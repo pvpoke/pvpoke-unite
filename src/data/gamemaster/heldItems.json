@@ -1,0 +1,88 @@
+[
+	{
+		"itemId": "shell_bell",
+		"values": [45, 60, 75, 75],
+		"boosts": [
+			{
+				"boostType": "spA",
+				"values": [24, 24, 24, 24]
+			},
+			{
+				"boostType": "moveCooldown",
+				"values": [-4.5, -4.5, -4.5, -4.5]
+			}
+		]
+	},
+	{
+		"itemId": "buddy_barrier",
+		"values": [20, 30, 40, 40],
+		"boosts": [
+			{
+				"boostType": "hp",
+				"values": [600, 600, 600, 600]
+			}
+		]
+	},
+	{
+		"itemId": "muscle_band",
+		"values": [1, 2, 3, 3],
+		"boosts": [
+			{
+				"boostType": "atk",
+				"values": [15, 15, 15, 15]
+			},
+			{
+				"boostType": "basicAttackSpeed",
+				"values": [7.5, 7.5, 7.5, 7.5]
+			}
+		]
+	},
+	{
+		"itemId": "wise_glasses",
+		"values": [3, 5, 7, 7],
+		"boosts": [
+			{
+				"boostType": "spA",
+				"values": [39, 39, 39, 39]
+			}
+		]
+	},
+	{
+		"itemId": "score_shield",
+		"values": [5, 7.5, 10, 10],
+		"boosts": [
+			{
+				"boostType": "hp",
+				"values": [450, 450, 450, 450]
+			}
+		]
+	},
+	{
+		"itemId": "leftovers",
+		"values": [1, 1.5, 2, 2],
+		"boosts": [
+			{
+				"boostType": "hp",
+				"values": [240, 240, 240, 240]
+			},
+			{
+				"boostType": "hpRecovery",
+				"values": [9, 9, 9, 9]
+			}
+		]
+	},
+	{
+		"itemId": "assault_vest",
+		"values": [9, 12, 15, 15],
+		"boosts": [
+			{
+				"boostType": "hp",
+				"values": [270, 270, 270, 270]
+			},
+			{
+				"boostType": "spD",
+				"values": [42, 42, 42, 42]
+			}
+		]
+	}
+]
