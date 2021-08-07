@@ -1,0 +1,31 @@
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  color: #c8c8c8;
+  font-family: sans-serif;
+}
+
+body {
+  background: linear-gradient(90deg, #141414 20px, transparent 1%) center, linear-gradient(#141414 20px, transparent 1%) center, #323232;
+  background-size: 22px 22px;
+}
+
+#main {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+header .header-wrap {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+footer {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/*# sourceMappingURL=style.css.map */
