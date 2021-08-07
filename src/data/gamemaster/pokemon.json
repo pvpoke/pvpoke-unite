@@ -1,0 +1,200 @@
+[
+	{
+		"pokemonId": "venusaur",
+		"dex": 3,
+		"role": "attacker",
+		"type": "ranged",
+		"style": "special",
+		"difficulty": "intermediate",
+		"ratings": {
+			"offense": 4.5,
+			"endurance": 2,
+			"mobility": 2,
+			"scoring": 2.5,
+			"support": 1
+		},
+		"stages": [
+			{
+				"stageId": "bulbausaur",
+				"level": 1
+			},
+			{
+				"stageId": "ivysaur",
+				"level": 5
+			},
+			{
+				"stageId": "venusaur",
+				"level": 9
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 2,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 3,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 4,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 5,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 6,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 7,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 8,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 9,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 10,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 11,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 12,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 13,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 14,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 15,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700}
+		],
+		"moves": {
+			"basic": {
+				"moveId": "venusaur_basic",
+				"style": "physical",
+				"boostStyle": "special",
+				"boostCount": 3
+			},
+			"slot1": [
+				{
+					"moveId": "seed_bomb",
+					"cooldown": 6,
+					"level": 1
+				},
+				{
+					"moveId": "sludge_bomb",
+					"cooldown": 6,
+					"level": 5,
+					"upgrade": 11
+				},
+				{
+					"moveId": "giga_drain",
+					"cooldown": 7,
+					"level": 5,
+					"upgrade": 13
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "razor_leaf",
+					"cooldown": 9,
+					"level": 1
+				},
+				{
+					"moveId": "solar_beam",
+					"cooldown": 11,
+					"level": 7,
+					"upgrade": 10
+				},
+				{
+					"moveId": "petal_dance",
+					"cooldown": 11,
+					"level": 7,
+					"upgrade": 11
+				}
+			],
+			"unite": {
+				"moveId": "verdant_anger",
+				"level": 9
+			},
+			"passive": {
+				"moveId": "overgrow"
+			}
+		}
+	},
+	{
+		"pokemonId": "charizard",
+		"dex": 6,
+		"role": "all_rounder",
+		"type": "melee",
+		"style": "physical",
+		"difficulty": "novice",
+		"ratings": {
+			"offense": 3.5,
+			"endurance": 3,
+			"mobility": 2.5,
+			"scoring": 3,
+			"support": 0.5
+		},
+		"stages": [
+			{
+				"stageId": "bulbausaur",
+				"level": 1
+			},
+			{
+				"stageId": "ivysaur",
+				"level": 5
+			},
+			{
+				"stageId": "venusaur",
+				"level": 9
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 2,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 3,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 4,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 5,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 6,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 7,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 8,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 9,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 10,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 11,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 12,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 13,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 14,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700},
+			{"level": 15,  "hp": 3300, "atk": 134, "def": 35, "spA": 50, "spD": 27, "speed": 3700}
+		],
+		"moves": {
+			"basic": {
+				"moveId": "venusaur_basic",
+				"style": "physical",
+				"boostStyle": "special",
+				"boostCount": 3
+			},
+			"slot1": [
+				{
+					"moveId": "seed_bomb",
+					"cooldown": 6,
+					"level": 1
+				},
+				{
+					"moveId": "sludge_bomb",
+					"cooldown": 6,
+					"level": 5,
+					"upgrade": 11
+				},
+				{
+					"moveId": "giga_drain",
+					"cooldown": 7,
+					"level": 5,
+					"upgrade": 13
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "razor_leaf",
+					"cooldown": 9,
+					"level": 1
+				},
+				{
+					"moveId": "solar_beam",
+					"cooldown": 11,
+					"level": 7,
+					"upgrade": 10
+				},
+				{
+					"moveId": "petal_dance",
+					"cooldown": 11,
+					"level": 7,
+					"upgrade": 11
+				}
+			],
+			"unite": {
+				"moveId": "verdant_anger",
+				"level": 9
+			},
+			"passive": {
+				"moveId": "overgrow"
+			}
+		}
+	}
+]
