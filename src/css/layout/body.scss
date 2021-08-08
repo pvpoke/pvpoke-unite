@@ -1,12 +1,30 @@
 body{
-	background:
-		linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center,
-		linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center,
-		$dot-color;
-	background-size: $dot-space $dot-space;
+	background-color: #f3fbfe;
+    background: url('../img/unite-bg.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center top;
+    min-height: 100%;
 }
 
-#main{
+.main-wrap{
 	max-width: $max-container-width;
 	margin: 0 auto;
+	padding:$gutter-width;
+}
+
+.section{
+
+	&.patterned{
+		background:
+			linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center,
+			linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center,
+			$dot-color;
+		background-size: $dot-space $dot-space;
+	}
+
+	&.padding{
+		padding: 20px 0;
+	}
 }

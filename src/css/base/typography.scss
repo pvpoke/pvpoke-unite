@@ -1,4 +1,8 @@
 body{
-	color:rgb(200,200,200);
+	color:$white;
 	font-family: sans-serif;
+}
+
+a{
+	color:$accent-color;
 }

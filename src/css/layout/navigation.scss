@@ -1,0 +1,91 @@
+
+.menu{
+	display:none;
+
+	a{
+		display: block;
+		font-weight: bold;
+		font-size: 24px;
+		padding:10px;
+		background:$gray;
+
+		&.more{
+			display: none;
+		}
+	}
+
+	flex-basis: 100%;
+}
+
+.hamburger{
+	display:block;
+	cursor: pointer;
+
+	.meat{
+		width: 40px;
+	    height: 6px;
+	    margin: 5px 0;
+	    background: $accent-color;
+	}
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	.menu{
+		display:flex;
+		flex-basis: auto;
+		background:none;
+
+		a{
+			padding:10px 10px 0 10px;
+			margin-left:40px;
+			background:none;
+
+			&.more{
+				display: block;
+
+				&:after{
+					font-size: 40px;
+		    		line-height: 20px;
+		    		content: "...";
+				}
+			}
+		}
+
+		.parent-menu{
+			position: relative;
+
+			.submenu{
+				padding-top: 10px;
+			    max-width: 200px;
+			    position: absolute;
+			    right: 0;
+			    top: 35px;
+			    height: 0;
+			    overflow: hidden;
+			    pointer-events: none;
+			    white-space: nowrap;
+			    -webkit-transition: all 0.125s linear 0s;
+			    -moz-transition: all 0.125s linear 0s;
+			    -o-transition: all 0.125s linear 0s;
+			    transition: all 0.125s linear 0s;
+
+				&.active{
+					display: block;
+				    height: 150px;
+				    pointer-events: auto;
+				}
+
+				a{
+					margin:0;
+					padding:8px;
+					font-size:16px;
+					background:$gray;
+				}
+			}
+		}
+	}
+
+	.hamburger{
+		display: none;
+	}
+}

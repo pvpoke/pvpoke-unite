@@ -2,5 +2,31 @@ header{
 	.header-wrap{
 		max-width: $max-container-width;
 		margin: 0 auto;
+		padding:10px $gutter-width 0 $gutter-width;
+		display: flex;
+	    justify-content: space-between;
+	    align-items: flex-end;
+		flex-wrap: wrap;
+	}
+
+	.title{
+		margin: 0;
+
+		a{
+			color:$white;
+			font-weight:normal;
+		}
+
+
+		span{
+			color:$accent-color;
+			font-weight: 900;
+			margin-left:10px;
+			text-transform: uppercase;
+		}
+	}
+
+	a{
+		text-decoration: none;
 	}
 }

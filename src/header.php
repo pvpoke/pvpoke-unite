@@ -106,9 +106,9 @@ if(! isset($OG_IMAGE)){
 </head>
 
 <body>
-	<header>
+	<header class="section patterned">
 		<div class="header-wrap">
-			<h1 class="title"><a href="/"><?php e("site_title"); ?></a></h1>
+			<h1 class="title"><a href="/"><?php e("pvpoke"); ?><span><?php e("unite"); ?></span></a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
@@ -116,7 +116,7 @@ if(! isset($OG_IMAGE)){
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>/"><?php e("nav_builds"); ?></a>
+				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>builds/"><?php e("nav_builds"); ?></a>
 				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>teams/"><?php e("nav_teams"); ?></a>
 				<div class="parent-menu">
 					<a class="more desktop" href="#"></a>
@@ -131,5 +131,3 @@ if(! isset($OG_IMAGE)){
 			</div>
 		</div>
 	</header>
-	<div class="main-wrap">
-		<div id="main">
