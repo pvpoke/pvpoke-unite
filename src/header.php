@@ -1,4 +1,6 @@
 <?php require_once 'modules/config.php';
+require_once 'modules/localize.php';
+
 $SITE_VERSION = '1.0';
 
 // This prevents caching on local testing
@@ -7,16 +9,11 @@ if (strpos($WEB_ROOT, 'src') !== false) {
 }
 
 // Initialize settings object
-if(isset($_COOKIE['settings'])){
-	$_SETTINGS = json_decode($_COOKIE['settings']);
-
-	// Fill in missing settings with defaults
-	if(! isset($_SETTINGS->ads)){
-		$_SETTINGS->ads = 1;
-	}
-
+if(isset($_COOKIE['unite_settings'])){
+	$_SETTINGS = json_decode($_COOKIE['unite_settings']);
 } else{
 	$_SETTINGS = (object) [
+		'lang' => 'en',
 		'ads' => 1
 	];
 }
@@ -29,9 +26,9 @@ if(isset($_COOKIE['settings'])){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <?php
 if(! isset($META_TITLE)){
-	$META_TITLE = 'PvPoke Unite | Open-Source Builds, Team Building & Analysis for Pokemon Unite';
+	$META_TITLE = l("site_title") . ' | ' . l("meta_title");
 } else{
-	$META_TITLE = $META_TITLE . ' | PvPoke Unite';
+	$META_TITLE = $META_TITLE . ' | ' . l("site_title");
 }
 
 if(! isset($META_DESCRIPTION)){
@@ -76,10 +73,14 @@ if(! isset($OG_IMAGE)){
 
 	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
+			'lang': "<?php echo htmlspecialchars($_SETTINGS->lang); ?>",
+			'ads': "<?php echo htmlspecialchars($_SETTINGS->ads); ?>"
 		};
 	<?php else: ?>
 
 		var settings = {
+			'lang': 'en',
+			'ads': 1
 		};
 
 	<?php endif; ?>
@@ -107,7 +108,7 @@ if(! isset($OG_IMAGE)){
 <body>
 	<header>
 		<div class="header-wrap">
-			<h1 class="title"><a href="/">PvPoke Unite</a></h1>
+			<h1 class="title"><a href="/"><?php e("site_title"); ?></a></h1>
 			<div class="hamburger">
 				<!--Because I'm too lazy to make a graphic-->
 				<div class="meat"></div>
@@ -115,14 +116,14 @@ if(! isset($OG_IMAGE)){
 				<div class="meat"></div>
 			</div>
 			<div class="menu">
-				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>/">Builds</a>
-				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>teams/">Teams</a>
+				<a class="icon-battle" href="<?php echo $WEB_ROOT; ?>/"><?php e("nav_builds"); ?></a>
+				<a class="icon-team" href="<?php echo $WEB_ROOT; ?>teams/"><?php e("nav_teams"); ?></a>
 				<div class="parent-menu">
 					<a class="more desktop" href="#"></a>
 					<div class="submenu">
 						<div class="submenu-wrap">
-							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/">Contribute</a>
-							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/">Settings</a>
+							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/"><?php e("nav_contribute"); ?></a>
+							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/"><?php e("nav_settings"); ?></a>
 							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
 						</div>
 					</div>

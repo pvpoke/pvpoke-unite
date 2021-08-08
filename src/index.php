@@ -1,8 +1,10 @@
 <?php require_once 'header.php'; ?>
 
+<?php i18n::getInstance()->loadMessages("pages/home"); ?>
+
 <div class="section home white">
 
-	<p>Welcome to PvPoke Unite! PvPoke is an open-source tool for build and team analysis of Pokemon Unite.</p>
+	<p><?php e("home_welcome"); ?></p>
 
 	<?php require 'modules/ads/body-728.php'; ?>
 
@@ -11,7 +13,7 @@
 	<?php endif; ?>
 
 	<!--Update section for updates-->
-	<h3>What's New</h3>
+	<h3><?php e("whats_new"); ?></h3>
 
 	<h4>v1.22.18 (July 24, 2021)</h4>
 	<ul>

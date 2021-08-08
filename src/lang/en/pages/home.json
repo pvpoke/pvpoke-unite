@@ -1,0 +1,7 @@
+{
+	"home_welcome": "Welcome to PvPoke Unite! PvPoke is an open-source tool for build and team analysis of Pokemon Unite.",
+	"whats_new": "What's New",
+	"bullet_1": "Fixed an issue with the training AI evaluating some scenarios incorrectly",
+	"bullet_2": "Fixed an issue where individual battles in Master League Classic would set the Pokemon to level 50.",
+	"bullet_3": "Fixed an issue where custom threats and alternatives entered in the Team Builder weren't reflected correctly in battle links."
+}
