@@ -41,6 +41,33 @@
 			width:100%;
 			font-size:18px;
 		}
+
+		.pokemon-list{
+			display: flex;
+			flex-wrap: wrap;
+
+			.pokemon{
+				cursor:pointer;
+				width:100px;
+
+				.image{
+					width:100px;
+					height:100px;
+					border:1px solid $gray;
+					box-sizing: border-box;
+				}
+
+				.name{
+					font-size:10px;
+					text-align: center;
+					padding:5px 0;
+				}
+
+				&:hover{
+					background:$gray;
+				}
+			}
+		}
 	}
 
 	.selected-pokemon{

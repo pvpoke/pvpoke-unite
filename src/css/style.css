@@ -173,7 +173,7 @@ input[type=text] {
   box-sizing: border-box;
 }
 
-.hide {
+.hide, .template {
   display: none !important;
 }
 
@@ -208,6 +208,28 @@ input[type=text] {
 .build-select .poke-select input.poke-search {
   width: 100%;
   font-size: 18px;
+}
+.build-select .poke-select .pokemon-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.build-select .poke-select .pokemon-list .pokemon {
+  cursor: pointer;
+  width: 100px;
+}
+.build-select .poke-select .pokemon-list .pokemon .image {
+  width: 100px;
+  height: 100px;
+  border: 1px solid #222222;
+  box-sizing: border-box;
+}
+.build-select .poke-select .pokemon-list .pokemon .name {
+  font-size: 10px;
+  text-align: center;
+  padding: 5px 0;
+}
+.build-select .poke-select .pokemon-list .pokemon:hover {
+  background: #222222;
 }
 .build-select .selected-pokemon {
   display: block;

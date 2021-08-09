@@ -39,9 +39,9 @@ var GameMaster = (function () {
 		object.getPokemonById = function(id){
 			var pokemon;
 
-			$.each(object.data.pokemon, function(index, poke){
+			$.each(object.pokemon, function(index, poke){
 
-				if(poke.speciesId == id){
+				if(poke.pokemonId == id){
 					pokemon = poke;
 					return;
 				}
