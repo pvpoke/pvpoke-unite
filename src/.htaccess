@@ -9,6 +9,8 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteCond %{HTTP_HOST} ^www\.pvpoke\.com [NC]
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
+RewriteRule builds.?$ builds.php [L,QSA]
+
 
 # Redirect index.php to /
 

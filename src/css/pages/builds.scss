@@ -1,0 +1,49 @@
+.build-list{
+	display:flex;
+	width:100%;
+
+	.build-select, .new-build-section{
+		width:300px;
+		margin-right:20px;
+	}
+
+	.build-select:first-of-type{
+
+	}
+
+	.build-select{
+		border: 1px solid $gray;
+	}
+}
+
+.new-build-section{
+
+	a{
+		display: block;
+		text-decoration: none;
+		border:1px solid $accent-color;
+		text-align: center;
+		font-weight: bold;
+		font-size:18px;
+	}
+
+	a.new-build{
+		padding:20px;
+	}
+}
+
+.build-select{
+	padding:5px;
+	background:$black;
+
+	.poke-select{
+		input.poke-search{
+			width:100%;
+			font-size:18px;
+		}
+	}
+
+	.selected-pokemon{
+		display: block;
+	}
+}

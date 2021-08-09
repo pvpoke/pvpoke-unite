@@ -1,0 +1,14 @@
+input{
+	display: block;
+
+	&[type="text"]{
+		background:$black;
+		color:$white;
+		border-bottom:3px solid $accent-color;
+		padding:10px 10px 6px 10px;
+		outline:none;
+		box-sizing: border-box;
+	}
+}
+
+.hide{ display: none !important; }

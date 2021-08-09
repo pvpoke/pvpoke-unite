@@ -9,8 +9,11 @@
 @import 'layout/header';
 @import 'layout/footer';
 
+@import 'components/ads';
 @import 'components/buttons';
+@import 'components/forms';
 
 @import 'pages/home';
+@import 'pages/builds';
 
 @import 'themes/default-theme';

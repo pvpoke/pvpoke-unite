@@ -12,6 +12,11 @@ html {
   height: 100%;
 }
 
+input[type=text] {
+  border: none;
+  outline: none;
+}
+
 body {
   color: #c8c8c8;
   font-family: sans-serif;
@@ -154,6 +159,58 @@ footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px;
+}
+
+input {
+  display: block;
+}
+input[type=text] {
+  background: #141414;
+  color: #c8c8c8;
+  border-bottom: 3px solid #6f55df;
+  padding: 10px 10px 6px 10px;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.hide {
+  display: none !important;
+}
+
+.build-list {
+  display: flex;
+  width: 100%;
+}
+.build-list .build-select, .build-list .new-build-section {
+  width: 300px;
+  margin-right: 20px;
+}
+.build-list .build-select {
+  border: 1px solid #222222;
+}
+
+.new-build-section a {
+  display: block;
+  text-decoration: none;
+  border: 1px solid #6f55df;
+  text-align: center;
+  font-weight: bold;
+  font-size: 18px;
+}
+.new-build-section a.new-build {
+  padding: 20px;
+}
+
+.build-select {
+  padding: 5px;
+  background: #141414;
+}
+.build-select .poke-select input.poke-search {
+  width: 100%;
+  font-size: 18px;
+}
+.build-select .selected-pokemon {
+  display: block;
 }
 
 /*# sourceMappingURL=style.css.map */
