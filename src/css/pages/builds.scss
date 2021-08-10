@@ -70,7 +70,63 @@
 		}
 	}
 
+	.details{
+		display:none;
+	}
+
 	.selected-pokemon{
-		display: block;
+		border:1px solid $gray;
+		height:100px;
+	}
+
+	.attributes{
+		display: flex;
+	    flex-wrap: wrap;
+	    justify-content: center;
+
+		div{
+			padding:2px 5px;
+			margin:5px;
+			font-size:12px;
+			background:$accent-color;
+			color:$white;
+			cursor:default;
+		}
+	}
+
+	.stats{
+		margin-top:15px;
+
+		.stat{
+			display:flex;
+			align-items: center;
+			margin:10px 0;
+
+			& > div{
+				margin-right:10px;
+			}
+
+			.stat-label{
+				cursor: pointer;
+				padding:4px 10px;
+				border:1px solid $accent-color;
+				color:$accent-color;
+				min-width:80px;
+
+				&:hover{
+					background:$gray;
+				}
+
+				&.selected{
+					background:$accent-color;
+					color:$white;
+				}
+			}
+
+			.stat-value{
+				font-weight: bold;
+				min-width: 50px;
+			}
+		}
 	}
 }

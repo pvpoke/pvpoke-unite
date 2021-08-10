@@ -231,8 +231,54 @@ input[type=text] {
 .build-select .poke-select .pokemon-list .pokemon:hover {
   background: #222222;
 }
+.build-select .details {
+  display: none;
+}
 .build-select .selected-pokemon {
-  display: block;
+  border: 1px solid #222222;
+  height: 100px;
+}
+.build-select .attributes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.build-select .attributes div {
+  padding: 2px 5px;
+  margin: 5px;
+  font-size: 12px;
+  background: #6f55df;
+  color: #c8c8c8;
+  cursor: default;
+}
+.build-select .stats {
+  margin-top: 15px;
+}
+.build-select .stats .stat {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.build-select .stats .stat > div {
+  margin-right: 10px;
+}
+.build-select .stats .stat .stat-label {
+  cursor: pointer;
+  padding: 4px 10px;
+  border: 1px solid #6f55df;
+  color: #6f55df;
+  min-width: 80px;
+}
+.build-select .stats .stat .stat-label:hover {
+  background: #222222;
+}
+.build-select .stats .stat .stat-label.selected {
+  background: #6f55df;
+  color: #c8c8c8;
+}
+.build-select .stats .stat .stat-value {
+  font-weight: bold;
+  min-width: 50px;
 }
 
 /*# sourceMappingURL=style.css.map */

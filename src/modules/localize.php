@@ -43,7 +43,7 @@ class i18n {
 
 $i18n = i18n::getInstance();
 
-// Shorthand for returning a string
+// Shorthand for echoing a string
 
 function e($id){
 	echo i18n::getInstance()->localize($id);
