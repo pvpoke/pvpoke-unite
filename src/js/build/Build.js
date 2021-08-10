@@ -2,14 +2,16 @@
 * The main Build class used to represent a build and its Pokemon
 */
 
-function Build(id){
+function Build(id, level){
+	level = typeof level !== 'undefined' ? level : true;
+
 	let self = this;
 	let gm = GameMaster.getInstance();
 
 	self.heldItems = [];
 	self.battleItem = null;
 	self.stageId = '';
-	self.level = 1;
+	self.level = level;
 
 
 	// Apply a new Pokemon to this build

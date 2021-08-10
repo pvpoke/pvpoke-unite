@@ -44,7 +44,10 @@ function BuildSelect(element, ctx, selectors){
 
 	// Update displayed stats, moves, and items from the selected build
 
-	self.update = function(){
+	self.update = function(internal){
+		internal = typeof internal !== 'undefined' ? internal : true;
+
+
 		// Display Pokemon's name and image
 		$el.find(".selected-pokemon .name").html(build.stageId);
 
@@ -73,7 +76,9 @@ function BuildSelect(element, ctx, selectors){
 
 			let primary = buildSelectors[0].getBuild();
 
-			if(primary != build){
+			if((primary != build) && primary){
+				console.log("level " + primary.level);
+
 				let statsToCompare = [
 					{ "stat": "hp", "element": ".stat.hp" },
 					{ "stat": "atk", "element": ".stat.atk" },
@@ -97,9 +102,17 @@ function BuildSelect(element, ctx, selectors){
 						$el.find(statsToCompare[i].element + " .stat-difference").addClass("positive");
 					} else if(diff < 0){
 						$el.find(statsToCompare[i].element + " .stat-difference").addClass("negative");
+					} else if(diff == 0){
+						$el.find(statsToCompare[i].element + " .stat-difference").html('');
 					}
 
 				}
+			}
+
+			// Bubble up to other build selectors
+
+			if((context == "builds")&&(internal)){
+				interface.selectorUpdateHandler(self);
 			}
 		}
 
@@ -134,9 +147,23 @@ function BuildSelect(element, ctx, selectors){
 		statCtx.stroke();
 		statCtx.closePath();
 
+		// Draw level line
+
+		statCtx.lineWidth = 1;
+		statCtx.strokeStyle = "#888888";
+		statCtx.setLineDash([5, 3]);
+		let levelX = (build.level-1) * (width / 14);
+
+		statCtx.beginPath();
+		statCtx.moveTo(levelX, 0);
+		statCtx.lineTo(levelX, height);
+		statCtx.stroke();
+		statCtx.closePath();
+
 		// Draw stat graph
-		statCtx.lineWidth = 2;
+		statCtx.lineWidth = 4;
 		statCtx.strokeStyle = "#9950c5";
+		statCtx.setLineDash([]);
 
 		statCtx.beginPath();
 
@@ -158,6 +185,29 @@ function BuildSelect(element, ctx, selectors){
 	self.getBuild = function(){
 		return build;
 	}
+
+	// Return the currently graphed stat
+
+	self.getSelectedStat = function(){
+		return selectedStat;
+	}
+
+	// Externally set the selected stat
+
+	self.setSelectedStat = function(value){
+		selectedStat = value;
+
+		$el.find(".stat-label").removeClass("selected");
+		$el.find(".stat-label[value=\""+value+"\"]").addClass("selected");
+	}
+
+	// Externally set the build level
+
+	self.setLevel = function(value){
+		build.setLevel(value);
+		$el.find(".level-slider").val(value);
+	}
+
 
 
 	// Search select Pokemon
@@ -185,8 +235,19 @@ function BuildSelect(element, ctx, selectors){
 	$el.on("click", ".pokemon-list .pokemon", function(e){
 
 		let pokemonId = $(e.target).closest(".pokemon").attr("pokemon-id");
+		let level = 1;
 
-		build = new Build(pokemonId);
+		if(context == "builds"){
+			let primary = buildSelectors[0].getBuild();
+
+			// Set new build to the build of the primary
+			if(primary){
+				level = primary.level;
+			}
+		}
+
+
+		build = new Build(pokemonId, level);
 
 		$el.find(".poke-select").hide();
 		$el.find(".details").show();
