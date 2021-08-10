@@ -23,7 +23,7 @@ body {
 }
 
 a {
-  color: #8a44b3;
+  color: #9950c5;
 }
 
 .menu {
@@ -49,7 +49,7 @@ a {
   width: 40px;
   height: 6px;
   margin: 5px 0;
-  background: #8a44b3;
+  background: #9950c5;
 }
 
 @media only screen and (min-width: 768px) {
@@ -146,7 +146,7 @@ header .title a {
   font-weight: normal;
 }
 header .title span {
-  color: #8a44b3;
+  color: #9950c5;
   font-weight: 900;
   margin-left: 10px;
   text-transform: uppercase;
@@ -167,7 +167,7 @@ input {
 input[type=text] {
   background: #141414;
   color: #c8c8c8;
-  border-bottom: 3px solid #8a44b3;
+  border-bottom: 3px solid #9950c5;
   padding: 10px 10px 6px 10px;
   outline: none;
   box-sizing: border-box;
@@ -188,7 +188,7 @@ input[type=text] {
   appearance: none;
   width: 15px;
   height: 15px;
-  background: #8a44b3;
+  background: #9950c5;
   cursor: pointer;
 }
 
@@ -211,7 +211,7 @@ input[type=text] {
 .new-build-section a {
   display: block;
   text-decoration: none;
-  border: 1px solid #8a44b3;
+  border: 1px solid #9950c5;
   text-align: center;
   font-weight: bold;
   font-size: 18px;
@@ -266,7 +266,7 @@ input[type=text] {
   padding: 2px 5px;
   margin: 5px;
   font-size: 12px;
-  background: #8a44b3;
+  background: #9950c5;
   color: #c8c8c8;
   cursor: default;
 }
@@ -287,8 +287,8 @@ input[type=text] {
 .build-select .stats .stat .stat-label {
   cursor: pointer;
   padding: 4px 10px;
-  border: 1px solid #8a44b3;
-  color: #8a44b3;
+  border: 1px solid #9950c5;
+  color: #9950c5;
   min-width: 80px;
   font-weight: bold;
 }
@@ -296,7 +296,7 @@ input[type=text] {
   background: #222222;
 }
 .build-select .stats .stat .stat-label.selected {
-  background: #8a44b3;
+  background: #9950c5;
   color: #c8c8c8;
 }
 .build-select .stats .stat .stat-value {
@@ -329,6 +329,9 @@ input[type=text] {
 .build-select .level .label {
   font-weight: bold;
   margin-right: 10px;
+}
+.build-select .level-slider {
+  margin: 5px 0 25px 0;
 }
 
 /*# sourceMappingURL=style.css.map */

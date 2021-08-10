@@ -46,7 +46,7 @@ function BuildSelect(element, ctx, selectors){
 
 	self.update = function(){
 		// Display Pokemon's name and image
-		$el.find(".selected-pokemon .name").html(build.pokemonId);
+		$el.find(".selected-pokemon .name").html(build.stageId);
 
 		// Display Pokemon's role and type
 		$el.find(".attributes").html("");
@@ -136,7 +136,7 @@ function BuildSelect(element, ctx, selectors){
 
 		// Draw stat graph
 		statCtx.lineWidth = 2;
-		statCtx.strokeStyle = "#8a44b3";
+		statCtx.strokeStyle = "#9950c5";
 
 		statCtx.beginPath();
 

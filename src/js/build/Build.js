@@ -28,6 +28,7 @@ function Build(id){
 		self.stages = data.stages;
 		self.movePool = data.moves;
 		self.ratings = data.ratings;
+		self.stageId = self.stages[0].stageId;
 
 		self.setStats();
 	}
@@ -46,7 +47,7 @@ function Build(id){
 		// Set this Pokemon's evolutionary stage at its current level
 		for(var i = 0; i < self.stages.length; i++){
 			if(self.level >= self.stages[i].level){
-				self.stage = self.stages[i];
+				self.stageId = self.stages[i].stageId;
 			}
 		}
 
