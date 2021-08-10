@@ -116,6 +116,7 @@
 				border:1px solid $accent-color;
 				color:$accent-color;
 				min-width:80px;
+				font-weight: bold;
 
 				&:hover{
 					background:$gray;
@@ -128,7 +129,6 @@
 			}
 
 			.stat-value{
-				font-weight: bold;
 				min-width: 50px;
 			}
 
@@ -145,8 +145,22 @@
 		margin-top: 15px;
 		background:$black;
 		border:1px solid $gray;
-		width:100%;
+		width:95%;
 		height:100px;
 		box-sizing: border-box;
+		margin: 15px auto 5px auto;
+		display: block;
+		margin-top: 15px;
+	}
+
+	.level{
+		display: flex;
+		margin: 5px 8px;
+
+		.label{
+			font-weight: bold;
+			margin-right: 10px;
+		}
+
 	}
 }

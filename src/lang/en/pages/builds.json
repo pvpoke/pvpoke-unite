@@ -4,5 +4,6 @@
 	"attack": "Attack",
 	"defense": "Defense",
 	"special_attack": "Special<br>Attack",
-	"special_defense": "Special<br>Defense"
+	"special_defense": "Special<br>Defense",
+	"level": "Level"
 }

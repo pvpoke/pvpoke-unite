@@ -20,6 +20,13 @@
 
 		<canvas class="progression"></canvas>
 
+		<div class="level">
+			<div class="label"><?php e("level"); ?></div>
+			<div class="value">1</div>
+		</div>
+
+		<input class="slider level-slider" type="range" min="1" max="15" value="1">
+
 		<div class="stats">
 			<div class="stat hp">
 				<div class="stat-label selected" value="hp"><?php e("hp"); ?></div>

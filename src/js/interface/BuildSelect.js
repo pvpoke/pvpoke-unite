@@ -54,6 +54,10 @@ function BuildSelect(element, ctx, selectors){
 		$el.find(".attributes").append("<div>"+build.type+"</div>");
 		$el.find(".attributes").append("<div>"+build.style+"</div>");
 
+		// Display current level
+		$el.find(".level .value").html(build.level);
+
+
 		// Display Pokemon's stats
 
 		$el.find(".stat.hp .stat-value").html(build.stats.hp);
@@ -111,8 +115,29 @@ function BuildSelect(element, ctx, selectors){
 		}
 
 		statCtx.clearRect(0, 0, width, height);
-		statCtx.strokeStyle = "#6f55df";
+
+		// Draw gridlines
+		let gridCount = 7;
+
+		statCtx.lineWidth = 1;
+		statCtx.strokeStyle = "#222222";
+
+		statCtx.beginPath();
+
+		for(var i = 0; i < gridCount; i++){
+			let x = (width / gridCount) * i;
+			statCtx.moveTo(x, 0);
+			statCtx.lineTo(x, height);
+
+		}
+
+		statCtx.stroke();
+		statCtx.closePath();
+
+		// Draw stat graph
 		statCtx.lineWidth = 2;
+		statCtx.strokeStyle = "#8a44b3";
+
 		statCtx.beginPath();
 
 		// Calculate stat at each level
@@ -121,12 +146,11 @@ function BuildSelect(element, ctx, selectors){
 			let x = width * (i / 14);
 			let y = height - (height * (stats[selectedStat] / yAxisMax));
 
-			console.log(stats[selectedStat]);
 	        statCtx.lineTo(x, y);
-	        statCtx.stroke();
-			statCtx.lineTo(x, y);
-
 		}
+
+		statCtx.stroke();
+		statCtx.closePath();
 	}
 
 	// Return the currently selected build
@@ -185,6 +209,17 @@ function BuildSelect(element, ctx, selectors){
 		$(this).addClass("selected");
 
 		selectedStat = $(this).attr("value");
+
+		self.update();
+	});
+
+	// Adjust the build level
+
+	$el.find(".level-slider").on("input", function(e){
+
+		let level = parseInt($(this).val());
+
+		build.setLevel(level);
 
 		self.update();
 	});

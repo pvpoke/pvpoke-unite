@@ -8,7 +8,27 @@ input{
 		padding:10px 10px 6px 10px;
 		outline:none;
 		box-sizing: border-box;
+		-webkit-appearance: none;
 	}
 }
+
+.slider{
+
+	width: 100%;
+	margin: 0;
+	outline:none;
+	background:$gray;
+	 -webkit-appearance: none; /* Override default look */
+
+	&::-webkit-slider-thumb {
+	  -webkit-appearance: none; /* Override default look */
+	  appearance: none;
+	  width: 15px;
+	  height: 15px;
+	  background: $accent-color;
+	  cursor: pointer;
+	}
+}
+
 
 .hide, .template{ display: none !important; }
