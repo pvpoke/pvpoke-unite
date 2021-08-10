@@ -24,7 +24,7 @@ var InterfaceMaster = (function () {
 				let $buildSelect = $(".build-template .build-select").clone();
 				$buildSelect.insertBefore(".build-list .new-build-section");
 
-				let buildSelector = new BuildSelect($buildSelect, "builds");
+				let buildSelector = new BuildSelect($buildSelect, "builds", buildSelectors);
 				buildSelector.init();
 
 				buildSelectors.push(buildSelector);

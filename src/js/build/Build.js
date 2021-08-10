@@ -29,7 +29,7 @@ function Build(id){
 		self.movePool = data.moves;
 		self.ratings = data.ratings;
 
-		self.calculateStats();
+		self.setStats();
 	}
 
 	// Set the level for this Pokemon
@@ -42,16 +42,29 @@ function Build(id){
 		}
 
 		self.level = value;
-		self.calculateStats();
+
+		// Set this Pokemon's evolutionary stage at its current level
+		for(var i = 0; i < self.stages.length; i++){
+			if(self.level >= self.stages[i].level){
+				self.stage = self.stages[i];
+			}
+		}
+
+		self.setStats();
 	}
 
-	// Calculate this build's stats after setting Pokemon or level
+	// Set the Pokemon's stats at its current level
 
-	self.calculateStats = function(){
-		let statSet = self.baseStats[self.level - 1];
+	self.setStats = function(){
+		self.stats = self.calculateStats(self.level);
+	}
 
-		self.stats = {
-			overall: 0,
+	// Return this build's stats at a given level
+
+	self.calculateStats = function(level){
+		let statSet = self.baseStats[level - 1];
+
+		let stats = {
 			hp: statSet.hp,
 			atk: statSet.atk,
 			def: statSet.def,
@@ -63,18 +76,11 @@ function Build(id){
 		// Factor in held items here
 
 		// Calculate overall stat
-		let statProduct = self.stats.hp * self.stats.atk * self.stats.def * self.stats.spA * self.stats.spD;
+		//let statProduct = self.stats.hp * self.stats.atk * self.stats.def * self.stats.spA * self.stats.spD;
 
-		self.stats.overall = Math.round(statProduct / 1000000);
+		//self.stats.overall = Math.round(statProduct / 1000000);
 
-		// Set this Pokemon's evolutionary stage at its current level
-		for(var i = 0; i < self.stages.length; i++){
-			if(self.level >= self.stages[i].level){
-				self.stage = self.stages[i];
-			}
-		}
-
-		console.log(self.stats);
+		return stats;
 	}
 
 	self.setPokemon(id); // Initialize with given ID

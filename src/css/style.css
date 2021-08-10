@@ -262,6 +262,9 @@ input[type=text] {
 .build-select .stats .stat > div {
   margin-right: 10px;
 }
+.build-select .stats .stat.link {
+  font-size: 12px;
+}
 .build-select .stats .stat .stat-label {
   cursor: pointer;
   padding: 4px 10px;
@@ -279,6 +282,23 @@ input[type=text] {
 .build-select .stats .stat .stat-value {
   font-weight: bold;
   min-width: 50px;
+}
+.build-select .stats .stat .stat-difference {
+  font-size: 12px;
+}
+.build-select .stats .stat .stat-difference.positive {
+  color: #91c74c;
+}
+.build-select .stats .stat .stat-difference.negative {
+  color: #c7524c;
+}
+.build-select canvas.progression {
+  margin-top: 15px;
+  background: #141414;
+  border: 1px solid #222222;
+  width: 100%;
+  height: 100px;
+  box-sizing: border-box;
 }
 
 /*# sourceMappingURL=style.css.map */

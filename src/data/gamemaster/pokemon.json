@@ -437,7 +437,7 @@
 			{"level": 3, "hp": 3573, "atk": 139, "def": 111, "spA": 68, "spD": 99, "speed": 3700},
 			{"level": 4, "hp": 4327, "atk": 162, "def": 169, "spA": 144, "spD": 151, "speed": 3700},
 			{"level": 5, "hp": 4581, "atk": 168, "def": 184, "spA": 164, "spD": 165, "speed": 3700},
-			{"level": 6, "hp": 6821, "atk": 175, "def": 201, "spA": 187, "spD": 181, "speed": 3700},
+			{"level": 6, "hp": 4821, "atk": 175, "def": 201, "spA": 187, "spD": 181, "speed": 3700},
 			{"level": 7, "hp": 5097, "atk": 183, "def": 221, "spA": 213, "spD": 199, "speed": 3700},
 			{"level": 8, "hp": 5414, "atk": 192, "def": 244, "spA": 243, "spD": 220, "speed": 3700},
 			{"level": 9, "hp": 5779, "atk": 203, "def": 271, "spA": 278, "spD": 244, "speed": 3700},
