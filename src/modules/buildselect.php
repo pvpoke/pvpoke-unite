@@ -102,5 +102,6 @@
 				<div class="name"></div>
 			</div>
 		</div>
+		<button class="select"><?php e("select"); ?></button>
 	</div>
 </div>

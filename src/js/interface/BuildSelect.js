@@ -113,6 +113,13 @@ function BuildSelect(element, ctx, selectors){
 				}
 			}
 
+			// Display held items
+			$el.find(".held-item").html("+");
+
+			for(var i = 0; i < build.heldItems.length; i++){
+				$el.find(".held-item").eq(i).html(build.heldItems[i].itemName);
+			}
+
 			// Bubble up to other build selectors
 
 			if((context == "builds")&&(internal)){
@@ -289,12 +296,51 @@ function BuildSelect(element, ctx, selectors){
 	$el.find(".held-item").on("click", function(e){
 		modal = new ModalWindow($el.find(".held-item-modal"));
 
+		let itemIndex = $el.find(".held-item").index($(e.target).closest(".held-item"));
+
 		// Populate item list
 		for(var i = 0; i < gm.heldItems.length; i++){
+			let itemId = gm.heldItems[i].itemId;
 			let $item = $(".modal .held-item-modal .item.template").clone().removeClass("template");
-			$item.find(".name").html(gm.heldItems[i].itemId);
+			$item.find(".name").html(itemId);
+			$item.attr("value", itemId);
+
+			if(build.hasHeldItem(itemId)){
+				$item.addClass("disabled");
+			}
+
 			$(".modal .held-item-modal .item-list").append($item);
 		}
+
+		// Item click
+
+		$(".held-item-modal .item-list .item").click(function(e){
+
+			let $item = $(e.target).closest(".item");
+
+			if($item.hasClass("disabled")){
+				return false;
+			}
+
+			$(".modal .held-item-modal .item-list .item").removeClass("selected");
+
+			$(".modal .held-item-modal .selected-item .name").html($item.find(".name").html());
+
+			$item.addClass("selected");
+		});
+
+		// Item selection
+
+		$(".held-item-modal button.select").click(function(e){
+			let $item = $(".held-item-modal .item.selected");
+			let itemId = $item.attr("value");
+
+			let item = new HeldItem(itemId);
+			build.giveHeldItem(item, itemIndex);
+
+			modal.close();
+			self.update();
+		});
 	});
 
 

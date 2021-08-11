@@ -161,6 +161,35 @@ footer {
   padding: 8px;
 }
 
+button {
+  display: block;
+  border: 1px solid #9950c5;
+  background: #9950c5;
+  color: #c8c8c8;
+  padding: 5px 10px;
+  margin: 5px;
+  outline: none;
+  cursor: pointer;
+}
+button.toggle {
+  background: #141414;
+  color: #9950c5;
+}
+button.toggle:hover {
+  background: #222222;
+}
+button.toggle.on {
+  color: #c8c8c8;
+  background: #9950c5;
+}
+
+button.select {
+  font-weight: bold;
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 15px auto 0 auto;
+}
+
 input {
   display: block;
 }
@@ -190,23 +219,6 @@ input[type=text] {
   height: 15px;
   background: #9950c5;
   cursor: pointer;
-}
-
-button.toggle {
-  border: 1px solid #9950c5;
-  color: #9950c5;
-  padding: 5px 10px;
-  margin: 5px;
-  background: #141414;
-  outline: none;
-  cursor: pointer;
-}
-button.toggle:hover {
-  background: #222222;
-}
-button.toggle.on {
-  color: #c8c8c8;
-  background: #9950c5;
 }
 
 .hide, .template {
@@ -456,10 +468,15 @@ button.toggle.on {
   background: #222222;
 }
 .select-modal .item.selected {
-  background: #9950c5;
+  background: #9950c5 !important;
+}
+.select-modal .item.disabled {
+  cursor: default;
+  opacity: 0.5;
+  background: none !important;
 }
 .select-modal .selected-description {
-  max-height: 300px;
+  height: 300px;
   overflow-y: auto;
 }
 .select-modal .item-list {

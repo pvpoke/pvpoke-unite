@@ -86,6 +86,30 @@ function Build(id, level){
 		return stats;
 	}
 
+	// Check to see if this Pokemon is holding a specific item
+
+	self.hasHeldItem = function(itemId){
+		for(var i = 0; i < self.heldItems.length; i++){
+			if(self.heldItems[i].itemId == itemId){
+				return true;
+			}
+		}
+
+		return false;
+	}
+
+	// Give this Pokemon a specific held item
+
+	self.giveHeldItem = function(item, slot){
+		slot = typeof slot !== 'undefined' ? slot : self.heldItems.length;
+		
+		if(slot >= self.heldItems.length){
+			self.heldItems.push(item);
+		} else{
+			self.heldItems[slot] = item;
+		}
+	}
+
 	self.setPokemon(id); // Initialize with given ID
 	self.setLevel(level);
 }

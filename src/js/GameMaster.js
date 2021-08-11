@@ -34,10 +34,10 @@ var GameMaster = (function () {
 			});
 		}
 
-		// Return a Pokemon object given species ID
+		// Return Pokemon data given species ID
 
 		object.getPokemonById = function(id){
-			var pokemon;
+			let pokemon;
 
 			$.each(object.pokemon, function(index, poke){
 
@@ -48,6 +48,22 @@ var GameMaster = (function () {
 			});
 
 			return pokemon;
+		}
+
+		// Return Held Item data given item ID
+
+		object.getHeldItemById = function(id){
+			let item;
+
+			$.each(object.heldItems, function(index, it){
+
+				if(it.itemId == id){
+					item = it;
+					return;
+				}
+			});
+
+			return item;
 		}
 
         return object;

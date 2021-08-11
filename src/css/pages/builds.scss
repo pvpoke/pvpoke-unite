@@ -240,17 +240,24 @@
 	.item{
 		padding:10px;
 		cursor:pointer;
+
 		&:hover{
 			background:$gray;
 		}
 
 		&.selected{
-			background:$accent-color;
+			background:$accent-color !important;
+		}
+
+		&.disabled{
+			cursor:default;
+			opacity: 0.5;
+			background:none !important;
 		}
 	}
 
 	.selected-description{
-		max-height:300px;
+		height:300px;
 		overflow-y:auto;
 	}
 

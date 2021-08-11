@@ -1,0 +1,31 @@
+button{
+	display:block;
+	border: 1px solid $accent-color;
+	background:$accent-color;
+	color:$white;
+	padding:5px 10px;
+	margin: 5px;
+	outline:none;
+	cursor: pointer;
+
+	&.toggle{
+		background:$black;
+		color:$accent-color;
+
+		&:hover{
+			background:$gray;
+		}
+
+		&.on{
+			color:$white;
+			background:$accent-color;
+		}
+	}
+}
+
+button.select{
+	font-weight:bold;
+	font-size:18px;
+	padding:10px 15px;
+	margin:15px auto 0 auto;
+}

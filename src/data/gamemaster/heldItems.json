@@ -4,11 +4,11 @@
 		"values": [45, 60, 75, 75],
 		"boosts": [
 			{
-				"boostType": "spA",
+				"type": "spA",
 				"values": [24, 24, 24, 24]
 			},
 			{
-				"boostType": "moveCooldown",
+				"type": "moveCooldown",
 				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
 		]
@@ -18,7 +18,7 @@
 		"values": [20, 30, 40, 40],
 		"boosts": [
 			{
-				"boostType": "hp",
+				"type": "hp",
 				"values": [600, 600, 600, 600]
 			}
 		]
@@ -28,11 +28,11 @@
 		"values": [1, 2, 3, 3],
 		"boosts": [
 			{
-				"boostType": "atk",
+				"type": "atk",
 				"values": [15, 15, 15, 15]
 			},
 			{
-				"boostType": "basicAttackSpeed",
+				"type": "basicAttackSpeed",
 				"values": [7.5, 7.5, 7.5, 7.5]
 			}
 		]
@@ -42,7 +42,7 @@
 		"values": [3, 5, 7, 7],
 		"boosts": [
 			{
-				"boostType": "spA",
+				"type": "spA",
 				"values": [39, 39, 39, 39]
 			}
 		]
@@ -52,7 +52,7 @@
 		"values": [5, 7.5, 10, 10],
 		"boosts": [
 			{
-				"boostType": "hp",
+				"type": "hp",
 				"values": [450, 450, 450, 450]
 			}
 		]
@@ -62,11 +62,11 @@
 		"values": [1, 1.5, 2, 2],
 		"boosts": [
 			{
-				"boostType": "hp",
+				"type": "hp",
 				"values": [240, 240, 240, 240]
 			},
 			{
-				"boostType": "hpRecovery",
+				"type": "hpRecovery",
 				"values": [9, 9, 9, 9]
 			}
 		]
@@ -76,11 +76,11 @@
 		"values": [9, 12, 15, 15],
 		"boosts": [
 			{
-				"boostType": "hp",
+				"type": "hp",
 				"values": [270, 270, 270, 270]
 			},
 			{
-				"boostType": "spD",
+				"type": "spD",
 				"values": [42, 42, 42, 42]
 			}
 		]
