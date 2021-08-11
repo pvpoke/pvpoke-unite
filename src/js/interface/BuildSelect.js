@@ -47,6 +47,9 @@ function BuildSelect(element, ctx, selectors){
 	self.update = function(internal){
 		internal = typeof internal !== 'undefined' ? internal : true;
 
+		if(! build)
+			return false;
+
 
 		// Display Pokemon's name and image
 		$el.find(".selected-pokemon .name").html(build.stageId);
@@ -77,7 +80,6 @@ function BuildSelect(element, ctx, selectors){
 			let primary = buildSelectors[0].getBuild();
 
 			if((primary != build) && primary){
-				console.log("level " + primary.level);
 
 				let statsToCompare = [
 					{ "stat": "hp", "element": ".stat.hp" },
@@ -178,6 +180,11 @@ function BuildSelect(element, ctx, selectors){
 
 		statCtx.stroke();
 		statCtx.closePath();
+
+		// Match level slider if not equal
+		if($el.find(".level-slider").val() != build.level){
+			$el.find(".level-slider").val(build.level);
+		}
 	}
 
 	// Return the currently selected build

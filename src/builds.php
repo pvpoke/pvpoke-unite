@@ -9,6 +9,8 @@
 			<h1><?php e("nav_builds"); ?></h1>
 			<p>Create your build below and compare it to other builds or Pokemon.</p>
 
+			<button class="toggle lock-settings on"><?php e('lock_settings'); ?></button>
+
 			<div class="build-list">
 				<div class="new-build-section">
 					<a class="new-build" href="#">+ Add Build</a>

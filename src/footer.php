@@ -16,7 +16,7 @@ $(".hamburger").click(function(e){
 
 // Submenu interaction on desktop
 
-$(".menu .parent-menu").on("mouseover click", function(e){
+$("body").on("mouseover click", ".menu .parent-menu", function(e){
 	$(".submenu").removeClass("active");
 	$(this).find(".submenu").addClass("active");
 });
@@ -25,6 +25,12 @@ $("body").on("mousemove click", function(e){
 	if($(".submenu:hover, .parent-menu:hover").length == 0){
 		$(".submenu").removeClass("active");
 	}
+});
+
+// Toggle buttons on and off
+
+$("body").on("click", "button.toggle", function(e){
+	$(e.target).toggleClass("on");
 });
 
 // Auto select link

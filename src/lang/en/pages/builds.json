@@ -1,9 +1,12 @@
 {
 	"overall": "Overall",
 	"hp": "HP",
-	"attack": "Attack",
-	"defense": "Defense",
-	"special_attack": "Special<br>Attack",
-	"special_defense": "Special<br>Defense",
-	"level": "Level"
+	"attack": "Atk",
+	"defense": "Def",
+	"special_attack": "Sp. Atk",
+	"special_defense": "Sp. Def",
+	"level": "Level",
+	"lock_settings": "Lock Settings",
+	"build_nav_duplicate": "Duplicate",
+	"build_nav_delete": "Delete"
 }

@@ -30,5 +30,24 @@ input{
 	}
 }
 
+button.toggle{
+	border: 1px solid $accent-color;
+	color:$accent-color;
+	padding:5px 10px;
+	margin: 5px;
+	background:$black;
+	outline:none;
+	cursor: pointer;
+
+	&:hover{
+		background:$gray;
+	}
+
+	&.on{
+		color:$white;
+		background:$accent-color;
+	}
+}
+
 
 .hide, .template{ display: none !important; }

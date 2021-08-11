@@ -74,6 +74,11 @@ var InterfaceMaster = (function () {
 				self.addNewBuild();
 			});
 
+			// Toggle lock settings on or off
+
+			$("button.lock-settings").click(function(e){
+				lockSettings = (! lockSettings);
+			});
 		};
 
         return object;

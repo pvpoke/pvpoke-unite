@@ -11,7 +11,7 @@ function Build(id, level){
 	self.heldItems = [];
 	self.battleItem = null;
 	self.stageId = '';
-	self.level = level;
+	self.level = 1;
 
 
 	// Apply a new Pokemon to this build
@@ -87,4 +87,5 @@ function Build(id, level){
 	}
 
 	self.setPokemon(id); // Initialize with given ID
+	self.setLevel(level);
 }
