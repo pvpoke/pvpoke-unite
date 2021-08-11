@@ -223,3 +223,44 @@
 		margin: 25px 0 5px 0;
 	}
 }
+
+.select-modal{
+	.item, .selected-item{
+		display: flex;
+		align-items: center;
+
+		.image{
+			width:75px;
+			height:75px;
+			margin-right: 10px;
+			border:1px solid $gray;
+		}
+	}
+
+	.item{
+		padding:10px;
+		cursor:pointer;
+		&:hover{
+			background:$gray;
+		}
+
+		&.selected{
+			background:$accent-color;
+		}
+	}
+
+	.selected-description{
+		max-height:300px;
+		overflow-y:auto;
+	}
+
+	.item-list{
+		max-height:600px;
+		overflow-y:auto;
+
+		.image{
+			width:25px;
+			height:25px;
+		}
+	}
+}

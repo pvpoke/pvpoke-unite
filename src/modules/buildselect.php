@@ -86,6 +86,21 @@
 				<div class="held-item">+</div>
 			</div>
 		</div>
+	</div>
 
+	<!-- Modal windows-->
+
+	<div class="held-item-modal select-modal hide" header="<?php e("held_item"); ?>">
+		<div class="selected-item">
+			<div class="image"></div>
+			<div class="name"></div>
+		</div>
+		<div class="selected-description"></div>
+		<div class="item-list">
+			<div class="item template">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
+		</div>
 	</div>
 </div>

@@ -16,6 +16,8 @@ function BuildSelect(element, ctx, selectors){
 	let statCanvas = $el.find("canvas.progression")[0];
 	let statCtx = statCanvas.getContext("2d");
 
+	let modal = null; // Modal window for selecting items and moves
+
 	if(selectors){
 		buildSelectors = selectors;
 	}
@@ -262,17 +264,9 @@ function BuildSelect(element, ctx, selectors){
 		self.update();
 	});
 
-	// Clear build
-
-	$el.find(".selected-pokemon .remove").on("click", function(e){
-		e.preventDefault();
-		self.clear();
-	});
-
 	// Select a stat to display
 
 	$el.find(".stat-label").on("click", function(e){
-
 		$el.find(".stat-label").removeClass("selected");
 		$(this).addClass("selected");
 
@@ -284,12 +278,31 @@ function BuildSelect(element, ctx, selectors){
 	// Adjust the build level
 
 	$el.find(".level-slider").on("input", function(e){
-
 		let level = parseInt($(this).val());
 
 		build.setLevel(level);
-
 		self.update();
+	});
+
+	// Open the held item select modal window
+
+	$el.find(".held-item").on("click", function(e){
+		modal = new ModalWindow($el.find(".held-item-modal"));
+
+		// Populate item list
+		for(var i = 0; i < gm.heldItems.length; i++){
+			let $item = $(".modal .held-item-modal .item.template").clone().removeClass("template");
+			$item.find(".name").html(gm.heldItems[i].itemId);
+			$(".modal .held-item-modal .item-list").append($item);
+		}
+	});
+
+
+	// Clear build
+
+	$el.find(".selected-pokemon .remove").on("click", function(e){
+		e.preventDefault();
+		self.clear();
 	});
 
 }
