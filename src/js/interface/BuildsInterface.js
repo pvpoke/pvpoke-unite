@@ -53,7 +53,6 @@ var InterfaceMaster = (function () {
 							selector.setSelectedStat(selectedStat);
 							selector.update(false);
 						}
-
 					}
 				}
 

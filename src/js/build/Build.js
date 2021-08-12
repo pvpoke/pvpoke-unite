@@ -12,6 +12,8 @@ function Build(id, level){
 	self.battleItem = null;
 	self.stageId = '';
 	self.level = 1;
+	self.stats = {}; // Object containing the final calculated stats
+	self.statParts = {}; // ojbect containing the parts and bonuses making up each stat
 
 
 	// Apply a new Pokemon to this build
@@ -65,23 +67,56 @@ function Build(id, level){
 	// Return this build's stats at a given level
 
 	self.calculateStats = function(level){
-		let statSet = self.baseStats[level - 1];
+
+		// Organize each stat into its parts and bonuses
 
 		let stats = {
-			hp: statSet.hp,
-			atk: statSet.atk,
-			def: statSet.def,
-			spA: statSet.spA,
-			spD: statSet.spD,
-			speed: statSet.speed
+			hp: { value: 0, parts: []},
+			atk: { value: 0, parts: []},
+			def: { value: 0, parts: []},
+			spA: { value: 0, parts: []},
+			spD: { value: 0, parts: []},
+			speed: { value: 0, parts: []}
 		};
 
-		// Factor in held items here
+		// Determine base stats
+		let statSet = self.baseStats[level - 1];
 
-		// Calculate overall stat
-		//let statProduct = self.stats.hp * self.stats.atk * self.stats.def * self.stats.spA * self.stats.spD;
+		// Cycle through each stat and discover base stats and bonuses
 
-		//self.stats.overall = Math.round(statProduct / 1000000);
+		for(var key in stats){
+			if(stats.hasOwnProperty(key)){
+				let parts = stats[key].parts;
+				let baseStat = statSet[key];
+
+				// Add base stat
+				parts.push({
+					source: "base_stat",
+					value: baseStat
+				});
+
+				// Add bonuses from held items
+
+				for(var i = 0; i < self.heldItems.length; i++){
+					let item = self.heldItems[i];
+					let boosts = item.boosts;
+
+					for(var n = 0; n < boosts.length; n++){
+						if(boosts[n].stat == key){
+							parts.push({
+								source: item.itemId,
+								value: boosts[n].value
+							});
+						}
+					}
+				}
+
+				// Add up all parts
+				for(var i = 0; i < parts.length; i++){
+					stats[key].value += parts[i].value;
+				}
+			}
+		}
 
 		return stats;
 	}
@@ -102,7 +137,7 @@ function Build(id, level){
 
 	self.giveHeldItem = function(item, slot){
 		slot = typeof slot !== 'undefined' ? slot : self.heldItems.length;
-		
+
 		if(slot >= self.heldItems.length){
 			self.heldItems.push(item);
 		} else{

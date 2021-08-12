@@ -68,11 +68,11 @@ function BuildSelect(element, ctx, selectors){
 
 		// Display Pokemon's stats
 
-		$el.find(".stat.hp .stat-value").html(build.stats.hp);
-		$el.find(".stat.atk .stat-value").html(build.stats.atk);
-		$el.find(".stat.def .stat-value").html(build.stats.def);
-		$el.find(".stat.spa .stat-value").html(build.stats.spA);
-		$el.find(".stat.spd .stat-value").html(build.stats.spD);
+		$el.find(".stat.hp .stat-value").html(build.stats.hp.value);
+		$el.find(".stat.atk .stat-value").html(build.stats.atk.value);
+		$el.find(".stat.def .stat-value").html(build.stats.def.value);
+		$el.find(".stat.spa .stat-value").html(build.stats.spA.value);
+		$el.find(".stat.spd .stat-value").html(build.stats.spD.value);
 
 		// Display comparison stats
 		$el.find(".stat-difference").html("");
@@ -92,7 +92,7 @@ function BuildSelect(element, ctx, selectors){
 				];
 
 				for(var i = 0; i < statsToCompare.length; i++){
-					let diff = build.stats[statsToCompare[i].stat] - primary.stats[statsToCompare[i].stat];
+					let diff = build.stats[statsToCompare[i].stat].value - primary.stats[statsToCompare[i].stat].value;
 					let displayStr = diff;
 
 					if(diff > 0){
@@ -182,7 +182,7 @@ function BuildSelect(element, ctx, selectors){
 		for(var i = 0; i < 15; i++){
 			let stats = build.calculateStats(i+1);
 			let x = width * (i / 14);
-			let y = height - (height * (stats[selectedStat] / yAxisMax));
+			let y = height - (height * (stats[selectedStat].value / yAxisMax));
 
 	        statCtx.lineTo(x, y);
 		}
@@ -194,6 +194,17 @@ function BuildSelect(element, ctx, selectors){
 		if($el.find(".level-slider").val() != build.level){
 			$el.find(".level-slider").val(build.level);
 		}
+	}
+
+	// In the modal window, update the selected held item's details
+
+	self.UpdateHeldItemDetails = function(){
+		let $item = $(".modal .held-item-modal .item.selected");
+		let $selectedItem = $(".modal .held-item-modal .selected-item");
+		let $selecteDescription = $(".modal .held-item-modal .selected-description");
+
+		$selectedItem.find(".name").html($item.find(".name").html())
+		$selecteDescription.html($item.attr("value") + "_description");
 	}
 
 	// Return the currently selected build
@@ -298,6 +309,13 @@ function BuildSelect(element, ctx, selectors){
 
 		let itemIndex = $el.find(".held-item").index($(e.target).closest(".held-item"));
 
+		// Preselect any currently selected items
+		let selectedItem;
+
+		if(itemIndex < build.heldItems.length){
+			selectedItem = build.heldItems[itemIndex];
+		}
+
 		// Populate item list
 		for(var i = 0; i < gm.heldItems.length; i++){
 			let itemId = gm.heldItems[i].itemId;
@@ -306,10 +324,19 @@ function BuildSelect(element, ctx, selectors){
 			$item.attr("value", itemId);
 
 			if(build.hasHeldItem(itemId)){
-				$item.addClass("disabled");
+				if((selectedItem)&&(selectedItem.itemId != itemId)){
+					$item.addClass("disabled");
+				} else if(! selectedItem){
+					$item.addClass("disabled");
+				}
 			}
 
 			$(".modal .held-item-modal .item-list").append($item);
+		}
+
+		if(selectedItem){
+			$(".modal .held-item-modal .item[value=\""+selectedItem.itemId+"\"]").addClass("selected");
+			self.UpdateHeldItemDetails();
 		}
 
 		// Item click
@@ -323,10 +350,9 @@ function BuildSelect(element, ctx, selectors){
 			}
 
 			$(".modal .held-item-modal .item-list .item").removeClass("selected");
-
-			$(".modal .held-item-modal .selected-item .name").html($item.find(".name").html());
-
 			$item.addClass("selected");
+
+			self.UpdateHeldItemDetails();
 		});
 
 		// Item selection

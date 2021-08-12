@@ -22,7 +22,7 @@ function HeldItem(id){
 
 	for(var i = 0; i < data.boosts.length; i++){
 		self.boosts.push({
-			type: data.boosts[i].type,
+			stat: data.boosts[i].stat,
 			value: 0,
 			values: data.boosts[i].values
 		});
