@@ -66,6 +66,22 @@ var GameMaster = (function () {
 			return item;
 		}
 
+		// Return Held Item data given item ID
+
+		object.getBattleItemById = function(id){
+			let item;
+
+			$.each(object.battleItems, function(index, it){
+
+				if(it.itemId == id){
+					item = it;
+					return;
+				}
+			});
+
+			return item;
+		}
+
         return object;
     }
 

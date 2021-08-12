@@ -67,12 +67,22 @@ function BuildSelect(element, ctx, selectors){
 
 
 		// Display Pokemon's stats
+		let statsToDisplay = ["hp", "atk", "def", "spA", "spD", "speed"];
 
-		$el.find(".stat.hp .stat-value").html(build.stat("hp", true));
-		$el.find(".stat.atk .stat-value").html(build.stat("atk", true));
-		$el.find(".stat.def .stat-value").html(build.stat("def", true));
-		$el.find(".stat.spa .stat-value").html(build.stat("spA", true));
-		$el.find(".stat.spd .stat-value").html(build.stat("spD", true));
+		for(var i = 0; i < statsToDisplay.length; i++){
+			let key = statsToDisplay[i];
+			let stat = build.stat(key, true);
+			let baseStat = build.stats[key].parts[0].value; // Whew
+			let selector = ".stat."+key.toLowerCase()+" .stat-value"
+
+			$el.find(selector).html(stat);
+			if(stat > baseStat){
+				$el.find(selector).addClass("boosted");
+			} else{
+				$el.find(selector).removeClass("boosted");
+			}
+
+		}
 
 		// Display comparison stats
 		$el.find(".stat-difference").html("");
@@ -237,8 +247,6 @@ function BuildSelect(element, ctx, selectors){
 		build.setLevel(value);
 		$el.find(".level-slider").val(value);
 	}
-
-
 
 	// Search select Pokemon
 

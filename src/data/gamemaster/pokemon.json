@@ -55,12 +55,14 @@
 				{
 					"moveId": "seed_bomb",
 					"style": "special",
+					"category": "ranged",
 					"cooldown": 6,
 					"level": 1
 				},
 				{
 					"moveId": "sludge_bomb",
 					"style": "special",
+					"category": "ranged",
 					"cooldown": 6,
 					"level": 5,
 					"upgrade": 11
@@ -68,6 +70,7 @@
 				{
 					"moveId": "giga_drain",
 					"style": "special",
+					"category": "recovery",
 					"cooldown": 7,
 					"level": 5,
 					"upgrade": 13
@@ -77,12 +80,14 @@
 				{
 					"moveId": "razor_leaf",
 					"style": "special",
+					"category": "area",
 					"cooldown": 9,
 					"level": 1
 				},
 				{
 					"moveId": "solar_beam",
 					"style": "special",
+					"category": "area",
 					"cooldown": 11,
 					"level": 7,
 					"upgrade": 10
@@ -90,6 +95,7 @@
 				{
 					"moveId": "petal_dance",
 					"style": "special",
+					"category": "area",
 					"cooldown": 11,
 					"level": 7,
 					"upgrade": 11
@@ -97,6 +103,7 @@
 			],
 			"unite": {
 				"moveId": "verdant_anger",
+				"category": "area",
 				"level": 9
 			},
 			"passive": {
@@ -160,12 +167,14 @@
 				{
 					"moveId": "flame_burst",
 					"style": "physical",
+					"category": "ranged",
 					"cooldown": 6,
 					"level": 1
 				},
 				{
 					"moveId": "flamethrower",
 					"style": "physical",
+					"category": "ranged",
 					"cooldown": 5.5,
 					"level": 5,
 					"upgrade": 11
@@ -173,6 +182,7 @@
 				{
 					"moveId": "fire_punch",
 					"style": "physical",
+					"category": "dash",
 					"cooldown": 6,
 					"level": 5,
 					"upgrade": 11
@@ -182,12 +192,14 @@
 				{
 					"moveId": "fire_spin",
 					"style": "physical",
+					"category": "area",
 					"cooldown": 10,
 					"level": 1
 				},
 				{
 					"moveId": "fire_blast",
 					"style": "physical",
+					"category": "area",
 					"cooldown": 8,
 					"level": 7,
 					"upgrade": 13
@@ -195,6 +207,7 @@
 				{
 					"moveId": "flare_blitz",
 					"style": "physical",
+					"category": "dash",
 					"cooldown": 10,
 					"level": 7,
 					"upgrade": 13
@@ -202,6 +215,7 @@
 			],
 			"unite": {
 				"moveId": "seismic_slam",
+				"category": "sure_hit",
 				"level": 9
 			},
 			"passive": {
@@ -257,12 +271,14 @@
 				{
 					"moveId": "thunder_shock",
 					"style": "special",
+					"category": "sure_hit",
 					"cooldown": 5,
 					"level": 1
 				},
 				{
 					"moveId": "electro_ball",
 					"style": "special",
+					"category": "sure_hit",
 					"cooldown": 5,
 					"level": 4,
 					"upgrade": 11
@@ -270,6 +286,7 @@
 				{
 					"moveId": "thunder",
 					"style": "special",
+					"category": "area",
 					"cooldown": 8,
 					"level": 4,
 					"upgrade": 11
@@ -279,12 +296,14 @@
 				{
 					"moveId": "electro_web",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 9,
 					"level": 1
 				},
 				{
 					"moveId": "volt_tackle",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 10,
 					"level": 6,
 					"upgrade": 13
@@ -292,6 +311,7 @@
 				{
 					"moveId": "thunderbolt",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 8,
 					"level": 6,
 					"upgrade": 13
@@ -299,6 +319,7 @@
 			],
 			"unite": {
 				"moveId": "thunderstorm",
+				"category": "area",
 				"level": 9
 			},
 			"passive": {
@@ -358,12 +379,14 @@
 				{
 					"moveId": "powder_snow",
 					"style": "special",
+					"category": "area",
 					"cooldown": 5,
 					"level": 1
 				},
 				{
 					"moveId": "avalanche",
 					"style": "special",
+					"category": "area",
 					"cooldown": 7,
 					"level": 4,
 					"upgrade": 11
@@ -371,6 +394,7 @@
 				{
 					"moveId": "dazzling_gleam",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 7.5,
 					"level": 4,
 					"upgrade": 11
@@ -380,12 +404,14 @@
 				{
 					"moveId": "icy_wind",
 					"style": "special",
+					"category": "ranged",
 					"cooldown": 8,
 					"level": 1
 				},
 				{
 					"moveId": "blizzard",
 					"style": "special",
+					"category": "ranged",
 					"cooldown": 11,
 					"level": 6,
 					"upgrade": 13
@@ -393,6 +419,7 @@
 				{
 					"moveId": "aurora_veil",
 					"style": "special",
+					"category": "buff",
 					"cooldown": 13,
 					"level": 6,
 					"upgrade": 13
@@ -400,6 +427,7 @@
 			],
 			"unite": {
 				"moveId": "snow_globe",
+				"category": "area",
 				"level": 9
 			},
 			"passive": {
@@ -459,12 +487,14 @@
 				{
 					"moveId": "pound",
 					"style": "special",
+					"category": "melee",
 					"cooldown": 5,
 					"level": 1
 				},
 				{
 					"moveId": "double_slap",
 					"style": "special",
+					"category": "melee",
 					"cooldown": 5,
 					"level": 6,
 					"upgrade": 10
@@ -472,6 +502,7 @@
 				{
 					"moveId": "dazzling_gleam",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 4.5,
 					"level": 6,
 					"upgrade": 10
@@ -481,12 +512,14 @@
 				{
 					"moveId": "defense_curl",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 8,
 					"level": 1
 				},
 				{
 					"moveId": "rollout",
 					"style": "special",
+					"category": "hindrance",
 					"cooldown": 10,
 					"level": 4,
 					"upgrade": 12
@@ -494,6 +527,7 @@
 				{
 					"moveId": "sing",
 					"style": "special",
+					"category": "area",
 					"cooldown": 10,
 					"level": 4,
 					"upgrade": 12
@@ -501,6 +535,7 @@
 			],
 			"unite": {
 				"moveId": "star_recital",
+				"category": "buff",
 				"level": 8
 			},
 			"passive": {
@@ -564,12 +599,14 @@
 				{
 					"moveId": "karate_chop",
 					"style": "physical",
+					"category": "melee",
 					"cooldown": 6,
 					"level": 1
 				},
 				{
 					"moveId": "close_combat",
 					"style": "physical",
+					"category": "melee",
 					"cooldown": 6,
 					"level": 7,
 					"upgrade": 11
@@ -577,6 +614,7 @@
 				{
 					"moveId": "cross_chop",
 					"style": "physical",
+					"category": "dash",
 					"cooldown": 6,
 					"level": 7,
 					"upgrade": 11
@@ -586,12 +624,14 @@
 				{
 					"moveId": "bulk_up",
 					"style": "physical",
+					"category": "buff",
 					"cooldown": 8,
 					"level": 1
 				},
 				{
 					"moveId": "dynamic_punch",
 					"style": "physical",
+					"category": "dash",
 					"cooldown": 8,
 					"level": 5,
 					"upgrade": 13
@@ -599,6 +639,7 @@
 				{
 					"moveId": "submission",
 					"style": "physical",
+					"category": "hindrance",
 					"cooldown": 11,
 					"level": 5,
 					"upgrade": 13
@@ -606,6 +647,7 @@
 			],
 			"unite": {
 				"moveId": "barrage_blow",
+				"category": "buff",
 				"level": 9
 			},
 			"passive": {

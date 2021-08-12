@@ -221,21 +221,21 @@
 	.held-items{
 		display: flex;
 		justify-content: space-between;
+	}
 
-		.held-item{
-			display: flex;
-		    justify-content: center;
-		    align-items: center;
-			cursor: pointer;
-			width:30%;
-			border:1px solid $gray;
-			border-radius: 4px;
-			box-sizing: border-box;
-			height:100px;
+	.held-item, .battle-item{
+		display: flex;
+	    justify-content: center;
+	    align-items: center;
+		cursor: pointer;
+		width:30%;
+		border:1px solid $gray;
+		border-radius: 4px;
+		box-sizing: border-box;
+		height:100px;
 
-			&:hover{
-				background: $gray;
-			}
+		&:hover{
+			background: $gray;
 		}
 	}
 

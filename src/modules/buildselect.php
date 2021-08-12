@@ -85,6 +85,10 @@
 				<div class="held-item">+</div>
 				<div class="held-item">+</div>
 			</div>
+
+			<h4>Battle Item</h4>
+
+			<div class="battle-item">+</div>
 		</div>
 	</div>
 
