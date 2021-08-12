@@ -1,6 +1,8 @@
 [
 	{
 		"itemId": "shell_bell",
+		"stat": "heal",
+		"type": "number",
 		"values": [45, 60, 75, 75],
 		"boosts": [
 			{
@@ -15,6 +17,8 @@
 	},
 	{
 		"itemId": "buddy_barrier",
+		"stat": "shield",
+		"type": "number",
 		"values": [20, 30, 40, 40],
 		"boosts": [
 			{
@@ -26,6 +30,8 @@
 	{
 		"itemId": "muscle_band",
 		"values": [1, 2, 3, 3],
+		"stat": "basic_attack_damage",
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "atk",
@@ -40,6 +46,8 @@
 	{
 		"itemId": "wise_glasses",
 		"values": [3, 5, 7, 7],
+		"stat": "spA",
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "spA",
@@ -50,6 +58,8 @@
 	{
 		"itemId": "score_shield",
 		"values": [5, 7.5, 10, 10],
+		"stat": "shield",
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "hp",
@@ -60,6 +70,8 @@
 	{
 		"itemId": "leftovers",
 		"values": [1, 1.5, 2, 2],
+		"stat": "heal",
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "hp",
@@ -74,6 +86,8 @@
 	{
 		"itemId": "assault_vest",
 		"values": [9, 12, 15, 15],
+		"stat": "shield",
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "hp",

@@ -68,11 +68,11 @@ function BuildSelect(element, ctx, selectors){
 
 		// Display Pokemon's stats
 
-		$el.find(".stat.hp .stat-value").html(build.stats.hp.value);
-		$el.find(".stat.atk .stat-value").html(build.stats.atk.value);
-		$el.find(".stat.def .stat-value").html(build.stats.def.value);
-		$el.find(".stat.spa .stat-value").html(build.stats.spA.value);
-		$el.find(".stat.spd .stat-value").html(build.stats.spD.value);
+		$el.find(".stat.hp .stat-value").html(build.stat("hp", true));
+		$el.find(".stat.atk .stat-value").html(build.stat("atk", true));
+		$el.find(".stat.def .stat-value").html(build.stat("def", true));
+		$el.find(".stat.spa .stat-value").html(build.stat("spA", true));
+		$el.find(".stat.spd .stat-value").html(build.stat("spD", true));
 
 		// Display comparison stats
 		$el.find(".stat-difference").html("");
@@ -93,7 +93,7 @@ function BuildSelect(element, ctx, selectors){
 
 				for(var i = 0; i < statsToCompare.length; i++){
 					let diff = build.stats[statsToCompare[i].stat].value - primary.stats[statsToCompare[i].stat].value;
-					let displayStr = diff;
+					let displayStr = displayFloat(diff, 1);
 
 					if(diff > 0){
 						displayStr = "+" + displayStr;
@@ -104,10 +104,13 @@ function BuildSelect(element, ctx, selectors){
 
 					if(diff > 0){
 						$el.find(statsToCompare[i].element + " .stat-difference").addClass("positive");
+						$el.find(statsToCompare[i].element + " .stat-difference").css("opacity", 1);
 					} else if(diff < 0){
 						$el.find(statsToCompare[i].element + " .stat-difference").addClass("negative");
+						$el.find(statsToCompare[i].element + " .stat-difference").css("opacity", 1);
 					} else if(diff == 0){
 						$el.find(statsToCompare[i].element + " .stat-difference").html('');
+						$el.find(statsToCompare[i].element + " .stat-difference").css("opacity", 0);
 					}
 
 				}

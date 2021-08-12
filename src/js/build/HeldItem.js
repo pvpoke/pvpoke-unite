@@ -13,6 +13,8 @@ function HeldItem(id){
 
 	self.itemId = data.itemId;
 	self.itemName = self.itemId;
+	self.stat = data.stat;
+	self.type = data.type;
 	self.level = 1; // In the future this will be adjustable
 	self.value = 0;
 	self.values = data.values;

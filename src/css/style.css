@@ -386,6 +386,8 @@ input[type=text] {
   color: #9950c5;
   min-width: 80px;
   font-weight: bold;
+  border-bottom-left-radius: 12px;
+  border-top-right-radius: 12px;
 }
 .build-select .stats .stat .stat-label:hover {
   background: #222222;
@@ -397,14 +399,30 @@ input[type=text] {
 .build-select .stats .stat .stat-value {
   min-width: 50px;
 }
+.build-select .stats .stat .stat-value.boosted {
+  color: #f0d50a;
+}
 .build-select .stats .stat .stat-difference {
   font-size: 12px;
+  opacity: 0;
+  min-width: 40px;
+  min-height: 13px;
+  -webkit-transition: all 0.125s linear 0s;
+  -moz-transition: all 0.125s linear 0s;
+  -o-transition: all 0.125s linear 0s;
+  transition: all 0.125s linear 0s;
+}
+.build-select .stats .stat .stat-difference.positive, .build-select .stats .stat .stat-difference.negative {
+  color: #222222;
+  padding: 2px 6px;
+  border-radius: 12px;
+  text-align: center;
 }
 .build-select .stats .stat .stat-difference.positive {
-  color: #91c74c;
+  background: #91c74c;
 }
 .build-select .stats .stat .stat-difference.negative {
-  color: #c7524c;
+  background: #c7524c;
 }
 .build-select canvas.progression {
   margin-top: 15px;

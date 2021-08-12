@@ -101,13 +101,30 @@ function Build(id, level){
 					let item = self.heldItems[i];
 					let boosts = item.boosts;
 
+					let part = {
+						source: item.itemId,
+						value: 0
+					}
+
+					// Check primary effect
+					if(item.stat == key){
+						if(item.type == "number"){
+							part.value += item.value;
+						} else if(item.type == "percent"){
+							part.value += item.value * (parts[0].value / 100);
+						}
+					}
+
+					// Check secondary boosts
+
 					for(var n = 0; n < boosts.length; n++){
 						if(boosts[n].stat == key){
-							parts.push({
-								source: item.itemId,
-								value: boosts[n].value
-							});
+							part.value += boosts[n].value;
 						}
+					}
+
+					if(part.value != 0){
+						parts.push(part);
 					}
 				}
 
@@ -119,6 +136,16 @@ function Build(id, level){
 		}
 
 		return stats;
+	}
+
+	// Shorthand for accessing stat values
+	self.stat = function(key, round){
+		let stat = self.stats[key].value;
+		if(round){
+			stat = displayFloat(stat, 1);
+		}
+
+		return stat;
 	}
 
 	// Check to see if this Pokemon is holding a specific item

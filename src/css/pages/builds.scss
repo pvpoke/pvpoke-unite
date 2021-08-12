@@ -147,6 +147,8 @@
 				color:$accent-color;
 				min-width:80px;
 				font-weight: bold;
+				border-bottom-left-radius: 12px;
+				border-top-right-radius: 12px;
 
 				&:hover{
 					background:$gray;
@@ -160,13 +162,31 @@
 
 			.stat-value{
 				min-width: 50px;
+
+				&.boosted{
+					color:$boosted-color;
+				}
 			}
 
 			.stat-difference{
 				font-size:12px;
+				opacity:0;
+				min-width: 40px;
+				min-height: 13px;
 
-				&.positive{ color: $positive-color; }
-				&.negative{ color: $negative-color; }
+				-webkit-transition: all 0.125s linear 0s;
+			    -moz-transition: all 0.125s linear 0s;
+			    -o-transition: all 0.125s linear 0s;
+			    transition: all 0.125s linear 0s;
+
+				&.positive, &.negative{
+					color: #222222;
+    				padding: 2px 6px;
+					border-radius: 12px;
+					text-align: center;
+				}
+				&.positive{ background: $positive-color; }
+				&.negative{ background: $negative-color; }
 			}
 		}
 	}
