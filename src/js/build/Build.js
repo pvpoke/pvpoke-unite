@@ -172,6 +172,13 @@ function Build(id, level){
 		}
 	}
 
+	// Give this Pokemon a specific battle item
+
+	self.giveBattleItem = function(item){
+		self.battleItem = item;
+	}
+
+
 	self.setPokemon(id); // Initialize with given ID
 	self.setLevel(level);
 }

@@ -127,10 +127,15 @@ function BuildSelect(element, ctx, selectors){
 			}
 
 			// Display held items
-			$el.find(".held-item").html("+");
+			$el.find(".held-item, .battle-item").html("+");
 
 			for(var i = 0; i < build.heldItems.length; i++){
 				$el.find(".held-item").eq(i).html(build.heldItems[i].itemName);
+			}
+
+			// Display battle item
+			if(build.battleItem){
+				$el.find(".battle-item").html(build.battleItem.itemName);
 			}
 
 			// Bubble up to other build selectors
@@ -217,6 +222,16 @@ function BuildSelect(element, ctx, selectors){
 
 		self.update();
 	}
+
+	// Callback function for the SelectWindow to trigger when selecting a held item
+
+	self.selectBattleItem = function(itemId){
+		let item = new BattleItem(itemId);
+		build.giveBattleItem(item);
+
+		self.update();
+	}
+
 
 	// Return the currently selected build
 
@@ -324,6 +339,16 @@ function BuildSelect(element, ctx, selectors){
 		}
 
 		selectWindow = new SelectWindow($el.find(".held-item-modal"), "held", build, self.selectHeldItem, itemIndex, selectedItem);
+	});
+
+	// Open the held item select modal window
+
+	$el.find(".battle-item").on("click", function(e){
+
+		// Preselect any currently selected items
+		let selectedItem = build.battleItem;
+
+		selectWindow = new SelectWindow($el.find(".held-item-modal"), "battle", build, self.selectBattleItem, -1, selectedItem);
 	});
 
 

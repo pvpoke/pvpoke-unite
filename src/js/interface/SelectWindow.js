@@ -12,18 +12,27 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	let gm = GameMaster.getInstance();
 
 	// Populate item list
+	let itemArray = [];
 
-	for(var i = 0; i < gm.heldItems.length; i++){
-		let itemId = gm.heldItems[i].itemId;
+	if(type == "held"){
+		itemArray = gm.heldItems;
+	} else if(type == "battle"){
+		itemArray = gm.battleItems;
+	}
+
+	for(var i = 0; i < itemArray.length; i++){
+		let itemId = itemArray[i].itemId;
 		let $item = $form.find(".item.template").clone().removeClass("template");
 		$item.find(".name").html(itemId);
 		$item.attr("value", itemId);
 
-		if(build.hasHeldItem(itemId)){
-			if((selectedItem)&&(selectedItem.itemId != itemId)){
-				$item.addClass("disabled");
-			} else if(! selectedItem){
-				$item.addClass("disabled");
+		if(type == "held"){
+			if(build.hasHeldItem(itemId)){
+				if((selectedItem)&&(selectedItem.itemId != itemId)){
+					$item.addClass("disabled");
+				} else if(! selectedItem){
+					$item.addClass("disabled");
+				}
 			}
 		}
 
