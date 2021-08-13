@@ -10,5 +10,8 @@
 	"build_nav_duplicate": "Duplicate",
 	"build_nav_delete": "Delete",
 	"held_item": "Held Item",
+	"held_items": "Held Items",
+	"battle_item": "Battle Item",
+	"moveset": "Moveset",
 	"select": "Select"
 }

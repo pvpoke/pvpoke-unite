@@ -78,7 +78,7 @@
 			</div>
 
 
-			<h4>Held Items</h4>
+			<h4><?php e("held_items"); ?></h4>
 
 			<div class="held-items">
 				<div class="held-item">+</div>
@@ -86,9 +86,34 @@
 				<div class="held-item">+</div>
 			</div>
 
-			<h4>Battle Item</h4>
+			<h4><?php e("battle_item"); ?></h4>
 
-			<div class="battle-item">+</div>
+			<div class="battle-item">
+				<div class="image">+</div>
+				<div class="name"></div>
+			</div>
+
+			<h4><?php e("moveset"); ?></h4>
+			<div class="move ability slot1">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
+			<div class="move ability slot2">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
+			<div class="move unite">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
+			<div class="move passive">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
+			<div class="move basic">
+				<div class="image"></div>
+				<div class="name"></div>
+			</div>
 		</div>
 	</div>
 

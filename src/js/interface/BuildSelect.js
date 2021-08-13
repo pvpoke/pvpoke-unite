@@ -126,24 +126,32 @@ function BuildSelect(element, ctx, selectors){
 				}
 			}
 
-			// Display held items
-			$el.find(".held-item, .battle-item").html("+");
-
-			for(var i = 0; i < build.heldItems.length; i++){
-				$el.find(".held-item").eq(i).html(build.heldItems[i].itemName);
-			}
-
-			// Display battle item
-			if(build.battleItem){
-				$el.find(".battle-item").html(build.battleItem.itemName);
-			}
-
 			// Bubble up to other build selectors
 
 			if((context == "builds")&&(internal)){
 				interface.selectorUpdateHandler(self);
 			}
 		}
+
+		// Display held items
+		$el.find(".held-item").html("+");
+
+		for(var i = 0; i < build.heldItems.length; i++){
+			$el.find(".held-item").eq(i).html(build.heldItems[i].itemName);
+		}
+
+		// Display battle item
+		if(build.battleItem){
+			$el.find(".battle-item .name").html(build.battleItem.itemName);
+		}
+
+		// Display moves
+		for(var key in build.moves){
+			if(build.moves.hasOwnProperty(key)){
+				$el.find(".move."+key+" .name").html(build.moves[key].moveName);
+			}
+		}
+
 
 		// Draw progression graph
 

@@ -223,7 +223,7 @@
 		justify-content: space-between;
 	}
 
-	.held-item, .battle-item{
+	.held-item, .battle-item .image, .move .image{
 		display: flex;
 	    justify-content: center;
 	    align-items: center;
@@ -232,10 +232,27 @@
 		border:1px solid $gray;
 		border-radius: 4px;
 		box-sizing: border-box;
-		height:100px;
+		height:50px;
 
 		&:hover{
 			background: $gray;
+		}
+	}
+
+	.move,
+	.battle-item{
+		display: flex;
+		align-items: center;
+		cursor:pointer;
+		margin-bottom: 5px;
+
+		.image{
+			width:50px;
+			margin-right:10px;
+		}
+
+		&:hover{
+			background:$gray;
 		}
 	}
 

@@ -450,7 +450,7 @@ input[type=text] {
   display: flex;
   justify-content: space-between;
 }
-.build-select .held-item, .build-select .battle-item {
+.build-select .held-item, .build-select .battle-item .image, .build-select .move .image {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -459,9 +459,25 @@ input[type=text] {
   border: 1px solid #222222;
   border-radius: 4px;
   box-sizing: border-box;
-  height: 100px;
+  height: 50px;
 }
-.build-select .held-item:hover, .build-select .battle-item:hover {
+.build-select .held-item:hover, .build-select .battle-item .image:hover, .build-select .move .image:hover {
+  background: #222222;
+}
+.build-select .move,
+.build-select .battle-item {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 5px;
+}
+.build-select .move .image,
+.build-select .battle-item .image {
+  width: 50px;
+  margin-right: 10px;
+}
+.build-select .move:hover,
+.build-select .battle-item:hover {
   background: #222222;
 }
 .build-select h4 {

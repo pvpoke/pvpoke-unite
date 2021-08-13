@@ -14,7 +14,13 @@ function Build(id, level){
 	self.level = 1;
 	self.stats = {}; // Object containing the final calculated stats
 	self.statParts = {}; // ojbect containing the parts and bonuses making up each stat
-
+	self.moves = {
+		basic: {},
+		slot1: {},
+		slot2: {},
+		unite: {},
+		passive: {}
+	};
 
 	// Apply a new Pokemon to this build
 
@@ -33,6 +39,13 @@ function Build(id, level){
 		self.movePool = data.moves;
 		self.ratings = data.ratings;
 		self.stageId = self.stages[0].stageId;
+
+		// Set initial moves
+		self.moves.basic = new Move("basic", self.movePool.basic);
+		self.moves.unite = new Move("unite", self.movePool.unite);
+		self.moves.passive = new Move("passive", self.movePool.passive);
+		self.moves.slot1 = new Move("slot1", self.movePool.slot1[0]);
+		self.moves.slot2 = new Move("slot2", self.movePool.slot2[0]);
 
 		self.setStats();
 	}
