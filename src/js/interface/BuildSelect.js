@@ -16,7 +16,7 @@ function BuildSelect(element, ctx, selectors){
 	let statCanvas = $el.find("canvas.progression")[0];
 	let statCtx = statCanvas.getContext("2d");
 
-	let modal = null; // Modal window for selecting items and moves
+	let selectWindow = null; // Modal window for selecting items and moves
 
 	if(selectors){
 		buildSelectors = selectors;
@@ -209,15 +209,13 @@ function BuildSelect(element, ctx, selectors){
 		}
 	}
 
-	// In the modal window, update the selected held item's details
+	// Callback function for the SelectWindow to trigger when selecting a held item
 
-	self.UpdateHeldItemDetails = function(){
-		let $item = $(".modal .held-item-modal .item.selected");
-		let $selectedItem = $(".modal .held-item-modal .selected-item");
-		let $selecteDescription = $(".modal .held-item-modal .selected-description");
+	self.selectHeldItem = function(itemId, itemIndex){
+		let item = new HeldItem(itemId);
+		build.giveHeldItem(item, itemIndex);
 
-		$selectedItem.find(".name").html($item.find(".name").html())
-		$selecteDescription.html($item.attr("value") + "_description");
+		self.update();
 	}
 
 	// Return the currently selected build
@@ -316,68 +314,16 @@ function BuildSelect(element, ctx, selectors){
 	// Open the held item select modal window
 
 	$el.find(".held-item").on("click", function(e){
-		modal = new ModalWindow($el.find(".held-item-modal"));
-
 		let itemIndex = $el.find(".held-item").index($(e.target).closest(".held-item"));
 
 		// Preselect any currently selected items
-		let selectedItem;
+		let selectedItem = null;
 
 		if(itemIndex < build.heldItems.length){
 			selectedItem = build.heldItems[itemIndex];
 		}
 
-		// Populate item list
-		for(var i = 0; i < gm.heldItems.length; i++){
-			let itemId = gm.heldItems[i].itemId;
-			let $item = $(".modal .held-item-modal .item.template").clone().removeClass("template");
-			$item.find(".name").html(itemId);
-			$item.attr("value", itemId);
-
-			if(build.hasHeldItem(itemId)){
-				if((selectedItem)&&(selectedItem.itemId != itemId)){
-					$item.addClass("disabled");
-				} else if(! selectedItem){
-					$item.addClass("disabled");
-				}
-			}
-
-			$(".modal .held-item-modal .item-list").append($item);
-		}
-
-		if(selectedItem){
-			$(".modal .held-item-modal .item[value=\""+selectedItem.itemId+"\"]").addClass("selected");
-			self.UpdateHeldItemDetails();
-		}
-
-		// Item click
-
-		$(".held-item-modal .item-list .item").click(function(e){
-
-			let $item = $(e.target).closest(".item");
-
-			if($item.hasClass("disabled")){
-				return false;
-			}
-
-			$(".modal .held-item-modal .item-list .item").removeClass("selected");
-			$item.addClass("selected");
-
-			self.UpdateHeldItemDetails();
-		});
-
-		// Item selection
-
-		$(".held-item-modal button.select").click(function(e){
-			let $item = $(".held-item-modal .item.selected");
-			let itemId = $item.attr("value");
-
-			let item = new HeldItem(itemId);
-			build.giveHeldItem(item, itemIndex);
-
-			modal.close();
-			self.update();
-		});
+		selectWindow = new SelectWindow($el.find(".held-item-modal"), "held", build, self.selectHeldItem, itemIndex, selectedItem);
 	});
 
 
