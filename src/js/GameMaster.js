@@ -66,7 +66,23 @@ var GameMaster = (function () {
 			return item;
 		}
 
-		// Return Held Item data given item ID
+		// Return Held Item data given item dex number
+
+		object.getHeldItemByDex = function(dex){
+			let item;
+
+			$.each(object.heldItems, function(index, it){
+
+				if(it.dex == dex){
+					item = it;
+					return;
+				}
+			});
+
+			return item;
+		}
+
+		// Return Held Item data given item
 
 		object.getBattleItemById = function(id){
 			let item;
@@ -74,6 +90,22 @@ var GameMaster = (function () {
 			$.each(object.battleItems, function(index, it){
 
 				if(it.itemId == id){
+					item = it;
+					return;
+				}
+			});
+
+			return item;
+		}
+
+		// Return Held Item data given item dex number
+
+		object.getBattleItemByDex = function(dex){
+			let item;
+
+			$.each(object.battleItems, function(index, it){
+
+				if(it.dex == dex){
 					item = it;
 					return;
 				}

@@ -37,4 +37,18 @@ input{
 	background:$gray;
 }
 
+.share-link{
+	display:flex;
+
+	input{
+		background:$gray;
+		flex-basis:75%;
+		font-size:12px;
+	}
+
+	button.copy{
+		flex:1;
+	}
+}
+
 .hide, .template{ display: none !important; }

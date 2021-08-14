@@ -115,6 +115,12 @@
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>
+
+			<h4><?php e("share"); ?></h4>
+			<div class="share-link">
+				<input type="text" value="" readonly>
+				<button class="copy">Copy</button>
+			</div>
 		</div>
 	</div>
 
@@ -132,6 +138,6 @@
 				<div class="name"></div>
 			</div>
 		</div>
-		<button class="select"><?php e("select"); ?></button>
+		<button class="select"><?php e("select_button"); ?></button>
 	</div>
 </div>

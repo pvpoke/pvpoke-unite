@@ -12,6 +12,7 @@ function BattleItem(id){
 		return false;
 
 	self.itemId = data.itemId;
+	self.dex = data.dex; // This number is used in URl strings
 	self.itemName = self.itemId;
 	self.cooldown = data.cooldown;
 }

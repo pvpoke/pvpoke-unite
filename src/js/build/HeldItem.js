@@ -13,6 +13,7 @@ function HeldItem(id){
 
 	self.itemId = data.itemId;
 	self.itemName = self.itemId;
+	self.dex = data.dex; // This number is used in URl strings
 	self.stat = data.stat;
 	self.type = data.type;
 	self.level = 1; // In the future this will be adjustable

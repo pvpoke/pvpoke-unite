@@ -152,6 +152,9 @@ function BuildSelect(element, ctx, selectors){
 			}
 		}
 
+		// Display share link
+		$el.find(".share-link input").val(host + "builds/" + build.generateURLString());
+
 		// Draw progression graph
 
 		let xAxisMax = 15;

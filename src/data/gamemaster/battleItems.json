@@ -1,34 +1,42 @@
 [
 	{
 		"itemId": "eject_button",
+		"dex": 1,
 		"cooldown": 55
 	},
 	{
 		"itemId": "full_heal",
+		"dex": 2,
 		"cooldown": 40
 	},
 	{
 		"itemId": "potion",
+		"dex": 3,
 		"cooldown": 30
 	},
 	{
 		"itemId": "x_attack",
+		"dex": 4,
 		"cooldown": 40
 	},
 	{
 		"itemId": "x_speed",
+		"dex": 5,
 		"cooldown": 50
 	},
 	{
 		"itemId": "goal_getter",
+		"dex": 6,
 		"cooldown": 120
 	},
 	{
 		"itemId": "fluffy_tail",
+		"dex": 7,
 		"cooldown": 40
 	},
 	{
 		"itemId": "slow_smoke",
+		"dex": 8,
 		"cooldown": 40
 	}
 ]

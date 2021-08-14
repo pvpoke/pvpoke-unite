@@ -35,7 +35,7 @@ $("body").on("click", "button.toggle", function(e){
 
 // Auto select link
 
-$(".share-link input").click(function(e){
+$("body").on("click", ".share-link input", function(e){
 	this.setSelectionRange(0, this.value.length);
 });
 

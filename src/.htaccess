@@ -9,6 +9,7 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 # RewriteCond %{HTTP_HOST} ^www\.pvpoke\.com [NC]
 # RewriteRule ^(.*)$ https://pvpoke.com/$1 [L,R=301]
 
+RewriteRule builds/([a-zA-Z0-9-]+).*$ builds.php?builds=$1 [L,QSA]
 RewriteRule builds.?$ builds.php [L,QSA]
 
 

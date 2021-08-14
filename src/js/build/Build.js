@@ -204,7 +204,82 @@ function Build(id, level){
 		}
 	}
 
+	// Generate a string to be parsed for URLs
+	// Format: speciesId - level - move1index move2index - heldItem1 - heldItem2 - heldItem3 - battleItem
+	// venusaur-15-01-5-6-3-9
+
+	self.generateURLString = function(){
+		let str = self.pokemonId;
+
+		str += '-' + self.level;
+
+		// Add 1st move selection
+		for(var i = 0; i < self.movePool.slot1.length; i++){
+			if(self.movePool.slot1[i].moveId == self.moves.slot1.moveId){
+				str += "-" + i;
+			}
+		}
+
+		// Add 2nd move selection
+		for(var i = 0; i < self.movePool.slot2.length; i++){
+			if(self.movePool.slot2[i].moveId == self.moves.slot2.moveId){
+				str += "-" + i;
+			}
+		}
+
+		// Add held items
+		for(var i = 0; i < 3; i ++){
+			if(self.heldItems.length > i){
+				str += "-" + self.heldItems[i].dex;
+			} else{
+				str += "-0";
+			}
+		}
+
+		// Add battle item
+		if(self.battleItem){
+			str += "-" + self.battleItem.dex;
+		} else{
+			str += "-0";
+		}
+
+		return str;
+	}
 
 	self.setPokemon(id); // Initialize with given ID
 	self.setLevel(level);
+}
+
+// Generate a new Build from a URL string
+// Format: speciesId - level - move1index move2index - heldItem1 - heldItem2 - heldItem3 - battleItem
+// venusaur-15-0-1-5-6-3-9
+// 0 - pokemonId, 1 - level, 2 - slot 1 move index, 3 - slot 2 move index
+// 4 - held item 1, 5 - held item 2, 6 - held item 3, 7 - battle item
+
+function generateBuildFromString(str){
+	let arr = str.split("-");
+	let gm = GameMaster.getInstance();
+
+	if(arr.length < 7)
+		return false;
+
+	let build = new Build(arr[0], parseInt(arr[1]));
+	let heldItems = [arr[4], arr[5], arr[6]];
+
+	build.selectMove(build.movePool.slot1[arr[2]].moveId, "slot1"); // Human readable code doesn't matter if you commit to never reading your code
+	build.selectMove(build.movePool.slot2[arr[3]].moveId, "slot2");
+
+	for(var i = 0; i < heldItems.length; i++){
+		if(heldItems[i] > 0){
+			let heldItem = gm.getHeldItemByDex(heldItems[i]);
+			build.giveHeldItem(new HeldItem(heldItem.itemId), build.heldItems.length);
+		}
+	}
+
+	if(arr[7] > 0){
+		let battleItem = gm.getBattleItemByDex(arr[7]);
+		build.giveBattleItem(new BattleItem(battleItem.itemId));
+	}
+
+	return build;
 }

@@ -1,6 +1,7 @@
 [
 	{
 		"itemId": "shell_bell",
+		"dex": 1,
 		"stat": "heal",
 		"type": "number",
 		"values": [45, 60, 75, 75],
@@ -17,6 +18,7 @@
 	},
 	{
 		"itemId": "buddy_barrier",
+		"dex": 2,
 		"stat": "shield",
 		"type": "number",
 		"values": [20, 30, 40, 40],
@@ -29,6 +31,7 @@
 	},
 	{
 		"itemId": "muscle_band",
+		"dex": 3,
 		"values": [1, 2, 3, 3],
 		"stat": "basic_attack_damage",
 		"type": "percent",
@@ -45,6 +48,7 @@
 	},
 	{
 		"itemId": "wise_glasses",
+		"dex": 4,
 		"values": [3, 5, 7, 7],
 		"stat": "spA",
 		"type": "percent",
@@ -57,6 +61,7 @@
 	},
 	{
 		"itemId": "score_shield",
+		"dex": 5,
 		"values": [5, 7.5, 10, 10],
 		"stat": "shield",
 		"type": "percent",
@@ -69,6 +74,7 @@
 	},
 	{
 		"itemId": "leftovers",
+		"dex": 6,
 		"values": [1, 1.5, 2, 2],
 		"stat": "heal",
 		"type": "percent",
@@ -85,6 +91,7 @@
 	},
 	{
 		"itemId": "assault_vest",
+		"dex": 7,
 		"values": [9, 12, 15, 15],
 		"stat": "shield",
 		"type": "percent",

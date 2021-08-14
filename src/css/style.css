@@ -228,6 +228,18 @@ input[type=text] {
   background: #222222;
 }
 
+.share-link {
+  display: flex;
+}
+.share-link input {
+  background: #222222;
+  flex-basis: 75%;
+  font-size: 12px;
+}
+.share-link button.copy {
+  flex: 1;
+}
+
 .hide, .template {
   display: none !important;
 }

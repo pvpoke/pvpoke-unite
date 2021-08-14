@@ -13,5 +13,6 @@
 	"held_items": "Held Items",
 	"battle_item": "Battle Item",
 	"moveset": "Moveset",
-	"select": "Select"
+	"select_button": "Select",
+	"share": "Share"
 }
