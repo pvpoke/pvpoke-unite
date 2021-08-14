@@ -191,6 +191,19 @@ function Build(id, level){
 		self.battleItem = item;
 	}
 
+	// Select a move of a given ID for a given slot
+
+	self.selectMove = function(moveId, slot){
+		let moveArr = self.movePool[slot];
+
+		for(var i = 0; i < moveArr.length; i++){
+			if(moveArr[i].moveId == moveId){
+				self.moves[slot] = new Move(slot, moveArr[i]);
+				break;
+			}
+		}
+	}
+
 
 	self.setPokemon(id); // Initialize with given ID
 	self.setLevel(level);

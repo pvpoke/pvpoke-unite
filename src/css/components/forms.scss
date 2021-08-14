@@ -30,4 +30,11 @@ input{
 	}
 }
 
+.divider{
+	margin:8px 0;
+	height:1px;
+	width:100%;
+	background:$gray;
+}
+
 .hide, .template{ display: none !important; }

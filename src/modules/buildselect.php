@@ -94,23 +94,24 @@
 			</div>
 
 			<h4><?php e("moveset"); ?></h4>
-			<div class="move ability slot1">
+			<div class="move ability" slot="slot1">
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>
-			<div class="move ability slot2">
+			<div class="move ability"  slot="slot2">
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>
-			<div class="move unite">
+			<div class="divider"></div>
+			<div class="move" slot="unite">
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>
-			<div class="move passive">
+			<div class="move passive" slot="passive">
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>
-			<div class="move basic">
+			<div class="move basic" slot="basic">
 				<div class="image"></div>
 				<div class="name"></div>
 			</div>

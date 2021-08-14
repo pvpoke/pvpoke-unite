@@ -148,10 +148,9 @@ function BuildSelect(element, ctx, selectors){
 		// Display moves
 		for(var key in build.moves){
 			if(build.moves.hasOwnProperty(key)){
-				$el.find(".move."+key+" .name").html(build.moves[key].moveName);
+				$el.find(".move[slot=\""+key+"\"] .name").html(build.moves[key].moveName);
 			}
 		}
-
 
 		// Draw progression graph
 
@@ -238,6 +237,16 @@ function BuildSelect(element, ctx, selectors){
 		build.giveBattleItem(item);
 
 		self.update();
+	}
+
+	// Callback function for the SelectWindow to trigger when selecting a move
+
+	self.selectMove = function(moveId, moveSlot){
+		if((moveSlot == "slot1")||(moveSlot == "slot2")){
+			build.selectMove(moveId, moveSlot);
+
+			self.update();
+		}
 	}
 
 
@@ -357,6 +366,18 @@ function BuildSelect(element, ctx, selectors){
 		let selectedItem = build.battleItem;
 
 		selectWindow = new SelectWindow($el.find(".held-item-modal"), "battle", build, self.selectBattleItem, -1, selectedItem);
+	});
+
+	// Open the move select modal window
+
+	$el.find(".move").on("click", function(e){
+
+		let slot = $(e.target).closest(".move").attr("slot");
+
+		// Preselect any currently selected items
+		let selectedItem = build.moves[slot];
+
+		selectWindow = new SelectWindow($el.find(".held-item-modal"), "move", build, self.selectMove, slot, selectedItem);
 	});
 
 

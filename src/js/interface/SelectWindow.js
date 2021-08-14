@@ -10,6 +10,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	let modal = new ModalWindow($content);
 	let $form = $(".modal .select-modal");
 	let gm = GameMaster.getInstance();
+	let idKey = "itemId";
+
+	if(type == "move"){
+		idKey = "moveId";
+	}
 
 	// Populate item list
 	let itemArray = [];
@@ -18,10 +23,17 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		itemArray = gm.heldItems;
 	} else if(type == "battle"){
 		itemArray = gm.battleItems;
+	} else if(type == "move"){
+		itemArray = build.movePool[itemIndex];
+
+		if((itemIndex != "slot1") &&(itemIndex != "slot2")){
+			itemArray = [build.movePool[itemIndex]];
+		}
 	}
 
 	for(var i = 0; i < itemArray.length; i++){
-		let itemId = itemArray[i].itemId;
+		let itemId = itemArray[i][idKey];
+
 		let $item = $form.find(".item.template").clone().removeClass("template");
 		$item.find(".name").html(itemId);
 		$item.attr("value", itemId);
@@ -40,8 +52,14 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	}
 
 	if(selectedItem){
-		$form.find(".item[value=\""+selectedItem.itemId+"\"]").addClass("selected");
+		$form.find(".item[value=\""+selectedItem[idKey]+"\"]").addClass("selected");
 		updateHeldItemDetails();
+	}
+
+	// Hide the selection options if only 1 option
+	if(itemArray.length <= 1){
+		$form.find(".item-list").hide();
+		$form.find("button.select").hide();
 	}
 
 	// Item click
