@@ -49,8 +49,17 @@ function BuildSelect(element, ctx, selectors){
 	self.update = function(internal){
 		internal = typeof internal !== 'undefined' ? internal : true;
 
-		if(! build)
+		if(! build){
+			$el.find(".poke-select").show();
+			$el.find(".details").hide();
 			return false;
+		} else{
+			$el.find(".poke-select").hide();
+			$el.find(".details").show();
+		}
+
+
+
 
 
 		// Display Pokemon's name and image
@@ -259,6 +268,13 @@ function BuildSelect(element, ctx, selectors){
 		return build;
 	}
 
+	// Set a build
+
+	self.setBuild = function(value){
+		build = value;
+		self.update(false);
+	}
+
 	// Return the currently graphed stat
 
 	self.getSelectedStat = function(){
@@ -319,9 +335,6 @@ function BuildSelect(element, ctx, selectors){
 
 
 		build = new Build(pokemonId, level);
-
-		$el.find(".poke-select").hide();
-		$el.find(".details").show();
 
 		self.update();
 	});
