@@ -348,28 +348,85 @@ input[type=text] {
 .build-select .poke-select .pokemon-list .pokemon {
   cursor: pointer;
   flex-basis: 33%;
+  max-width: 33%;
   flex-grow: 1;
 }
-.build-select .poke-select .pokemon-list .pokemon .image {
+.build-select .poke-select .pokemon-list .pokemon .image-container {
   width: 100%;
   height: 100px;
-  border: 1px solid #222222;
+  border: 3px solid #222222;
   box-sizing: border-box;
+  -webkit-transition: all 0.125s ease-out 0s;
+  -moz-transition: all 0.125s ease-out 0s;
+  -o-transition: all 0.125s ease-out 0s;
+  transition: all 0.125s ease-out 0s;
+}
+.build-select .poke-select .pokemon-list .pokemon .image-container .image {
+  width: 100%;
+  height: 100%;
+  background-size: 125%;
+  background-position: center center;
+  -webkit-transition: all 0.25s ease-out 0s;
+  -moz-transition: all 0.25s ease-out 0s;
+  -o-transition: all 0.25s ease-out 0s;
+  transition: all 0.25s ease-out 0s;
 }
 .build-select .poke-select .pokemon-list .pokemon .name {
   font-size: 10px;
   text-align: center;
   padding: 5px 0;
 }
-.build-select .poke-select .pokemon-list .pokemon:hover {
-  background: #222222;
+.build-select .poke-select .pokemon-list .pokemon:hover .image-container {
+  border: 3px solid #c8c8c8;
 }
 .build-select .details {
   display: none;
 }
 .build-select .selected-pokemon {
+  position: relative;
   border: 1px solid #222222;
   height: 100px;
+}
+.build-select .selected-pokemon .image {
+  height: 100%;
+  width: 60%;
+  margin-right: 10px;
+  background-image: url(../img/pokemon/pikachu.png);
+  background-size: 100%;
+  background-position: right center;
+  position: absolute;
+}
+.build-select .selected-pokemon .container {
+  display: flex;
+  align-items: center;
+  position: relative;
+  justify-content: space-between;
+  height: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+}
+.build-select .selected-pokemon .container .name {
+  font-size: 30px;
+  color: #141414;
+  font-weight: 900;
+  flex: 1;
+  text-transform: uppercase;
+  text-align: center;
+  max-width: 80%;
+  text-shadow: -1px 1px 0 #c8c8c8, 1px 1px 0 #c8c8c8, 1px -1px 0 #c8c8c8, -1px -1px 0 #c8c8c8;
+}
+.build-select .selected-pokemon .container a.remove {
+  border-radius: 20px;
+  background: #141414;
+  color: #c8c8c8;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
 }
 .build-select .attributes {
   display: flex;
@@ -539,6 +596,24 @@ input[type=text] {
 .select-modal .item-list .image {
   width: 25px;
   height: 25px;
+}
+
+.role-bg {
+  background-image: radial-gradient(rgba(0, 0, 0, 0.1) 25%, transparent 25%), radial-gradient(rgba(0, 0, 0, 0.1) 25%, transparent 25%);
+  background-size: 60px 60px;
+  background-position: 0 0, 30px 30px;
+}
+.role-bg[role=attacker] {
+  background-color: #f16c39;
+}
+.role-bg[role=defender] {
+  background-color: #abee5a;
+}
+.role-bg[role=supporter] {
+  background-color: #fecc52;
+}
+.role-bg[role=all_rounder] {
+  background-color: #9950c5;
 }
 
 /*# sourceMappingURL=style.css.map */

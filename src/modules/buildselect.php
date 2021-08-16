@@ -22,7 +22,9 @@
 			<input type="text" class="poke-search" placeholder="Search" />
 			<div class="pokemon-list">
 				<div class="pokemon template" pokemon-id="">
-					<div class="image"></div>
+					<div class="image-container role-bg">
+						<div class="image"></div>
+					</div>
 					<div class="name"></div>
 				</div>
 			</div>
@@ -30,9 +32,12 @@
 		</div>
 
 		<div class="details">
-			<div class="selected-pokemon">
-				<div class="name"></div>
-				<a class="remove" href="#">X</a>
+			<div class="selected-pokemon role-bg">
+				<div class="image"></div>
+				<div class="container">
+					<div class="name"></div>
+					<a class="remove" href="#">X</a>
+				</div>
 			</div>
 
 			<div class="attributes"></div>

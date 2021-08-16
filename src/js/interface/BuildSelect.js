@@ -28,6 +28,8 @@ function BuildSelect(element, ctx, selectors){
 			let $pokeEl = $el.find(".pokemon-list .pokemon.template").clone().removeClass("template");
 
 			$pokeEl.find(".name").html(poke.pokemonId);
+			$pokeEl.find(".image-container").attr("role", poke.role);
+			$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
 			$pokeEl.attr("pokemon-id", poke.pokemonId);
 			$el.find(".pokemon-list").append($pokeEl);
 		});
@@ -58,10 +60,6 @@ function BuildSelect(element, ctx, selectors){
 			$el.find(".details").show();
 		}
 
-
-
-
-
 		// Display Pokemon's name and image
 		$el.find(".selected-pokemon .name").html(build.stageId);
 
@@ -74,6 +72,9 @@ function BuildSelect(element, ctx, selectors){
 		// Display current level
 		$el.find(".level .value").html(build.level);
 
+		// Display pokemon image
+		$el.find(".selected-pokemon .image").css("background-image", "url(../img/pokemon/"+build.stageId+".png)");
+		$el.find(".selected-pokemon").attr("role", build.role);
 
 		// Display Pokemon's stats
 		let statsToDisplay = ["hp", "atk", "def", "spA", "spD", "speed"];
