@@ -95,20 +95,20 @@ function BuildSelect(element, ctx, selectors){
 
 		// Display comparison stats
 		$el.find(".stat-difference").html("");
+		$el.find(".stat-difference").css("opacity", 0);
 
 		if((context == "builds")&&(buildSelectors)){
 
 			let primary = buildSelectors[0].getBuild();
+			let statsToCompare = [
+				{ "stat": "hp", "element": ".stat.hp" },
+				{ "stat": "atk", "element": ".stat.atk" },
+				{ "stat": "def", "element": ".stat.def" },
+				{ "stat": "spA", "element": ".stat.spa" },
+				{ "stat": "spD", "element": ".stat.spd" }
+			];
 
 			if((primary != build) && primary){
-
-				let statsToCompare = [
-					{ "stat": "hp", "element": ".stat.hp" },
-					{ "stat": "atk", "element": ".stat.atk" },
-					{ "stat": "def", "element": ".stat.def" },
-					{ "stat": "spA", "element": ".stat.spa" },
-					{ "stat": "spD", "element": ".stat.spd" }
-				];
 
 				for(var i = 0; i < statsToCompare.length; i++){
 					let diff = build.stats[statsToCompare[i].stat].value - primary.stats[statsToCompare[i].stat].value;
@@ -394,6 +394,24 @@ function BuildSelect(element, ctx, selectors){
 		let selectedItem = build.moves[slot];
 
 		selectWindow = new SelectWindow($el.find(".held-item-modal"), "move", build, self.selectMove, slot, selectedItem);
+	});
+
+	// Bubble up to duplicate this build
+
+	$el.find("a.duplicate").on("click", function(e){
+		e.preventDefault();
+		if(context == "builds"){
+			interface.duplicateBuild(self);
+		}
+	});
+
+	// Bubble up to delete this build
+
+	$el.find("a.delete").on("click", function(e){
+		e.preventDefault();
+		if(context == "builds"){
+			interface.deleteBuild(self);
+		}
 	});
 
 

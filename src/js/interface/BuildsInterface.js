@@ -55,6 +55,7 @@ var InterfaceMaster = (function () {
 
 								let arr = val.split(",");
 
+
 								for(var i = 0; i < arr.length; i++){
 									let build = generateBuildFromString(arr[i]);
 
@@ -74,14 +75,21 @@ var InterfaceMaster = (function () {
 
 			// Add a new build to the list
 
-			this.addNewBuild = function(build){
-				let $buildSelect = $(".build-template .build-select").clone();
-				$buildSelect.insertBefore(".build-list .new-build-section");
+			this.addNewBuild = function(build, index){
+				index = typeof index !== 'undefined' ? index : -1;
 
+				let $buildSelect = $(".build-template .build-select").clone();
 				let buildSelector = new BuildSelect($buildSelect, "builds", buildSelectors);
 				buildSelector.init();
 
-				buildSelectors.push(buildSelector);
+				if(index == -1){
+					$buildSelect.insertBefore(".build-list .new-build-section");
+					buildSelectors.push(buildSelector);
+				} else{
+					let $insertElement = $(".build-list .build-select").eq(index-1);
+					$buildSelect.insertAfter($insertElement);
+					buildSelectors.splice(index, 0, buildSelector);
+				}
 
 				// Prefill an existing build
 				if(build){
@@ -95,29 +103,40 @@ var InterfaceMaster = (function () {
 			this.selectorUpdateHandler = function(source, pushHistory){
 				pushHistory = typeof pushHistory !== 'undefined' ? pushHistory : true;
 
-				let build = source.getBuild();
-				let selectedStat = source.getSelectedStat();
-				let level = build.level;
-				let isPrimary = (source == buildSelectors[0]);
+				let isPrimary = false;
 
-				// Sync settings between selectors
+				if(source){
+					let build = source.getBuild();
+					let selectedStat = source.getSelectedStat();
+					let level = build.level;
+					isPrimary = (source == buildSelectors[0]);
 
-				if(lockSettings){
-					for(var i = 0; i < buildSelectors.length; i++){
-						let selector = buildSelectors[i];
+					// Sync settings between selectors
 
-						if(selector.getBuild()){
-							selector.setLevel(level);
-							selector.setSelectedStat(selectedStat);
-							selector.update(false);
+					if(lockSettings){
+						for(var i = 0; i < buildSelectors.length; i++){
+							let selector = buildSelectors[i];
+
+							if(selector.getBuild()){
+								selector.setLevel(level);
+								selector.setSelectedStat(selectedStat);
+								selector.update(false);
+							}
 						}
 					}
 				}
 
-				// Update the other selectors when the primary selector is changed
 
+				// Update the other selectors when the primary selector is changed
 				if(isPrimary){
 					for(var i = 1; i < buildSelectors.length; i++){
+						buildSelectors[i].update(false);
+					}
+				}
+
+				// Update all selectors when no source is provided;
+				if(! source){
+					for(var i = 0; i < buildSelectors.length; i++){
 						buildSelectors[i].update(false);
 					}
 				}
@@ -158,6 +177,40 @@ var InterfaceMaster = (function () {
 				  'event_category' : 'Rankings',
 				  'event_label' : speciesId
 			  });*/
+			}
+
+			// This event is triggered from BuildSelect.js when the duplicate button is clicked
+
+			this.duplicateBuild = function(selector){
+				let buildStr = selector.getBuild().generateURLString();
+				let build = generateBuildFromString(buildStr);
+
+				// Find the index of the selector to slot this in afterward
+				let index = 0;
+
+				for(var i = 0; i < buildSelectors.length; i++){
+					if(buildSelectors[i] == selector){
+						index = i + 1;
+						break;
+					}
+				}
+
+				self.addNewBuild(build, index);
+			}
+
+			// This event is triggered from BuildSelect.js when the delete button is clicked
+
+			this.deleteBuild = function(selector){
+				// Find the index of the selector to slot this in afterward
+				for(var i = 0; i < buildSelectors.length; i++){
+					if(buildSelectors[i] == selector){
+						$(".build-list .build-select").eq(i).remove();
+						buildSelectors.splice(i, 1);
+						break;
+					}
+				}
+
+				self.selectorUpdateHandler(false, true);
 			}
 
 			// Event handler for new build button
