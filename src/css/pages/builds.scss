@@ -127,7 +127,6 @@
 			height: 100%;
 		    width: 60%;
 		    margin-right: 10px;
-		    background-image: url(../img/pokemon/pikachu.png);
 		    background-size: 100%;
 		    background-position: right center;
 		    position: absolute;
@@ -380,4 +379,5 @@
 	&[role="defender"]{ background-color:$defender-color; }
 	&[role="supporter"]{ background-color:$supporter-color; }
 	&[role="all_rounder"]{ background-color:$accent-color; }
+	&[role="speedster"]{ background-color:$speedster-color; }
 }

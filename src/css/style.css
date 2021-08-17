@@ -392,7 +392,6 @@ input[type=text] {
   height: 100%;
   width: 60%;
   margin-right: 10px;
-  background-image: url(../img/pokemon/pikachu.png);
   background-size: 100%;
   background-position: right center;
   position: absolute;
@@ -615,6 +614,9 @@ input[type=text] {
 }
 .role-bg[role=all_rounder] {
   background-color: #9950c5;
+}
+.role-bg[role=speedster] {
+  background-color: #29a5e3;
 }
 
 /*# sourceMappingURL=style.css.map */
