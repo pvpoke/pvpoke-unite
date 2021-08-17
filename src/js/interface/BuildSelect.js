@@ -40,6 +40,7 @@ function BuildSelect(element, ctx, selectors){
 	// Clear the currently selected build and open Pokemon select
 
 	self.clear = function(){
+		build = null;
 		$el.find(".details").hide();
 		$el.find(".poke-select").show();
 		$el.find(".poke-select input").val('');
@@ -326,11 +327,12 @@ function BuildSelect(element, ctx, selectors){
 		let level = 1;
 
 		if(context == "builds"){
-			let primary = buildSelectors[0].getBuild();
-
-			// Set new build to the build of the primary
-			if(primary){
-				level = primary.level;
+			// Set new build level to the primary or first available build
+			for(var i = 0; i < buildSelectors.length; i++){
+				if(buildSelectors[i].getBuild()){
+					level = buildSelectors[i].getBuild().level;
+					break;
+				}
 			}
 		}
 
