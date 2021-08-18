@@ -3,11 +3,14 @@
 class i18n {
 	private static $instance = null;
 	private $messages = array();
+	private $categories = array(); // Also an array of messages but indexed by category
 	private $lang = 'en';
 
 	private function __construct() {
 		$this->loadMessages('global');
 	}
+
+	// Load a specific JSON file and add to messages
 
 	public function loadMessages($category){
 		$json = file_get_contents(__DIR__ . "/../lang/".$this->lang."/".$category.".json");
@@ -17,8 +20,11 @@ class i18n {
 
 			// Merge newly loaded messages into existing messages
 			$this->messages = array_merge($arr, $this->messages);
+			$this->categories[$category] = $arr;
 		}
 	}
+
+	// Return a string by ID
 
 	public function localize($id){
 		if(isset($this->messages[$id])){
@@ -27,6 +33,24 @@ class i18n {
 			echo '<script>console.error("string '.$id.' missing")</script>';
 			return $id;
 		}
+	}
+
+	// Output the messages of a given category for Javascript
+
+	public function outputCategoryToJS($category){
+
+		echo "<script>\n";
+
+		$msgs = $this->categories[$category];
+
+
+		foreach($msgs as $key => $value){
+			//echo 'messages.'.$key.' = "' . $value . '";'." /n ";
+			echo "messages.".$key."=\"".addslashes($value)."\";\n";
+		}
+
+		echo "</script>\n";
+
 	}
 
 	// The object is created from within the class itself

@@ -70,6 +70,7 @@ if(! isset($OG_IMAGE)){
 	var host = "<?php echo $WEB_HOST; ?>";
 	var webRoot = "<?php echo $WEB_ROOT; ?>";
 	var siteVersion = "<?php echo $SITE_VERSION; ?>";
+	var messages = {}; // Object of translation messages
 
 	<?php if(isset($_COOKIE['settings'])) : ?>
 		var settings = {
