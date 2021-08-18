@@ -114,6 +114,68 @@ var GameMaster = (function () {
 			return item;
 		}
 
+		// Generate a full list of string ID's to be localized from the Pokemon data
+		object.generateStringIDs = function(){
+			let arr = [];
+
+			for(var i = 0; i < object.pokemon.length; i++){
+				let pokemon = object.pokemon[i];
+
+				for(var n = 0; n < pokemon.stages.length; n++){
+					arr.push({id: pokemon.stages[n].stageId, str: idToString(pokemon.stages[n].stageId)});
+				}
+
+				arr.push({id: pokemon.moves.basic.moveId+"_description", str: ""});
+
+				for(var n = 0; n < pokemon.moves.slot1.length; n++){
+					arr.push({id: pokemon.moves.slot1[n].moveId, str: idToString(pokemon.moves.slot1[n].moveId)});
+					arr.push({id: pokemon.moves.slot1[n].moveId+"_description", str: ""});
+
+					if(n > 0){
+						arr.push({id: pokemon.moves.slot1[n].moveId+"_upgrade", str: ""});
+					}
+				}
+
+				for(var n = 0; n < pokemon.moves.slot2.length; n++){
+					arr.push({id: pokemon.moves.slot2[n].moveId, str: idToString(pokemon.moves.slot2[n].moveId)});
+					arr.push({id: pokemon.moves.slot2[n].moveId+"_description", str: ""});
+
+					if(n > 0){
+						arr.push({id: pokemon.moves.slot2[n].moveId+"_upgrade", str: ""});
+					}
+				}
+
+				arr.push({id: pokemon.moves.unite.moveId, str: idToString(pokemon.moves.unite.moveId)});
+				arr.push({id: pokemon.moves.unite.moveId+"_description", str: ""});
+				arr.push({id: pokemon.moves.passive.moveId, str: idToString(pokemon.moves.passive.moveId)});
+				arr.push({id: pokemon.moves.passive.moveId+"_description", str: ""});
+			}
+
+			let csv = '';
+
+			for(var i = 0; i < arr.length; i++){
+				csv += arr[i].id + ',' + arr[i].str + '\n';
+			}
+
+			console.log(csv);
+
+			function idToString(id){
+				let str = id.replaceAll("_", " ");
+				str = capitalize(str);
+
+				return str;
+			}
+
+			function capitalize(words) {
+			   var separateWord = words.toLowerCase().split(' ');
+			   for (var i = 0; i < separateWord.length; i++) {
+			      separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+			      separateWord[i].substring(1);
+			   }
+			   return separateWord.join(' ');
+			}
+		}
+
         return object;
     }
 
