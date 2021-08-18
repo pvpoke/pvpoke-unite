@@ -16,6 +16,9 @@ function BuildSelect(element, ctx, selectors){
 	let statCanvas = $el.find("canvas.progression")[0];
 	let statCtx = statCanvas.getContext("2d");
 
+	// Used for animating images on level change
+	let previousStage = '';
+
 	let selectWindow = null; // Modal window for selecting items and moves
 
 	if(selectors){
@@ -41,6 +44,7 @@ function BuildSelect(element, ctx, selectors){
 
 	self.clear = function(){
 		build = null;
+		previousStage = '';
 		$el.find(".details").hide();
 		$el.find(".poke-select").show();
 		$el.find(".poke-select input").val('');
@@ -76,6 +80,17 @@ function BuildSelect(element, ctx, selectors){
 		// Display pokemon image
 		$el.find(".selected-pokemon .image").css("background-image", "url(../img/pokemon/"+build.stageId+".png)");
 		$el.find(".selected-pokemon").attr("role", build.role);
+
+		if(previousStage != build.stageId){
+			$el.find(".selected-pokemon .image").removeClass("animate");
+
+			setTimeout(function(){
+				$el.find(".selected-pokemon .image").addClass("animate");
+			}, 25);
+
+			previousStage = build.stageId;
+		}
+
 
 		// Display Pokemon's stats
 		let statsToDisplay = ["hp", "atk", "def", "spA", "spD", "speed"];
@@ -174,7 +189,7 @@ function BuildSelect(element, ctx, selectors){
 		let height = statCanvas.height;
 
 		if(selectedStat == "hp"){
-			yAxisMax = 13000;
+			yAxisMax = 10000;
 		}
 
 		statCtx.clearRect(0, 0, width, height);
@@ -211,7 +226,7 @@ function BuildSelect(element, ctx, selectors){
 		statCtx.closePath();
 
 		// Draw stat graph
-		statCtx.lineWidth = 4;
+		statCtx.lineWidth = 6;
 		statCtx.strokeStyle = "#9950c5";
 		statCtx.setLineDash([]);
 
@@ -220,8 +235,15 @@ function BuildSelect(element, ctx, selectors){
 		// Calculate stat at each level
 		for(var i = 0; i < 15; i++){
 			let stats = build.calculateStats(i+1);
+			let displayStat = stats[selectedStat].value;
+
+			// Scaling Hp stat graph to show change more visually
+			if(selectedStat == "hp"){
+				displayStat -= 3000;
+			}
+
 			let x = width * (i / 14);
-			let y = height - (height * (stats[selectedStat].value / yAxisMax));
+			let y = height - (height * (displayStat / yAxisMax));
 
 	        statCtx.lineTo(x, y);
 		}
@@ -335,7 +357,6 @@ function BuildSelect(element, ctx, selectors){
 				}
 			}
 		}
-
 
 		build = new Build(pokemonId, level);
 

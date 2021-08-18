@@ -191,6 +191,11 @@ button.select {
   margin: 15px auto 0 auto;
 }
 
+.corners {
+  border-bottom-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
 input {
   display: block;
 }
@@ -357,10 +362,6 @@ input[type=text] {
   height: 100px;
   border: 3px solid #222222;
   box-sizing: border-box;
-  -webkit-transition: all 0.125s ease-out 0s;
-  -moz-transition: all 0.125s ease-out 0s;
-  -o-transition: all 0.125s ease-out 0s;
-  transition: all 0.125s ease-out 0s;
 }
 .build-select .poke-select .pokemon-list .pokemon .image-container .image {
   width: 100%;
@@ -393,8 +394,16 @@ input[type=text] {
   width: 60%;
   margin-right: 10px;
   background-size: 100%;
-  background-position: right center;
+  background-position: right 30%;
+  background-repeat: no-repeat;
   position: absolute;
+}
+.build-select .selected-pokemon .image.animate {
+  -webkit-transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
+  -moz-transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
+  -o-transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
+  transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
+  background-position: right center;
 }
 .build-select .selected-pokemon .container {
   display: flex;
@@ -501,11 +510,10 @@ input[type=text] {
   background: #c7524c;
 }
 .build-select canvas.progression {
-  margin-top: 15px;
   background: #141414;
   border: 1px solid #222222;
   width: 95%;
-  height: 100px;
+  height: 75px;
   box-sizing: border-box;
   margin: 15px auto 5px auto;
   display: block;

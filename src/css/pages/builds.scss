@@ -87,7 +87,7 @@
 					border:3px solid $gray;
 					box-sizing: border-box;
 
-					@include transition(all, 0.125s, ease-out, 0s);
+					//@include transition(all, 0.125s, ease-out, 0s);
 
 					.image{
 						width:100%;
@@ -128,8 +128,14 @@
 		    width: 60%;
 		    margin-right: 10px;
 		    background-size: 100%;
-		    background-position: right center;
+		    background-position: right 30%;
+			background-repeat: no-repeat;
 		    position: absolute;
+
+			&.animate{
+				@include transition(all, 0.2s, cubic-bezier(0.6, -0.15, 0.265, 1.55), 0s);
+				background-position: right center;
+			}
 		}
 
 		.container{
@@ -252,11 +258,10 @@
 	}
 
 	canvas.progression{
-		margin-top: 15px;
 		background:$black;
 		border:1px solid $gray;
 		width:95%;
-		height:100px;
+		height:75px;
 		box-sizing: border-box;
 		margin: 15px auto 5px auto;
 		display: block;
