@@ -7,12 +7,12 @@ function Move(slot, data){
 	let self = this;
 	let gm = GameMaster.getInstance();
 	self.moveId = data.moveId;
-	self.moveName = messages[self.moveId];
+	self.moveName = msg(self.moveId);
 	self.unlockLevel = 1;
 	self.upgradeLevel = 16;
 
 	if(slot == "basic"){
-		self.moveName = messages["basic_attack"];
+		self.moveName = msg("basic_attack");
 	}
 
 	switch(slot){

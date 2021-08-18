@@ -35,7 +35,13 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let itemId = itemArray[i][idKey];
 
 		let $item = $form.find(".item.template").clone().removeClass("template");
-		$item.find(".name").html(itemId);
+		let displayId = itemId;
+
+		if(displayId.indexOf("_basic") > -1){
+			displayId = "basic_attack";
+		}
+
+		$item.find(".name").html(msg(displayId));
 		$item.attr("value", itemId);
 
 		if(type == "held"){
@@ -96,6 +102,6 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let $selecteDescription = $form.find(".selected-description");
 
 		$selectedItem.find(".name").html($item.find(".name").html())
-		$selecteDescription.html($item.attr("value") + "_description");
+		$selecteDescription.html(msg($item.attr("value") + "_description"));
 	}
 }

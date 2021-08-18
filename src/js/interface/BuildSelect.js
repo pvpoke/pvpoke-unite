@@ -66,13 +66,13 @@ function BuildSelect(element, ctx, selectors){
 		}
 
 		// Display Pokemon's name and image
-		$el.find(".selected-pokemon .name").html(messages[build.stageId]);
+		$el.find(".selected-pokemon .name").html(msg(build.stageId));
 
 		// Display Pokemon's role and type
 		$el.find(".attributes").html("");
-		$el.find(".attributes").append("<div>"+messages[build.role]+"</div>");
-		$el.find(".attributes").append("<div>"+messages[build.type]+"</div>");
-		$el.find(".attributes").append("<div>"+messages[build.style]+"</div>");
+		$el.find(".attributes").append("<div>"+msg(build.role)+"</div>");
+		$el.find(".attributes").append("<div>"+msg(build.type)+"</div>");
+		$el.find(".attributes").append("<div>"+msg(build.style)+"</div>");
 
 		// Display current level
 		$el.find(".level .value").html(build.level);

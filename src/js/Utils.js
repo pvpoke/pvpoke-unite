@@ -11,3 +11,14 @@ function displayFloat(number, digits){
 
 	return number;
 }
+
+// Return a message from the message object
+
+function msg(stringId){
+	if(messages[stringId]){
+		return messages[stringId];
+	} else{
+		console.error(stringId + " not found");
+		return stringId;
+	}
+}
