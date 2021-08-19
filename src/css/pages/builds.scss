@@ -286,6 +286,12 @@
 	.held-items{
 		display: flex;
 		justify-content: space-between;
+
+		.held-item{
+			background-size: 85%;
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		}
 	}
 
 	.held-item, .battle-item .image, .move .image{
@@ -300,7 +306,7 @@
 		height:50px;
 
 		&:hover{
-			background: $gray;
+			background-color: $gray;
 		}
 	}
 
@@ -336,6 +342,9 @@
 			height:75px;
 			margin-right: 10px;
 			border:1px solid $gray;
+			background-size: 100%;
+		    background-position: center center;
+		    background-repeat: no-repeat;
 		}
 	}
 
@@ -368,6 +377,7 @@
 		overflow-y:auto;
 
 		.image{
+			border:none;
 			width:25px;
 			height:25px;
 		}

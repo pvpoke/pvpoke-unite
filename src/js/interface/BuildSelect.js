@@ -160,10 +160,16 @@ function BuildSelect(element, ctx, selectors){
 		}
 
 		// Display held items
-		$el.find(".held-item").html("+");
 
-		for(var i = 0; i < build.heldItems.length; i++){
-			$el.find(".held-item").eq(i).html(build.heldItems[i].itemName);
+
+		for(var i = 0; i < 3; i++){
+			if(i < build.heldItems.length){
+				$el.find(".held-item").eq(i).html("");
+				$el.find(".held-item").eq(i).css("background-image", "url("+host+"img/helditems/"+build.heldItems[i].itemId+".png)");
+			} else{
+				$el.find(".held-item").eq(i).html("+");
+				$el.find(".held-item").eq(i).css("background-image", "none");
+			}
 		}
 
 		// Display battle item

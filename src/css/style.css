@@ -534,6 +534,11 @@ input[type=text] {
   display: flex;
   justify-content: space-between;
 }
+.build-select .held-items .held-item {
+  background-size: 85%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
 .build-select .held-item, .build-select .battle-item .image, .build-select .move .image {
   display: flex;
   justify-content: center;
@@ -546,7 +551,7 @@ input[type=text] {
   height: 50px;
 }
 .build-select .held-item:hover, .build-select .battle-item .image:hover, .build-select .move .image:hover {
-  background: #222222;
+  background-color: #222222;
 }
 .build-select .move,
 .build-select .battle-item {
@@ -577,6 +582,9 @@ input[type=text] {
   height: 75px;
   margin-right: 10px;
   border: 1px solid #222222;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
 }
 .select-modal .item {
   padding: 10px;
@@ -602,6 +610,7 @@ input[type=text] {
   overflow-y: auto;
 }
 .select-modal .item-list .image {
+  border: none;
   width: 25px;
   height: 25px;
 }

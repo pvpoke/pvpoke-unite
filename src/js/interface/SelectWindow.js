@@ -16,6 +16,17 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		idKey = "moveId";
 	}
 
+	let imgDir = '';
+
+	// Grab the directory for the image of this item
+	if(type == "held"){
+		imgDir = "helditems";
+	} else if(type == "battle"){
+		imgDir = "battleitems";
+	} else if(type == "move"){
+		imgDir = "moves";
+	}
+
 	// Populate item list
 	let itemArray = [];
 
@@ -42,6 +53,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		}
 
 		$item.find(".name").html(msg(displayId));
+		$item.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+itemId+".png)");
 		$item.attr("value", itemId);
 
 		if(type == "held"){
@@ -101,7 +113,8 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let $selectedItem = $form.find(".selected-item");
 		let $selecteDescription = $form.find(".selected-description");
 
-		$selectedItem.find(".name").html($item.find(".name").html())
+		$selectedItem.find(".name").html($item.find(".name").html());
+		$selectedItem.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+$item.attr("value")+".png)");
 		$selecteDescription.html(msg($item.attr("value") + "_description"));
 	}
 }
