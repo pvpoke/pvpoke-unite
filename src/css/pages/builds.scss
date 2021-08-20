@@ -332,58 +332,6 @@
 	}
 }
 
-.select-modal{
-	.item, .selected-item{
-		display: flex;
-		align-items: center;
-
-		.image{
-			width:75px;
-			height:75px;
-			margin-right: 10px;
-			border:1px solid $gray;
-			background-size: 100%;
-		    background-position: center center;
-		    background-repeat: no-repeat;
-		}
-	}
-
-	.item{
-		padding:10px;
-		cursor:pointer;
-
-		&:hover{
-			background:$gray;
-		}
-
-		&.selected{
-			background:$accent-color !important;
-		}
-
-		&.disabled{
-			cursor:default;
-			opacity: 0.5;
-			background:none !important;
-		}
-	}
-
-	.selected-description{
-		height:300px;
-		overflow-y:auto;
-	}
-
-	.item-list{
-		max-height:600px;
-		overflow-y:auto;
-
-		.image{
-			border:none;
-			width:25px;
-			height:25px;
-		}
-	}
-}
-
 .role-bg{
 	background-image: radial-gradient(rgba(0,0,0,0.1) 25%, transparent 25%),
 	radial-gradient(rgba(0,0,0,0.1) 25%, transparent 25%);

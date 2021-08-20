@@ -1,31 +1,14 @@
 [
 	{
-		"itemId": "shell_bell",
-		"dex": 1,
-		"stat": "heal",
-		"type": "number",
-		"values": [45, 60, 75, 75],
-		"boosts": [
-			{
-				"stat": "spA",
-				"values": [24, 24, 24, 24]
-			},
-			{
-				"stat": "moveCooldown",
-				"values": [-4.5, -4.5, -4.5, -4.5]
-			}
-		]
-	},
-	{
-		"itemId": "buddy_barrier",
-		"dex": 2,
+		"itemId": "score_shield",
+		"dex": 5,
+		"values": [5, 7.5, 10, 10],
 		"stat": "shield",
-		"type": "number",
-		"values": [20, 30, 40, 40],
+		"type": "percent",
 		"boosts": [
 			{
 				"stat": "hp",
-				"values": [600, 600, 600, 600]
+				"values": [450, 450, 450, 450]
 			}
 		]
 	},
@@ -33,7 +16,7 @@
 		"itemId": "muscle_band",
 		"dex": 3,
 		"values": [1, 2, 3, 3],
-		"stat": "basic_attack_damage",
+		"stat": "basicAttackDamage",
 		"type": "percent",
 		"boosts": [
 			{
@@ -60,15 +43,149 @@
 		]
 	},
 	{
-		"itemId": "score_shield",
-		"dex": 5,
-		"values": [5, 7.5, 10, 10],
+		"itemId": "scope_lens",
+		"dex": 10,
+		"values": [1, 1, 1, 1],
+		"stat": "criticalHitDamage",
+		"type": "number",
+		"boosts": [
+			{
+				"stat": "criticalHitRate",
+				"type": "percent",
+				"values": [6, 6, 6, 6]
+			},
+			{
+				"stat": "criticalHitDamage",
+				"type": "percent",
+				"values": [12, 12, 12, 12]
+			}
+		]
+	},
+	{
+		"itemId": "assault_vest",
+		"dex": 7,
+		"values": [9, 12, 15, 15],
 		"stat": "shield",
 		"type": "percent",
 		"boosts": [
 			{
 				"stat": "hp",
-				"values": [450, 450, 450, 450]
+				"values": [270, 270, 270, 270]
+			},
+			{
+				"stat": "spD",
+				"values": [42, 42, 42, 42]
+			}
+		]
+	},
+	{
+		"itemId": "buddy_barrier",
+		"dex": 2,
+		"stat": "shield",
+		"type": "number",
+		"values": [20, 30, 40, 40],
+		"boosts": [
+			{
+				"stat": "hp",
+				"values": [600, 600, 600, 600]
+			}
+		]
+	},
+	{
+		"itemId": "energy_amplifier",
+		"dex": 11,
+		"values": [21, 21, 21, 21],
+		"stat": "energyAmplifierEffect",
+		"type": "percent",
+		"boosts": [
+			{
+				"stat": "uniteMoveChargeRate",
+				"type": "percent",
+				"values": [6, 6, 6, 6]
+			},
+			{
+				"stat": "moveCooldown",
+				"type": "percent",
+				"values": [-4.5, -4.5, -4.5, -4.5]
+			}
+		]
+	},
+	{
+		"itemId": "attack_weight",
+		"dex": 12,
+		"values": [6, 9, 12, 12],
+		"stat": "atk",
+		"type": "number",
+		"maxStacks": 6,
+		"boosts": [
+			{
+				"stat": "atk",
+				"values": [18, 18, 18, 18]
+			}
+		]
+	},
+	{
+		"itemId": "sp_atk_specs",
+		"dex": 13,
+		"values": [8, 12, 16, 16],
+		"stat": "spAtk",
+		"type": "number",
+		"maxStacks": 6,
+		"boosts": [
+			{
+				"stat": "spAtk",
+				"values": [24, 24, 24, 24]
+			}
+		]
+	},
+	{
+		"itemId": "rocky_helmet",
+		"dex": 8,
+		"values": [3, 4, 5, 5],
+		"stat": "rockyHelmetEffect",
+		"type": "percent",
+		"boosts": [
+			{
+				"stat": "hp",
+				"values": [240, 240, 240, 240]
+			},
+			{
+				"stat": "def",
+				"values": [42, 42, 42, 42]
+			}
+		]
+	},
+	{
+		"itemId": "exp_share",
+		"dex": 8,
+		"values": [2, 3, 4, 4],
+		"stat": "expGain",
+		"type": "number",
+		"boosts": [
+			{
+				"stat": "hp",
+				"values": [240, 240, 240, 240]
+			},
+			{
+				"stat": "speed",
+				"values": [150, 150, 150, 150]
+			}
+		]
+	},
+	{
+		"itemId": "shell_bell",
+		"dex": 1,
+		"stat": "heal",
+		"type": "number",
+		"values": [45, 60, 75, 75],
+		"boosts": [
+			{
+				"stat": "spA",
+				"values": [24, 24, 24, 24]
+			},
+			{
+				"stat": "moveCooldown",
+				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
 		]
 	},
@@ -90,19 +207,15 @@
 		]
 	},
 	{
-		"itemId": "assault_vest",
-		"dex": 7,
-		"values": [9, 12, 15, 15],
-		"stat": "shield",
-		"type": "percent",
+		"itemId": "aeos_cookie",
+		"dex": 9,
+		"values": [100, 150, 200, 200],
+		"stat": "hp",
+		"type": "number",
 		"boosts": [
 			{
 				"stat": "hp",
-				"values": [270, 270, 270, 270]
-			},
-			{
-				"stat": "spD",
-				"values": [42, 42, 42, 42]
+				"values": [240, 240, 240, 240]
 			}
 		]
 	}

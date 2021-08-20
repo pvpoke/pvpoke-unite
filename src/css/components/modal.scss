@@ -44,3 +44,56 @@
 		}
 	}
 }
+
+
+.select-modal{
+	.item, .selected-item{
+		display: flex;
+		align-items: center;
+
+		.image{
+			width:75px;
+			height:75px;
+			margin-right: 10px;
+			border:1px solid $gray;
+			background-size: 100%;
+		    background-position: center center;
+		    background-repeat: no-repeat;
+		}
+	}
+
+	.item{
+		padding:10px;
+		cursor:pointer;
+
+		&:hover{
+			background:$gray;
+		}
+
+		&.selected{
+			background:$accent-color !important;
+		}
+
+		&.disabled{
+			cursor:default;
+			opacity: 0.5;
+			background:none !important;
+		}
+	}
+
+	.selected-description{
+		height:200px;
+		overflow-y:auto;
+	}
+
+	.item-list{
+		max-height:340px;
+		overflow-y:auto;
+
+		.image{
+			border:none;
+			width:25px;
+			height:25px;
+		}
+	}
+}

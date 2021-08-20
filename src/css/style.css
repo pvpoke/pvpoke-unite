@@ -291,6 +291,48 @@ input[type=text] {
   padding: 10px;
 }
 
+.select-modal .item, .select-modal .selected-item {
+  display: flex;
+  align-items: center;
+}
+.select-modal .item .image, .select-modal .selected-item .image {
+  width: 75px;
+  height: 75px;
+  margin-right: 10px;
+  border: 1px solid #222222;
+  background-size: 100%;
+  background-position: center center;
+  background-repeat: no-repeat;
+}
+.select-modal .item {
+  padding: 10px;
+  cursor: pointer;
+}
+.select-modal .item:hover {
+  background: #222222;
+}
+.select-modal .item.selected {
+  background: #9950c5 !important;
+}
+.select-modal .item.disabled {
+  cursor: default;
+  opacity: 0.5;
+  background: none !important;
+}
+.select-modal .selected-description {
+  height: 200px;
+  overflow-y: auto;
+}
+.select-modal .item-list {
+  max-height: 340px;
+  overflow-y: auto;
+}
+.select-modal .item-list .image {
+  border: none;
+  width: 25px;
+  height: 25px;
+}
+
 .build-list {
   display: flex;
   width: 100%;
@@ -571,48 +613,6 @@ input[type=text] {
 }
 .build-select h4 {
   margin: 25px 0 5px 0;
-}
-
-.select-modal .item, .select-modal .selected-item {
-  display: flex;
-  align-items: center;
-}
-.select-modal .item .image, .select-modal .selected-item .image {
-  width: 75px;
-  height: 75px;
-  margin-right: 10px;
-  border: 1px solid #222222;
-  background-size: 100%;
-  background-position: center center;
-  background-repeat: no-repeat;
-}
-.select-modal .item {
-  padding: 10px;
-  cursor: pointer;
-}
-.select-modal .item:hover {
-  background: #222222;
-}
-.select-modal .item.selected {
-  background: #9950c5 !important;
-}
-.select-modal .item.disabled {
-  cursor: default;
-  opacity: 0.5;
-  background: none !important;
-}
-.select-modal .selected-description {
-  height: 300px;
-  overflow-y: auto;
-}
-.select-modal .item-list {
-  max-height: 600px;
-  overflow-y: auto;
-}
-.select-modal .item-list .image {
-  border: none;
-  width: 25px;
-  height: 25px;
 }
 
 .role-bg {
