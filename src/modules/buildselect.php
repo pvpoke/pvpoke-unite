@@ -1,5 +1,6 @@
 <div class="build-select">
 	<div class="nav-bar">
+		<div class="star">&#9733;</div>
 		<div class="menu">
 			<div class="parent-menu">
 				<a class="options" href="#">
@@ -42,43 +43,45 @@
 
 			<div class="attributes"></div>
 
-			<canvas class="progression"></canvas>
+			<div class="advanced">
+				<canvas class="progression"></canvas>
 
-			<div class="level">
-				<div class="label"><?php e("level"); ?></div>
-				<div class="value">1</div>
-			</div>
+				<div class="level">
+					<div class="label"><?php e("level"); ?></div>
+					<div class="value">1</div>
+				</div>
 
-			<input class="slider level-slider" type="range" min="1" max="15" value="1">
+				<input class="slider level-slider" type="range" min="1" max="15" value="1">
 
-			<div class="stats">
-				<div class="stat hp">
-					<div class="stat-label selected" value="hp"><?php e("hp"); ?></div>
-					<div class="stat-value">0</div>
-					<div class="stat-difference"></div>
-				</div>
-				<div class="stat atk">
-					<div class="stat-label" value="atk"><?php e("attack"); ?></div>
-					<div class="stat-value">0</div>
-					<div class="stat-difference"></div>
-				</div>
-				<div class="stat def">
-					<div class="stat-label" value="def"><?php e("defense"); ?></div>
-					<div class="stat-value">0</div>
-					<div class="stat-difference"></div>
-				</div>
-				<div class="stat spa">
-					<div class="stat-label" value="spA"><?php e("special_attack"); ?></div>
-					<div class="stat-value">0</div>
-					<div class="stat-difference"></div>
-				</div>
-				<div class="stat spd">
-					<div class="stat-label" value="spD"><?php e("special_defense"); ?></div>
-					<div class="stat-value">0</div>
-					<div class="stat-difference"></div>
-				</div>
-				<div class="stat link">
-					Stats from &nbsp;<a href="https://www.serebii.net/pokemonunite/pokemon.shtml" target="_blank">serebii.net</a>
+				<div class="stats">
+					<div class="stat hp">
+						<div class="stat-label selected" value="hp"><?php e("hp"); ?></div>
+						<div class="stat-value">0</div>
+						<div class="stat-difference"></div>
+					</div>
+					<div class="stat atk">
+						<div class="stat-label" value="atk"><?php e("attack"); ?></div>
+						<div class="stat-value">0</div>
+						<div class="stat-difference"></div>
+					</div>
+					<div class="stat def">
+						<div class="stat-label" value="def"><?php e("defense"); ?></div>
+						<div class="stat-value">0</div>
+						<div class="stat-difference"></div>
+					</div>
+					<div class="stat spa">
+						<div class="stat-label" value="spA"><?php e("special_attack"); ?></div>
+						<div class="stat-value">0</div>
+						<div class="stat-difference"></div>
+					</div>
+					<div class="stat spd">
+						<div class="stat-label" value="spD"><?php e("special_defense"); ?></div>
+						<div class="stat-value">0</div>
+						<div class="stat-difference"></div>
+					</div>
+					<div class="stat link">
+						Stats from &nbsp;<a href="https://www.serebii.net/pokemonunite/pokemon.shtml" target="_blank">serebii.net</a>
+					</div>
 				</div>
 			</div>
 

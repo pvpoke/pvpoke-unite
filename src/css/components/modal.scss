@@ -23,7 +23,7 @@
 		.modal-header{
 			padding:10px;
 			background:$gray;
-			font-size:24px;
+			font-size:16px;
 			font-weight: bold;
 		}
 
@@ -62,6 +62,15 @@
 		}
 	}
 
+	.selected-item{
+		margin-bottom:10px;
+
+		.name{
+			font-size: 22px;
+			font-weight: bold;
+		}
+	}
+
 	.item{
 		padding:10px;
 		cursor:pointer;
@@ -84,6 +93,10 @@
 	.selected-description{
 		height:200px;
 		overflow-y:auto;
+		margin-bottom:10px;
+		border-bottom: 1px solid $gray;
+		line-height: 20px;
+		font-size: 14px;
 	}
 
 	.item-list{

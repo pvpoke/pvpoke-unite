@@ -274,7 +274,7 @@ input[type=text] {
 .modal .modal-container .modal-header {
   padding: 10px;
   background: #222222;
-  font-size: 24px;
+  font-size: 16px;
   font-weight: bold;
 }
 .modal .modal-container .modal-close {
@@ -304,6 +304,13 @@ input[type=text] {
   background-position: center center;
   background-repeat: no-repeat;
 }
+.select-modal .selected-item {
+  margin-bottom: 10px;
+}
+.select-modal .selected-item .name {
+  font-size: 22px;
+  font-weight: bold;
+}
 .select-modal .item {
   padding: 10px;
   cursor: pointer;
@@ -322,6 +329,10 @@ input[type=text] {
 .select-modal .selected-description {
   height: 200px;
   overflow-y: auto;
+  margin-bottom: 10px;
+  border-bottom: 1px solid #222222;
+  line-height: 20px;
+  font-size: 14px;
 }
 .select-modal .item-list {
   max-height: 340px;
@@ -349,6 +360,10 @@ input[type=text] {
 .build-list .build-select .nav-bar {
   background: #222222;
   height: 30px;
+  display: relative;
+}
+.build-list .build-select .nav-bar .star {
+  display: none;
 }
 .build-list .build-select .nav-bar .menu {
   justify-content: flex-end;
@@ -365,6 +380,25 @@ input[type=text] {
   width: 5px;
   height: 5px;
   margin-bottom: 4px;
+}
+.build-list .build-select:first-of-type .nav-bar {
+  background: #9950c5;
+}
+.build-list .build-select:first-of-type .nav-bar .star {
+  display: block;
+  color: #141414;
+  position: absolute;
+  font-size: 30px;
+  line-height: 30px;
+  margin-left: 5px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.build-list .build-select:first-of-type .nav-bar .options .meat {
+  background: #141414;
 }
 
 .new-build-section a {
@@ -430,13 +464,14 @@ input[type=text] {
   position: relative;
   border: 1px solid #222222;
   height: 100px;
+  overflow: hidden;
 }
 .build-select .selected-pokemon .image {
   height: 100%;
-  width: 60%;
+  width: 100%;
   margin-right: 10px;
-  background-size: 100%;
-  background-position: right 30%;
+  background-size: 60%;
+  background-position: -20% 30%;
   background-repeat: no-repeat;
   position: absolute;
 }
@@ -445,19 +480,19 @@ input[type=text] {
   -moz-transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
   -o-transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
   transition: all 0.2s cubic-bezier(0.6, -0.15, 0.265, 1.55) 0s;
-  background-position: right center;
+  background-position: -20% center;
 }
 .build-select .selected-pokemon .container {
   display: flex;
   align-items: center;
   position: relative;
-  justify-content: space-between;
+  justify-content: flex-end;
   height: 100%;
   padding: 10px;
   box-sizing: border-box;
 }
 .build-select .selected-pokemon .container .name {
-  font-size: 30px;
+  font-size: 24px;
   color: #141414;
   font-weight: 900;
   flex: 1;

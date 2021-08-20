@@ -19,6 +19,9 @@
 		.nav-bar{
 			background:$gray;
 			height:30px;
+			display: relative;
+
+			.star{ display: none; }
 
 			.menu{
 				justify-content: flex-end;
@@ -36,6 +39,31 @@
 					width:5px;
 					height:5px;
 					margin-bottom:4px;
+				}
+			}
+		}
+
+		&:first-of-type{
+			.nav-bar{
+				background:$accent-color;
+
+				.star{
+					display: block;
+				    color: #141414;
+				    position: absolute;
+				    font-size: 30px;
+				    line-height: 30px;
+				    margin-left: 5px;
+					
+					-moz-user-select: none;
+				    -khtml-user-select: none;
+				    -webkit-user-select: none;
+				    -ms-user-select: none;
+				    user-select: none;
+				}
+
+				.options .meat{
+					background:$black;
 				}
 			}
 		}
@@ -122,19 +150,20 @@
 		position:relative;
 		border:1px solid $gray;
 		height:100px;
+		overflow:hidden;
 
 		.image{
 			height: 100%;
-		    width: 60%;
+		    width: 100%;
 		    margin-right: 10px;
-		    background-size: 100%;
-		    background-position: right 30%;
+		    background-size: 60%;
+		    background-position: -20% 30%;
 			background-repeat: no-repeat;
 		    position: absolute;
 
 			&.animate{
 				@include transition(all, 0.2s, cubic-bezier(0.6, -0.15, 0.265, 1.55), 0s);
-				background-position: right center;
+				background-position: -20% center;
 			}
 		}
 
@@ -142,13 +171,13 @@
 			display:flex;
 			align-items: center;
 			position: relative;
-			justify-content: space-between;
+			justify-content: flex-end;
 			height:100%;
 			padding:10px;
 			box-sizing: border-box;
 
 			.name{
-			    font-size: 30px;
+			    font-size: 24px;
 			    color: $black;
 			    font-weight: 900;
 			    flex: 1;
