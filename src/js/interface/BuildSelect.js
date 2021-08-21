@@ -30,7 +30,7 @@ function BuildSelect(element, ctx, selectors){
 		$.each(gm.pokemon, function(n, poke){
 			let $pokeEl = $el.find(".pokemon-list .pokemon.template").clone().removeClass("template");
 
-			$pokeEl.find(".name").html(poke.pokemonId);
+			$pokeEl.find(".name").html(msg(poke.pokemonId));
 			$pokeEl.find(".image-container").attr("role", poke.role);
 			$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
 			$pokeEl.attr("pokemon-id", poke.pokemonId);
@@ -339,7 +339,17 @@ function BuildSelect(element, ctx, selectors){
 		}
 
 		$el.find(".pokemon").each(function(index, value){
-			if($(this).attr("pokemon-id").startsWith(searchStr)){
+			//Match against each word in the name HTML
+			let strs = $(this).find(".name").html().split(" ");
+			let matches = 0;
+
+			for(var i = 0; i < strs.length; i++){
+				if(strs[i].toLowerCase().startsWith(searchStr)){
+					matches++;
+				}
+			}
+
+			if(matches > 0){
 				$(this).show();
 			} else{
 				$(this).hide();
@@ -441,6 +451,15 @@ function BuildSelect(element, ctx, selectors){
 		e.preventDefault();
 		if(context == "builds"){
 			interface.deleteBuild(self);
+		}
+	});
+
+	// Bubble up to move this build selector to the front
+
+	$el.find("a.move-to-front").on("click", function(e){
+		e.preventDefault();
+		if(context == "builds"){
+			interface.moveBuildToFront(self);
 		}
 	});
 

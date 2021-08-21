@@ -10,6 +10,7 @@
 				</a>
 				<div class="submenu">
 					<div class="submenu-wrap">
+						<a class="move-to-front" href="#"><?php e("build_nav_move"); ?></a>
 						<a class="duplicate" href="#"><?php e("build_nav_duplicate"); ?></a>
 						<a class="delete" href="#"><?php e("build_nav_delete"); ?></a>
 					</div>

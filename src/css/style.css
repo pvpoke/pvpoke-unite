@@ -52,6 +52,24 @@ a {
   background: #9950c5;
 }
 
+.submenu {
+  overflow: hidden;
+  height: 0;
+  position: relative;
+  z-index: 5;
+  overflow: hidden;
+  pointer-events: none;
+  white-space: nowrap;
+  -webkit-transition: all 0.125s linear 0s;
+  -moz-transition: all 0.125s linear 0s;
+  -o-transition: all 0.125s linear 0s;
+  transition: all 0.125s linear 0s;
+}
+
+header .submenu {
+  height: auto;
+}
+
 @media only screen and (min-width: 768px) {
   .menu {
     display: flex;
@@ -78,17 +96,10 @@ a {
     padding-top: 10px;
     max-width: 200px;
     position: absolute;
+    height: 0;
     z-index: 5;
     right: 0;
     top: 35px;
-    height: 0;
-    overflow: hidden;
-    pointer-events: none;
-    white-space: nowrap;
-    -webkit-transition: all 0.125s linear 0s;
-    -moz-transition: all 0.125s linear 0s;
-    -o-transition: all 0.125s linear 0s;
-    transition: all 0.125s linear 0s;
   }
   .menu .parent-menu .submenu.active {
     display: block;
@@ -194,6 +205,7 @@ button.select {
 .corners {
   border-bottom-left-radius: 20px;
   border-top-right-radius: 20px;
+  overflow: hidden;
 }
 
 input {
@@ -372,6 +384,16 @@ input[type=text] {
 .build-list .build-select .nav-bar .menu a {
   text-decoration: none;
 }
+.build-list .build-select .nav-bar .menu a.options {
+  padding-left: 30px;
+  margin-left: 0;
+}
+.build-list .build-select .nav-bar .submenu {
+  padding-top: 0;
+}
+.build-list .build-select .nav-bar .submenu.active {
+  height: 110px;
+}
 .build-list .build-select .nav-bar .options {
   padding: 4px 6px;
 }
@@ -381,12 +403,9 @@ input[type=text] {
   height: 5px;
   margin-bottom: 4px;
 }
-.build-list .build-select:first-of-type .nav-bar {
-  background: #9950c5;
-}
-.build-list .build-select:first-of-type .nav-bar .star {
+.build-list .build-select:first-of-type .star {
   display: block;
-  color: #141414;
+  color: #c8c8c8;
   position: absolute;
   font-size: 30px;
   line-height: 30px;
@@ -396,9 +415,6 @@ input[type=text] {
   -webkit-user-select: none;
   -ms-user-select: none;
   user-select: none;
-}
-.build-list .build-select:first-of-type .nav-bar .options .meat {
-  background: #141414;
 }
 
 .new-build-section a {
@@ -450,9 +466,9 @@ input[type=text] {
   transition: all 0.25s ease-out 0s;
 }
 .build-select .poke-select .pokemon-list .pokemon .name {
-  font-size: 10px;
+  font-size: 12px;
   text-align: center;
-  padding: 5px 0;
+  padding: 2px 0 8px 0;
 }
 .build-select .poke-select .pokemon-list .pokemon:hover .image-container {
   border: 3px solid #c8c8c8;

@@ -213,6 +213,24 @@ var InterfaceMaster = (function () {
 				self.selectorUpdateHandler(false, true);
 			}
 
+			// This event is triggered from BuildSelect.js when the move button is clicked
+
+			this.moveBuildToFront = function(selector){
+				// Find the index of the selector to slot this in afterward
+				for(var i = 0; i < buildSelectors.length; i++){
+					if(buildSelectors[i] == selector){
+						buildSelectors.splice(i, 1);
+						buildSelectors.unshift(selector);
+
+						let $el = $(".build-list .build-select").eq(i);
+						$el.prependTo(".build-list");
+						break;
+					}
+				}
+
+				self.selectorUpdateHandler(false, true);
+			}
+
 			// Event handler for new build button
 
 			$("a.new-build").click(function(e){

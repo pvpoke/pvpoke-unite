@@ -29,6 +29,24 @@
 	}
 }
 
+.submenu{
+	 overflow: hidden;
+	 height: 0;
+	 position: relative;
+	 z-index: 5;
+	 overflow: hidden;
+	 pointer-events: none;
+	 white-space: nowrap;
+	 -webkit-transition: all 0.125s linear 0s;
+	 -moz-transition: all 0.125s linear 0s;
+	 -o-transition: all 0.125s linear 0s;
+	 transition: all 0.125s linear 0s;
+}
+
+header .submenu{
+	height:auto;
+}
+
 @media only screen and (min-width: $desktop-breakpoint) {
 	.menu{
 		display:flex;
@@ -58,17 +76,10 @@
 				padding-top: 10px;
 			    max-width: 200px;
 			    position: absolute;
+				height:0;
 				z-index: 5;
 			    right: 0;
 			    top: 35px;
-			    height: 0;
-			    overflow: hidden;
-			    pointer-events: none;
-			    white-space: nowrap;
-			    -webkit-transition: all 0.125s linear 0s;
-			    -moz-transition: all 0.125s linear 0s;
-			    -o-transition: all 0.125s linear 0s;
-			    transition: all 0.125s linear 0s;
 
 				&.active{
 					display: block;
