@@ -13,6 +13,8 @@ var InterfaceMaster = (function () {
 			let self = this;
 			let buildSelectors = [];
 			let lockSettings = true;
+			let scrollPosition = 0;
+			let scrollLocked = false;
 
 			this.init = function(){
 				console.log("interface init");
@@ -237,6 +239,16 @@ var InterfaceMaster = (function () {
 				e.preventDefault();
 
 				self.addNewBuild();
+			});
+
+			// On mobile, lock side to side scrolling while interacting with level sliders
+
+			$("body").on("touchstart", ".level-slider-wrap, .level-slider", function(){
+				$(".build-list").css("overflow-x", "hidden");
+			});
+
+			$("body").on("touchend", function(){
+				$(".build-list").css("overflow-x", "auto");
 			});
 
 			// Toggle lock settings on or off

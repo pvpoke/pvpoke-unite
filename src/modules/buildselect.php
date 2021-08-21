@@ -52,7 +52,9 @@
 					<div class="value">1</div>
 				</div>
 
-				<input class="slider level-slider" type="range" min="1" max="15" value="1">
+				<div class="level-slider-wrap">
+					<input class="slider level-slider" type="range" min="1" max="15" value="1">
+				</div>
 
 				<div class="stats">
 					<div class="stat hp">

@@ -15,17 +15,29 @@ $(".hamburger").click(function(e){
 });
 
 // Submenu interaction on desktop
-
-$("body").on("mouseover click", ".menu .parent-menu", function(e){
-	$(".submenu").removeClass("active");
-	$(this).find(".submenu").addClass("active");
-});
-
-$("body").on("mousemove click", function(e){
-	if($(".submenu:hover, .parent-menu:hover").length == 0){
+if($(window).width() > 768){
+	$("body").on("mouseover", ".menu .parent-menu", function(e){
 		$(".submenu").removeClass("active");
-	}
-});
+		$(this).find(".submenu").addClass("active");
+	});
+
+	$("body").on("mousemove", function(e){
+		if($(".submenu:hover, .parent-menu:hover").length == 0){
+			$(".submenu").removeClass("active");
+		}
+	});
+} else{
+	$("body").on("click", ".menu .parent-menu", function(e){
+		$(this).find(".submenu").toggleClass("active");
+	});
+
+	$("body").on("click", function(e){
+		if($(".submenu:hover, .parent-menu:hover").length == 0){
+			$(".submenu").removeClass("active");
+		}
+	});
+}
+
 
 // Toggle buttons on and off
 

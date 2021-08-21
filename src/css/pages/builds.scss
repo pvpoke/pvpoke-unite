@@ -22,6 +22,7 @@
 			.menu{
 				justify-content: flex-end;
 				display: flex !important;
+				position:relative;
 
 				a{
 					text-decoration: none;
@@ -29,12 +30,20 @@
 					&.options{
 						padding-left:30px;
 						margin-left: 0;
+						background:none;
 					}
 				}
 			}
 
 			.submenu{
 				padding-top:0;
+				max-width: 200px;
+			    position: absolute;
+				height:0;
+				z-index: 5;
+			    right: 0;
+				font-size:16px;
+			    top: 30px;
 
 				&.active{
 					height:110px;
@@ -309,8 +318,9 @@
 
 	}
 
-	.level-slider{
-		margin: 5px 0 25px 0;
+	.level-slider-wrap{
+		padding: 5px 0 5px 0;
+		margin-bottom: 20px;
 	}
 
 	.held-items{

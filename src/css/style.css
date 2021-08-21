@@ -33,7 +33,6 @@ a {
 .menu a {
   display: block;
   font-weight: bold;
-  font-size: 24px;
   padding: 10px;
   background: #222222;
 }
@@ -77,6 +76,7 @@ header .submenu {
     background: none;
   }
   .menu a {
+    font-size: 24px;
     padding: 10px 10px 0 10px;
     margin-left: 40px;
     background: none;
@@ -380,6 +380,7 @@ input[type=text] {
 .build-list .build-select .nav-bar .menu {
   justify-content: flex-end;
   display: flex !important;
+  position: relative;
 }
 .build-list .build-select .nav-bar .menu a {
   text-decoration: none;
@@ -387,9 +388,17 @@ input[type=text] {
 .build-list .build-select .nav-bar .menu a.options {
   padding-left: 30px;
   margin-left: 0;
+  background: none;
 }
 .build-list .build-select .nav-bar .submenu {
   padding-top: 0;
+  max-width: 200px;
+  position: absolute;
+  height: 0;
+  z-index: 5;
+  right: 0;
+  font-size: 16px;
+  top: 30px;
 }
 .build-list .build-select .nav-bar .submenu.active {
   height: 110px;
@@ -620,8 +629,9 @@ input[type=text] {
   font-weight: bold;
   margin-right: 10px;
 }
-.build-select .level-slider {
-  margin: 5px 0 25px 0;
+.build-select .level-slider-wrap {
+  padding: 5px 0 5px 0;
+  margin-bottom: 20px;
 }
 .build-select .held-items {
   display: flex;
