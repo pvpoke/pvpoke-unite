@@ -115,7 +115,7 @@ var GameMaster = (function () {
 		}
 
 		// Generate a full list of string ID's to be localized from the Pokemon data
-		object.generateStringIDs = function(){
+		object.generatePokemonStringIDs = function(){
 			let arr = [];
 
 			for(var i = 0; i < object.pokemon.length; i++){
@@ -158,22 +158,49 @@ var GameMaster = (function () {
 			}
 
 			console.log(csv);
+		}
 
-			function idToString(id){
-				let str = id.replaceAll("_", " ");
-				str = capitalize(str);
+		// Generate a full list of string ID's to be localized from the item data
+		object.generateItemStringIDs = function(){
+			let arr = [];
 
-				return str;
+			for(var i = 0; i < object.heldItems.length; i++){
+				let item = object.heldItems[i];
+
+				arr.push({id: item.itemId, str: idToString(item.itemId)});
+				arr.push({id: item.itemId+"_description", str: ""});
 			}
 
-			function capitalize(words) {
-			   var separateWord = words.toLowerCase().split(' ');
-			   for (var i = 0; i < separateWord.length; i++) {
-			      separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
-			      separateWord[i].substring(1);
-			   }
-			   return separateWord.join(' ');
+			for(var i = 0; i < object.battleItems.length; i++){
+				let item = object.battleItems[i];
+
+				arr.push({id: item.itemId, str: idToString(item.itemId)});
+				arr.push({id: item.itemId+"_description", str: ""});
 			}
+
+			let csv = '';
+
+			for(var i = 0; i < arr.length; i++){
+				csv += arr[i].id + ',' + arr[i].str + '\n';
+			}
+
+			console.log(csv);
+		}
+
+		function idToString(id){
+			let str = id.replaceAll("_", " ");
+			str = capitalize(str);
+
+			return str;
+		}
+
+		function capitalize(words) {
+		   var separateWord = words.toLowerCase().split(' ');
+		   for (var i = 0; i < separateWord.length; i++) {
+		      separateWord[i] = separateWord[i].charAt(0).toUpperCase() +
+		      separateWord[i].substring(1);
+		   }
+		   return separateWord.join(' ');
 		}
 
         return object;

@@ -60,7 +60,7 @@
 					"level": 1
 				},
 				{
-					"moveId": "sludge_bomb",
+					"moveId": "sludge_bomb_venusaur",
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 6,
@@ -219,7 +219,7 @@
 				"level": 9
 			},
 			"passive": {
-				"moveId": "blaze"
+				"moveId": "blaze_charizard"
 			}
 		}
 	},
@@ -392,7 +392,7 @@
 					"upgrade": 11
 				},
 				{
-					"moveId": "dazzling_gleam",
+					"moveId": "dazzling_gleam_ninetales",
 					"style": "special",
 					"category": "hindrance",
 					"cooldown": 7.5,
@@ -500,7 +500,7 @@
 					"upgrade": 10
 				},
 				{
-					"moveId": "dazzling_gleam",
+					"moveId": "dazzling_gleam_wigglytuff",
 					"style": "special",
 					"category": "hindrance",
 					"cooldown": 4.5,
@@ -604,7 +604,7 @@
 					"level": 1
 				},
 				{
-					"moveId": "close_combat",
+					"moveId": "close_combat_machamp",
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 6,
@@ -832,7 +832,7 @@
 					"upgrade": 11
 				},
 				{
-					"moveId": "sludge_bomb",
+					"moveId": "sludge_bomb_gengar",
 					"style": "special",
 					"category": "area",
 					"cooldown": 8,
@@ -928,7 +928,7 @@
 					"level": 1
 				},
 				{
-					"moveId": "confusion",
+					"moveId": "confusion_mime",
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 6,
@@ -936,7 +936,7 @@
 					"upgrade": 11
 				},
 				{
-					"moveId": "psychic",
+					"moveId": "psychic_mime",
 					"style": "special",
 					"category": "debuff",
 					"cooldown": 6,
@@ -1137,14 +1137,14 @@
 			},
 			"slot1": [
 				{
-					"moveId": "confusion",
+					"moveId": "confusion_gardevoir",
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 4.5,
 					"level": 1
 				},
 				{
-					"moveId": "psychic",
+					"moveId": "psychic_gardevoir",
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 7,
@@ -1266,7 +1266,7 @@
 			],
 			"slot2": [
 				{
-					"moveId": "slash",
+					"moveId": "slash_absol",
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 7,
@@ -1497,7 +1497,7 @@
 					"upgrade": 13
 				},
 				{
-					"moveId": "close_combat",
+					"moveId": "close_combat_lucario",
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 9,
@@ -1796,7 +1796,7 @@
 					"level": 1
 				},
 				{
-					"moveId": "flame_charge",
+					"moveId": "flame_charge_talonflame",
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 6.5,
@@ -1918,7 +1918,7 @@
 			],
 			"slot2": [
 				{
-					"moveId": "slash",
+					"moveId": "slash_zeraora",
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 8.5,
@@ -2037,7 +2037,7 @@
 					"level": 1
 				},
 				{
-					"moveId": "flame_charge",
+					"moveId": "flame_charge_cinderace",
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 6,
@@ -2045,7 +2045,7 @@
 					"upgrade": 13
 				},
 				{
-					"moveId": "feint",
+					"moveId": "feint_cinderace",
 					"style": "other",
 					"category": "buff",
 					"cooldown": 13,
@@ -2059,7 +2059,7 @@
 				"level": 9
 			},
 			"passive": {
-				"moveId": "blaze"
+				"moveId": "blaze_cinderace"
 			}
 		}
 	},
