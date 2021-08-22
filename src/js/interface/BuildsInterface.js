@@ -13,8 +13,6 @@ var InterfaceMaster = (function () {
 			let self = this;
 			let buildSelectors = [];
 			let lockSettings = true;
-			let scrollPosition = 0;
-			let scrollLocked = false;
 
 			this.init = function(){
 				console.log("interface init");

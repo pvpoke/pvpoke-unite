@@ -2,6 +2,7 @@
 
 <?php i18n::getInstance()->loadMessages("pages/builds"); ?>
 <?php i18n::getInstance()->loadMessages("pokemon-strings"); ?>
+<?php i18n::getInstance()->loadMessages("item-strings"); ?>
 
 <div id="builds">
 
@@ -38,5 +39,6 @@
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
 
 <?php require_once 'footer.php'; ?>

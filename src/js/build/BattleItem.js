@@ -13,7 +13,7 @@ function BattleItem(id){
 
 	self.itemId = data.itemId;
 	self.dex = data.dex; // This number is used in URl strings
-	self.itemName = self.itemId;
+	self.itemName = msg(self.itemId);
 	self.cooldown = data.cooldown;
 }
 

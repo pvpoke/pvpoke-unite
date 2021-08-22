@@ -161,7 +161,6 @@ function BuildSelect(element, ctx, selectors){
 
 		// Display held items
 
-
 		for(var i = 0; i < 3; i++){
 			if(i < build.heldItems.length){
 				$el.find(".held-item").eq(i).html("");
@@ -362,7 +361,7 @@ function BuildSelect(element, ctx, selectors){
 	$el.on("click", ".pokemon-list .pokemon", function(e){
 
 		let pokemonId = $(e.target).closest(".pokemon").attr("pokemon-id");
-		let level = 1;
+		let level = 10;
 
 		if(context == "builds"){
 			// Set new build level to the primary or first available build

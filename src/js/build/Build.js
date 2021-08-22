@@ -11,7 +11,7 @@ function Build(id, level){
 	self.heldItems = [];
 	self.battleItem = null;
 	self.stageId = '';
-	self.level = 1;
+	self.level = 10;
 	self.stats = {}; // Object containing the final calculated stats
 	self.statParts = {}; // ojbect containing the parts and bonuses making up each stat
 	self.moves = {

@@ -2,7 +2,7 @@
 	{
 		"itemId": "eject_button",
 		"dex": 1,
-		"cooldown": 55
+		"cooldown": 70
 	},
 	{
 		"itemId": "full_heal",
@@ -27,12 +27,12 @@
 	{
 		"itemId": "goal_getter",
 		"dex": 6,
-		"cooldown": 120
+		"cooldown": 90
 	},
 	{
 		"itemId": "fluffy_tail",
 		"dex": 7,
-		"cooldown": 40
+		"cooldown": 25
 	},
 	{
 		"itemId": "slow_smoke",
