@@ -13,6 +13,7 @@ var InterfaceMaster = (function () {
 			let self = this;
 			let buildSelectors = [];
 			let lockSettings = true;
+			let maxBuilds = 4;
 
 			this.init = function(){
 				console.log("interface init");
@@ -95,6 +96,8 @@ var InterfaceMaster = (function () {
 				if(build){
 					buildSelector.setBuild(build);
 				}
+
+				self.updateBuildMax();
 			}
 
 			// This triggers when updates are made to child update selectors.
@@ -210,6 +213,7 @@ var InterfaceMaster = (function () {
 					}
 				}
 
+				self.updateBuildMax();
 				self.selectorUpdateHandler(false, true);
 			}
 
@@ -229,6 +233,19 @@ var InterfaceMaster = (function () {
 				}
 
 				self.selectorUpdateHandler(false, true);
+			}
+
+			// Show or hide the new build button
+
+			this.updateBuildMax = function(){
+				$(".build-count .current").html(buildSelectors.length);
+				$(".build-list").attr("full", (buildSelectors.length >= maxBuilds));
+
+				if(buildSelectors.length >= maxBuilds){
+					$(".new-build-section").hide();
+				} else{
+					$(".new-build-section").show();
+				}
 			}
 
 			// Event handler for new build button
@@ -253,6 +270,12 @@ var InterfaceMaster = (function () {
 
 			$("button.lock-settings").click(function(e){
 				lockSettings = (! lockSettings);
+			});
+
+			// Toggle lock settings on or off
+
+			$("button.show-stats").click(function(e){
+				$(".build-list").attr("stats", ( $(".build-list").attr("stats") == "false" ));
 			});
 		};
 

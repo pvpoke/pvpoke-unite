@@ -4,7 +4,7 @@
 	overflow-x:auto;
 
 	.build-select, .new-build-section{
-		width:300px;
+		width:250px;
 		margin-right:20px;
 		flex-shrink: 0;
 	}
@@ -15,7 +15,7 @@
 		.nav-bar{
 			background:$gray;
 			height:30px;
-			display: relative;
+			position: relative;
 
 			.star{ display: none; }
 
@@ -80,6 +80,27 @@
 	}
 }
 
+.builds-nav{
+	display:flex;
+	align-items: center;
+	margin-bottom: 15px;
+
+	button{
+		margin: 0 10px 0 0;
+	}
+
+	.build-count{
+		font-weight: bold;
+		margin-right: 15px;
+	}
+}
+
+.build-list[stats="true"]{
+	.advanced{
+		display: block;
+	}
+}
+
 .new-build-section{
 
 	a{
@@ -121,7 +142,7 @@
 
 				.image-container{
 					width:100%;
-					height:100px;
+					height:75px;
 					border:3px solid $gray;
 					box-sizing: border-box;
 
@@ -159,7 +180,7 @@
 	.selected-pokemon{
 		position:relative;
 		border:1px solid $gray;
-		height:100px;
+		height:75px;
 		overflow:hidden;
 
 		.image{
@@ -193,7 +214,7 @@
 			    flex: 1;
 			    text-transform: uppercase;
 			    text-align: center;
-				max-width: 80%;
+				max-width: 90%;
 				text-shadow: -1px 1px 0 $white,
 							  1px 1px 0 $white,
 							 1px -1px 0 $white,
@@ -223,17 +244,25 @@
 	    justify-content: center;
 
 		div{
-			padding:2px 5px;
+			padding:2px 8px;
 			margin:5px;
 			font-size:12px;
-			background:$accent-color;
 			color:$white;
+			border:1px solid $gray;
+			background:$gray;
+			border-bottom-left-radius: 10px;
+			border-top-right-radius: 10px;
 			cursor:default;
 		}
 	}
 
+	.advanced{
+		display: none;
+	}
+
 	.stats{
 		margin-top:15px;
+		font-size:14px;
 
 		.stat{
 			display:flex;
@@ -250,7 +279,7 @@
 
 			.stat-label{
 				cursor: pointer;
-				padding:4px 10px;
+				padding:2px 10px;
 				border:1px solid $accent-color;
 				color:$accent-color;
 				min-width:80px;
@@ -307,9 +336,12 @@
 		margin-top: 15px;
 	}
 
+	.advanced-stats{
+		margin-top:15px;
+	}
+
 	.level{
 		display: flex;
-		margin: 5px 8px;
 
 		.label{
 			font-weight: bold;
@@ -320,7 +352,6 @@
 
 	.level-slider-wrap{
 		padding: 5px 0 5px 0;
-		margin-bottom: 20px;
 	}
 
 	.held-items{
@@ -383,4 +414,45 @@
 	&[role="supporter"]{ background-color:$supporter-color; }
 	&[role="all_rounder"]{ background-color:$accent-color; }
 	&[role="speedster"]{ background-color:$speedster-color; }
+}
+
+// Responsive styling
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	.build-list{
+
+		.build-select, .new-build-section{
+			width:280px;
+		}
+
+		&[full="true"]{
+			.build-select:nth-last-child(2){
+				margin-right:0;
+			}
+		}
+
+		&[full="false"]{
+			.new-build-section{
+				margin-right:0;
+			}
+		}
+	}
+
+	.build-select{
+		.selected-pokemon{
+			height:100px;
+
+			.container .name{
+				max-width:80%;
+			}
+		}
+
+		.stats{
+			font-size:16px;
+
+			.stat .stat-label{
+				padding:4px 10px;
+			}
+		}
+	}
 }

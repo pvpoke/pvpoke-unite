@@ -6,6 +6,9 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	index = typeof index !== 'undefined' ? index : -1;
 	selectedItem = typeof selectedItem !== 'undefined' ? selectedItem : null;
 
+	// Set content header
+	$content.attr("header", $content.attr("header-"+type));
+
 	let self = this;
 	let modal = new ModalWindow($content);
 	let $form = $(".modal .select-modal");

@@ -11,9 +11,16 @@
 			<h1><?php e("nav_builds"); ?></h1>
 			<p>Create your build below and compare it to other builds or Pokemon.</p>
 
-			<button class="toggle lock-settings on"><?php e('lock_settings'); ?></button>
+			<div class="builds-nav">
+				<div class="build-count">
+					<span class="current">0</span> / <span class="max">4</span>
+				</div>
+				<button class="toggle lock-settings on"><?php e('lock_settings'); ?></button>
+				<button class="toggle show-stats on"><?php e('show_stats'); ?></button>
+			</div>
 
-			<div class="build-list">
+
+			<div class="build-list" stats="true" full="false">
 				<div class="new-build-section">
 					<a class="new-build" href="#">+ Add Build</a>
 				</div>

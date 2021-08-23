@@ -137,7 +137,7 @@
 
 	<!-- Modal windows-->
 
-	<div class="held-item-modal select-modal hide" header="<?php e("held_item"); ?>">
+	<div class="held-item-modal select-modal hide" header="" header-held="<?php e("held_item"); ?>" header-battle="<?php e("battle_item"); ?>" header-move="<?php e("move"); ?>">
 		<div class="selected-item">
 			<div class="image"></div>
 			<div class="name"></div>
