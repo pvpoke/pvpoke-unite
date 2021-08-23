@@ -8,6 +8,8 @@ function Build(id, level){
 	let self = this;
 	let gm = GameMaster.getInstance();
 
+	self.buildId = 0; // This is used for saving to favorites
+	self.isFavorite = false;
 	self.heldItems = [];
 	self.battleItem = null;
 	self.stageId = '';
@@ -122,7 +124,7 @@ function Build(id, level){
 					// Check primary effect
 					if(item.stat == key){
 						if(item.type == "number"){
-							part.value += item.value;
+							part.value += item.value * item.stacks;
 						} else if(item.type == "percent"){
 							part.value += item.value * (parts[0].value / 100);
 						}
@@ -256,6 +258,28 @@ function Build(id, level){
 		}
 
 		return str;
+	}
+
+	// Generate a random ID to be used for favorites storage, or use a given ID
+	self.setBuildId = function(bId){
+		let idLength = 4;
+
+		if(bId){
+			self.buildId = bId;
+		} else{
+			let characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+			let str = '';
+
+			for(var i = 0; i < 4; i++){
+				str += characters.charAt(Math.floor(Math.random() * characters.length));
+			}
+
+			self.buildId = str;
+		}
+
+		self.isFavorite = true;
+
+		return self.buildId;
 	}
 
 	self.setPokemon(id); // Initialize with given ID

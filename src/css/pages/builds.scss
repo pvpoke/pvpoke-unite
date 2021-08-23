@@ -46,7 +46,11 @@
 			    top: 30px;
 
 				&.active{
-					height:110px;
+					height:140px;
+				}
+
+				a.add-to-favorites, a.save-changes{
+					display: none;
 				}
 			}
 

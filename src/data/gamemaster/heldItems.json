@@ -141,12 +141,12 @@
 		"itemId": "sp_atk_specs",
 		"dex": 13,
 		"values": [8, 12, 16, 16],
-		"stat": "spAtk",
+		"stat": "spA",
 		"type": "number",
 		"maxStacks": 6,
 		"boosts": [
 			{
-				"stat": "spAtk",
+				"stat": "spA",
 				"values": [24, 24, 24, 24]
 			}
 		]

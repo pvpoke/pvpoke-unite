@@ -7,8 +7,9 @@ function BuildSelect(element, ctx, selectors){
 	let $el = element;
 	let $pokeSearch = $el.find("input.poke-search");
 	let gm = GameMaster.getInstance();
-	let build;
+	let favorites = Favorites.getInstance();
 	let interface = InterfaceMaster.getInstance();
+	let build;
 	let context = ctx;
 	let buildSelectors = [];
 
@@ -187,6 +188,15 @@ function BuildSelect(element, ctx, selectors){
 
 		// Display share link
 		$el.find(".share-link input").val(host + "builds/" + build.generateURLString());
+
+		// Show or hide add to favorites menu options
+		if(build.isFavorite){
+			$el.find("a.add-to-favorites").hide();
+			$el.find("a.save-changes").css("display", "block");
+		} else{
+			$el.find("a.add-to-favorites").css("display", "block");
+			$el.find("a.save-changes").hide();
+		}
 
 		// Draw progression graph
 
@@ -461,6 +471,17 @@ function BuildSelect(element, ctx, selectors){
 		e.preventDefault();
 		if(context == "builds"){
 			interface.moveBuildToFront(self);
+		}
+	});
+
+	// Save this Pokemon to the favorites list
+
+	$el.find("a.add-to-favorites").on("click", function(e){
+		e.preventDefault();
+		if(context == "builds"){
+			favorites.addBuildToFavorites(build);
+			$el.find(".submenu").removeClass("active");
+			self.update();
 		}
 	});
 

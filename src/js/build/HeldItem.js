@@ -21,7 +21,11 @@ function HeldItem(id){
 	self.values = data.values;
 	self.boosts = [];
 	self.stacks = 1; // Number of times the main value is applied
-	self.maxStacks = 6;
+	self.maxStacks = 1;
+
+	if(data.maxStacks){
+		self.maxStacks = data.maxStacks;
+	}
 
 	for(var i = 0; i < data.boosts.length; i++){
 		self.boosts.push({

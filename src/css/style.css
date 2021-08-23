@@ -401,7 +401,10 @@ input[type=text] {
   top: 30px;
 }
 .build-list .build-select .nav-bar .submenu.active {
-  height: 110px;
+  height: 140px;
+}
+.build-list .build-select .nav-bar .submenu a.add-to-favorites, .build-list .build-select .nav-bar .submenu a.save-changes {
+  display: none;
 }
 .build-list .build-select .nav-bar .options {
   padding: 4px 6px;

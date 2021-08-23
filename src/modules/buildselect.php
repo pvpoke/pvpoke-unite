@@ -11,6 +11,8 @@
 				<div class="submenu">
 					<div class="submenu-wrap">
 						<a class="move-to-front" href="#"><?php e("build_nav_move"); ?></a>
+						<a class="add-to-favorites" href="#"><?php e("build_nav_favorite"); ?></a>
+						<a class="save-changes" href="#"><?php e("build_nav_save_changes"); ?></a>
 						<a class="duplicate" href="#"><?php e("build_nav_duplicate"); ?></a>
 						<a class="delete" href="#"><?php e("build_nav_delete"); ?></a>
 					</div>
