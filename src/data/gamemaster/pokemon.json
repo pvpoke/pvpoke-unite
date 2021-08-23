@@ -1241,7 +1241,7 @@
 			},
 			"slot1": [
 				{
-					"moveId": "feint",
+					"moveId": "feint_absol",
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 8,

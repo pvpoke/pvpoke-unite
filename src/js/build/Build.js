@@ -317,5 +317,16 @@ function generateBuildFromString(str){
 		build.giveBattleItem(new BattleItem(battleItem.itemId));
 	}
 
+	// Check if this build matches a favorite build
+	let favorites = Favorites.getInstance();
+
+	for(var i = 0; i < favorites.list.length; i++){
+		console.log(str + " " + favorites.list[i].str);
+		if(str == favorites.list[i].str){
+			build.setBuildId(favorites.list[i].id);
+			break;
+		}
+	}
+
 	return build;
 }

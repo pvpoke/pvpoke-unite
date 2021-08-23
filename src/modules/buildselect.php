@@ -24,13 +24,17 @@
 	<div class="build-wrap">
 		<div class="poke-select">
 			<input type="text" class="poke-search" placeholder="Search" />
+			<div class="tabs">
+				<a href="#" class="active" value="new"><?php e("build_tab_new"); ?></a>
+				<a href="#" value="favorites"><?php e("build_tab_favorites"); ?></a>
+			</div>
 			<div class="pokemon-list">
-				<div class="pokemon template" pokemon-id="">
-					<div class="image-container role-bg corners">
-						<div class="image"></div>
-					</div>
-					<div class="name"></div>
+			</div>
+			<div class="pokemon template" pokemon-id="">
+				<div class="image-container role-bg corners">
+					<div class="image"></div>
 				</div>
+				<div class="name"></div>
 			</div>
 
 		</div>

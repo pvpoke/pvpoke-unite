@@ -28,15 +28,7 @@ function BuildSelect(element, ctx, selectors){
 
 	this.init = function(){
 
-		$.each(gm.pokemon, function(n, poke){
-			let $pokeEl = $el.find(".pokemon-list .pokemon.template").clone().removeClass("template");
-
-			$pokeEl.find(".name").html(msg(poke.pokemonId));
-			$pokeEl.find(".image-container").attr("role", poke.role);
-			$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
-			$pokeEl.attr("pokemon-id", poke.pokemonId);
-			$el.find(".pokemon-list").append($pokeEl);
-		});
+		self.displayNewPokemonList();
 
 		$pokeSearch.val("");
 	}
@@ -50,6 +42,8 @@ function BuildSelect(element, ctx, selectors){
 		$el.find(".poke-select").show();
 		$el.find(".poke-select input").val('');
 		$el.find(".poke-select .pokemon").show();
+		$el.find("a.save-changes").hide();
+		$el.find("a.add-to-favorites").hide();
 	}
 
 	// Update displayed stats, moves, and items from the selected build
@@ -193,9 +187,11 @@ function BuildSelect(element, ctx, selectors){
 		if(build.isFavorite){
 			$el.find("a.add-to-favorites").hide();
 			$el.find("a.save-changes").css("display", "block");
+			$el.find(".nav-bar .star").show();
 		} else{
 			$el.find("a.add-to-favorites").css("display", "block");
 			$el.find("a.save-changes").hide();
+			$el.find(".nav-bar .star").hide();
 		}
 
 		// Draw progression graph
@@ -302,6 +298,45 @@ function BuildSelect(element, ctx, selectors){
 		}
 	}
 
+	// Display the list of new Pokemon by species
+	self.displayNewPokemonList = function(){
+		 $el.find(".pokemon-list").html("");
+
+		$.each(gm.pokemon, function(n, poke){
+			let $pokeEl = self.createNewPokeSelectElement(poke);
+
+			$el.find(".pokemon-list").append($pokeEl);
+		});
+	}
+
+	// Display the list of new Pokemon by species
+	self.displayFavoritesList = function(){
+		 $el.find(".pokemon-list").html("");
+
+		$.each(favorites.list, function(n, obj){
+			let poke = generateBuildFromString(obj.str);
+			let $pokeEl = self.createNewPokeSelectElement(poke);
+
+			$pokeEl.attr("build-id", obj.id);
+			$pokeEl.attr("build-str", obj.str);
+
+			$el.find(".pokemon-list").append($pokeEl);
+		});
+	}
+
+	// Given a build or Pokemon data element, create a new HTML block for the Pokemon select screen
+
+	self.createNewPokeSelectElement = function(poke){
+		let $pokeEl = $el.find(".pokemon.template").clone().removeClass("template");
+
+		$pokeEl.find(".name").html(msg(poke.pokemonId));
+		$pokeEl.find(".image-container").attr("role", poke.role);
+		$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
+		$pokeEl.attr("pokemon-id", poke.pokemonId);
+
+		return $pokeEl;
+	}
+
 
 	// Return the currently selected build
 
@@ -371,8 +406,8 @@ function BuildSelect(element, ctx, selectors){
 	// Select a Pokemon
 
 	$el.on("click", ".pokemon-list .pokemon", function(e){
-
-		let pokemonId = $(e.target).closest(".pokemon").attr("pokemon-id");
+		let $pokemon = $(e.target).closest(".pokemon");
+		let pokemonId = $pokemon.attr("pokemon-id");
 		let level = 10;
 
 		if(context == "builds"){
@@ -385,7 +420,13 @@ function BuildSelect(element, ctx, selectors){
 			}
 		}
 
-		build = new Build(pokemonId, level);
+		// If this build has an associated Build ID and string, set them;
+		if(! $pokemon.attr("build-id")){
+			build = new Build(pokemonId, level);
+		} else{
+			build = generateBuildFromString($pokemon.attr("build-str"));
+			build.setLevel(level);
+		}
 
 		self.update();
 	});
@@ -471,6 +512,7 @@ function BuildSelect(element, ctx, selectors){
 		e.preventDefault();
 		if(context == "builds"){
 			interface.moveBuildToFront(self);
+			$el.find(".submenu").removeClass("active");
 		}
 	});
 
@@ -482,6 +524,26 @@ function BuildSelect(element, ctx, selectors){
 			favorites.addBuildToFavorites(build);
 			$el.find(".submenu").removeClass("active");
 			self.update();
+		}
+	});
+
+	// Save this Pokemon to the favorites list
+
+	$el.find("a.save-changes").on("click", function(e){
+		e.preventDefault();
+		if(context == "builds"){
+			favorites.saveBuildChanges(build);
+		}
+	});
+
+	// Select one of the tab options for Pokemon selection
+	$el.find(".poke-select .tabs a").on("click", function(e){
+		let val = $(this).attr("value");
+
+		if(val == "new"){
+			self.displayNewPokemonList();
+		} else if(val == "favorites"){
+			self.displayFavoritesList();
 		}
 	});
 

@@ -13,6 +13,8 @@
 	"build_nav_move": "Move to Front",
 	"build_nav_favorite": "Add to Favorites",
 	"build_nav_save_changes": "Save Changes",
+	"build_tab_new": "New",
+	"build_tab_favorites": "My Favorites",
 	"held_item": "Held Item",
 	"held_items": "Held Items",
 	"battle_item": "Battle Item",

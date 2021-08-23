@@ -68,6 +68,15 @@ $("body").on("click", ".toggle", function(e){
 	$(e.target).closest(".toggle").toggleClass("active");
 });
 
+// Tab navigation
+
+$("body").on("click", ".tabs a", function(e){
+	e.preventDefault();
+
+	$(e.target).closest(".tabs").find("a").removeClass("active");
+	$(this).addClass("active");
+});
+
 // Service worker handler
 if ('serviceWorker' in navigator) {
 	console.log("Attempting to register service worker");

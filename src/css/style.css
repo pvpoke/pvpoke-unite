@@ -208,6 +208,26 @@ button.select {
   overflow: hidden;
 }
 
+.tabs {
+  display: flex;
+  margin: 5px 0;
+}
+.tabs a {
+  padding: 5px 10px;
+  font-size: 12px;
+  text-align: center;
+  flex-grow: 1;
+  font-weight: bold;
+  text-decoration: none;
+}
+.tabs a:hover {
+  background: #222222;
+}
+.tabs a.active {
+  background: #9950c5;
+  color: #c8c8c8;
+}
+
 input {
   display: block;
 }
@@ -376,6 +396,16 @@ input[type=text] {
 }
 .build-list .build-select .nav-bar .star {
   display: none;
+  color: #c8c8c8;
+  position: absolute;
+  font-size: 30px;
+  line-height: 30px;
+  margin-left: 5px;
+  -moz-user-select: none;
+  -khtml-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 .build-list .build-select .nav-bar .menu {
   justify-content: flex-end;
@@ -415,18 +445,11 @@ input[type=text] {
   height: 5px;
   margin-bottom: 4px;
 }
-.build-list .build-select:first-of-type .star {
-  display: block;
-  color: #c8c8c8;
-  position: absolute;
-  font-size: 30px;
-  line-height: 30px;
-  margin-left: 5px;
-  -moz-user-select: none;
-  -khtml-user-select: none;
-  -webkit-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+.build-list .build-select:first-of-type {
+  background: #190c20;
+}
+.build-list .build-select:first-of-type .nav-bar {
+  background: #4b1f62;
 }
 
 .builds-nav {

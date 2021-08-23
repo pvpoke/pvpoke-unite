@@ -35,3 +35,26 @@ button.select{
 	border-top-right-radius: 20px;
 	overflow: hidden;
 }
+
+.tabs{
+	display:flex;
+	margin:5px 0;
+
+	a{
+		padding: 5px 10px;
+	    font-size: 12px;
+	    text-align: center;
+	    flex-grow: 1;
+	    font-weight: bold;
+	    text-decoration: none;
+
+		&:hover{
+			background:$gray;
+		}
+
+		&.active{
+			background:$accent-color;
+			color:$white;
+		}
+	}
+}

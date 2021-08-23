@@ -17,7 +17,20 @@
 			height:30px;
 			position: relative;
 
-			.star{ display: none; }
+			.star{
+				display: none;
+			    color: $white;
+			    position: absolute;
+			    font-size: 30px;
+			    line-height: 30px;
+			    margin-left: 5px;
+
+				-moz-user-select: none;
+			    -khtml-user-select: none;
+			    -webkit-user-select: none;
+			    -ms-user-select: none;
+			    user-select: none;
+			}
 
 			.menu{
 				justify-content: flex-end;
@@ -66,19 +79,10 @@
 		}
 
 		&:first-of-type{
-			.star{
-				display: block;
-			    color: $white;
-			    position: absolute;
-			    font-size: 30px;
-			    line-height: 30px;
-			    margin-left: 5px;
+			background:$primary-selector-color;
 
-				-moz-user-select: none;
-			    -khtml-user-select: none;
-			    -webkit-user-select: none;
-			    -ms-user-select: none;
-			    user-select: none;
+			.nav-bar{
+				background:$primary-header-color;
 			}
 		}
 	}

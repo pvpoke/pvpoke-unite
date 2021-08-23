@@ -27,7 +27,24 @@ var Favorites = (function () {
 
 			console.log(object.list);
 
-			// object.saveFavorites();
+			object.saveFavorites();
+		}
+
+		// Add a build to the favorites list, checking for duplicate ID's
+		object.saveBuildChanges = function(build){
+
+			// Find build with the same ID
+			for(var i = 0; i < object.list.length; i++){
+				if(object.list[i].id == build.buildId){
+					object.list[i].str = build.generateURLString();
+
+					break;
+				}
+			}
+
+			console.log(object.list);
+
+			object.saveFavorites();
 		}
 
 		// Return a build from the list with the given build ID, or false if not found
@@ -52,6 +69,7 @@ var Favorites = (function () {
 		object.loadFavorites = function(){
 			if(window.localStorage.getItem("uniteFavoriteBuilds")){
 				object.list = JSON.parse(window.localStorage.getItem("uniteFavoriteBuilds"));
+				console.log("favorites loaded");
 				console.log(object.list);
 			}
 		}
