@@ -174,6 +174,8 @@ function BuildSelect(element, ctx, selectors){
 		// Display battle item
 		if(build.battleItem){
 			$el.find(".battle-item .name").html(build.battleItem.itemName);
+		} else{
+			$el.find(".battle-item .name").html("");
 		}
 
 		// Display moves

@@ -101,6 +101,12 @@
 	}
 }
 
+.build-list[full="true"]{
+	a.duplicate{
+		display:none;
+	}
+}
+
 .new-build-section{
 
 	a{

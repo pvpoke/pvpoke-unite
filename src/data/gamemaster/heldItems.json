@@ -1,5 +1,18 @@
 [
 	{
+		"itemId": "none",
+		"dex": 0,
+		"values": [0, 0, 0, 0],
+		"stat": "shield",
+		"type": "percent",
+		"boosts": [
+			{
+				"stat": "hp",
+				"values": [450, 450, 450, 450]
+			}
+		]
+	},
+	{
 		"itemId": "score_shield",
 		"dex": 5,
 		"values": [5, 7.5, 10, 10],

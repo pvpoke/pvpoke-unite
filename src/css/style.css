@@ -443,6 +443,10 @@ input[type=text] {
   display: block;
 }
 
+.build-list[full=true] a.duplicate {
+  display: none;
+}
+
 .new-build-section a {
   display: block;
   text-decoration: none;

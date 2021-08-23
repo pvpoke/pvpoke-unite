@@ -75,6 +75,9 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	if(selectedItem){
 		$form.find(".item[value=\""+selectedItem[idKey]+"\"]").addClass("selected");
 		updateHeldItemDetails();
+	} else{
+		$form.find(".item[value=\"none\"]").addClass("selected");
+		updateHeldItemDetails();
 	}
 
 	// Hide the selection options if only 1 option

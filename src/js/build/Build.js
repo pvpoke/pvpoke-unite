@@ -178,6 +178,14 @@ function Build(id, level){
 	self.giveHeldItem = function(item, slot){
 		slot = typeof slot !== 'undefined' ? slot : self.heldItems.length;
 
+		// When given a "none" item, remove the current item or do nothing
+		if(item.itemId == "none"){
+			if(slot < self.heldItems.length){
+				self.heldItems.splice(slot, 1);
+			}
+			return;
+		}
+
 		if(slot >= self.heldItems.length){
 			self.heldItems.push(item);
 		} else{
@@ -188,7 +196,11 @@ function Build(id, level){
 	// Give this Pokemon a specific battle item
 
 	self.giveBattleItem = function(item){
-		self.battleItem = item;
+		if(item.itemId != "none"){
+			self.battleItem = item;
+		} else{
+			self.battleItem = null;
+		}
 	}
 
 	// Select a move of a given ID for a given slot

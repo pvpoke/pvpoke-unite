@@ -42,5 +42,7 @@
     "fluffy_tail": "Fluffy Tail",
     "fluffy_tail_description": "Leaves wild Pokemon unable to act for a short time and also increases damage dealt to those Pokemon.",
     "slow_smoke": "Slow Smoke",
-    "slow_smoke_description": "Creates a cloud of smoke that greatly decreases the movement speed of opposing Pokemon for a short time."
+    "slow_smoke_description": "Creates a cloud of smoke that greatly decreases the movement speed of opposing Pokemon for a short time.",
+	"none": "No Selection",
+    "none_description": "Select an item below."
 }

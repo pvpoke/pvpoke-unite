@@ -1,5 +1,10 @@
 [
 	{
+		"itemId": "none",
+		"dex": 0,
+		"cooldown": 0
+	},
+	{
 		"itemId": "eject_button",
 		"dex": 1,
 		"cooldown": 70
