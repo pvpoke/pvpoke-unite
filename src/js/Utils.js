@@ -5,6 +5,10 @@
 // Round a float to a certain number of digits
 
 function displayFloat(number, digits){
+	if(digits == 0){
+		return Math.round(number);
+	}
+
 	number = number * (10 * digits);
 	number = Math.round(number);
 	number /= (10 * digits);

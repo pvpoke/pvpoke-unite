@@ -97,6 +97,26 @@
 		border-bottom: 1px solid $gray;
 		line-height: 20px;
 		font-size: 14px;
+
+		.value, .boosts span{
+			font-weight: bold;
+			color:$boosted-color;
+		}
+
+		.boosts{
+			margin-top:15px;
+
+			.boost{
+				background:$gray;
+				margin: 5px 0;
+				padding: 2px 10px;
+
+				span{
+					display: inline-block;
+					min-width:35px;
+				}
+			}
+		}
 	}
 
 	.item-list{

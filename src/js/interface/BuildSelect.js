@@ -559,8 +559,6 @@ function BuildSelect(element, ctx, selectors){
 		let parts = build.stats[key].parts;
 		let $content = $("<div></div>");
 
-		console.log(build.stats[key]);
-
 		for(var i = 0; i < parts.length; i++){
 			if(i > 0){
 				$content.append(" + ");

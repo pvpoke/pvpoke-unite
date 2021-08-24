@@ -118,9 +118,17 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let $item = $form.find(".item.selected");
 		let $selectedItem = $form.find(".selected-item");
 		let $selecteDescription = $form.find(".selected-description");
+		let itemId = $item.attr("value");
+		let descriptionKey = $item.attr("value") + "_description";
 
 		$selectedItem.find(".name").html($item.find(".name").html());
-		$selectedItem.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+$item.attr("value")+".png)");
-		$selecteDescription.html(msg($item.attr("value") + "_description"));
+		$selectedItem.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+itemId+".png)");
+
+		if(type == "held"){
+			let heldItem = new HeldItem(itemId);
+			$selecteDescription.html(heldItem.descriptionHTML(build));
+		} else{
+			$selecteDescription.html(msg(descriptionKey));
+		}
 	}
 }

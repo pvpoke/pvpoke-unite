@@ -22,7 +22,7 @@
     "exp_share": "Exp Share",
     "exp_share_description": "While the Pokemon has the fewest Exp. Points on its team, it gains %1$d more Exp. Points per second. In addition, when a nearby teammates defeats a wild Pokemon, that teammate gains slightly more Exp. Points.",
     "shell_bell": "Shell Bell",
-    "shell_bell_description": "When the Pokemon hits with a move, it recovers a minimum of 60 HP. The higher the Pokemon's Sp. Atk, the more HP it recovers.",
+    "shell_bell_description": "When the Pokemon hits with a move, it recovers a minimum of %1$d HP. The higher the Pokemon's Sp. Atk, the more HP it recovers.",
     "leftovers": "Leftovers",
     "leftovers_description": "When the Pokemon is not in combat, it recovers %1$d of its max HP every second.",
     "aeos_cookie": "Aeos Cookie",

@@ -16,7 +16,8 @@ function HeldItem(id){
 	self.dex = data.dex; // This number is used in URl strings
 	self.stat = data.stat;
 	self.type = data.type;
-	self.level = 1; // In the future this will be adjustable
+	self.level = 30; // In the future this will be adjustable
+	self.levelIndex = 3;
 	self.value = 0;
 	self.values = data.values;
 	self.boosts = [];
@@ -34,7 +35,6 @@ function HeldItem(id){
 			values: data.boosts[i].values
 		});
 	}
-
 	// Set the item's level and the values of its effects and boosts
 	self.setLevel = function(value){
 		let level = parseInt(value);
@@ -44,14 +44,75 @@ function HeldItem(id){
 		}
 
 		self.level = level;
+		self.levelIndex = Math.floor(self.level / 10);
 
 		// Set the correct base effect value
-		let valueIndex = Math.floor(self.level / 10);
-		self.value = self.values[valueIndex];
+		self.value = self.values[self.levelIndex];
 
 		for(var i = 0; i < self.boosts.length; i++){
-			self.boosts[i].value = self.boosts[i].values[valueIndex];
+			self.boosts[i].value = self.boosts[i].values[self.levelIndex];
 		}
+	}
+
+	// Insert values into a dynamic string
+
+	self.descriptionHTML = function(build){
+		let $content = $("<div></div>");
+		let str = msg(self.itemId+"_description");
+		let valueStr = '';
+
+		valueStr = valueStr + self.values[self.levelIndex];
+
+		if(self.type == "percent"){
+			valueStr += '%';
+		}
+
+		// This code displays exact values of percentage point bonuses
+		// Will implement fully later because it requires applying the item to a build
+
+		/*switch(self.itemId){
+			case "score_shield":
+			case "assault_vest":
+			case "buddy_barrier":
+			case "leftovers":
+				let shieldValue = build.stats.hp.value * (self.value / 100);
+
+				valueStr += ' (' + displayFloat(shieldValue, 0) + ')';
+			break;
+
+			case "wise_glasses":
+				let spAtkBoost = build.stats.spA.parts[0].value * (self.value / 100);
+
+				console.log(self.value);
+
+				valueStr += ' (' + displayFloat(spAtkBoost, 0) + ')';
+			break;
+		}*/
+
+		valueStr = '<span class="value">'+valueStr + '</span>';
+
+		str = str.replace("%1$d", valueStr);
+
+		$content.append(str);
+
+		// Add secondary bonuses
+
+		let $secondary = $('<div class="boosts"></div>');
+
+		for(var i = 0; i < self.boosts.length; i++){
+			let boostStr = self.boosts[i].value;
+
+			if(self.boosts[i].value > 0){
+				boostStr = "+" + boostStr;
+			}
+
+			$secondary.append('<div class="boost corners"><span>'+boostStr + '</span> ' + msg(self.boosts[i].stat) + '</div>');
+		}
+
+		$content.append($secondary);
+
+
+		return $content;
 	}
 
 	self.setLevel(30);

@@ -95,7 +95,7 @@
 		"itemId": "buddy_barrier",
 		"dex": 2,
 		"stat": "shield",
-		"type": "number",
+		"type": "percent",
 		"values": [20, 30, 40, 40],
 		"boosts": [
 			{
