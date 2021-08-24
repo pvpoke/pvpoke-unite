@@ -43,6 +43,13 @@
     "fluffy_tail_description": "Leaves wild Pokemon unable to act for a short time and also increases damage dealt to those Pokemon.",
     "slow_smoke": "Slow Smoke",
     "slow_smoke_description": "Creates a cloud of smoke that greatly decreases the movement speed of opposing Pokemon for a short time.",
-	"none": "No Selection",
-    "none_description": "Select an item below."
+    "none": "No Selection",
+    "none_description": "Select an item below.",
+    "basic_attack_damage": "Basic Attack Damage",
+    "basic_attack_speed": "Basic Attack Speed",
+    "critical_hit_rate": "Critical Hit Rate",
+    "critical_hit_damage": "Critical Hit Damage",
+    "unite_move_charge_rate": "Unite Move Charge Rate",
+    "move_cooldown": "Move Cooldown",
+    "hp_recovery": "HP Recovery"
 }

@@ -90,7 +90,7 @@ function BuildSelect(element, ctx, selectors){
 
 
 		// Display Pokemon's stats
-		let statsToDisplay = ["hp", "atk", "def", "spA", "spD", "speed"];
+		let statsToDisplay = ["hp", "atk", "def", "sp_atk", "sp_def", "speed"];
 
 		for(var i = 0; i < statsToDisplay.length; i++){
 			let key = statsToDisplay[i];
@@ -118,8 +118,8 @@ function BuildSelect(element, ctx, selectors){
 				{ "stat": "hp", "element": ".stat.hp" },
 				{ "stat": "atk", "element": ".stat.atk" },
 				{ "stat": "def", "element": ".stat.def" },
-				{ "stat": "spA", "element": ".stat.spa" },
-				{ "stat": "spD", "element": ".stat.spd" }
+				{ "stat": "sp_atk", "element": ".stat.sp_atk" },
+				{ "stat": "sp_def", "element": ".stat.sp_def" }
 			];
 
 			if((primary != build) && primary){

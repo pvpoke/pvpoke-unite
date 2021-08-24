@@ -5,12 +5,7 @@
 		"values": [0, 0, 0, 0],
 		"stat": "shield",
 		"type": "percent",
-		"boosts": [
-			{
-				"stat": "hp",
-				"values": [450, 450, 450, 450]
-			}
-		]
+		"boosts": []
 	},
 	{
 		"itemId": "score_shield",
@@ -29,7 +24,7 @@
 		"itemId": "muscle_band",
 		"dex": 3,
 		"values": [1, 2, 3, 3],
-		"stat": "basicAttackDamage",
+		"stat": "basic_attack_damage",
 		"type": "percent",
 		"boosts": [
 			{
@@ -37,7 +32,8 @@
 				"values": [15, 15, 15, 15]
 			},
 			{
-				"stat": "basicAttackSpeed",
+				"stat": "basic_attack_speed",
+				"type": "percent",
 				"values": [7.5, 7.5, 7.5, 7.5]
 			}
 		]
@@ -46,11 +42,11 @@
 		"itemId": "wise_glasses",
 		"dex": 4,
 		"values": [3, 5, 7, 7],
-		"stat": "spA",
+		"stat": "sp_atk",
 		"type": "percent",
 		"boosts": [
 			{
-				"stat": "spA",
+				"stat": "sp_atk",
 				"values": [39, 39, 39, 39]
 			}
 		]
@@ -63,12 +59,12 @@
 		"type": "number",
 		"boosts": [
 			{
-				"stat": "criticalHitRate",
+				"stat": "critical_hit_rate",
 				"type": "percent",
 				"values": [6, 6, 6, 6]
 			},
 			{
-				"stat": "criticalHitDamage",
+				"stat": "critical_hit_damage",
 				"type": "percent",
 				"values": [12, 12, 12, 12]
 			}
@@ -86,7 +82,7 @@
 				"values": [270, 270, 270, 270]
 			},
 			{
-				"stat": "spD",
+				"stat": "sp_def",
 				"values": [42, 42, 42, 42]
 			}
 		]
@@ -108,16 +104,16 @@
 		"itemId": "energy_amplifier",
 		"dex": 11,
 		"values": [21, 21, 21, 21],
-		"stat": "energyAmplifierEffect",
+		"stat": "energy_amplifier_effect",
 		"type": "percent",
 		"boosts": [
 			{
-				"stat": "uniteMoveChargeRate",
+				"stat": "unite_move_charge_rate",
 				"type": "percent",
 				"values": [6, 6, 6, 6]
 			},
 			{
-				"stat": "moveCooldown",
+				"stat": "move_cooldown",
 				"type": "percent",
 				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
@@ -141,12 +137,12 @@
 		"itemId": "sp_atk_specs",
 		"dex": 13,
 		"values": [8, 12, 16, 16],
-		"stat": "spA",
+		"stat": "sp_atk",
 		"type": "number",
 		"maxStacks": 6,
 		"boosts": [
 			{
-				"stat": "spA",
+				"stat": "sp_atk",
 				"values": [24, 24, 24, 24]
 			}
 		]
@@ -155,7 +151,7 @@
 		"itemId": "rocky_helmet",
 		"dex": 8,
 		"values": [3, 4, 5, 5],
-		"stat": "rockyHelmetEffect",
+		"stat": "rocky_helmet_effect",
 		"type": "percent",
 		"boosts": [
 			{
@@ -172,7 +168,7 @@
 		"itemId": "exp_share",
 		"dex": 8,
 		"values": [2, 3, 4, 4],
-		"stat": "expGain",
+		"stat": "exp_gain",
 		"type": "number",
 		"boosts": [
 			{
@@ -193,11 +189,12 @@
 		"values": [45, 60, 75, 75],
 		"boosts": [
 			{
-				"stat": "spA",
+				"stat": "sp_atk",
 				"values": [24, 24, 24, 24]
 			},
 			{
-				"stat": "moveCooldown",
+				"stat": "move_cooldown",
+				"type": "percent",
 				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
 		]
@@ -214,7 +211,7 @@
 				"values": [240, 240, 240, 240]
 			},
 			{
-				"stat": "hpRecovery",
+				"stat": "hp_recovery",
 				"values": [9, 9, 9, 9]
 			}
 		]

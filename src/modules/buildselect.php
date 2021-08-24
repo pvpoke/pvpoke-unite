@@ -69,22 +69,22 @@
 						<div class="stat-difference"></div>
 					</div>
 					<div class="stat atk">
-						<div class="stat-label" value="atk"><?php e("attack"); ?></div>
+						<div class="stat-label" value="atk"><?php e("atk"); ?></div>
 						<div class="stat-value tooltippable">0</div>
 						<div class="stat-difference"></div>
 					</div>
 					<div class="stat def">
-						<div class="stat-label" value="def"><?php e("defense"); ?></div>
+						<div class="stat-label" value="def"><?php e("def"); ?></div>
 						<div class="stat-value tooltippable">0</div>
 						<div class="stat-difference"></div>
 					</div>
-					<div class="stat spa">
-						<div class="stat-label" value="spA"><?php e("special_attack"); ?></div>
+					<div class="stat sp_atk">
+						<div class="stat-label" value="sp_atk"><?php e("sp_atk"); ?></div>
 						<div class="stat-value tooltippable">0</div>
 						<div class="stat-difference"></div>
 					</div>
-					<div class="stat spd">
-						<div class="stat-label" value="spD"><?php e("special_defense"); ?></div>
+					<div class="stat sp_def">
+						<div class="stat-label" value="sp_def"><?php e("sp_def"); ?></div>
 						<div class="stat-value tooltippable">0</div>
 						<div class="stat-difference"></div>
 					</div>

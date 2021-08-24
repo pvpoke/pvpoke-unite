@@ -89,8 +89,8 @@ function Build(id, level){
 			hp: { value: 0, parts: []},
 			atk: { value: 0, parts: []},
 			def: { value: 0, parts: []},
-			spA: { value: 0, parts: []},
-			spD: { value: 0, parts: []},
+			sp_atk: { value: 0, parts: []},
+			sp_def: { value: 0, parts: []},
 			speed: { value: 0, parts: []}
 		};
 

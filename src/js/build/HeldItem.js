@@ -32,7 +32,8 @@ function HeldItem(id){
 		self.boosts.push({
 			stat: data.boosts[i].stat,
 			value: 0,
-			values: data.boosts[i].values
+			values: data.boosts[i].values,
+			type: data.boosts[i].type
 		});
 	}
 	// Set the item's level and the values of its effects and boosts
@@ -105,6 +106,11 @@ function HeldItem(id){
 			if(self.boosts[i].value > 0){
 				boostStr = "+" + boostStr;
 			}
+
+			if(self.boosts[i].type == "percent"){
+				boostStr += '%';
+			}
+
 
 			$secondary.append('<div class="boost corners"><span>'+boostStr + '</span> ' + msg(self.boosts[i].stat) + '</div>');
 		}
