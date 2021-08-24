@@ -1,0 +1,21 @@
+
+.tooltip{
+	position:absolute;
+	display:none;
+	padding:6px 10px;
+	border:1px solid $white;
+	background:$black;
+	font-size:12px;
+	max-width:250px;
+
+	&[context="stat-parts"]{
+		.value{
+			font-size:14px;
+			font-weight: bold;
+		}
+
+		.stat-part:not(:first-of-type){
+			color:$boosted-color;
+		}
+	}
+}

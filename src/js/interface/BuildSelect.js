@@ -17,6 +17,8 @@ function BuildSelect(element, ctx, selectors){
 	let statCanvas = $el.find("canvas.progression")[0];
 	let statCtx = statCanvas.getContext("2d");
 
+	let tooltip = Tooltip.getInstance();
+
 	// Used for animating images on level change
 	let previousStage = '';
 
@@ -545,6 +547,28 @@ function BuildSelect(element, ctx, selectors){
 		} else if(val == "favorites"){
 			self.displayFavoritesList();
 		}
+	});
+
+	// Show tooltip info for stats
+	$el.find(".stats .stat-value").on("mouseover", function(e){
+		let key = $(this).parent().find(".stat-label").attr("value");
+
+		if(! key)
+			return;
+
+		let parts = build.stats[key].parts;
+		let $content = $("<div></div>");
+
+		console.log(build.stats[key]);
+
+		for(var i = 0; i < parts.length; i++){
+			if(i > 0){
+				$content.append(" + ");
+			}
+			$content.append("<span class=\"stat-part\"><span class=\"value\">"+displayFloat(parts[i].value, 1)+"</span> "+msg(parts[i].source)+"</span>");
+		}
+
+		tooltip.setContent($content, "stat-parts");
 	});
 
 

@@ -31,6 +31,8 @@
 			</div>
 		</div>
 	</div>
+
+	<div class="tooltip corners"></div>
 </div>
 
 <script src="<?php echo $WEB_ROOT; ?>js/Utils.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -40,6 +42,7 @@
 <script src="<?php echo $WEB_ROOT; ?>js/build/BattleItem.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Move.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Build.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Tooltip.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/SelectWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -48,5 +51,6 @@
 
 <?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
 <?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
 
 <?php require_once 'footer.php'; ?>

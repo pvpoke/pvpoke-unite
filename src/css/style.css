@@ -376,6 +376,23 @@ input[type=text] {
   height: 25px;
 }
 
+.tooltip {
+  position: absolute;
+  display: none;
+  padding: 6px 10px;
+  border: 1px solid #c8c8c8;
+  background: #141414;
+  font-size: 12px;
+  max-width: 250px;
+}
+.tooltip[context=stat-parts] .value {
+  font-size: 14px;
+  font-weight: bold;
+}
+.tooltip[context=stat-parts] .stat-part:not(:first-of-type) {
+  color: #f0d50a;
+}
+
 .build-list {
   display: flex;
   width: 100%;
