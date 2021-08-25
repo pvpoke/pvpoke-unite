@@ -74,6 +74,11 @@ var Favorites = (function () {
 			}
 		}
 
+		// For testing purposes, clear the favorites selection
+		object.clearFavorites = function(){
+			window.localStorage.setItem("uniteFavoriteBuilds", JSON.stringify([]));
+		}
+
 		object.loadFavorites();
 
         return object;

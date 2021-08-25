@@ -160,7 +160,7 @@ var InterfaceMaster = (function () {
 					let build = buildSelectors[i].getBuild();
 
 					if(build){
-						buildStrArr.push(build.generateURLString());
+						buildStrArr.push(build.generateURLString(true));
 					}
 				}
 

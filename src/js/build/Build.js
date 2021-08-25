@@ -209,7 +209,7 @@ function Build(id, level){
 
 	self.selectMove = function(moveId, slot){
 		let moveArr = self.movePool[slot];
-
+		
 		for(var i = 0; i < moveArr.length; i++){
 			if(moveArr[i].moveId == moveId){
 				self.moves[slot] = new Move(slot, moveArr[i]);
@@ -219,13 +219,13 @@ function Build(id, level){
 	}
 
 	// Generate a string to be parsed for URLs
-	// Format: speciesId - level - move1index move2index - heldItem1 - heldItem2 - heldItem3 - battleItem
+	// Format: speciesId - move1index move2index - heldItem1 - heldItem2 - heldItem3 - battleItem - level
 	// venusaur-15-01-5-6-3-9
 
-	self.generateURLString = function(){
-		let str = self.pokemonId;
+	self.generateURLString = function(includeLevel){
+		includeLevel = typeof includeLevel !== 'undefined' ? includeLevel : false;
 
-		str += '-' + self.level;
+		let str = self.pokemonId;
 
 		// Add 1st move selection
 		for(var i = 0; i < self.movePool.slot1.length; i++){
@@ -255,6 +255,10 @@ function Build(id, level){
 			str += "-" + self.battleItem.dex;
 		} else{
 			str += "-0";
+		}
+
+		if(includeLevel){
+			str += '-' + self.level;
 		}
 
 		return str;
@@ -296,14 +300,23 @@ function generateBuildFromString(str){
 	let arr = str.split("-");
 	let gm = GameMaster.getInstance();
 
-	if(arr.length < 7)
+	console.log(str);
+
+	if(arr.length < 6)
 		return false;
 
-	let build = new Build(arr[0], parseInt(arr[1]));
-	let heldItems = [arr[4], arr[5], arr[6]];
+	let level = 10;
 
-	build.selectMove(build.movePool.slot1[arr[2]].moveId, "slot1"); // Human readable code doesn't matter if you commit to never reading your code
-	build.selectMove(build.movePool.slot2[arr[3]].moveId, "slot2");
+	if(arr.length >= 8){
+		level = parseInt(arr[7]);
+	}
+
+
+	let build = new Build(arr[0], level);
+	let heldItems = [arr[3], arr[4], arr[5]];
+
+	build.selectMove(build.movePool.slot1[arr[1]].moveId, "slot1"); // Human readable code doesn't matter if you commit to never reading your code
+	build.selectMove(build.movePool.slot2[arr[2]].moveId, "slot2");
 
 	for(var i = 0; i < heldItems.length; i++){
 		if(heldItems[i] > 0){
@@ -312,8 +325,8 @@ function generateBuildFromString(str){
 		}
 	}
 
-	if(arr[7] > 0){
-		let battleItem = gm.getBattleItemByDex(arr[7]);
+	if(arr[6] > 0){
+		let battleItem = gm.getBattleItemByDex(arr[6]);
 		build.giveBattleItem(new BattleItem(battleItem.itemId));
 	}
 
@@ -321,8 +334,9 @@ function generateBuildFromString(str){
 	let favorites = Favorites.getInstance();
 
 	for(var i = 0; i < favorites.list.length; i++){
-		console.log(str + " " + favorites.list[i].str);
-		if(str == favorites.list[i].str){
+		let newStr = build.generateURLString();
+
+		if(newStr == favorites.list[i].str){
 			build.setBuildId(favorites.list[i].id);
 			break;
 		}
