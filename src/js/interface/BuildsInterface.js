@@ -60,6 +60,11 @@ var InterfaceMaster = (function () {
 								for(var i = 0; i < arr.length; i++){
 									let build = generateBuildFromString(arr[i]);
 
+									gtag('event', build.pokemonId, {
+									  'event_category' : 'Pokemon Select',
+									  'event_label': build.generateURLString()
+									});
+
 									if(build){
 										self.addNewBuild(build);
 									}

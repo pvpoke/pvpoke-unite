@@ -278,6 +278,13 @@ function BuildSelect(element, ctx, selectors){
 		let item = new HeldItem(itemId);
 		build.giveHeldItem(item, itemIndex);
 
+		if(itemId != "none"){
+			gtag('event', build.pokemonId, {
+			  'event_category' : 'Held Item',
+			  'event_label' : itemId
+			});
+		}
+
 		self.update();
 	}
 
@@ -287,6 +294,13 @@ function BuildSelect(element, ctx, selectors){
 		let item = new BattleItem(itemId);
 		build.giveBattleItem(item);
 
+		if(itemId != "none"){
+			gtag('event', build.pokemonId, {
+			  'event_category' : 'Battle Item',
+			  'event_label' : itemId
+			});
+		}
+
 		self.update();
 	}
 
@@ -295,6 +309,11 @@ function BuildSelect(element, ctx, selectors){
 	self.selectMove = function(moveId, moveSlot){
 		if((moveSlot == "slot1")||(moveSlot == "slot2")){
 			build.selectMove(moveId, moveSlot);
+
+			gtag('event', build.pokemonId, {
+			  'event_category' : 'Move Select',
+			  'event_label' : moveId
+			});
 
 			self.update();
 		}
@@ -429,6 +448,12 @@ function BuildSelect(element, ctx, selectors){
 			build = generateBuildFromString($pokemon.attr("build-str"));
 			build.setLevel(level);
 		}
+
+		// Log a Pokemon selection event
+
+		gtag('event', pokemonId, {
+		  'event_category' : 'Pokemon Select'
+		});
 
 		self.update();
 	});
