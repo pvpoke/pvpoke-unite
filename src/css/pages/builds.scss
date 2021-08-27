@@ -389,10 +389,11 @@
 		border-radius: 4px;
 		box-sizing: border-box;
 		height:50px;
+		background-size: 100%;
+	}
 
-		&:hover{
-			background-color: $gray;
-		}
+	.held-item:hover, .battle-item:hover, .move:hover{
+		background-color: $gray;
 	}
 
 	.move,
@@ -410,6 +411,11 @@
 		&:hover{
 			background:$gray;
 		}
+	}
+
+	.move .image{
+		border-radius: 100px;
+		background-color:$white;
 	}
 
 	h4{

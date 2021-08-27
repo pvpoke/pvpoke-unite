@@ -129,4 +129,16 @@
 			height:25px;
 		}
 	}
+
+	&[type="move"]{
+		.image{
+			border-radius: 100px;
+			background-color:$white;
+		}
+
+		.selected-item .image{
+			background-size:92%;
+			background-position: center center;
+		}
+	}
 }

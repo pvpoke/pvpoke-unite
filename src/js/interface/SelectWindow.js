@@ -15,6 +15,8 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	let gm = GameMaster.getInstance();
 	let idKey = "itemId";
 
+	$form.attr("type", type);
+
 	if(type == "move"){
 		idKey = "moveId";
 	}
@@ -47,6 +49,20 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 
 	for(var i = 0; i < itemArray.length; i++){
 		let itemId = itemArray[i][idKey];
+		let assetId = itemId;
+
+		if(type == "move"){
+			if(itemIndex == "basic"){
+				assetId = "basic";
+			} else if(itemIndex == "passive"){
+				assetId = "passive";
+			} else if(itemIndex == "unite"){
+				assetId = "unite";
+			} else{
+				assetId = itemArray[i].category;
+			}
+
+		}
 
 		let $item = $form.find(".item.template").clone().removeClass("template");
 		let displayId = itemId;
@@ -56,8 +72,9 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		}
 
 		$item.find(".name").html(msg(displayId));
-		$item.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+itemId+".png)");
+		$item.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+assetId+".png)");
 		$item.attr("value", itemId);
+		$item.attr("asset-id", assetId);
 
 		if(type == "held"){
 			if(build.hasHeldItem(itemId)){
@@ -119,10 +136,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let $selectedItem = $form.find(".selected-item");
 		let $selecteDescription = $form.find(".selected-description");
 		let itemId = $item.attr("value");
+		let assetId = $item.attr("asset-id");
 		let descriptionKey = $item.attr("value") + "_description";
 
 		$selectedItem.find(".name").html($item.find(".name").html());
-		$selectedItem.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+itemId+".png)");
+		$selectedItem.find(".image").css("background-image", "url("+host+"img/"+imgDir+"/"+assetId+".png)");
 
 		if(type == "held"){
 			let heldItem = new HeldItem(itemId);

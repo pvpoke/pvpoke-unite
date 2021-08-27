@@ -380,7 +380,7 @@ input[type=text] {
 }
 .select-modal .selected-description .boosts .boost span {
   display: inline-block;
-  min-width: 35px;
+  min-width: 45px;
 }
 .select-modal .item-list {
   max-height: 340px;
@@ -390,6 +390,14 @@ input[type=text] {
   border: none;
   width: 25px;
   height: 25px;
+}
+.select-modal[type=move] .image {
+  border-radius: 100px;
+  background-color: #c8c8c8;
+}
+.select-modal[type=move] .selected-item .image {
+  background-size: 92%;
+  background-position: center center;
 }
 
 .tooltip {
@@ -741,8 +749,9 @@ input[type=text] {
   border-radius: 4px;
   box-sizing: border-box;
   height: 50px;
+  background-size: 100%;
 }
-.build-select .held-item:hover, .build-select .battle-item .image:hover, .build-select .move .image:hover {
+.build-select .held-item:hover, .build-select .battle-item:hover, .build-select .move:hover {
   background-color: #222222;
 }
 .build-select .move,
@@ -760,6 +769,10 @@ input[type=text] {
 .build-select .move:hover,
 .build-select .battle-item:hover {
   background: #222222;
+}
+.build-select .move .image {
+  border-radius: 100px;
+  background-color: #c8c8c8;
 }
 .build-select h4 {
   margin: 25px 0 5px 0;

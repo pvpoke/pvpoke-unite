@@ -171,14 +171,19 @@ function BuildSelect(element, ctx, selectors){
 		// Display battle item
 		if(build.battleItem){
 			$el.find(".battle-item .name").html(build.battleItem.itemName);
+			$el.find(".battle-item .image").html("");
+			$el.find(".battle-item .image").css("background-image", "url("+host+"img/battleitems/"+build.battleItem.itemId+".png)");
 		} else{
 			$el.find(".battle-item .name").html("");
+			$el.find(".battle-item .image").html("+");
+			$el.find(".battle-item .image").css("background-image", "none");
 		}
 
 		// Display moves
 		for(var key in build.moves){
 			if(build.moves.hasOwnProperty(key)){
 				$el.find(".move[slot=\""+key+"\"] .name").html(build.moves[key].moveName);
+				$el.find(".move[slot=\""+key+"\"] .image").css("background-image", "url("+host+"img/moves/"+build.moves[key].assetId+".png)");
 			}
 		}
 
