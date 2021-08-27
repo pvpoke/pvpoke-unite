@@ -6,6 +6,7 @@ $dot-space: 22px;
 
 $max-container-width: 1200px;
 
+// Primary site colors
 $accent-color:#9950c5;
 $primary-selector-color:#190c20;
 $primary-header-color:#4b1f62;
@@ -13,10 +14,12 @@ $black: #141414;
 $gray: #222222;
 $white: #c8c8c8;
 
+// Secondary site colors
 $positive-color:#91c74c;
 $negative-color:#c7524c;
 $boosted-color:#f0d50a;
 
+// Pokemon role colors
 $attacker-color:#f16c39;
 $defender-color:#abee5a;
 $supporter-color:#fecc52;
@@ -26,8 +29,40 @@ $speedster-color:#29a5e3;
 $desktop-breakpoint:768px;
 $gutter-width:8px;
 
-/*
-$background-color: rgb(240, 240, 240);
-
-$dot-color: rgb(210,210,210);
-*/
+// Move symbol colors
+$color-bug-dark:#9bc231;
+$color-bug-light:#aec92c;
+$color-dark-dark:#52505e;
+$color-dark-light:#6e7681;
+$color-dragon-dark:#1065b6;
+$color-dragon-light:#067fc4;
+$color-electric-dark:#f3d43e;
+$color-electric-light:#fedf6b;
+$color-fairy-dark:#eb8de1;
+$color-fairy-light:#f6a7e8;
+$color-fighting-dark:#ce3d64;
+$color-fighting-light:#e34448;
+$color-fire-dark:#fe9d59;
+$color-fire-light:#feb04b;
+$color-flying-dark:#91a8de;
+$color-flying-light:#a7c1f2;
+$color-ghost-dark:#5069ac;
+$color-ghost-light:#7571d0;
+$color-grass-dark:#5fbb50;
+$color-grass-light:#59c079;
+$color-ground-dark:#d87b40;
+$color-ground-light:#d2976b;
+$color-ice-dark:#74d3bd;
+$color-ice-light:#94ddd6;
+$color-normal-dark:#909aa3;
+$color-normal-light:#a3a49e;
+$color-poison-light:#a662c7;
+$color-poison-dark:#c662d6;
+$color-psychic-dark:#f2726f;
+$color-psychic-light:#fda194;
+$color-rock-dark:#c7b98c;
+$color-rock-light:#d7cd90;
+$color-steel-dark:#50879c;
+$color-steel-light:#5aafb4;
+$color-water-dark:#4f91db;
+$color-water-light:#6ac7e9;

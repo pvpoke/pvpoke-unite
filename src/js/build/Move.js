@@ -9,6 +9,11 @@ function Move(slot, data){
 	self.moveId = data.moveId;
 	self.unlockLevel = 1;
 	self.upgradeLevel = 16;
+	self.color = "";
+
+	if(data.color){
+		self.color = data.color;
+	}
 
 	switch(slot){
 		case "basic":

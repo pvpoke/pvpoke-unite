@@ -1,0 +1,20 @@
+/* TYPE COLORS */
+
+[color="bug"]{ @include gradient($color-bug-dark, $color-bug-light); }
+[color="dark"]{ @include gradient($color-dark-dark, $color-dark-light); }
+[color="dragon"]{ @include gradient($color-dragon-dark, $color-dragon-light); }
+[color="electric"]{ @include gradient($color-electric-dark, $color-electric-light); }
+[color="fairy"]{ @include gradient($color-fairy-dark, $color-fairy-light); }
+[color="fighting"]{ @include gradient($color-fighting-dark, $color-fighting-light); }
+[color="fire"]{ @include gradient($color-fire-dark, $color-fire-light); }
+[color="flying"]{ @include gradient($color-flying-dark, $color-flying-light); }
+[color="ghost"]{ @include gradient($color-ghost-dark, $color-ghost-light); }
+[color="grass"]{ @include gradient($color-grass-dark, $color-grass-light); }
+[color="ground"]{ @include gradient($color-ground-dark, $color-ground-light); }
+[color="ice"]{ @include gradient($color-ice-dark, $color-ice-light); }
+[color="normal"]{ @include gradient($color-normal-dark, $color-normal-light); }
+[color="poison"]{ @include gradient($color-poison-dark, $color-poison-light); }
+[color="psychic"]{ @include gradient($color-psychic-dark, $color-psychic-light); }
+[color="rock"]{ @include gradient($color-rock-dark, $color-rock-light); }
+[color="steel"]{ @include gradient($color-steel-dark, $color-steel-light); }
+[color="water"]{ @include gradient($color-water-dark, $color-water-light); }

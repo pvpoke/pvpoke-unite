@@ -1,8 +1,3 @@
-/*
-$background-color: rgb(240, 240, 240);
-
-$dot-color: rgb(210,210,210);
-*/
 body, html {
   margin: 0;
   padding: 0;
@@ -24,6 +19,205 @@ body {
 
 a {
   color: #9950c5;
+}
+
+/* TYPE COLORS */
+[color=bug] {
+  background: #aec92c;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #9bc231 30%, #aec92c 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #9bc231 30%, #aec92c 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=dark] {
+  background: #6e7681;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #52505e 30%, #6e7681 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #52505e 30%, #6e7681 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #52505e 30%, #6e7681 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=dragon] {
+  background: #067fc4;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #1065b6 30%, #067fc4 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #1065b6 30%, #067fc4 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=electric] {
+  background: #fedf6b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f3d43e 30%, #fedf6b 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f3d43e 30%, #fedf6b 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=fairy] {
+  background: #f6a7e8;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #eb8de1 30%, #f6a7e8 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #eb8de1 30%, #f6a7e8 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=fighting] {
+  background: #e34448;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #ce3d64 30%, #e34448 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #ce3d64 30%, #e34448 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=fire] {
+  background: #feb04b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #fe9d59 30%, #feb04b 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #fe9d59 30%, #feb04b 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=flying] {
+  background: #a7c1f2;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #91a8de 30%, #a7c1f2 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #91a8de 30%, #a7c1f2 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=ghost] {
+  background: #7571d0;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5069ac 30%, #7571d0 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #5069ac 30%, #7571d0 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=grass] {
+  background: #59c079;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5fbb50 30%, #59c079 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #5fbb50 30%, #59c079 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=ground] {
+  background: #d2976b;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #d87b40 30%, #d2976b 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #d87b40 30%, #d2976b 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=ice] {
+  background: #94ddd6;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #74d3bd 30%, #94ddd6 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #74d3bd 30%, #94ddd6 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=normal] {
+  background: #a3a49e;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #909aa3 30%, #a3a49e 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #909aa3 30%, #a3a49e 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=poison] {
+  background: #a662c7;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c662d6 30%, #a662c7 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c662d6 30%, #a662c7 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=psychic] {
+  background: #fda194;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #f2726f 30%, #fda194 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #f2726f 30%, #fda194 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #f2726f 30%, #fda194 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=rock] {
+  background: #d7cd90;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #c7b98c 30%, #d7cd90 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #c7b98c 30%, #d7cd90 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=steel] {
+  background: #5aafb4;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #50879c 30%, #5aafb4 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #50879c 30%, #5aafb4 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+}
+
+[color=water] {
+  background: #6ac7e9;
+  /* Old browsers */
+  background: -moz-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important;
+  /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #4f91db 30%, #6ac7e9 99%) !important;
+  /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #4f91db 30%, #6ac7e9 99%) !important;
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 .menu {
@@ -395,9 +589,17 @@ input[type=text] {
   border-radius: 100px;
   background-color: #c8c8c8;
 }
-.select-modal[type=move] .selected-item .image {
+.select-modal[type=move] .selected-item .image .asset {
   background-size: 92%;
   background-position: center center;
+  border-radius: 100px;
+}
+.select-modal .image .asset {
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  border-radius: 100px;
 }
 
 .tooltip {
@@ -751,6 +953,9 @@ input[type=text] {
   height: 50px;
   background-size: 100%;
 }
+.build-select .held-item .asset, .build-select .battle-item .image .asset, .build-select .move .image .asset {
+  background-size: 100%;
+}
 .build-select .held-item:hover, .build-select .battle-item:hover, .build-select .move:hover {
   background-color: #222222;
 }
@@ -773,6 +978,10 @@ input[type=text] {
 .build-select .move .image {
   border-radius: 100px;
   background-color: #c8c8c8;
+}
+.build-select .move .image .asset {
+  width: 100%;
+  height: 100%;
 }
 .build-select h4 {
   margin: 25px 0 5px 0;

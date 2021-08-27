@@ -136,9 +136,18 @@
 			background-color:$white;
 		}
 
-		.selected-item .image{
+		.selected-item .image .asset{
 			background-size:92%;
 			background-position: center center;
+			border-radius: 100px;
 		}
+	}
+
+	.image .asset{
+		width:100%;
+		height:100%;
+		background-repeat: no-repeat;
+		background-size:100%;
+		border-radius: 100px;
 	}
 }

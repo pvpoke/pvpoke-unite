@@ -49,7 +49,8 @@
 				"moveId": "venusaur_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "grass"
 			},
 			"slot1": [
 				{
@@ -57,7 +58,8 @@
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "grass"
 				},
 				{
 					"moveId": "sludge_bomb_venusaur",
@@ -65,7 +67,8 @@
 					"category": "ranged",
 					"cooldown": 6,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "poison"
 				},
 				{
 					"moveId": "giga_drain",
@@ -73,7 +76,8 @@
 					"category": "recovery",
 					"cooldown": 7,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "grass"
 				}
 			],
 			"slot2": [
@@ -82,7 +86,8 @@
 					"style": "special",
 					"category": "area",
 					"cooldown": 9,
-					"level": 1
+					"level": 1,
+					"color": "grass"
 				},
 				{
 					"moveId": "solar_beam",
@@ -90,7 +95,8 @@
 					"category": "area",
 					"cooldown": 11,
 					"level": 7,
-					"upgrade": 10
+					"upgrade": 10,
+					"color": "grass"
 				},
 				{
 					"moveId": "petal_dance",
@@ -98,16 +104,19 @@
 					"category": "area",
 					"cooldown": 11,
 					"level": 7,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "grass"
 				}
 			],
 			"unite": {
 				"moveId": "verdant_anger",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "grass"
 			},
 			"passive": {
-				"moveId": "overgrow"
+				"moveId": "overgrow",
+				"color": "grass"
 			}
 		}
 	},
@@ -161,7 +170,8 @@
 				"moveId": "charizard_basic",
 				"style": "physical",
 				"boostStyle": "physical",
-				"boostCount": 0
+				"boostCount": 0,
+				"color": "fire"
 			},
 			"slot1": [
 				{
@@ -169,7 +179,8 @@
 					"style": "physical",
 					"category": "ranged",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "fire"
 				},
 				{
 					"moveId": "flamethrower",
@@ -177,7 +188,8 @@
 					"category": "ranged",
 					"cooldown": 5.5,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "fire"
 				},
 				{
 					"moveId": "fire_punch",
@@ -185,7 +197,8 @@
 					"category": "dash",
 					"cooldown": 6,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "fire"
 				}
 			],
 			"slot2": [
@@ -194,7 +207,8 @@
 					"style": "physical",
 					"category": "area",
 					"cooldown": 10,
-					"level": 1
+					"level": 1,
+					"color": "fire"
 				},
 				{
 					"moveId": "fire_blast",
@@ -202,7 +216,8 @@
 					"category": "area",
 					"cooldown": 8,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "fire"
 				},
 				{
 					"moveId": "flare_blitz",
@@ -210,16 +225,19 @@
 					"category": "dash",
 					"cooldown": 10,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "fire"
 				}
 			],
 			"unite": {
 				"moveId": "seismic_slam",
 				"category": "sure_hit",
-				"level": 9
+				"level": 9,
+				"color": "fire"
 			},
 			"passive": {
-				"moveId": "blaze_charizard"
+				"moveId": "blaze_charizard",
+				"color": "fire"
 			}
 		}
 	},
@@ -265,7 +283,8 @@
 				"moveId": "pikachu_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "electric"
 			},
 			"slot1": [
 				{
@@ -273,7 +292,8 @@
 					"style": "special",
 					"category": "sure_hit",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "electric"
 				},
 				{
 					"moveId": "electro_ball",
@@ -281,7 +301,8 @@
 					"category": "sure_hit",
 					"cooldown": 5,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "electric"
 				},
 				{
 					"moveId": "thunder",
@@ -289,7 +310,8 @@
 					"category": "area",
 					"cooldown": 8,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "electric"
 				}
 			],
 			"slot2": [
@@ -298,7 +320,8 @@
 					"style": "special",
 					"category": "hindrance",
 					"cooldown": 9,
-					"level": 1
+					"level": 1,
+					"color": "electric"
 				},
 				{
 					"moveId": "volt_tackle",
@@ -306,7 +329,8 @@
 					"category": "hindrance",
 					"cooldown": 10,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "electric"
 				},
 				{
 					"moveId": "thunderbolt",
@@ -314,16 +338,19 @@
 					"category": "hindrance",
 					"cooldown": 8,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "electric"
 				}
 			],
 			"unite": {
 				"moveId": "thunderstorm",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "electric"
 			},
 			"passive": {
-				"moveId": "static"
+				"moveId": "static",
+				"color": "electric"
 			}
 		}
 	},
@@ -373,7 +400,8 @@
 				"moveId": "alolan_ninetales_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "ice"
 			},
 			"slot1": [
 				{
@@ -381,7 +409,8 @@
 					"style": "special",
 					"category": "area",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "ice"
 				},
 				{
 					"moveId": "avalanche",
@@ -389,7 +418,8 @@
 					"category": "area",
 					"cooldown": 7,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "ice"
 				},
 				{
 					"moveId": "dazzling_gleam_ninetales",
@@ -397,7 +427,8 @@
 					"category": "hindrance",
 					"cooldown": 7.5,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "ice"
 				}
 			],
 			"slot2": [
@@ -406,7 +437,8 @@
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "ice"
 				},
 				{
 					"moveId": "blizzard",
@@ -414,7 +446,8 @@
 					"category": "ranged",
 					"cooldown": 11,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "ice"
 				},
 				{
 					"moveId": "aurora_veil",
@@ -422,16 +455,19 @@
 					"category": "buff",
 					"cooldown": 13,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "fairy"
 				}
 			],
 			"unite": {
 				"moveId": "snow_globe",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "ice"
 			},
 			"passive": {
-				"moveId": "snow_warning"
+				"moveId": "snow_warning",
+				"color": "ice"
 			}
 		}
 	},
@@ -481,7 +517,8 @@
 				"moveId": "wigglytuff_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "fairy"
 			},
 			"slot1": [
 				{
@@ -489,7 +526,8 @@
 					"style": "special",
 					"category": "melee",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "normal"
 				},
 				{
 					"moveId": "double_slap",
@@ -497,7 +535,8 @@
 					"category": "melee",
 					"cooldown": 5,
 					"level": 6,
-					"upgrade": 10
+					"upgrade": 10,
+					"color": "normal"
 				},
 				{
 					"moveId": "dazzling_gleam_wigglytuff",
@@ -505,7 +544,8 @@
 					"category": "hindrance",
 					"cooldown": 4.5,
 					"level": 6,
-					"upgrade": 10
+					"upgrade": 10,
+					"color": "fairy"
 				}
 			],
 			"slot2": [
@@ -514,7 +554,8 @@
 					"style": "special",
 					"category": "hindrance",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "rock"
 				},
 				{
 					"moveId": "rollout",
@@ -522,7 +563,8 @@
 					"category": "hindrance",
 					"cooldown": 10,
 					"level": 4,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "rock"
 				},
 				{
 					"moveId": "sing",
@@ -530,16 +572,19 @@
 					"category": "area",
 					"cooldown": 10,
 					"level": 4,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "fairy"
 				}
 			],
 			"unite": {
 				"moveId": "star_recital",
 				"category": "buff",
-				"level": 8
+				"level": 8,
+				"color": "fairy"
 			},
 			"passive": {
-				"moveId": "cute_charm"
+				"moveId": "cute_charm",
+				"color": "fairy"
 			}
 		}
 	},
@@ -593,7 +638,8 @@
 				"moveId": "machamp_basic",
 				"style": "physical",
 				"boostStyle": "physical",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "fighting"
 			},
 			"slot1": [
 				{
@@ -601,7 +647,8 @@
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "fighting"
 				},
 				{
 					"moveId": "close_combat_machamp",
@@ -609,7 +656,8 @@
 					"category": "melee",
 					"cooldown": 6,
 					"level": 7,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "fighting"
 				},
 				{
 					"moveId": "cross_chop",
@@ -617,7 +665,8 @@
 					"category": "dash",
 					"cooldown": 6,
 					"level": 7,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "fighting"
 				}
 			],
 			"slot2": [
@@ -626,7 +675,8 @@
 					"style": "physical",
 					"category": "buff",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "fighting"
 				},
 				{
 					"moveId": "dynamic_punch",
@@ -634,7 +684,8 @@
 					"category": "dash",
 					"cooldown": 8,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "fighting"
 				},
 				{
 					"moveId": "submission",
@@ -642,16 +693,19 @@
 					"category": "hindrance",
 					"cooldown": 11,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "fighting"
 				}
 			],
 			"unite": {
 				"moveId": "barrage_blow",
 				"category": "buff",
-				"level": 9
+				"level": 9,
+				"color": "fighting"
 			},
 			"passive": {
-				"moveId": "guts"
+				"moveId": "guts",
+				"color": "fighting"
 			}
 		}
 	},
@@ -701,7 +755,8 @@
 				"moveId": "slowbro_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "water"
 			},
 			"slot1": [
 				{
@@ -709,7 +764,8 @@
 					"style": "special",
 					"category": "melee",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "water"
 				},
 				{
 					"moveId": "scald",
@@ -717,7 +773,8 @@
 					"category": "melee",
 					"cooldown": 5,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "water"
 				},
 				{
 					"moveId": "surf",
@@ -725,7 +782,8 @@
 					"category": "dash",
 					"cooldown": 9,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "water"
 				}
 			],
 			"slot2": [
@@ -734,7 +792,8 @@
 					"style": "special",
 					"category": "recovery",
 					"cooldown": 11,
-					"level": 1
+					"level": 1,
+					"color": "normal"
 				},
 				{
 					"moveId": "amnesia",
@@ -742,7 +801,8 @@
 					"category": "recovery",
 					"cooldown": 13,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "psychic"
 				},
 				{
 					"moveId": "telekenisis",
@@ -750,16 +810,19 @@
 					"category": "hindrance",
 					"cooldown": 11,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "psychic"
 				}
 			],
 			"unite": {
 				"moveId": "slowbeam",
 				"category": "hindrance",
-				"level": 9
+				"level": 9,
+				"color": "psychic"
 			},
 			"passive": {
-				"moveId": "oblivious"
+				"moveId": "oblivious",
+				"color": "psychic"
 			}
 		}
 	},
@@ -813,7 +876,8 @@
 				"moveId": "gengar_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "ghost"
 			},
 			"slot1": [
 				{
@@ -821,7 +885,8 @@
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "ghost"
 				},
 				{
 					"moveId": "shadow_ball",
@@ -829,7 +894,8 @@
 					"category": "ranged",
 					"cooldown": 4.5,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "ghost"
 				},
 				{
 					"moveId": "sludge_bomb_gengar",
@@ -837,7 +903,8 @@
 					"category": "area",
 					"cooldown": 8,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "poison"
 				}
 			],
 			"slot2": [
@@ -846,7 +913,8 @@
 					"style": "special",
 					"category": "area",
 					"cooldown": 7,
-					"level": 1
+					"level": 1,
+					"color": "ghost"
 				},
 				{
 					"moveId": "dream_eater",
@@ -854,7 +922,8 @@
 					"category": "ranged",
 					"cooldown": 8,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "ghost"
 				},
 				{
 					"moveId": "hex",
@@ -862,16 +931,19 @@
 					"category": "dash",
 					"cooldown": 7.5,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "ghost"
 				}
 			],
 			"unite": {
 				"moveId": "phantom_ambush",
 				"category": "dash",
-				"level": 9
+				"level": 9,
+				"color": "ghost"
 			},
 			"passive": {
-				"moveId": "levitate"
+				"moveId": "levitate",
+				"color": "ghost"
 			}
 		}
 	},
@@ -917,7 +989,8 @@
 				"moveId": "mime_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "psychic"
 			},
 			"slot1": [
 				{
@@ -925,7 +998,8 @@
 					"style": "special",
 					"category": "melee",
 					"cooldown": 7,
-					"level": 1
+					"level": 1,
+					"color": "psychic"
 				},
 				{
 					"moveId": "confusion_mime",
@@ -933,7 +1007,8 @@
 					"category": "ranged",
 					"cooldown": 6,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "psychic"
 				},
 				{
 					"moveId": "psychic_mime",
@@ -941,7 +1016,8 @@
 					"category": "debuff",
 					"cooldown": 6,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "psychic"
 				}
 			],
 			"slot2": [
@@ -950,7 +1026,8 @@
 					"style": "special",
 					"category": "hindrance",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "psychic"
 				},
 				{
 					"moveId": "barrier",
@@ -958,7 +1035,8 @@
 					"category": "hindrance",
 					"cooldown": 2,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "psychic"
 				},
 				{
 					"moveId": "guard_swap",
@@ -966,16 +1044,19 @@
 					"category": "debuff",
 					"cooldown": 4.5,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "psychic"
 				}
 			],
 			"unite": {
 				"moveId": "showtime",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "psychic"
 			},
 			"passive": {
-				"moveId": "filter"
+				"moveId": "filter",
+				"color": "psychic"
 			}
 		}
 	},
@@ -1021,7 +1102,8 @@
 				"moveId": "snorlax_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "normal"
 			},
 			"slot1": [
 				{
@@ -1029,7 +1111,8 @@
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "normal"
 				},
 				{
 					"moveId": "heavy_slam",
@@ -1037,7 +1120,8 @@
 					"category": "dash",
 					"cooldown": 7,
 					"level": 6,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "normal"
 				},
 				{
 					"moveId": "flail",
@@ -1045,7 +1129,8 @@
 					"category": "hindrance",
 					"cooldown": 6.5,
 					"level": 6,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "ground"
 				}
 			],
 			"slot2": [
@@ -1054,7 +1139,8 @@
 					"style": "physical",
 					"category": "hindrance",
 					"cooldown": 10,
-					"level": 1
+					"level": 1,
+					"color": "water"
 				},
 				{
 					"moveId": "block",
@@ -1062,7 +1148,8 @@
 					"category": "hindrance",
 					"cooldown": 11,
 					"level": 8,
-					"upgrade": 14
+					"upgrade": 14,
+					"color": "water"
 				},
 				{
 					"moveId": "yawn",
@@ -1070,16 +1157,19 @@
 					"category": "hindrance",
 					"cooldown": 12,
 					"level": 8,
-					"upgrade": 14
+					"upgrade": 14,
+					"color": "normal"
 				}
 			],
 			"unite": {
 				"moveId": "power_nap",
 				"category": "buff",
-				"level": 9
+				"level": 9,
+				"color": "water"
 			},
 			"passive": {
-				"moveId": "gluttony"
+				"moveId": "gluttony",
+				"color": "normal"
 			}
 		}
 	},
@@ -1133,7 +1223,8 @@
 				"moveId": "gardevoir_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "psychic"
 			},
 			"slot1": [
 				{
@@ -1141,7 +1232,8 @@
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 4.5,
-					"level": 1
+					"level": 1,
+					"color": "psychic"
 				},
 				{
 					"moveId": "psychic_gardevoir",
@@ -1149,7 +1241,8 @@
 					"category": "ranged",
 					"cooldown": 7,
 					"level": 8,
-					"upgrade": 14
+					"upgrade": 14,
+					"color": "psychic"
 				},
 				{
 					"moveId": "moonblast",
@@ -1157,7 +1250,8 @@
 					"category": "ranged",
 					"cooldown": 6,
 					"level": 8,
-					"upgrade": 14
+					"upgrade": 14,
+					"color": "psychic"
 				}
 			],
 			"slot2": [
@@ -1166,7 +1260,8 @@
 					"style": "special",
 					"category": "dash",
 					"cooldown": 11,
-					"level": 1
+					"level": 1,
+					"color": "psychic"
 				},
 				{
 					"moveId": "psyshock",
@@ -1174,7 +1269,8 @@
 					"category": "area",
 					"cooldown": 11,
 					"level": 6,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "psychic"
 				},
 				{
 					"moveId": "future_sight",
@@ -1182,16 +1278,19 @@
 					"category": "area",
 					"cooldown": 9,
 					"level": 6,
-					"upgrade": 12
+					"upgrade": 12,
+					"color": "psychic"
 				}
 			],
 			"unite": {
 				"moveId": "fairy_singularity",
 				"category": "hindrance",
-				"level": 10
+				"level": 10,
+				"color": "psychic"
 			},
 			"passive": {
-				"moveId": "synchronize"
+				"moveId": "synchronize",
+				"color": "psychic"
 			}
 		}
 	},
@@ -1237,7 +1336,8 @@
 				"moveId": "absol_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "dark"
 			},
 			"slot1": [
 				{
@@ -1245,7 +1345,8 @@
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "dark"
 				},
 				{
 					"moveId": "night_slash",
@@ -1253,7 +1354,8 @@
 					"category": "dash",
 					"cooldown": 5,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "dark"
 				},
 				{
 					"moveId": "pursuit",
@@ -1261,7 +1363,8 @@
 					"category": "dash",
 					"cooldown": 5,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "dark"
 				}
 			],
 			"slot2": [
@@ -1270,7 +1373,8 @@
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 7,
-					"level": 1
+					"level": 1,
+					"color": "normal"
 				},
 				{
 					"moveId": "psycho_cut",
@@ -1278,7 +1382,8 @@
 					"category": "melee",
 					"cooldown": 7,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "psychic"
 				},
 				{
 					"moveId": "sucker_punch",
@@ -1286,16 +1391,19 @@
 					"category": "hindrance",
 					"cooldown": 7,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "dark"
 				}
 			],
 			"unite": {
 				"moveId": "midnight_slash",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "dark"
 			},
 			"passive": {
-				"moveId": "super_luck"
+				"moveId": "super_luck",
+				"color": "dark"
 			}
 		}
 	},
@@ -1349,7 +1457,8 @@
 				"moveId": "garchomp_basic",
 				"style": "physical",
 				"boostStyle": "physical",
-				"boostCount": 5
+				"boostCount": 5,
+				"color": "dragon"
 			},
 			"slot1": [
 				{
@@ -1357,7 +1466,8 @@
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "ground"
 				},
 				{
 					"moveId": "dig",
@@ -1365,7 +1475,8 @@
 					"category": "dash",
 					"cooldown": 8,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "ground"
 				},
 				{
 					"moveId": "dragon_rush",
@@ -1373,7 +1484,8 @@
 					"category": "dash",
 					"cooldown": 8,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "dragon"
 				}
 			],
 			"slot2": [
@@ -1382,7 +1494,8 @@
 					"style": "physical",
 					"category": "area",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "ground"
 				},
 				{
 					"moveId": "earthquake",
@@ -1390,7 +1503,8 @@
 					"category": "area",
 					"cooldown": 7,
 					"level": 8,
-					"upgrade": 14
+					"upgrade": 14,
+					"color": "ground"
 				},
 				{
 					"moveId": "dragon_claw",
@@ -1398,16 +1512,19 @@
 					"category": "melee",
 					"cooldown": 5,
 					"level": 8,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "dragon"
 				}
 			],
 			"unite": {
 				"moveId": "livid_outrage",
 				"category": "melee",
-				"level": 10
+				"level": 10,
+				"color": "dragon"
 			},
 			"passive": {
-				"moveId": "rough_skin"
+				"moveId": "rough_skin",
+				"color": "dragon"
 			}
 		}
 	},
@@ -1453,7 +1570,8 @@
 				"moveId": "lucario_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "steel"
 			},
 			"slot1": [
 				{
@@ -1461,7 +1579,8 @@
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "electric"
 				},
 				{
 					"moveId": "extreme_speed",
@@ -1469,7 +1588,8 @@
 					"category": "dash",
 					"cooldown": 9,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "steel"
 				},
 				{
 					"moveId": "power_up_punch",
@@ -1477,7 +1597,8 @@
 					"category": "dash",
 					"cooldown": 7,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "electric"
 				}
 			],
 			"slot2": [
@@ -1486,7 +1607,8 @@
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 7,
-					"level": 1
+					"level": 1,
+					"color": "steel"
 				},
 				{
 					"moveId": "bone_rush",
@@ -1494,7 +1616,8 @@
 					"category": "dash",
 					"cooldown": 10,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "steel"
 				},
 				{
 					"moveId": "close_combat_lucario",
@@ -1502,16 +1625,19 @@
 					"category": "melee",
 					"cooldown": 9,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "steel"
 				}
 			],
 			"unite": {
 				"moveId": "aura_cannon",
 				"category": "ranged",
-				"level": 9
+				"level": 9,
+				"color": "steel"
 			},
 			"passive": {
-				"moveId": "steadfast"
+				"moveId": "steadfast",
+				"color": "steel"
 			}
 		}
 	},
@@ -1561,7 +1687,8 @@
 				"moveId": "crustle_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "bug"
 			},
 			"slot1": [
 				{
@@ -1569,7 +1696,8 @@
 					"style": "physical",
 					"category": "area",
 					"cooldown": 6,
-					"level": 1
+					"level": 1,
+					"color": "rock"
 				},
 				{
 					"moveId": "rock_tomb",
@@ -1577,7 +1705,8 @@
 					"category": "area",
 					"cooldown": 5,
 					"level": 4,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "rock"
 				},
 				{
 					"moveId": "shell_smash",
@@ -1585,7 +1714,8 @@
 					"category": "buff",
 					"cooldown": 7,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "rock"
 				}
 			],
 			"slot2": [
@@ -1594,7 +1724,8 @@
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 3.5,
-					"level": 1
+					"level": 1,
+					"color": "bug"
 				},
 				{
 					"moveId": "stealth_rock",
@@ -1602,7 +1733,8 @@
 					"category": "area",
 					"cooldown": 8,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "rock"
 				},
 				{
 					"moveId": "x_scissor",
@@ -1610,16 +1742,19 @@
 					"category": "melee",
 					"cooldown": 9,
 					"level": 6,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "bug"
 				}
 			],
 			"unite": {
 				"moveId": "rubble_rouser",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "rock"
 			},
 			"passive": {
-				"moveId": "sturdy"
+				"moveId": "sturdy",
+				"color": "rock"
 			}
 		}
 	},
@@ -1673,7 +1808,8 @@
 				"moveId": "greninja_basic",
 				"style": "physical",
 				"boostStyle": "special",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "water"
 			},
 			"slot1": [
 				{
@@ -1681,7 +1817,8 @@
 					"style": "physical",
 					"category": "ranged",
 					"cooldown": 9,
-					"level": 1
+					"level": 1,
+					"color": "water"
 				},
 				{
 					"moveId": "water_shuriken",
@@ -1689,7 +1826,8 @@
 					"category": "area",
 					"cooldown": 7,
 					"level": 7,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "water"
 				},
 				{
 					"moveId": "surf",
@@ -1697,7 +1835,8 @@
 					"category": "melee",
 					"cooldown": 9,
 					"level": 7,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "water"
 				}
 			],
 			"slot2": [
@@ -1706,7 +1845,8 @@
 					"style": "other",
 					"category": "dash",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "water"
 				},
 				{
 					"moveId": "double_team",
@@ -1714,7 +1854,8 @@
 					"category": "dash",
 					"cooldown": 11,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "water"
 				},
 				{
 					"moveId": "smokescreen",
@@ -1722,16 +1863,19 @@
 					"category": "dash",
 					"cooldown": 11,
 					"level": 5,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "normal"
 				}
 			],
 			"unite": {
 				"moveId": "waterburst_shuriken",
 				"category": "area",
-				"level": 9
+				"level": 9,
+				"color": "water"
 			},
 			"passive": {
-				"moveId": "torrent"
+				"moveId": "torrent",
+				"color": "water"
 			}
 		}
 	},
@@ -1785,7 +1929,8 @@
 				"moveId": "talonflame_basic",
 				"style": "physical",
 				"boostStyle": "physical",
-				"boostCount": 3
+				"boostCount": 3,
+				"color": "flying"
 			},
 			"slot1": [
 				{
@@ -1793,7 +1938,8 @@
 					"style": "physical",
 					"category": "melee",
 					"cooldown": 5,
-					"level": 1
+					"level": 1,
+					"color": "flying"
 				},
 				{
 					"moveId": "flame_charge_talonflame",
@@ -1801,7 +1947,8 @@
 					"category": "dash",
 					"cooldown": 6.5,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "fire"
 				},
 				{
 					"moveId": "aerial_ace",
@@ -1809,7 +1956,8 @@
 					"category": "dash",
 					"cooldown": 6,
 					"level": 5,
-					"upgrade": 11
+					"upgrade": 11,
+					"color": "flying"
 				}
 			],
 			"slot2": [
@@ -1818,7 +1966,8 @@
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 8,
-					"level": 1
+					"level": 1,
+					"color": "flying"
 				},
 				{
 					"moveId": "fly",
@@ -1826,7 +1975,8 @@
 					"category": "dash",
 					"cooldown": 11,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "flying"
 				},
 				{
 					"moveId": "brave_bird",
@@ -1834,16 +1984,19 @@
 					"category": "dash",
 					"cooldown": 10,
 					"level": 7,
-					"upgrade": 13
+					"upgrade": 13,
+					"color": "flying"
 				}
 			],
 			"unite": {
 				"moveId": "flame_sweep",
 				"category": "dash",
-				"level": 9
+				"level": 9,
+				"color": "fire"
 			},
 			"passive": {
-				"moveId": "gale_wings"
+				"moveId": "gale_wings",
+				"color": "flying"
 			}
 		}
 	},

@@ -112,24 +112,34 @@
 
 			<h4><?php e("moveset"); ?></h4>
 			<div class="move ability" slot="slot1">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 			<div class="move ability"  slot="slot2">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 			<div class="divider"></div>
 			<div class="move" slot="unite">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 			<div class="move passive" slot="passive">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 			<div class="move basic" slot="basic">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 
@@ -145,13 +155,17 @@
 
 	<div class="held-item-modal select-modal hide" header="" header-held="<?php e("held_item"); ?>" header-battle="<?php e("battle_item"); ?>" header-move="<?php e("move"); ?>">
 		<div class="selected-item">
-			<div class="image"></div>
+			<div class="image">
+				<div class="asset"></div>
+			</div>
 			<div class="name"></div>
 		</div>
 		<div class="selected-description"></div>
 		<div class="item-list">
 			<div class="item template">
-				<div class="image"></div>
+				<div class="image">
+					<div class="asset"></div>
+				</div>
 				<div class="name"></div>
 			</div>
 		</div>

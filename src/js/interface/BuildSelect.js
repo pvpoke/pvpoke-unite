@@ -183,7 +183,8 @@ function BuildSelect(element, ctx, selectors){
 		for(var key in build.moves){
 			if(build.moves.hasOwnProperty(key)){
 				$el.find(".move[slot=\""+key+"\"] .name").html(build.moves[key].moveName);
-				$el.find(".move[slot=\""+key+"\"] .image").css("background-image", "url("+host+"img/moves/"+build.moves[key].assetId+".png)");
+				$el.find(".move[slot=\""+key+"\"] .image").attr("color", build.moves[key].color);
+				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+host+"img/moves/"+build.moves[key].assetId+".png)");
 			}
 		}
 
