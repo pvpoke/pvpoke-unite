@@ -20,6 +20,7 @@ function Move(slot, data){
 			self.moveName = msg("basic_attack");
 			self.boostCount = data.boostCount;
 			self.assetId = "basic";
+			self.color = "basic";
 		break;
 
 		case "slot1":

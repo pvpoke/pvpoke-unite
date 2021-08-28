@@ -16,22 +16,39 @@ $(".hamburger").click(function(e){
 
 // Submenu interaction on desktop
 if($(window).width() > 768){
-	$("body").on("mouseover", ".menu .parent-menu", function(e){
+
+	$("body").on("click", function(e){
+		if(e.type == "click"){
+			if($(".submenu:hover, .parent-menu:hover").length == 0){
+				$(".submenu").removeClass("active");
+			} else{
+				e.preventDefault();
+				$(e.target).closest(".parent-menu").find(".submenu").toggleClass("active");
+			}
+		}
+	});
+
+	$("body").on("mousemove click", function(e){
+		e.preventDefault();
+
+		if($("header .submenu:hover, header .parent-menu:hover").length == 0){
+			$("header .submenu").removeClass("active");
+		}
+	});
+
+	$("body").on("mouseover click", "header .menu .parent-menu", function(e){
+		e.preventDefault();
 		$(".submenu").removeClass("active");
 		$(this).find(".submenu").addClass("active");
 	});
-
-	$("body").on("mousemove", function(e){
-		if($(".submenu:hover, .parent-menu:hover").length == 0){
-			$(".submenu").removeClass("active");
-		}
-	});
 } else{
 	$("body").on("click", ".menu .parent-menu", function(e){
+		e.preventDefault();
 		$(this).find(".submenu").toggleClass("active");
 	});
 
 	$("body").on("click", function(e){
+		e.preventDefault();
 		if($(".submenu:hover, .parent-menu:hover").length == 0){
 			$(".submenu").removeClass("active");
 		}

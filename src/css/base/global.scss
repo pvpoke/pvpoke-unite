@@ -18,3 +18,4 @@
 [color="rock"]{ @include gradient($color-rock-dark, $color-rock-light); }
 [color="steel"]{ @include gradient($color-steel-dark, $color-steel-light); }
 [color="water"]{ @include gradient($color-water-dark, $color-water-light); }
+[color="basic"]{ @include gradient($color-basic-dark, $color-basic-light); }

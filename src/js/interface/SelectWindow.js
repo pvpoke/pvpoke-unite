@@ -53,8 +53,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let color = "";
 
 		if(type == "move"){
+			color = itemArray[i].color;
+
 			if(itemIndex == "basic"){
 				assetId = "basic";
+				color = "basic";
 			} else if(itemIndex == "passive"){
 				assetId = "passive";
 			} else if(itemIndex == "unite"){
@@ -62,8 +65,6 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			} else{
 				assetId = itemArray[i].category;
 			}
-
-			color = itemArray[i].color;
 		}
 
 		let $item = $form.find(".item.template").clone().removeClass("template");

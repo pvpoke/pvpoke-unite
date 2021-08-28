@@ -6,8 +6,8 @@
 }
 
 @mixin gradient($light, $dark){
-	background: $dark; /* Old browsers */
-	background: -moz-linear-gradient(top, $light 30%, $dark 99%) !important; /* FF3.6-15 */
-	background: -webkit-linear-gradient(top, $light 30%,$dark 99%) !important; /* Chrome10-25,Safari5.1-6 */
-	background: linear-gradient(to bottom, $light 30%,$dark 99%) !important; /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	background: $light;
+	background: -moz-linear-gradient(39deg, $light 26%, $dark 77%);
+	background: -webkit-linear-gradient(39deg, $light 26%, $dark 77%);
+	background: linear-gradient(39deg, $light 26%, $dark 77%);
 }
