@@ -42,29 +42,18 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	} else if(type == "move"){
 		itemArray = build.movePool[itemIndex];
 
-		if((itemIndex != "slot1") &&(itemIndex != "slot2")){
+		if((itemIndex != "slot1") && (itemIndex != "slot2")){
 			itemArray = [build.movePool[itemIndex]];
 		}
 	}
 
 	for(var i = 0; i < itemArray.length; i++){
 		let itemId = itemArray[i][idKey];
-		let assetId = itemId;
+		let assetId = itemArray[i].assetId;
 		let color = "";
 
 		if(type == "move"){
 			color = itemArray[i].color;
-
-			if(itemIndex == "basic"){
-				assetId = "basic";
-				color = "basic";
-			} else if(itemIndex == "passive"){
-				assetId = "passive";
-			} else if(itemIndex == "unite"){
-				assetId = "unite";
-			} else{
-				assetId = itemArray[i].category;
-			}
 		}
 
 		let $item = $form.find(".item.template").clone().removeClass("template");
@@ -153,6 +142,32 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			$selecteDescription.html(heldItem.descriptionHTML(build));
 		} else{
 			$selecteDescription.html(msg(descriptionKey));
+		}
+
+		// Display item attributes
+		let $attributes = $selectedItem.find(".attributes");
+
+		$attributes.hide();
+
+		if(type == "move"){
+			let selectedIndex = $form.find(".item").index($item) - 1; // -1 because of the template
+			let move = itemArray[selectedIndex];
+
+			$attributes.html("");
+
+			if(move.cooldown){
+				$attributes.append("<div class=\"cooldown\">"+move.cooldown+msg("cooldown_abbreviation")+"</div>");
+			}
+
+			if(move.category){
+				$attributes.append("<div>"+msg(move.category)+"</div>");
+			}
+
+			if(move.style){
+				$attributes.append("<div>"+msg(move.style)+"</div>");
+			}
+
+			$attributes.show();
 		}
 	}
 }

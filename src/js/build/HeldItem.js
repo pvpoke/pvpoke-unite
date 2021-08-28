@@ -23,6 +23,7 @@ function HeldItem(id){
 	self.boosts = [];
 	self.stacks = 1; // Number of times the main value is applied
 	self.maxStacks = 1;
+	self.assetId = self.itemId; // Used for displaying images
 
 	if(data.maxStacks){
 		self.maxStacks = data.maxStacks;

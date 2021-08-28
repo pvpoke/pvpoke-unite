@@ -15,6 +15,7 @@ function BattleItem(id){
 	self.dex = data.dex; // This number is used in URl strings
 	self.itemName = msg(self.itemId);
 	self.cooldown = data.cooldown;
+	self.assetId = self.itemId; // Used for displaying images
 }
 
 // Hello I am a tiny class

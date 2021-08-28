@@ -19,8 +19,11 @@ function Move(slot, data){
 		case "basic":
 			self.moveName = msg("basic_attack");
 			self.boostCount = data.boostCount;
+			self.style = data.style;
+			self.boostStyle = data.boostStyle;
 			self.assetId = "basic";
 			self.color = "basic";
+			self.assetId = "basic";
 		break;
 
 		case "slot1":
@@ -32,6 +35,7 @@ function Move(slot, data){
 			self.unlockLevel = data.level;
 			self.upgradeLevel = data.upgrade;
 			self.cooldown = data.cooldown;
+			self.baseCooldown = data.cooldown;
 			self.assetId = data.category;
 		break;
 

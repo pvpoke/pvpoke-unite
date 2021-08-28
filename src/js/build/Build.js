@@ -38,16 +38,33 @@ function Build(id, level){
 		self.style = data.style;
 		self.difficulty = data.difficulty;
 		self.stages = data.stages;
-		self.movePool = data.moves;
 		self.ratings = data.ratings;
 		self.stageId = self.stages[0].stageId;
 
+		// Initiate movepool
+		self.movePool = {};
+
+		for(var key in data.moves){
+			if(data.moves.hasOwnProperty(key)){
+				// If this key has one move, set it. Otherwise, iterate through the array.
+				if(data.moves[key].moveId){
+					self.movePool[key] = new Move(key, data.moves[key]);
+				} else{
+					self.movePool[key] = [];
+
+					for(var i = 0; i < data.moves[key].length; i++){
+						self.movePool[key].push(new Move(key, data.moves[key][i]));
+					}
+				}
+			}
+		}
+
 		// Set initial moves
-		self.moves.basic = new Move("basic", self.movePool.basic);
-		self.moves.unite = new Move("unite", self.movePool.unite);
-		self.moves.passive = new Move("passive", self.movePool.passive);
-		self.moves.slot1 = new Move("slot1", self.movePool.slot1[0]);
-		self.moves.slot2 = new Move("slot2", self.movePool.slot2[0]);
+		self.moves.basic = self.movePool.basic;
+		self.moves.unite = self.movePool.unite;
+		self.moves.passive = self.movePool.passive;
+		self.moves.slot1 = self.movePool.slot1[0];
+		self.moves.slot2 = self.movePool.slot2[0];
 
 		self.setStats();
 	}
@@ -209,10 +226,10 @@ function Build(id, level){
 
 	self.selectMove = function(moveId, slot){
 		let moveArr = self.movePool[slot];
-		
+
 		for(var i = 0; i < moveArr.length; i++){
 			if(moveArr[i].moveId == moveId){
-				self.moves[slot] = new Move(slot, moveArr[i]);
+				self.moves[slot] = moveArr[i];
 				break;
 			}
 		}

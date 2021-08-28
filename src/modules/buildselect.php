@@ -158,7 +158,10 @@
 			<div class="image">
 				<div class="asset"></div>
 			</div>
-			<div class="name"></div>
+			<div class="name-container">
+				<div class="name"></div>
+				<div class="attributes"></div>
+			</div>
 		</div>
 		<div class="selected-description"></div>
 		<div class="item-list">

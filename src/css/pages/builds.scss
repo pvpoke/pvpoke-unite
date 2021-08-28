@@ -253,21 +253,7 @@
 	}
 
 	.attributes{
-		display: flex;
-	    flex-wrap: wrap;
 	    justify-content: center;
-
-		div{
-			padding:2px 8px;
-			margin:5px;
-			font-size:12px;
-			color:$white;
-			border:1px solid $gray;
-			background:$gray;
-			border-bottom-left-radius: 10px;
-			border-top-right-radius: 10px;
-			cursor:default;
-		}
 	}
 
 	.advanced{

@@ -23,5 +23,6 @@
 	"move": "Move",
 	"moveset": "Moveset",
 	"select_button": "Select",
-	"share": "Share"
+	"share": "Share",
+	"cooldown_abbreviation": "s"
 }

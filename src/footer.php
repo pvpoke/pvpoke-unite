@@ -22,15 +22,12 @@ if($(window).width() > 768){
 			if($(".submenu:hover, .parent-menu:hover").length == 0){
 				$(".submenu").removeClass("active");
 			} else{
-				e.preventDefault();
 				$(e.target).closest(".parent-menu").find(".submenu").toggleClass("active");
 			}
 		}
 	});
 
 	$("body").on("mousemove click", function(e){
-		e.preventDefault();
-
 		if($("header .submenu:hover, header .parent-menu:hover").length == 0){
 			$("header .submenu").removeClass("active");
 		}
