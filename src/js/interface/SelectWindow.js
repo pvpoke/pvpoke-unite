@@ -49,11 +49,12 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 
 	for(var i = 0; i < itemArray.length; i++){
 		let itemId = itemArray[i][idKey];
-		let assetId = itemArray[i].assetId;
+		let assetId = itemId;
 		let color = "";
 
 		if(type == "move"){
 			color = itemArray[i].color;
+			assetId = itemArray[i].assetId;
 		}
 
 		let $item = $form.find(".item.template").clone().removeClass("template");
