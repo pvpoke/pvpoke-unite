@@ -1,0 +1,56 @@
+[
+	{
+		"id": "3v3",
+		"teamCount": 3,
+		"lanes": [
+			{
+				"id": "top_path",
+				"recommendedCount": 2
+			},
+			{
+				"id": "central_area",
+				"recommendedCount": 0
+			},
+			{
+				"id": "bottom_path",
+				"recommendedCount": 2
+			}
+		]
+	},
+	{
+		"id": "4v4",
+		"teamCount": 4,
+		"lanes": [
+			{
+				"id": "top_path",
+				"recommendedCount": 2
+			},
+			{
+				"id": "central_area",
+				"recommendedCount": 0
+			},
+			{
+				"id": "bottom_path",
+				"recommendedCount": 2
+			}
+		]
+	},
+	{
+		"id": "5v5",
+		"teamCount": 5,
+		"lanes": [
+			{
+				"id": "top_path",
+				"recommendedCount": 2
+			},
+			{
+				"id": "central_area",
+				"recommendedCount": 1
+			},
+			{
+				"id": "bottom_path",
+				"recommendedCount": 2
+			}
+		]
+	}
+]

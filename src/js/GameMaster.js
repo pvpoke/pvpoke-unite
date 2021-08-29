@@ -19,6 +19,7 @@ var GameMaster = (function () {
 		loadGameMasterChunk("pokemon");
 		loadGameMasterChunk("heldItems");
 		loadGameMasterChunk("battleItems");
+		loadGameMasterChunk("formats");
 
 		// Load a given segment of the gamemaster JSON and store it in a GameMaster parameter of the same name
 

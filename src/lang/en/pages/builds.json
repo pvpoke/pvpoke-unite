@@ -1,6 +1,7 @@
 {
 	"builds_meta_title": "Builds",
-	"builds_meta_description": "Create, save, and share your builds for Pokemon Unite.",
+	"builds_meta_description": "Create, save, and share your Pokemon builds for Pokemon Unite.",
+	"builds_description": "Create a Pokemon build below, compare it to other builds, and save your favorites.",
 	"overall": "Overall",
 	"hp": "HP",
 	"atk": "Atk",

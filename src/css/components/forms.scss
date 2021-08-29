@@ -82,3 +82,14 @@ input{
 		}
 	}
 }
+
+// Select dropdown formatting
+
+select{
+	background:$black;
+	color:$white;
+	width:200px;
+	padding:5px 10px;
+	box-sizing: border-box;
+	font-size:18px;
+}

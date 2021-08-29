@@ -1,14 +1,15 @@
 <?php
 require_once 'modules/localize.php';
 
+i18n::getInstance()->loadMessages("pages/teams");
 i18n::getInstance()->loadMessages("pages/builds");
 i18n::getInstance()->loadMessages("pokemon-strings");
 
-$CANONICAL = '/builds/';
+$CANONICAL = '/teams/';
 
-$META_TITLE = l("builds_meta_title");
+$META_TITLE = l("teams_meta_title");
 
-$META_DESCRIPTION = l("builds_meta_description");
+$META_DESCRIPTION = l("teams_meta_description");
 
 ?>
 
@@ -16,32 +17,58 @@ $META_DESCRIPTION = l("builds_meta_description");
 
 <?php i18n::getInstance()->loadMessages("item-strings"); ?>
 
-<div id="builds">
+<div id="teams">
 
 	<div class="section patterned padding">
 		<div class="main-wrap">
-			<h1><?php e("nav_builds"); ?></h1>
-			<p><?php e("builds_description") ?></p>
+			<h1><?php e("teams_meta_title"); ?></h1>
+			<p><?php e("teams_description"); ?></p>
 
-			<div class="builds-nav">
-				<div class="build-count">
-					<span class="current">0</span> / <span class="max">4</span>
+			<div class="top-team-panel">
+				<?php require_once 'modules/formatselect.php'; ?>
+
+				<div class="synergy">
+					<div class="label">Team Synergy: </div>
+					<div class="synergy-meter"></div>
 				</div>
-				<button class="toggle lock-settings on"><?php e('lock_settings'); ?></button>
-				<button class="toggle show-stats on"><?php e('show_stats'); ?></button>
-			</div>
-
-
-			<div class="build-list" stats="true" full="false">
-				<div class="new-build-section">
-					<a class="new-build" href="#">+ Add Build</a>
-				</div>
-			</div>
-
-			<div class="build-template template">
-				<?php require_once 'modules/buildselect.php'; ?>
 			</div>
 		</div>
+	</div>
+
+	<div class="section padding">
+		<div class="main-wrap lanes">
+			<div class="lane">
+				<div class="header">
+					<div class="name">Top Path</div>
+					<div class="synergy">
+						<div class="label">Lane Synergy: </div>
+						<div class="synergy-meter"></div>
+					</div>
+				</div>
+				<div class="pokemon-list">
+					<div class="pokemon" pokemon-id="venusaur">
+						<div class="image-container role-bg corners" role="attacker">
+							<div class="image" style="background-image: url(&quot;../img/pokemon/venusaur.png&quot;);"></div>
+						</div>
+						<div class="name">Venusaur</div>
+					</div>
+					<div class="pokemon" pokemon-id="venusaur">
+						<div class="image-container role-bg corners" role="attacker">
+							<div class="image" style="background-image: url(&quot;../img/pokemon/venusaur.png&quot;);"></div>
+						</div>
+						<div class="name">Venusaur</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="lane-template">
+
+	</div>
+
+	<div class="build-template template">
+		<?php require_once 'modules/buildselect.php'; ?>
 	</div>
 
 	<div class="tooltip corners"></div>
@@ -58,7 +85,7 @@ $META_DESCRIPTION = l("builds_meta_description");
 <script src="<?php echo $WEB_ROOT; ?>js/interface/SelectWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Builds.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/Teams.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>

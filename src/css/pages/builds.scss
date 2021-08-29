@@ -143,48 +143,6 @@
 			width:100%;
 			font-size:18px;
 		}
-
-		.pokemon-list{
-			display: flex;
-			flex-wrap: wrap;
-
-			.pokemon{
-				cursor:pointer;
-				flex-basis: 33%;
-				max-width: 33%;
-				flex-grow: 1;
-
-				.image-container{
-					width:100%;
-					height:75px;
-					border:3px solid $gray;
-					box-sizing: border-box;
-
-					//@include transition(all, 0.125s, ease-out, 0s);
-
-					.image{
-						width:100%;
-						height:100%;
-					    background-size: 125%;
-					    background-position: center center;
-
-						@include transition(all, 0.25s, ease-out, 0s);
-					}
-				}
-
-				.name{
-					font-size: 12px;
-				    text-align: center;
-				    padding: 2px 0 8px 0;
-				}
-
-				&:hover{
-					.image-container{
-						border:3px solid $white;
-					}
-				}
-			}
-		}
 	}
 
 	.details{

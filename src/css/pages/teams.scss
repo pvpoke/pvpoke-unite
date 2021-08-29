@@ -1,0 +1,62 @@
+
+#teams{
+	.section.padding:first-of-type{
+		padding-bottom: 0;
+	}
+}
+
+.top-team-panel{
+	display:flex;
+	flex-wrap: wrap;
+
+	select{
+		margin:10px 40px 10px 0;
+	}
+
+}
+
+.synergy{
+	display:flex;
+	align-items: center;
+
+	.label{
+		font-weight: bold;
+	}
+}
+
+
+.lanes{
+	.lane{
+		max-width: 500px;
+	    margin: 0 auto 20px auto;
+	    background: $black;
+	    border-bottom-left-radius: 20px;
+	    border-top-right-radius: 20px;
+	    overflow: hidden;
+
+		&:last-of-type{
+			margin-bottom: 0;
+		}
+
+		.header{
+			display:flex;
+			justify-content: space-between;
+			background: $gray;
+			padding: 5px;
+
+			.name{
+				font-weight: bold;
+				font-size: 18px;
+			}
+
+			.synergy .label{
+				font-size:14px;
+				font-weight: normal;
+			}
+		}
+
+		.pokemon-list{
+			padding:5px;
+		}
+	}
+}

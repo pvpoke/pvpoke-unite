@@ -14,6 +14,8 @@ RewriteRule builds.?$ builds.php [L,QSA]
 
 RewriteRule settings.?$ settings.php [L,QSA]
 
+RewriteRule teams.?$ teams.php [L,QSA]
+
 
 # Redirect index.php to /
 
