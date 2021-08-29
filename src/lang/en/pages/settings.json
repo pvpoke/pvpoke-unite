@@ -1,0 +1,11 @@
+{
+	"settings_meta_title": "Settings",
+	"settings_meta_description": "Adjust your settings and preferences for the site.",
+	"settings_description": "Adjust your site preferences below. These will be saved in a cookie to your device.",
+	"settings_ads": "Advertisements",
+	"settings_ads_button": "Show Ads",
+	"settings_ads_description": "Ads help support the site and the Pokemon Unite community!",
+	"settings_save_button": "Save Settings",
+	"settings_save_header": "Settings Saved",
+	"settings_save_message": "Your settings have been updated. (Refresh the page if you've updated the site appearance.)"
+}

@@ -33,7 +33,7 @@ if($(window).width() > 768){
 		}
 	});
 
-	$("body").on("mouseover click", "header .menu .parent-menu", function(e){
+	$("body").on("mouseover", "header .menu .parent-menu", function(e){
 		e.preventDefault();
 		$(".submenu").removeClass("active");
 		$(this).find(".submenu").addClass("active");
@@ -89,6 +89,14 @@ $("body").on("click", ".tabs a", function(e){
 
 	$(e.target).closest(".tabs").find("a").removeClass("active");
 	$(this).addClass("active");
+});
+
+// Checkboxes
+
+$("body").on("click", ".check", function(e){
+	e.preventDefault();
+
+	$(e.target).closest(".check").toggleClass("on");
 });
 
 // Service worker handler

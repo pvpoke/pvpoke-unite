@@ -27,7 +27,7 @@ var Favorites = (function () {
 
 			console.log(object.list);
 
-			object.saveFavorites();
+			object.saveFavoriteBuilds();
 		}
 
 		// Add a build to the favorites list, checking for duplicate ID's
@@ -44,7 +44,7 @@ var Favorites = (function () {
 
 			console.log(object.list);
 
-			object.saveFavorites();
+			object.saveFavoriteBuilds();
 		}
 
 		// Return a build from the list with the given build ID, or false if not found
@@ -59,14 +59,14 @@ var Favorites = (function () {
 		}
 
 		// Save current list to local storage
-		object.saveFavorites = function(){
+		object.saveFavoriteBuilds = function(){
 			let json = JSON.stringify(object.list);
 
 			window.localStorage.setItem("uniteFavoriteBuilds", json);
 		}
 
 		// Load favorites list from local storage
-		object.loadFavorites = function(){
+		object.loadFavoriteBuilds = function(){
 			if(window.localStorage.getItem("uniteFavoriteBuilds")){
 				object.list = JSON.parse(window.localStorage.getItem("uniteFavoriteBuilds"));
 				console.log("favorites loaded");
@@ -75,11 +75,11 @@ var Favorites = (function () {
 		}
 
 		// For testing purposes, clear the favorites selection
-		object.clearFavorites = function(){
+		object.clearFavoriteBuilds = function(){
 			window.localStorage.setItem("uniteFavoriteBuilds", JSON.stringify([]));
 		}
 
-		object.loadFavorites();
+		object.loadFavoriteBuilds();
 
         return object;
     }

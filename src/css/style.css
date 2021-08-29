@@ -427,6 +427,27 @@ input[type=text] {
   display: none !important;
 }
 
+.check {
+  margin-top: 10px;
+  cursor: pointer;
+}
+.check span {
+  display: block;
+  width: 17px;
+  height: 17px;
+  background: #141414;
+  border: 2px solid #c8c8c8;
+  box-sizing: border-box;
+  margin: 0px 5px 0 0;
+  float: left;
+}
+.check.on span {
+  background: #9950c5;
+}
+.check:hover:not(.on) span {
+  background: #222222;
+}
+
 .modal {
   position: fixed;
   top: 0;

@@ -52,3 +52,33 @@ input{
 }
 
 .hide, .template{ display: none !important; }
+
+// Checkbox
+
+.check{
+	margin-top:10px;
+	cursor: pointer;
+
+	span{
+		display: block;
+		width: 17px;
+		height: 17px;
+		background: $black;
+		border: 2px solid $white;
+		box-sizing:border-box;
+		margin: 0px 5px 0 0;
+		float: left;
+	}
+
+	&.on{
+		span{
+			background:$accent-color;
+		}
+	}
+
+	&:hover:not(.on){
+		span{
+			background:$gray;
+		}
+	}
+}

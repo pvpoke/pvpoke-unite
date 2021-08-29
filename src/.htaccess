@@ -12,6 +12,8 @@ RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteRule builds/([a-zA-Z0-9-,_]+).*$ builds.php?builds=$1 [L,QSA]
 RewriteRule builds.?$ builds.php [L,QSA]
 
+RewriteRule settings.?$ settings.php [L,QSA]
+
 
 # Redirect index.php to /
 

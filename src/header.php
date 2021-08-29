@@ -72,7 +72,7 @@ if(! isset($OG_IMAGE)){
 	var siteVersion = "<?php echo $SITE_VERSION; ?>";
 	var messages = {}; // Object of translation messages
 
-	<?php if(isset($_COOKIE['settings'])) : ?>
+	<?php if(isset($_COOKIE['unite_settings'])) : ?>
 		var settings = {
 			'lang': "<?php echo htmlspecialchars($_SETTINGS->lang); ?>",
 			'ads': "<?php echo htmlspecialchars($_SETTINGS->ads); ?>"
