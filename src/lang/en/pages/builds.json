@@ -24,5 +24,8 @@
 	"moveset": "Moveset",
 	"select_button": "Select",
 	"share": "Share",
-	"cooldown_abbreviation": "s"
+	"cooldown_abbreviation": "s",
+	"unlock_level": "Unlock Level",
+	"upgrade_level": "Upgrade Level",
+	"upgrade": "Upgrade"
 }

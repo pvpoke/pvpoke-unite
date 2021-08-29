@@ -169,6 +169,23 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			}
 
 			$attributes.show();
+
+			// Add unlock and upgrade details
+
+			let $secondary = $('<div class="boosts"></div>');
+
+			if((itemIndex != "basic")&&(itemIndex != "passive")){
+				$secondary.append('<div class="boost corners"><span>'+move.unlockLevel + '</span> ' + msg("unlock_level") + '</div>');
+			}
+
+			if((itemIndex == "slot1")||(itemIndex == "slot2")){
+				if(move.upgradeLevel){
+					$secondary.append('<div class="boost corners"><span>'+move.upgradeLevel + '</span> ' + msg("upgrade_level") + '</div>');
+					$selecteDescription.append('<div class="upgrade-description"><b>'+msg("upgrade")+":</b> "+msg(move.moveId+"_upgrade")+'</div>');
+				}
+			}
+
+			$selecteDescription.append($secondary);
 		}
 	}
 }
