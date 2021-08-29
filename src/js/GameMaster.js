@@ -115,6 +115,22 @@ var GameMaster = (function () {
 			return item;
 		}
 
+		// Return a game mode format by id
+
+		object.getFormatById = function(id){
+			let format;
+
+			$.each(object.formats, function(index, it){
+
+				if(it.id == id){
+					format = it;
+					return;
+				}
+			});
+
+			return format;
+		}
+
 		// Generate a full list of string ID's to be localized from the Pokemon data
 		object.generatePokemonStringIDs = function(){
 			let arr = [];

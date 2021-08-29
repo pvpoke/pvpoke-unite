@@ -2,7 +2,10 @@
 	"teams_meta_title": "Teams",
 	"teams_meta_description": "Build your Pokemon Unite team and find the best synergy for your Pokemon and lanes.",
 	"teams_description": "Select your Pokemon below and analyze your team synergy.",
-	"3v3": "3v3 (Auroma Park)",
-	"4v4": "4v4 (Mer Stadium)",
-	"5v5": "5v5 (Remoat Stadium)"
+	"format3v3": "3v3 (Auroma Park)",
+	"format4v4": "4v4 (Mer Stadium)",
+	"format5v5": "5v5 (Remoat Stadium)",
+	"top_path": "Top Path",
+	"central_area": "Central Area",
+	"bottom_path": "Bottom Path"
 }

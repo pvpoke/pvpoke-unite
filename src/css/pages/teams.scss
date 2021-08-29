@@ -57,6 +57,11 @@
 
 		.pokemon-list{
 			padding:5px;
+
+			.pokemon{
+				max-width: 50%;
+				flex-basis: 50%;
+			}
 		}
 	}
 }

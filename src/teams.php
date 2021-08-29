@@ -37,36 +37,28 @@ $META_DESCRIPTION = l("teams_meta_description");
 
 	<div class="section padding">
 		<div class="main-wrap lanes">
-			<div class="lane">
-				<div class="header">
-					<div class="name">Top Path</div>
-					<div class="synergy">
-						<div class="label">Lane Synergy: </div>
-						<div class="synergy-meter"></div>
-					</div>
+		</div>
+	</div>
+
+	<!-- HTML template for lane interface-->
+	<div class="lane template">
+		<div class="lane">
+			<div class="header">
+				<div class="name"></div>
+				<div class="synergy">
+					<div class="label">Lane Synergy: </div>
+					<div class="synergy-meter"></div>
 				</div>
-				<div class="pokemon-list">
-					<div class="pokemon" pokemon-id="venusaur">
-						<div class="image-container role-bg corners" role="attacker">
-							<div class="image" style="background-image: url(&quot;../img/pokemon/venusaur.png&quot;);"></div>
-						</div>
-						<div class="name">Venusaur</div>
-					</div>
-					<div class="pokemon" pokemon-id="venusaur">
-						<div class="image-container role-bg corners" role="attacker">
-							<div class="image" style="background-image: url(&quot;../img/pokemon/venusaur.png&quot;);"></div>
-						</div>
-						<div class="name">Venusaur</div>
-					</div>
-				</div>
+			</div>
+			<div class="pokemon-list">
 			</div>
 		</div>
 	</div>
 
-	<div class="lane-template">
+	<!-- HTML template for Pokemon listed in a lane-->
+	<?php require 'modules/pokemonsquare.php'; ?>
 
-	</div>
-
+	<!-- HTML template for build selector-->
 	<div class="build-template template">
 		<?php require_once 'modules/buildselect.php'; ?>
 	</div>
@@ -81,15 +73,18 @@ $META_DESCRIPTION = l("teams_meta_description");
 <script src="<?php echo $WEB_ROOT; ?>js/build/BattleItem.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Move.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Build.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/team/Lane.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/team/Team.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Tooltip.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/SelectWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/Teams.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/TeamsInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
 <?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
 <?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("pages/teams"); ?>
 
 <?php require_once 'footer.php'; ?>

@@ -1,55 +1,55 @@
 [
 	{
-		"id": "3v3",
-		"teamCount": 3,
+		"id": "format3v3",
+		"teamCap": 3,
 		"lanes": [
 			{
 				"id": "top_path",
-				"recommendedCount": 2
+				"cap": 2
 			},
 			{
 				"id": "central_area",
-				"recommendedCount": 0
+				"cap": 1
 			},
 			{
 				"id": "bottom_path",
-				"recommendedCount": 2
+				"cap": 2
 			}
 		]
 	},
 	{
-		"id": "4v4",
-		"teamCount": 4,
+		"id": "format4v4",
+		"teamCap": 4,
 		"lanes": [
 			{
 				"id": "top_path",
-				"recommendedCount": 2
+				"cap": 2
 			},
 			{
 				"id": "central_area",
-				"recommendedCount": 0
+				"cap": 1
 			},
 			{
 				"id": "bottom_path",
-				"recommendedCount": 2
+				"cap": 2
 			}
 		]
 	},
 	{
-		"id": "5v5",
-		"teamCount": 5,
+		"id": "format5v5",
+		"teamCap": 5,
 		"lanes": [
 			{
 				"id": "top_path",
-				"recommendedCount": 2
+				"cap": 2
 			},
 			{
 				"id": "central_area",
-				"recommendedCount": 1
+				"cap": 1
 			},
 			{
 				"id": "bottom_path",
-				"recommendedCount": 2
+				"cap": 2
 			}
 		]
 	}

@@ -1052,5 +1052,9 @@ select {
 .lanes .lane .pokemon-list {
   padding: 5px;
 }
+.lanes .lane .pokemon-list .pokemon {
+  max-width: 50%;
+  flex-basis: 50%;
+}
 
 /*# sourceMappingURL=style.css.map */
