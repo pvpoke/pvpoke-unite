@@ -16,8 +16,9 @@ function Team(formatId){
 
 	// Add a build with a specified lane ID
 	self.addPokemon = function(build, laneId){
-		if((self.pokemon.length < self.cap)&&(self.getPokemon(laneId).length < self.lanes[laneId].cap)){
-			pokemon.push(build);
+		if((self.pokemon.length < self.cap)&&(! self.isLaneFull(laneId))){
+			build.lane = laneId;
+			self.pokemon.push(build);
 		}
 	}
 
@@ -51,7 +52,12 @@ function Team(formatId){
 		return pokes;
 	}
 
-
-
-
+	// Returns true if the specified lane is at capacity
+	self.isLaneFull = function(laneId){
+		if(self.getPokemon(laneId).length < self.lanes[laneId].cap){
+			return false;
+		} else{
+			return true;
+		}
+	}
 }

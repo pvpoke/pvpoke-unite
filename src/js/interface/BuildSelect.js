@@ -330,7 +330,7 @@ function BuildSelect(element, ctx, selectors){
 		 $el.find(".pokemon-list").html("");
 
 		$.each(gm.pokemon, function(n, poke){
-			let $pokeEl = self.createNewPokeSelectElement(poke);
+			let $pokeEl = createPokemonSquare(poke);
 
 			$el.find(".pokemon-list").append($pokeEl);
 		});
@@ -342,7 +342,7 @@ function BuildSelect(element, ctx, selectors){
 
 		$.each(favorites.list, function(n, obj){
 			let poke = generateBuildFromString(obj.str);
-			let $pokeEl = self.createNewPokeSelectElement(poke);
+			let $pokeEl = createPokemonSquare(poke);
 
 			$pokeEl.attr("build-id", obj.id);
 			$pokeEl.attr("build-str", obj.str);
@@ -350,20 +350,6 @@ function BuildSelect(element, ctx, selectors){
 			$el.find(".pokemon-list").append($pokeEl);
 		});
 	}
-
-	// Given a build or Pokemon data element, create a new HTML block for the Pokemon select screen
-
-	self.createNewPokeSelectElement = function(poke){
-		let $pokeEl = $el.find(".pokemon.template").clone().removeClass("template");
-
-		$pokeEl.find(".name").html(msg(poke.pokemonId));
-		$pokeEl.find(".image-container").attr("role", poke.role);
-		$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
-		$pokeEl.attr("pokemon-id", poke.pokemonId);
-
-		return $pokeEl;
-	}
-
 
 	// Return the currently selected build
 
@@ -457,9 +443,16 @@ function BuildSelect(element, ctx, selectors){
 
 		// Log a Pokemon selection event
 
-		gtag('event', pokemonId, {
-		  'event_category' : 'Pokemon Select'
-		});
+		if(context == "builds"){
+			gtag('event', pokemonId, {
+			  'event_category' : 'Pokemon Select'
+			});
+		}
+
+		// Bubble up to the TeamInterface when a Pokemnon is selected
+		if(context == "teams"){
+			interface.selectNewPokemon(build);
+		}
 
 		self.update();
 	});

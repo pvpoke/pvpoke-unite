@@ -5,7 +5,7 @@ var closePrevention = false; // Prevents closing the window during certain inter
 function ModalWindow(content, manualHeader){
 	let self = this;
 	let $content = $(content).clone();
-	$content.removeClass("hide");
+	$content.removeClass("hide template");
 	let header = $content.attr("header");
 
 	if(manualHeader){

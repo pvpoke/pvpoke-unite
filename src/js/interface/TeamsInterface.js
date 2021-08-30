@@ -12,6 +12,9 @@ var InterfaceMaster = (function () {
 
 			let self = this;
 			let team;
+			let modal;
+			let buildSelector;
+			let selectedLane;
 
 			this.init = function(){
 				console.log("interface init");
@@ -22,7 +25,7 @@ var InterfaceMaster = (function () {
 					team = new Team("format5v5");
 					console.log(team);
 
-					self.updateAllLanes();
+					self.refreshAllLanes();
 				}
 
 				// Loads history data on forward and backward navigation
@@ -34,7 +37,7 @@ var InterfaceMaster = (function () {
 
 			// Completely refresh the lanes section
 
-			this.updateAllLanes = function(){
+			this.refreshAllLanes = function(){
 				$(".lanes").html("");
 
 				for(var key in team.lanes){
@@ -43,10 +46,32 @@ var InterfaceMaster = (function () {
 
 						let $lane = $(".lane.template").clone().removeClass("template");
 						$lane.find(".header .name").html(msg(lane.laneId));
+						$lane.attr("lane-id", lane.laneId);
 						$(".lanes").append($lane);
 					}
 				}
 			}
+
+			// Update the Pokemon display of a particular lane
+
+			this.updateLane = function(laneId){
+				let $lane = $(".lane[lane-id=\""+laneId+"\"]");
+				let pokemon = team.getPokemon(laneId);
+
+				$lane.find(".pokemon:not(.add)").remove();
+
+				for(var i = 0; i < pokemon.length; i++){
+					let $pokeEl = createPokemonSquare(pokemon[i]);
+					$pokeEl.insertBefore($lane.find(".pokemon.add"));
+				}
+
+				if(team.isLaneFull(laneId)){
+					$lane.find(".pokemon.add").hide();
+				} else{
+					$lane.find(".pokemon.add").show();
+				}
+			}
+
 
 			// Load data from URL
 
@@ -106,6 +131,27 @@ var InterfaceMaster = (function () {
 				  'event_label' : speciesId
 			  });*/
 			}
+
+
+			// Called by BuildSelect when a Pokemon is selected
+
+			this.selectNewPokemon = function(build){
+				team.addPokemon(build, selectedLane);
+				modal.close();
+				self.updateLane(selectedLane);
+			}
+
+			// Open up the modal window to add a new Pokemon
+
+			$("body").on("click", ".pokemon.add", function(e){
+				selectedLane = $(this).closest(".lane").attr("lane-id");
+
+				modal = new ModalWindow($(".build-template"), msg("teams_select_pokemon"));
+
+				buildSelector = new BuildSelect($(".modal .build-select"), "teams");
+				buildSelector.init();
+			});
+
 		};
 
         return object;

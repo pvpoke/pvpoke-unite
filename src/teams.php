@@ -42,15 +42,18 @@ $META_DESCRIPTION = l("teams_meta_description");
 
 	<!-- HTML template for lane interface-->
 	<div class="lane template">
-		<div class="lane">
-			<div class="header">
-				<div class="name"></div>
-				<div class="synergy">
-					<div class="label">Lane Synergy: </div>
-					<div class="synergy-meter"></div>
-				</div>
+		<div class="header">
+			<div class="name"></div>
+			<div class="synergy">
+				<div class="label">Lane Synergy: </div>
+				<div class="synergy-meter"></div>
 			</div>
-			<div class="pokemon-list">
+		</div>
+		<div class="pokemon-list">
+			<div class="pokemon add">
+				<div class="image-container corners">
+					<div class="image">+</div>
+				</div>
 			</div>
 		</div>
 	</div>

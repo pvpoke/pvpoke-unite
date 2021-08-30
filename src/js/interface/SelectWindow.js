@@ -11,7 +11,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 
 	let self = this;
 	let modal = new ModalWindow($content);
-	let $form = $(".modal .select-modal");
+	let $form = $(".modal").last().find(".select-modal");
 	let gm = GameMaster.getInstance();
 	let idKey = "itemId";
 
@@ -47,6 +47,8 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		}
 	}
 
+	console.log("initializing list " + type);
+
 	for(var i = 0; i < itemArray.length; i++){
 		let itemId = itemArray[i][idKey];
 		let assetId = itemId;
@@ -57,7 +59,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			assetId = itemArray[i].assetId;
 		}
 
-		let $item = $form.find(".item.template").clone().removeClass("template");
+		let $item = $form.find(".item.template").first().clone().removeClass("template");
 		let displayId = itemId;
 
 		if(displayId.indexOf("_basic") > -1){

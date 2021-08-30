@@ -317,8 +317,6 @@ function generateBuildFromString(str){
 	let arr = str.split("-");
 	let gm = GameMaster.getInstance();
 
-	console.log(str);
-
 	if(arr.length < 6)
 		return false;
 

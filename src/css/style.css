@@ -181,6 +181,12 @@ a {
   max-width: 33%;
   flex-grow: 1;
 }
+.pokemon-list .pokemon.add .image {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+}
 .pokemon-list .pokemon .image-container {
   width: 100%;
   height: 75px;
@@ -1051,10 +1057,7 @@ select {
 }
 .lanes .lane .pokemon-list {
   padding: 5px;
-}
-.lanes .lane .pokemon-list .pokemon {
-  max-width: 50%;
-  flex-basis: 50%;
+  justify-content: space-evenly;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -51,6 +51,15 @@
 		max-width: 33%;
 		flex-grow: 1;
 
+		&.add{
+			.image{
+				display:flex;
+				justify-content: center;
+				align-items: center;
+				font-size:30px;
+			}
+		}
+
 		.image-container{
 			width:100%;
 			height:75px;
