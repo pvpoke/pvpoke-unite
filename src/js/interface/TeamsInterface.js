@@ -11,6 +11,7 @@ var InterfaceMaster = (function () {
 		function interfaceObject(){
 
 			let self = this;
+			let gm = GameMaster.getInstance();
 			let team;
 			let modal;
 			let buildSelector;
@@ -72,6 +73,9 @@ var InterfaceMaster = (function () {
 				} else{
 					$lane.find(".pokemon.add").show();
 				}
+
+				let ratings = self.calculatePokemonSynergy(pokemon);
+				console.log(ratings);
 			}
 
 
@@ -160,6 +164,83 @@ var InterfaceMaster = (function () {
 				self.updateLane(selectedLane);
 			}
 
+			// Calculate synergy with an array of Pokemon
+			this.calculatePokemonSynergy = function(pokemon){
+				// Initialize the synergy scores from the Pokemon's ratings
+				let ratings = {};
+				let categoryCount = 0;
+
+				for(var key in pokemon[0].ratings){
+					if(pokemon[0].ratings.hasOwnProperty(key)){
+						ratings[key] = 0;
+						categoryCount++;
+					}
+				}
+
+				// For each Pokemon, add ratings to the cumuluative score
+				for(var i = 0; i < pokemon.length; i++){
+					for(var key in ratings){
+						if(pokemon[i].ratings.hasOwnProperty(key)){
+							ratings[key] += pokemon[i].ratings[key];
+						}
+					}
+				}
+
+				// Calculate overall synergy as the value of stars missing from the combined total
+				let ratingCap = 5 * pokemon.length / 2; // The number of stars expected for perfect synergy in each category
+				let synergyScore = categoryCount * ratingCap;
+
+				for(var key in ratings){
+					if(ratings.hasOwnProperty(key)){
+						let synergy = ratingCap - ratings[key];
+
+						if(synergy > 0){
+							synergyScore -= synergy; // Subtract the difference from overall synergy
+						}
+					}
+				}
+
+				ratings.overall = synergyScore;
+				ratings.overallCap = (categoryCount * ratingCap);
+
+				return ratings;
+			}
+
+			// Calculate synergy for all Pokemon combinations
+			this.generateAllPokemonSynergy = function(){
+				let results = [];
+				let completedCombos = [];
+
+				$.each(gm.pokemon, function(i, pokeA){
+					$.each(gm.pokemon, function(n, pokeB){
+						if(pokeB != pokeA){
+							let comboNames = [pokeA.pokemonId, pokeB.pokemonId];
+							comboNames.sort((a,b) => (a > b) ? -1 : ((b > a) ? 1 : 0));
+
+							let comboName = comboNames.join("");
+
+							if(completedCombos.indexOf(comboName) == -1){
+								let synergy = self.calculatePokemonSynergy([pokeA, pokeB]);
+								results.push({a: pokeA.pokemonId, b: pokeB.pokemonId, synergy: synergy.overall});
+								completedCombos.push(comboName);
+							}
+						}
+					});
+				});
+
+				results.sort((a,b) => (a.synergy > b.synergy) ? -1 : ((b.synergy > a.synergy) ? 1 : 0));
+
+				console.log(results);
+
+				let csv = 'Pokemon A,Pokemon B,Synergy\n';
+
+				for(var i = 0; i < results.length; i++){
+					csv += results[i].a + ',' + results[i].b + ',' + results[i].synergy + '\n';
+				}
+
+				console.log(csv);
+			}
+
 			// Open up the modal window to add a new Pokemon
 
 			$("body").on("click", ".lane .pokemon.add", function(e){
@@ -177,6 +258,7 @@ var InterfaceMaster = (function () {
 
 			$("body").on("click", ".lane .pokemon:not(.add)", function(e){
 				if($("a.remove:hover").length > 0){
+					e.preventDefault();
 					self.removePokemon(e);
 					return false;
 				}
