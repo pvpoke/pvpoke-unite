@@ -22,6 +22,17 @@ function Team(formatId){
 		}
 	}
 
+	// Replace a specified Pokemon from a specified lane with a new build
+	self.replacePokemon = function(build, laneId, newBuild){
+
+		for(var i = 0; i < self.pokemon.length; i++){
+			if(self.pokemon[i] == build){
+				self.pokemon[i] = newBuild;
+				newBuild.lane = laneId;
+			}
+		}
+	}
+
 	// Remove a Pokemon from a specific lane given the Pokemon's index in that lane
 	self.removePokemon = function(laneId, index){
 		let counter = 0;
@@ -38,7 +49,7 @@ function Team(formatId){
 	}
 
 	// Return an array of Pokemon from specified lane Id's
-	self.getPokemon = function(laneId){
+	self.getPokemonList = function(laneId){
 		laneId = typeof laneId !== 'undefined' ? laneId : 'all';
 
 		let pokes = [];
@@ -52,9 +63,23 @@ function Team(formatId){
 		return pokes;
 	}
 
+	// Return a specific build given its ID and lane
+	self.getBuild = function(pokemonId, laneId){
+
+		let build;
+
+		for(var i = 0; i < self.pokemon.length; i++){
+			if((self.pokemon[i].lane == laneId)&&(self.pokemon[i].pokemonId == pokemonId)){
+				build = self.pokemon[i];
+			}
+		}
+
+		return build;
+	}
+
 	// Returns true if the specified lane is at capacity
 	self.isLaneFull = function(laneId){
-		if(self.getPokemon(laneId).length < self.lanes[laneId].cap){
+		if(self.getPokemonList(laneId).length < self.lanes[laneId].cap){
 			return false;
 		} else{
 			return true;

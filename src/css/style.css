@@ -1059,5 +1059,8 @@ select {
   padding: 5px;
   justify-content: space-evenly;
 }
+.lanes .lane .pokemon-list .pokemon .image {
+  background-size: 100%;
+}
 
 /*# sourceMappingURL=style.css.map */

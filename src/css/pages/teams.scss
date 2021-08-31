@@ -58,6 +58,12 @@
 		.pokemon-list{
 			padding:5px;
 			justify-content: space-evenly;
+
+			.pokemon{
+				.image{
+					background-size:100%;
+				}
+			}
 		}
 	}
 }

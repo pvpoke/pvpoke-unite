@@ -15,6 +15,8 @@ var InterfaceMaster = (function () {
 			let modal;
 			let buildSelector;
 			let selectedLane;
+			let selectedBuild;
+			let selectMode = "add";
 
 			this.init = function(){
 				console.log("interface init");
@@ -56,7 +58,7 @@ var InterfaceMaster = (function () {
 
 			this.updateLane = function(laneId){
 				let $lane = $(".lane[lane-id=\""+laneId+"\"]");
-				let pokemon = team.getPokemon(laneId);
+				let pokemon = team.getPokemonList(laneId);
 
 				$lane.find(".pokemon:not(.add)").remove();
 
@@ -136,7 +138,12 @@ var InterfaceMaster = (function () {
 			// Called by BuildSelect when a Pokemon is selected
 
 			this.selectNewPokemon = function(build){
-				team.addPokemon(build, selectedLane);
+				if(selectMode == "add"){
+					team.addPokemon(build, selectedLane);
+				} else if(selectMode == "edit"){
+					team.replacePokemon(selectedBuild, selectedLane, build)
+				}
+
 				modal.close();
 				self.updateLane(selectedLane);
 			}
@@ -150,6 +157,26 @@ var InterfaceMaster = (function () {
 
 				buildSelector = new BuildSelect($(".modal .build-select"), "teams");
 				buildSelector.init();
+
+				selectMode = "add";
+			});
+
+			// Open up the modal window to edit a Pokemon
+
+			$("body").on("click", ".pokemon:not(.add)", function(e){
+				let pokemonId = $(this).attr("pokemon-id");
+				selectedLane = $(this).closest(".lane").attr("lane-id");
+
+				let build = team.getBuild(pokemonId, selectedLane);
+
+				modal = new ModalWindow($(".build-template"), msg("teams_select_pokemon"));
+
+				buildSelector = new BuildSelect($(".modal .build-select"), "teams");
+				buildSelector.init();
+				buildSelector.setBuild(build);
+
+				selectMode = "edit";
+				selectedBuild = build;
 			});
 
 		};

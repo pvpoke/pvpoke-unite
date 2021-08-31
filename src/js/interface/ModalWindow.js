@@ -28,18 +28,18 @@ function ModalWindow(content, manualHeader){
 
 	// Close the window on clicking the X or clicking outside the window
 
-	$(".modal-close").click(function(e){
+	$modal.find(".modal-close").click(function(e){
 		self.close();
 	});
 
 	// Decline confirmation
 
-	$(".modal .no").click(function(e){
+	$modal.find(".modal .no").click(function(e){
 		self.close();
 	});
 
 
-	$(".modal").click(function(e){
+	$modal.click(function(e){
 
 		if($(".modal-container:hover, option:hover, input:focus").length == 0){
 			self.close();
