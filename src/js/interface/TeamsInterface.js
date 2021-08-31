@@ -63,7 +63,7 @@ var InterfaceMaster = (function () {
 				$lane.find(".pokemon:not(.add)").remove();
 
 				for(var i = 0; i < pokemon.length; i++){
-					let $pokeEl = createPokemonSquare(pokemon[i]);
+					let $pokeEl = createPokemonSquare(pokemon[i], "teams");
 					$pokeEl.insertBefore($lane.find(".pokemon.add"));
 				}
 
@@ -148,9 +148,21 @@ var InterfaceMaster = (function () {
 				self.updateLane(selectedLane);
 			}
 
+			// Remove a Pokemon when the X button is clicked
+			this.removePokemon = function(e){
+				let pokemonId = $(e.target).closest(".pokemon").attr("pokemon-id");
+				selectedLane = $(e.target).closest(".lane").attr("lane-id");
+
+				let index =  $(e.target).closest(".lane").find(".pokemon").index($(e.target).closest(".pokemon"));
+
+				team.removePokemon(selectedLane, index);
+
+				self.updateLane(selectedLane);
+			}
+
 			// Open up the modal window to add a new Pokemon
 
-			$("body").on("click", ".pokemon.add", function(e){
+			$("body").on("click", ".lane .pokemon.add", function(e){
 				selectedLane = $(this).closest(".lane").attr("lane-id");
 
 				modal = new ModalWindow($(".build-template"), msg("teams_select_pokemon"));
@@ -163,7 +175,12 @@ var InterfaceMaster = (function () {
 
 			// Open up the modal window to edit a Pokemon
 
-			$("body").on("click", ".pokemon:not(.add)", function(e){
+			$("body").on("click", ".lane .pokemon:not(.add)", function(e){
+				if($("a.remove:hover").length > 0){
+					self.removePokemon(e);
+					return false;
+				}
+
 				let pokemonId = $(this).attr("pokemon-id");
 				selectedLane = $(this).closest(".lane").attr("lane-id");
 
@@ -177,6 +194,12 @@ var InterfaceMaster = (function () {
 
 				selectMode = "edit";
 				selectedBuild = build;
+			});
+
+			// Remove a Pokemon
+
+			$("body").on("click", ".pokemon a.remove", function(e){
+
 			});
 
 		};

@@ -28,13 +28,17 @@ function msg(stringId){
 }
 
 
-function createPokemonSquare(poke){
+function createPokemonSquare(poke, context){
 	let $pokeEl = $(".pokemon.template").first().clone().removeClass("template");
 
 	$pokeEl.find(".name").html(msg(poke.pokemonId));
 	$pokeEl.find(".image-container").attr("role", poke.role);
 	$pokeEl.find(".image").css("background-image", "url(../img/pokemon/"+poke.pokemonId+".png)");
 	$pokeEl.attr("pokemon-id", poke.pokemonId);
+
+	if((context == "favorites")||(context == "teams")){
+		$pokeEl.find("a.remove").css("display","flex");
+	}
 
 	return $pokeEl;
 }

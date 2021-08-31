@@ -40,7 +40,7 @@ function Team(formatId){
 		for(var i = 0; i < self.pokemon.length; i++){
 			if(self.pokemon[i].lane == laneId){
 				if(counter == index){
-					self.pokemon[i].splice(i, 1);
+					self.pokemon.splice(i, 1);
 				} else{
 					counter++;
 				}

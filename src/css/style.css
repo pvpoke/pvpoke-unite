@@ -176,6 +176,7 @@ a {
   flex-wrap: wrap;
 }
 .pokemon-list .pokemon {
+  position: relative;
   cursor: pointer;
   flex-basis: 33%;
   max-width: 33%;
@@ -186,6 +187,9 @@ a {
   justify-content: center;
   align-items: center;
   font-size: 30px;
+}
+.pokemon-list .pokemon:hover .image-container {
+  border: 3px solid #c8c8c8;
 }
 .pokemon-list .pokemon .image-container {
   width: 100%;
@@ -208,8 +212,11 @@ a {
   text-align: center;
   padding: 2px 0 8px 0;
 }
-.pokemon-list .pokemon:hover .image-container {
-  border: 3px solid #c8c8c8;
+.pokemon-list .pokemon a.remove {
+  display: none;
+  position: absolute;
+  right: 5px;
+  top: 5px;
 }
 
 .menu {
@@ -412,6 +419,25 @@ button.select {
 .tabs a.active {
   background: #9950c5;
   color: #c8c8c8;
+}
+
+a.remove {
+  border-radius: 20px;
+  background: #141414;
+  color: #c8c8c8;
+  width: 20px;
+  height: 20px;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  padding: 2px;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+a.remove:hover {
+  border: 2px solid #c8c8c8;
 }
 
 input {
@@ -807,19 +833,6 @@ select {
   text-align: center;
   max-width: 90%;
   text-shadow: -1px 1px 0 #c8c8c8, 1px 1px 0 #c8c8c8, 1px -1px 0 #c8c8c8, -1px -1px 0 #c8c8c8;
-}
-.build-select .selected-pokemon .container a.remove {
-  border-radius: 20px;
-  background: #141414;
-  color: #c8c8c8;
-  width: 20px;
-  height: 20px;
-  text-decoration: none;
-  font-weight: bold;
-  display: flex;
-  padding: 2px;
-  align-items: center;
-  justify-content: center;
 }
 .build-select .attributes {
   justify-content: center;
