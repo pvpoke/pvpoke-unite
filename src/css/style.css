@@ -1,3 +1,4 @@
+@charset "UTF-8";
 body, html {
   margin: 0;
   padding: 0;
@@ -1064,16 +1065,45 @@ select {
   font-weight: bold;
   font-size: 18px;
 }
-.lanes .lane .header .synergy .label {
-  font-size: 14px;
-  font-weight: normal;
-}
 .lanes .lane .pokemon-list {
   padding: 5px;
   justify-content: space-evenly;
 }
 .lanes .lane .pokemon-list .pokemon .image {
   background-size: 100%;
+}
+
+.synergy .label {
+  font-size: 14px;
+  font-weight: normal;
+  margin-right: 5px;
+}
+.synergy .synergy-meter {
+  position: relative;
+}
+.synergy .synergy-meter .background, .synergy .synergy-meter .stars {
+  display: flex;
+}
+.synergy .synergy-meter .background {
+  position: relative;
+  color: #141414;
+}
+.synergy .synergy-meter .stars {
+  top: 0;
+  position: absolute;
+  color: #f0d50a;
+}
+.synergy .synergy-meter .star {
+  line-height: 20px;
+  font-size: 24px;
+  width: 20px;
+}
+.synergy .synergy-meter .star:after {
+  content: "★";
+}
+.synergy .synergy-meter .star.half {
+  overflow: hidden;
+  width: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */

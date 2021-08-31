@@ -19,6 +19,8 @@ var InterfaceMaster = (function () {
 			let selectedBuild;
 			let selectMode = "add";
 
+			let synergyScale = 7;
+
 			this.init = function(){
 				console.log("interface init");
 
@@ -50,6 +52,7 @@ var InterfaceMaster = (function () {
 						let $lane = $(".lane.template").clone().removeClass("template");
 						$lane.find(".header .name").html(msg(lane.laneId));
 						$lane.attr("lane-id", lane.laneId);
+
 						$(".lanes").append($lane);
 					}
 				}
@@ -74,8 +77,24 @@ var InterfaceMaster = (function () {
 					$lane.find(".pokemon.add").show();
 				}
 
+				// Display Synergy meter
+
 				let ratings = self.calculatePokemonSynergy(pokemon);
-				console.log(ratings);
+
+				// Adjust this to a scale of 5
+				let stars = (ratings.overall - 18) / 7; // Maximum possible is 25
+				stars = Math.round(stars * 10) / 2;
+
+				$lane.find(".synergy-meter .stars").html("");
+
+				for(var i = 0; i < Math.floor(stars); i++){
+					$lane.find(".synergy-meter .stars").append($("<div class=\"star\"></div>"));
+				}
+
+				if(stars % 1 == 0.5){
+					$lane.find(".synergy-meter .stars").append($("<div class=\"star half\"></div>"));
+				}
+
 			}
 
 
@@ -204,6 +223,28 @@ var InterfaceMaster = (function () {
 				ratings.overallCap = (categoryCount * ratingCap);
 
 				return ratings;
+			}
+
+			// Calculate synergy for all Pokemon added to a provided array
+			this.generateComboSynergy = function(pokemon){
+				let results = [];
+				let startArr = [];
+
+				for(var i = 0; i < pokemon.length; i++){
+					startArr.push(pokemon[i].pokemonId);
+				}
+
+				$.each(gm.pokemon, function(n, poke){
+					let arr = pokemon.slice();
+					arr.push(poke);
+
+					let synergy = self.calculatePokemonSynergy(arr);
+					results.push({pokemonId: poke.pokemonId, synergy:synergy.overall});
+				});
+
+				results.sort((a,b) => (a.synergy > b.synergy) ? -1 : ((b.synergy > a.synergy) ? 1 : 0));
+
+				return results;
 			}
 
 			// Calculate synergy for all Pokemon combinations

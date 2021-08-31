@@ -28,7 +28,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 				<?php require_once 'modules/formatselect.php'; ?>
 
 				<div class="synergy">
-					<div class="label">Team Synergy: </div>
+					<div class="label"><?php e("team_synergy") ?>: </div>
 					<div class="synergy-meter"></div>
 				</div>
 			</div>
@@ -45,8 +45,17 @@ $META_DESCRIPTION = l("teams_meta_description");
 		<div class="header">
 			<div class="name"></div>
 			<div class="synergy">
-				<div class="label">Lane Synergy: </div>
-				<div class="synergy-meter"></div>
+				<div class="label"><?php e("synergy") ?>: </div>
+				<div class="synergy-meter">
+					<div class="background">
+						<div class="star"></div>
+						<div class="star"></div>
+						<div class="star"></div>
+						<div class="star"></div>
+						<div class="star"></div>
+					</div>
+					<div class="stars"></div>
+				</div>
 			</div>
 		</div>
 		<div class="pokemon-list">

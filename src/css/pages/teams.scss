@@ -48,11 +48,6 @@
 				font-weight: bold;
 				font-size: 18px;
 			}
-
-			.synergy .label{
-				font-size:14px;
-				font-weight: normal;
-			}
 		}
 
 		.pokemon-list{
@@ -63,6 +58,49 @@
 				.image{
 					background-size:100%;
 				}
+			}
+		}
+	}
+}
+
+
+.synergy{
+	.label{
+		font-size:14px;
+		font-weight: normal;
+		margin-right: 5px;
+	}
+
+	.synergy-meter{
+		position: relative;
+
+		.background, .stars{
+			display:flex;
+		}
+
+		.background{
+			position:relative;
+			color:$black;
+		}
+
+		.stars{
+			top:0;
+			position: absolute;
+			color:$boosted-color;
+		}
+
+		.star{
+			line-height: 20px;
+			font-size:24px;
+			width:20px;
+
+			&:after{
+				content: '\2605';
+			}
+
+			&.half{
+				overflow: hidden;
+				width:10px;
 			}
 		}
 	}
