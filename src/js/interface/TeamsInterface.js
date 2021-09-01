@@ -59,6 +59,15 @@ var InterfaceMaster = (function () {
 				}
 			}
 
+			// Update Pokemon and recommended for all lanes
+			this.updateAllLanes = function(){
+				for(var key in team.lanes){
+					if(team.lanes.hasOwnProperty(key)){
+						self.updateLane(key);
+					}
+				}
+			}
+
 			// Update the Pokemon display of a particular lane
 
 			this.updateLane = function(laneId){
@@ -91,12 +100,11 @@ var InterfaceMaster = (function () {
 					let ratings = self.calculatePokemonSynergy(pokemon);
 					self.displayStars($lane.find(".synergy-meter"), ratings, pokemon);
 
-
 					console.log(ratings);
 
 					// Display full team synergy
 					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
-					self.displayStars($(".top-team-panel .synergy-meter"), ratings, pokemon);
+					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
 
 
 					// Get recommendations
@@ -115,7 +123,6 @@ var InterfaceMaster = (function () {
 					}
 				}
 			}
-
 
 			// Load data from URL
 
@@ -187,7 +194,7 @@ var InterfaceMaster = (function () {
 				}
 
 				modal.close();
-				self.updateLane(selectedLane);
+				self.updateAllLanes();
 			}
 
 			// Remove a Pokemon when the X button is clicked
@@ -199,7 +206,7 @@ var InterfaceMaster = (function () {
 
 				team.removePokemon(selectedLane, index);
 
-				self.updateLane(selectedLane);
+				self.updateAllLanes();
 			}
 
 			// Calculate synergy with an array of Pokemon
@@ -226,6 +233,7 @@ var InterfaceMaster = (function () {
 
 				// Calculate overall synergy as the value of stars missing from the combined total
 				let ratingCap = 5 + (2.5 * (pokemon.length - 2)); // The number of stars expected for perfect synergy in each category
+				let teamRatingCap = 5 + (2.5 * (team.cap - 2)); // The number of stars expected for perfect synergy on a whole team
 				let synergyScore = categoryCount * ratingCap;
 
 				for(var key in ratings){
@@ -240,6 +248,7 @@ var InterfaceMaster = (function () {
 
 				ratings.overall = synergyScore;
 				ratings.overallCap = (categoryCount * ratingCap);
+				ratings.overallTeamCap = (categoryCount * teamRatingCap);
 
 				return ratings;
 			}
@@ -294,15 +303,11 @@ var InterfaceMaster = (function () {
 
 				results.sort((a,b) => (a.synergy > b.synergy) ? -1 : ((b.synergy > a.synergy) ? 1 : 0));
 
-				console.log(results);
-
 				let csv = 'Pokemon A,Pokemon B,Synergy\n';
 
 				for(var i = 0; i < results.length; i++){
 					csv += results[i].a + ',' + results[i].b + ',' + results[i].synergy + '\n';
 				}
-
-				console.log(csv);
 			}
 
 			// Displays stars in a synergy meter given ratings and the list of Pokemon
@@ -310,11 +315,11 @@ var InterfaceMaster = (function () {
 			this.displayStars = function($meter, ratings, pokemon){
 				$meter.find(".stars").html("");
 
-				// Adjust this to a scale of 5
-				//let floor = ratings.overallCap - (7 + (0.5 * (pokemon.length - 3)));
 				let floor = 18 + (12.5 * (pokemon.length - 2));
 				let ceiling = 25 + (12.5 * (pokemon.length - 2));
-				let stars = (ratings.overall - floor) / (ratings.overallCap - floor); // Maximum possible is 25
+				let stars = (ratings.overall - floor) / (ratings.overallCap - floor);
+
+				// Adjust to a scale of 5
 				stars = Math.round(stars * 10) / 2;
 
 				if(pokemon.length == 1){
@@ -339,6 +344,11 @@ var InterfaceMaster = (function () {
 			this.setFormat = function(formatId){
 				team = new Team(formatId);
 				self.refreshAllLanes();
+			}
+
+			// Return the current team
+			this.getTeam = function(){
+				return team;
 			}
 
 			// Open up the modal window to add a new Pokemon
@@ -388,7 +398,7 @@ var InterfaceMaster = (function () {
 
 				team.addPokemon(build, selectedLane);
 
-				self.updateLane(selectedLane);
+				self.updateAllLanes();
 			});
 
 			// Change the format selection

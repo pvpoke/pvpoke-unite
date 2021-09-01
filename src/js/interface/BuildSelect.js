@@ -332,6 +332,13 @@ function BuildSelect(element, ctx, selectors){
 		$.each(gm.pokemon, function(n, poke){
 			let $pokeEl = createPokemonSquare(poke);
 
+			// Disable existing Pokemon on a team
+			if(context == "teams"){
+				if(interface.getTeam().hasPokemon(poke.pokemonId)){
+					$pokeEl.addClass("disabled");
+				}
+			}
+
 			$el.find(".pokemon-list").append($pokeEl);
 		});
 	}
@@ -346,6 +353,13 @@ function BuildSelect(element, ctx, selectors){
 
 			$pokeEl.attr("build-id", obj.id);
 			$pokeEl.attr("build-str", obj.str);
+
+			// Disable existing Pokemon on a team
+			if(context == "teams"){
+				if(interface.getTeam().hasPokemon(poke.pokemonId)){
+					$pokeEl.addClass("disabled");
+				}
+			}
 
 			$el.find(".pokemon-list").append($pokeEl);
 		});

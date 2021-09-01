@@ -80,6 +80,7 @@
 				height:100%;
 				background-size: 125%;
 				background-position: center center;
+				background-repeat: no-repeat;
 
 				@include transition(all, 0.25s, ease-out, 0s);
 			}
@@ -94,8 +95,20 @@
 		a.remove{
 			display:none;
 			position: absolute;
-			right:5px;
-			top:5px;
+			right: -5px;
+		    top: -5px;
+		    width: 30px;
+		    height: 30px;
 		}
 	}
+}
+
+.disabled{
+	pointer-events: none;
+	opacity: 0.5;
+	-webkit-filter: grayscale(100%);
+	-moz-filter:    grayscale(100%);
+	-ms-filter:     grayscale(100%);
+	-o-filter:      grayscale(100%);
+	filter: gray; 
 }
