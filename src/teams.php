@@ -67,11 +67,17 @@ $META_DESCRIPTION = l("teams_meta_description");
 				</div>
 			</div>
 		</div>
-		<div class="pokemon-list">
+		<div class="main pokemon-list">
 			<div class="pokemon add">
 				<div class="image-container corners">
 					<div class="image">+</div>
 				</div>
+			</div>
+		</div>
+		<div class="footer">
+			<div class="recommended-section">
+				<div class="label"><?php e("teams_recommended"); ?>:</div>
+				<div class="recommended pokemon-list"></div>
 			</div>
 		</div>
 	</div>

@@ -38,25 +38,62 @@
 			margin-bottom: 0;
 		}
 
-		.header{
+		.header,
+		.footer{
 			display:flex;
 			justify-content: space-between;
 			background: $gray;
-			padding: 5px;
+			padding: 5px 10px;
 
 			.name{
 				font-weight: bold;
 				font-size: 18px;
 			}
+
+			.recommended-section{
+				width:100%;
+				display:flex;
+				align-items: center;
+				visibility: hidden;
+
+				.label{
+					font-size: 14px;
+					margin-right:10px;
+				}
+			}
 		}
 
-		.pokemon-list{
-			padding:5px;
+		.footer{
+			padding: 2px 10px;
+			min-height: 34px;
+			box-sizing: border-box;
+		}
+
+		.main.pokemon-list{
+			padding:10px;
 			justify-content: space-evenly;
 
 			.pokemon{
 				.image{
 					background-size:100%;
+				}
+			}
+		}
+
+		.recommended.pokemon-list{
+			width:100%;
+
+			.pokemon{
+				max-width: 40px;
+
+				.image-container{
+					height:30px;
+					border-bottom-left-radius: 10px;
+					border-top-right-radius: 10px;
+				}
+
+				.name{
+					display: none;
 				}
 			}
 		}

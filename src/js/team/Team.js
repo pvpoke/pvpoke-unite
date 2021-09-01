@@ -36,7 +36,7 @@ function Team(formatId){
 	// Remove a Pokemon from a specific lane given the Pokemon's index in that lane
 	self.removePokemon = function(laneId, index){
 		let counter = 0;
-		
+
 		for(var i = 0; i < self.pokemon.length; i++){
 			if(self.pokemon[i].lane == laneId){
 				if(counter == index){
@@ -47,6 +47,17 @@ function Team(formatId){
 				}
 			}
 		}
+	}
+
+	// Returns whether this team has a specific Pokemon
+	self.hasPokemon = function(pokemonId){
+		for(var i = 0; i < self.pokemon.length; i++){
+			if(self.pokemon[i].pokemonId == pokemonId){
+				return true;
+			}
+		}
+
+		return false;
 	}
 
 	// Return an array of Pokemon from specified lane Id's

@@ -1055,22 +1055,53 @@ select {
 .lanes .lane:last-of-type {
   margin-bottom: 0;
 }
-.lanes .lane .header {
+.lanes .lane .header,
+.lanes .lane .footer {
   display: flex;
   justify-content: space-between;
   background: #222222;
-  padding: 5px;
+  padding: 5px 10px;
 }
-.lanes .lane .header .name {
+.lanes .lane .header .name,
+.lanes .lane .footer .name {
   font-weight: bold;
   font-size: 18px;
 }
-.lanes .lane .pokemon-list {
-  padding: 5px;
+.lanes .lane .header .recommended-section,
+.lanes .lane .footer .recommended-section {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  visibility: hidden;
+}
+.lanes .lane .header .recommended-section .label,
+.lanes .lane .footer .recommended-section .label {
+  font-size: 14px;
+  margin-right: 10px;
+}
+.lanes .lane .footer {
+  padding: 2px 10px;
+}
+.lanes .lane .main.pokemon-list {
+  padding: 10px;
   justify-content: space-evenly;
 }
-.lanes .lane .pokemon-list .pokemon .image {
+.lanes .lane .main.pokemon-list .pokemon .image {
   background-size: 100%;
+}
+.lanes .lane .recommended.pokemon-list {
+  width: 100%;
+}
+.lanes .lane .recommended.pokemon-list .pokemon {
+  max-width: 40px;
+}
+.lanes .lane .recommended.pokemon-list .pokemon .image-container {
+  height: 30px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.lanes .lane .recommended.pokemon-list .pokemon .name {
+  display: none;
 }
 
 .synergy .label {

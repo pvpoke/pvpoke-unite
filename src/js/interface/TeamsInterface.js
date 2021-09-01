@@ -44,6 +44,7 @@ var InterfaceMaster = (function () {
 
 			this.refreshAllLanes = function(){
 				$(".lanes").html("");
+				$(".synergy-meter .stars").html("");
 
 				for(var key in team.lanes){
 					if(team.lanes.hasOwnProperty(key)){
@@ -73,8 +74,14 @@ var InterfaceMaster = (function () {
 
 				if(team.isLaneFull(laneId)){
 					$lane.find(".pokemon.add").hide();
+					$lane.find(".recommended-section").css("visibility", "hidden");
 				} else{
 					$lane.find(".pokemon.add").show();
+					if(pokemon.length > 0){
+						$lane.find(".recommended-section").css("visibility", "visible");
+					} else{
+						$lane.find(".recommended-section").css("visibility", "hidden");
+					}
 				}
 
 				// Display Synergy meter
@@ -94,7 +101,18 @@ var InterfaceMaster = (function () {
 
 					// Get recommendations
 					let recommendations = self.generateComboSynergy(pokemon);
-					console.log(recommendations);
+
+					for(var i = 0; i < 5; i++){
+						let pokemon = gm.getPokemonById(recommendations[i].pokemonId);
+						let $pokeEl = createPokemonSquare(pokemon, "recommended");
+						$lane.find(".recommended.pokemon-list").append($pokeEl);
+					}
+				} else{
+					$lane.find(".synergy-meter .stars").html("");
+
+					if(team.pokemon.length == 0){
+						$(".synergy-meter .stars").html("");
+					}
 				}
 			}
 
@@ -236,6 +254,10 @@ var InterfaceMaster = (function () {
 				}
 
 				$.each(gm.pokemon, function(n, poke){
+					if(team.hasPokemon(poke.pokemonId)){
+						return;
+					}
+
 					let arr = pokemon.slice();
 					arr.push(poke);
 
@@ -285,13 +307,23 @@ var InterfaceMaster = (function () {
 
 			// Displays stars in a synergy meter given ratings and the list of Pokemon
 
-			self.displayStars = function($meter, ratings, pokemon){
+			this.displayStars = function($meter, ratings, pokemon){
 				$meter.find(".stars").html("");
-				
+
 				// Adjust this to a scale of 5
-				let floor = ratings.overallCap - (7 + (0.5 * (pokemon.length - 2)));
-				let stars = (ratings.overall - floor) / 7; // Maximum possible is 25
+				//let floor = ratings.overallCap - (7 + (0.5 * (pokemon.length - 3)));
+				let floor = 18 + (12.5 * (pokemon.length - 2));
+				let ceiling = 25 + (12.5 * (pokemon.length - 2));
+				let stars = (ratings.overall - floor) / (ratings.overallCap - floor); // Maximum possible is 25
 				stars = Math.round(stars * 10) / 2;
+
+				if(pokemon.length == 1){
+					stars = 0;
+				}
+
+				if(stars > 5){
+					stars = 5; // This shouldn't ever happen if the formula is good but just in case
+				}
 
 				for(var i = 0; i < Math.floor(stars); i++){
 					$meter.find(".stars").append($("<div class=\"star\"></div>"));
@@ -300,6 +332,13 @@ var InterfaceMaster = (function () {
 				if(stars % 1 == 0.5){
 					$meter.find(".stars").append($("<div class=\"star half\"></div>"));
 				}
+			}
+
+			// Set a new format
+
+			this.setFormat = function(formatId){
+				team = new Team(formatId);
+				self.refreshAllLanes();
 			}
 
 			// Open up the modal window to add a new Pokemon
@@ -317,7 +356,7 @@ var InterfaceMaster = (function () {
 
 			// Open up the modal window to edit a Pokemon
 
-			$("body").on("click", ".lane .pokemon:not(.add)", function(e){
+			$("body").on("click", ".lane .main.pokemon-list .pokemon:not(.add)", function(e){
 				if($("a.remove:hover").length > 0){
 					e.preventDefault();
 					self.removePokemon(e);
@@ -339,10 +378,23 @@ var InterfaceMaster = (function () {
 				selectedBuild = build;
 			});
 
-			// Remove a Pokemon
+			// Add a new Pokemon from the recommended list
 
-			$("body").on("click", ".pokemon a.remove", function(e){
+			$("body").on("click", ".lane .recommended.pokemon-list .pokemon", function(e){
+				let pokemonId = $(this).attr("pokemon-id");
+				selectedLane = $(this).closest(".lane").attr("lane-id");
 
+				let build = new Build(pokemonId);
+
+				team.addPokemon(build, selectedLane);
+
+				self.updateLane(selectedLane);
+			});
+
+			// Change the format selection
+
+			$(".format-select").on("change", function(e){
+				self.setFormat($(this).find("option:selected").val());
 			});
 
 		};

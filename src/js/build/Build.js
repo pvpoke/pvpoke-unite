@@ -3,7 +3,7 @@
 */
 
 function Build(id, level){
-	level = typeof level !== 'undefined' ? level : true;
+	level = typeof level !== 'undefined' ? level : 10;
 
 	let self = this;
 	let gm = GameMaster.getInstance();
