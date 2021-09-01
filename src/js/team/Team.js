@@ -36,11 +36,12 @@ function Team(formatId){
 	// Remove a Pokemon from a specific lane given the Pokemon's index in that lane
 	self.removePokemon = function(laneId, index){
 		let counter = 0;
-
+		
 		for(var i = 0; i < self.pokemon.length; i++){
 			if(self.pokemon[i].lane == laneId){
 				if(counter == index){
 					self.pokemon.splice(i, 1);
+					return;
 				} else{
 					counter++;
 				}

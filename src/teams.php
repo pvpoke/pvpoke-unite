@@ -29,7 +29,16 @@ $META_DESCRIPTION = l("teams_meta_description");
 
 				<div class="synergy">
 					<div class="label"><?php e("team_synergy") ?>: </div>
-					<div class="synergy-meter"></div>
+					<div class="synergy-meter">
+						<div class="background">
+							<div class="star"></div>
+							<div class="star"></div>
+							<div class="star"></div>
+							<div class="star"></div>
+							<div class="star"></div>
+						</div>
+						<div class="stars"></div>
+					</div>
 				</div>
 			</div>
 		</div>

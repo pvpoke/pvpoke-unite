@@ -15,11 +15,14 @@ var GameMaster = (function () {
 		object.pokemon = null;
 		object.battleItems = null;
 		object.heldItems = null;
+		object.formats = null;
 
-		loadGameMasterChunk("pokemon");
-		loadGameMasterChunk("heldItems");
-		loadGameMasterChunk("battleItems");
-		loadGameMasterChunk("formats");
+		let chunksToLoad = ["pokemon", "heldItems", "battleItems", "formats"];
+		let chunksLoaded = 0;
+
+		for(var i = 0; i < chunksToLoad.length; i++){
+			loadGameMasterChunk(chunksToLoad[i]);
+		}
 
 		// Load a given segment of the gamemaster JSON and store it in a GameMaster parameter of the same name
 
@@ -28,8 +31,10 @@ var GameMaster = (function () {
 			$.getJSON( webRoot+"data/gamemaster/"+filename+".json?v="+siteVersion, function( data ){
 				object[filename] = data;
 
+				chunksLoaded++;
+
 				// Initialize interface if all gamemaster chunks are loaded
-				if((object.pokemon !== null) && (object.battleItems !== null) && (object.heldItems !== null)){
+				if(chunksLoaded >= chunksToLoad.length){
 					InterfaceMaster.getInstance().init(object);
 				}
 			});

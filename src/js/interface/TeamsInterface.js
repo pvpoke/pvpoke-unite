@@ -27,7 +27,7 @@ var InterfaceMaster = (function () {
 				if(get){
 					self.loadGetData();
 				} else{
-					team = new Team("format5v5");
+					team = new Team("format_general");
 					console.log(team);
 
 					self.refreshAllLanes();
@@ -78,23 +78,24 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display Synergy meter
+				if(pokemon.length > 0){
 
-				let ratings = self.calculatePokemonSynergy(pokemon);
+					// Display lane synergy
+					let ratings = self.calculatePokemonSynergy(pokemon);
+					self.displayStars($lane.find(".synergy-meter"), ratings, pokemon);
 
-				// Adjust this to a scale of 5
-				let stars = (ratings.overall - 18) / 7; // Maximum possible is 25
-				stars = Math.round(stars * 10) / 2;
 
-				$lane.find(".synergy-meter .stars").html("");
+					console.log(ratings);
 
-				for(var i = 0; i < Math.floor(stars); i++){
-					$lane.find(".synergy-meter .stars").append($("<div class=\"star\"></div>"));
+					// Display full team synergy
+					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
+					self.displayStars($(".top-team-panel .synergy-meter"), ratings, pokemon);
+
+
+					// Get recommendations
+					let recommendations = self.generateComboSynergy(pokemon);
+					console.log(recommendations);
 				}
-
-				if(stars % 1 == 0.5){
-					$lane.find(".synergy-meter .stars").append($("<div class=\"star half\"></div>"));
-				}
-
 			}
 
 
@@ -206,7 +207,7 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate overall synergy as the value of stars missing from the combined total
-				let ratingCap = 5 * pokemon.length / 2; // The number of stars expected for perfect synergy in each category
+				let ratingCap = 5 + (2.5 * (pokemon.length - 2)); // The number of stars expected for perfect synergy in each category
 				let synergyScore = categoryCount * ratingCap;
 
 				for(var key in ratings){
@@ -280,6 +281,25 @@ var InterfaceMaster = (function () {
 				}
 
 				console.log(csv);
+			}
+
+			// Displays stars in a synergy meter given ratings and the list of Pokemon
+
+			self.displayStars = function($meter, ratings, pokemon){
+				$meter.find(".stars").html("");
+				
+				// Adjust this to a scale of 5
+				let floor = ratings.overallCap - (7 + (0.5 * (pokemon.length - 2)));
+				let stars = (ratings.overall - floor) / 7; // Maximum possible is 25
+				stars = Math.round(stars * 10) / 2;
+
+				for(var i = 0; i < Math.floor(stars); i++){
+					$meter.find(".stars").append($("<div class=\"star\"></div>"));
+				}
+
+				if(stars % 1 == 0.5){
+					$meter.find(".stars").append($("<div class=\"star half\"></div>"));
+				}
 			}
 
 			// Open up the modal window to add a new Pokemon
