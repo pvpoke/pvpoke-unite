@@ -207,12 +207,26 @@ var InterfaceMaster = (function () {
 				// Initialize the synergy scores from the Pokemon's ratings
 				let ratings = {};
 				let ratingParts = {}; // Store how much each Pokemon contributes
+				let categoryCaps = {}; // The maximum stars expected for each category
+				let totalCap = 0;
 				let categoryCount = 0;
 
 				for(var key in pokemon[0].ratings){
 					if(pokemon[0].ratings.hasOwnProperty(key)){
 						ratings[key] = 0;
 						ratingParts[key] = [];
+						categoryCaps[key] = 5 + (2.5 * (pokemon.length - 2));
+
+						if(key == "support"){
+							categoryCaps[key] = 5 + (1.5 * (pokemon.length - 2));
+						}
+
+						if(pokemon.length == 1){
+							categoryCaps[key] = 5;
+						}
+
+						totalCap += categoryCaps[key];
+
 						categoryCount++;
 					}
 				}
@@ -222,6 +236,7 @@ var InterfaceMaster = (function () {
 					for(var key in ratings){
 						if(pokemon[i].ratings.hasOwnProperty(key)){
 							ratings[key] += pokemon[i].ratings[key];
+
 							ratingParts[key].push({
 								pokemonId: pokemon[i].pokemonId,
 								role: pokemon[i].role,
@@ -232,17 +247,11 @@ var InterfaceMaster = (function () {
 				}
 
 				// Calculate overall synergy as the value of stars missing from the combined total
-				let ratingCap = 5 + (2.5 * (pokemon.length - 2)); // The number of stars expected for perfect synergy in each category
-				let teamRatingCap = 5 + (2.5 * (team.cap - 2)); // The number of stars expected for perfect synergy on a whole team
-				let synergyScore = categoryCount * ratingCap;
-
-				if(pokemon.length == 1){
-					ratingCap = 5;
-				}
+				let synergyScore = totalCap;
 
 				for(var key in ratings){
 					if(ratings.hasOwnProperty(key)){
-						let synergy = ratingCap - ratings[key];
+						let synergy = categoryCaps[key] - ratings[key];
 
 						if(synergy > 0){
 							synergyScore -= synergy; // Subtract the difference from overall synergy
@@ -251,9 +260,8 @@ var InterfaceMaster = (function () {
 				}
 
 				ratings.overall = synergyScore;
-				ratings.overallCap = (categoryCount * ratingCap);
-				ratings.overallTeamCap = (categoryCount * teamRatingCap);
-				ratings.categoryCap = ratingCap;
+				ratings.overallCap = totalCap;
+				ratings.categoryCaps = categoryCaps;
 				ratings.parts = ratingParts;
 
 				return ratings;
@@ -367,7 +375,7 @@ var InterfaceMaster = (function () {
 
 						for(var i = 0; i < parts[key].length; i++){
 							let $bar = $('<div class="bar role-bg"></div>');
-							let width = (parts[key][i].value / ratings.categoryCap) * 100;
+							let width = (parts[key][i].value / ratings.categoryCaps[key]) * 100;
 							$bar.attr("role", parts[key][i].role);
 							$bar.css("width", width+"%");
 							$section.find(".bars").append($bar);
