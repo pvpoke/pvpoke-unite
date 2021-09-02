@@ -225,6 +225,51 @@ var GameMaster = (function () {
 		   return separateWord.join(' ');
 		}
 
+
+		// Calculate leveling ratings for each Pokemon
+		object.generateLevelingScores = function(){
+			for(var i = 0; i < object.pokemon.length; i++){
+				let build = new Build(object.pokemon[i].pokemonId);
+
+				// What levels does this Pokemon unlock its first and second move?
+				let slot1Unlock = build.movePool.slot1[1].unlockLevel;
+				let slot2Unlock = build.movePool.slot2[1].unlockLevel;
+				let firstMoveUnlock = Math.min(slot1Unlock, slot2Unlock);
+				let secondMoveUnlock = Math.max(slot1Unlock, slot2Unlock);
+				let uniteUnlock = build.moves.unite.unlockLevel;
+
+				// At which level does this Pokemon reach a certain percent of its maximum stats?
+				let level15Stats = build.calculateStats(15);
+				let level15Total = level15Stats["hp"].value + level15Stats["atk"].value + level15Stats["def"].value + level15Stats["sp_atk"].value + level15Stats["sp_def"].value;
+				let minimumStatLevel = 15;
+
+				for(var n = 1; n <= 15; n++){
+					let levelStats = build.calculateStats(n);
+					let levelTotal = levelStats["hp"].value + levelStats["atk"].value + levelStats["def"].value + levelStats["sp_atk"].value + levelStats["sp_def"].value;
+
+					if(levelTotal / level15Total > .6){
+						minimumStatLevel = n;
+						break;
+					}
+				}
+
+				// Do a weighted average of these
+				// This value ranges from 6 to 9
+				let averageLevel = ( (firstMoveUnlock * 3) + (secondMoveUnlock * 6) + (uniteUnlock * 2) + (minimumStatLevel * 5)) / 16;
+
+				console.log(build.pokemonId + "  " + firstMoveUnlock + " " + secondMoveUnlock + " " + uniteUnlock + " " + minimumStatLevel + " " + averageLevel);
+
+				let stars = 1 - ((averageLevel - 6) / 3);
+				stars = Math.round(stars * 10) / 2;
+
+				console.log(build.pokemonId + "  " + stars);
+
+				object.pokemon[i].ratings.leveling = stars;
+			}
+
+			console.log(JSON.stringify(object.pokemon));
+		}
+
         return object;
     }
 

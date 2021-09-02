@@ -36,6 +36,8 @@ var InterfaceMaster = (function () {
 					get = e.state;
 					self.loadGetData();
 				});
+
+				gm.generateLevelingScores();
 			};
 
 			// Completely refresh the lanes section

@@ -11,7 +11,8 @@
 			"endurance": 2,
 			"mobility": 2,
 			"scoring": 2.5,
-			"support": 1
+			"support": 1,
+	        "leveling": 2.5
 		},
 		"stages": [
 			{
@@ -131,7 +132,8 @@
 			"endurance": 3,
 			"mobility": 2.5,
 			"scoring": 3,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 2.5
 		},
 		"stages": [
 			{
@@ -251,7 +253,8 @@
 			"endurance": 1.5,
 			"mobility": 2.5,
 			"scoring": 2,
-			"support": 1.5
+			"support": 1.5,
+	        "leveling": 4.5
 		},
 		"stages": [
 			{
@@ -363,7 +366,8 @@
 			"endurance": 1.5,
 			"mobility": 1.5,
 			"scoring": 2.5,
-			"support": 3
+			"support": 3,
+	        "leveling": 4.5
 		},
 		"stages": [
 			{
@@ -479,7 +483,8 @@
 			"endurance": 2.5,
 			"mobility": 2.5,
 			"scoring": 2,
-			"support": 4.5
+			"support": 4.5,
+	        "leveling": 3
 		},
 		"stages": [
 			{
@@ -595,7 +600,8 @@
 			"endurance": 2.5,
 			"mobility": 2.5,
 			"scoring": 2.5,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 2.5
 		},
 		"stages": [
 			{
@@ -715,7 +721,8 @@
 			"endurance": 4,
 			"mobility": 1.5,
 			"scoring": 1.5,
-			"support": 4
+			"support": 4,
+	        "leveling": 3
 		},
 		"stages": [
 			{
@@ -831,7 +838,8 @@
 			"endurance": 2,
 			"mobility": 4,
 			"scoring": 3,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 2.5
 		},
 		"stages": [
 			{
@@ -951,7 +959,8 @@
 			"endurance": 4,
 			"mobility": 1,
 			"scoring": 1.5,
-			"support": 4
+			"support": 4,
+	        "leveling": 3.5
 		},
 		"stages": [
 			{
@@ -1063,7 +1072,8 @@
 			"endurance": 5,
 			"mobility": 2,
 			"scoring": 1.5,
-			"support": 2.5
+			"support": 2.5,
+	        "leveling": 1
 		},
 		"stages": [
 			{
@@ -1175,7 +1185,8 @@
 			"endurance": 1.5,
 			"mobility": 1.5,
 			"scoring": 3,
-			"support": 1.5
+			"support": 1.5,
+	        "leveling": 1
 		},
 		"stages": [
 			{
@@ -1295,7 +1306,8 @@
 			"endurance": 2,
 			"mobility": 4,
 			"scoring": 2.5,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 3.5
 		},
 		"stages": [
 			{
@@ -1407,7 +1419,8 @@
 			"endurance": 3.5,
 			"mobility": 2.5,
 			"scoring": 2.5,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 1
 		},
 		"stages": [
 			{
@@ -1527,7 +1540,8 @@
 			"endurance": 2.5,
 			"mobility": 3.5,
 			"scoring": 3,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 3
 		},
 		"stages": [
 			{
@@ -1639,7 +1653,8 @@
 			"endurance": 4,
 			"mobility": 1.5,
 			"scoring": 2,
-			"support": 3
+			"support": 3,
+	        "leveling": 3
 		},
 		"stages": [
 			{
@@ -1755,7 +1770,8 @@
 			"endurance": 2,
 			"mobility": 3,
 			"scoring": 3,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 3.5
 		},
 		"stages": [
 			{
@@ -1875,7 +1891,8 @@
 			"endurance": 1.5,
 			"mobility": 5,
 			"scoring": 4.5,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 3.5
 		},
 		"stages": [
 			{
@@ -1995,7 +2012,8 @@
 			"endurance": 1.5,
 			"mobility": 4,
 			"scoring": 3,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 2
 		},
 		"stages": [
 			{
@@ -2107,7 +2125,8 @@
 			"endurance": 1.5,
 			"mobility": 3,
 			"scoring": 2.5,
-			"support": 0.5
+			"support": 0.5,
+	        "leveling": 2.5
 		},
 		"stages": [
 			{
@@ -2227,7 +2246,8 @@
 			"endurance": 2,
 			"mobility": 2.5,
 			"scoring": 2.5,
-			"support": 4
+			"support": 4,
+	        "leveling": 3.5
 		},
 		"stages": [
 			{
@@ -2343,7 +2363,8 @@
 			"endurance": 3,
 			"mobility": 3,
 			"scoring": 1.5,
-			"support": 1
+			"support": 1,
+	        "leveling": 4.5
 		},
 		"stages": [
 			{
