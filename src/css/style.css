@@ -1047,14 +1047,6 @@ select {
   margin: 10px 40px 10px 0;
 }
 
-.synergy {
-  display: flex;
-  align-items: center;
-}
-.synergy .label {
-  font-weight: bold;
-}
-
 .lanes .lane {
   max-width: 500px;
   margin: 0 auto 20px auto;
@@ -1117,9 +1109,13 @@ select {
   display: none;
 }
 
+.synergy {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
 .synergy .label {
   font-size: 14px;
-  font-weight: normal;
   margin-right: 5px;
 }
 .synergy .synergy-meter {
@@ -1148,6 +1144,23 @@ select {
 .synergy .synergy-meter .star.half {
   overflow: hidden;
   width: 10px;
+}
+
+.synergy-modal .synergy-detail {
+  margin-bottom: 10px;
+}
+.synergy-modal .synergy-detail .bars {
+  display: flex;
+  height: 20px;
+  background: #222222;
+}
+.synergy-modal .synergy-detail .bars .bar {
+  height: 100%;
+  border: 1px solid #141414;
+  box-sizing: border-box;
+}
+.synergy-modal .synergy-detail .label {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

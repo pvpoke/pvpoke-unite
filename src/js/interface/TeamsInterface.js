@@ -43,6 +43,7 @@ var InterfaceMaster = (function () {
 			this.refreshAllLanes = function(){
 				$(".lanes").html("");
 				$(".synergy-meter .stars").html("");
+				$(".top-team-panel .synergy").hide();
 
 				for(var key in team.lanes){
 					if(team.lanes.hasOwnProperty(key)){
@@ -66,6 +67,16 @@ var InterfaceMaster = (function () {
 						self.updateLane(key);
 					}
 				}
+
+				// Display full team synergy
+				if((team.pokemon.length > 0)&&(team.getFormat().id != "general")){
+					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
+					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
+					$(".top-team-panel .synergy").show();
+				} else{
+					$(".top-team-panel .synergy").hide();
+				}
+
 
 				if(pushHistory){
 					self.pushHistoryState();
@@ -103,11 +114,6 @@ var InterfaceMaster = (function () {
 					// Display lane synergy
 					let ratings = self.calculatePokemonSynergy(pokemon);
 					self.displayStars($lane.find(".synergy-meter"), ratings, pokemon);
-
-					// Display full team synergy
-					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
-					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
-
 
 					// Get recommendations
 					let recommendations = self.generateComboSynergy(pokemon);
@@ -200,11 +206,13 @@ var InterfaceMaster = (function () {
 			this.calculatePokemonSynergy = function(pokemon){
 				// Initialize the synergy scores from the Pokemon's ratings
 				let ratings = {};
+				let ratingParts = {}; // Store how much each Pokemon contributes
 				let categoryCount = 0;
 
 				for(var key in pokemon[0].ratings){
 					if(pokemon[0].ratings.hasOwnProperty(key)){
 						ratings[key] = 0;
+						ratingParts[key] = [];
 						categoryCount++;
 					}
 				}
@@ -214,6 +222,11 @@ var InterfaceMaster = (function () {
 					for(var key in ratings){
 						if(pokemon[i].ratings.hasOwnProperty(key)){
 							ratings[key] += pokemon[i].ratings[key];
+							ratingParts[key].push({
+								pokemonId: pokemon[i].pokemonId,
+								role: pokemon[i].role,
+								value: pokemon[i].ratings[key]
+							});
 						}
 					}
 				}
@@ -222,6 +235,10 @@ var InterfaceMaster = (function () {
 				let ratingCap = 5 + (2.5 * (pokemon.length - 2)); // The number of stars expected for perfect synergy in each category
 				let teamRatingCap = 5 + (2.5 * (team.cap - 2)); // The number of stars expected for perfect synergy on a whole team
 				let synergyScore = categoryCount * ratingCap;
+
+				if(pokemon.length == 1){
+					ratingCap = 5;
+				}
 
 				for(var key in ratings){
 					if(ratings.hasOwnProperty(key)){
@@ -236,6 +253,8 @@ var InterfaceMaster = (function () {
 				ratings.overall = synergyScore;
 				ratings.overallCap = (categoryCount * ratingCap);
 				ratings.overallTeamCap = (categoryCount * teamRatingCap);
+				ratings.categoryCap = ratingCap;
+				ratings.parts = ratingParts;
 
 				return ratings;
 			}
@@ -326,6 +345,33 @@ var InterfaceMaster = (function () {
 				}
 			}
 
+			// Open a new modal window to display synergy details given an array of Pokemon
+			this.openSynergyDetails = function(pokemon){
+				let ratings = self.calculatePokemonSynergy(pokemon);
+				let $details = $(".synergy-modal.template").first().clone().removeClass("template");
+				let modal = new ModalWindow($details, msg("synergy"));
+				let parts = ratings.parts;
+
+				for(var key in parts){
+					if(parts.hasOwnProperty(key)){
+						let $section = $(".synergy-detail.template").first().clone().removeClass("template");
+						$section.find(".label").html(msg(key));
+
+						for(var i = 0; i < parts[key].length; i++){
+							let $bar = $('<div class="bar role-bg"></div>');
+							let width = (parts[key][i].value / ratings.categoryCap) * 100;
+							$bar.attr("role", parts[key][i].role);
+							$bar.css("width", width+"%");
+							$section.find(".bars").append($bar);
+						}
+
+						$(".modal .synergy-details").append($section);
+					}
+				}
+
+
+			}
+
 			// Set a new format
 
 			this.setFormat = function(formatId){
@@ -386,6 +432,20 @@ var InterfaceMaster = (function () {
 				team.addPokemon(build, selectedLane);
 
 				self.updateAllLanes();
+			});
+
+			// Open up the synergy modal window
+
+			$("body").on("click", ".synergy", function(e){
+				// Determine if this is a lane or the whole team
+				let pokemon = team.pokemon;
+
+				if($(this).closest(".lane").length > 0){
+					let laneId = $(this).closest(".lane").attr("lane-id");
+					pokemon = team.getPokemonList(laneId);
+				}
+
+				self.openSynergyDetails(pokemon);
 			});
 
 			// Change the format selection

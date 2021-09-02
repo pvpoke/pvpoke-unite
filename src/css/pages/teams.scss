@@ -15,16 +15,6 @@
 
 }
 
-.synergy{
-	display:flex;
-	align-items: center;
-
-	.label{
-		font-weight: bold;
-	}
-}
-
-
 .lanes{
 	.lane{
 		max-width: 500px;
@@ -100,11 +90,13 @@
 	}
 }
 
-
 .synergy{
+	display:flex;
+	align-items: center;
+	cursor:pointer;
+
 	.label{
 		font-size:14px;
-		font-weight: normal;
 		margin-right: 5px;
 	}
 
@@ -139,6 +131,28 @@
 				overflow: hidden;
 				width:10px;
 			}
+		}
+	}
+}
+
+.synergy-modal{
+	.synergy-detail{
+		margin-bottom: 10px;
+		
+		.bars{
+			display:flex;
+			height:20px;
+			background:$gray;
+
+			.bar{
+				height:100%;
+				border:1px solid $black;
+				box-sizing: border-box;
+			}
+		}
+
+		.label{
+			font-size:12px;
 		}
 	}
 }

@@ -90,6 +90,18 @@ $META_DESCRIPTION = l("teams_meta_description");
 		<?php require_once 'modules/buildselect.php'; ?>
 	</div>
 
+	<!-- HTML template for synergy details modal-->
+	<div class="synergy-modal template">
+		<div class="synergy-details"></div>
+		<div class="synergy-detail template">
+			<div class="bars"></div>
+			<div class="label"></div>
+		</div>
+		<h3>About Synergy</h3>
+		<p>The synergy ratings are a general guideline for finding complimentary lane partners and teammates.</p>
+
+	</div>
+
 	<div class="tooltip corners"></div>
 </div>
 
