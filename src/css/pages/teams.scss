@@ -72,20 +72,6 @@
 
 		.recommended.pokemon-list{
 			width:100%;
-
-			.pokemon{
-				max-width: 40px;
-
-				.image-container{
-					height:30px;
-					border-bottom-left-radius: 10px;
-					border-top-right-radius: 10px;
-				}
-
-				.name{
-					display: none;
-				}
-			}
 		}
 	}
 }
@@ -138,7 +124,7 @@
 .synergy-modal{
 	.synergy-detail{
 		margin-bottom: 10px;
-		
+
 		.bars{
 			display:flex;
 			height:20px;
@@ -148,11 +134,25 @@
 				height:100%;
 				border:1px solid $black;
 				box-sizing: border-box;
+
+				.image{
+					width:20px;
+					height:100%;
+					background-size:150%;
+					background-repeat: no-repeat;
+					background-position: center;
+				}
 			}
 		}
 
 		.label{
 			font-size:12px;
 		}
+	}
+
+	.pokemon-list{
+		pointer-events: none;
+
+		margin-bottom: 10px;
 	}
 }

@@ -45,6 +45,22 @@
 	display: flex;
 	flex-wrap: wrap;
 
+	&.small{
+		.pokemon{
+			max-width: 40px;
+
+			.image-container{
+				height:30px;
+				border-bottom-left-radius: 10px;
+				border-top-right-radius: 10px;
+			}
+
+			.name{
+				display: none;
+			}
+		}
+	}
+
 	.pokemon{
 		position: relative;
 		cursor:pointer;
@@ -110,5 +126,5 @@
 	-moz-filter:    grayscale(100%);
 	-ms-filter:     grayscale(100%);
 	-o-filter:      grayscale(100%);
-	filter: gray; 
+	filter: gray;
 }

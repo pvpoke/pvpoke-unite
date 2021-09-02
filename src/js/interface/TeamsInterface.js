@@ -352,6 +352,14 @@ var InterfaceMaster = (function () {
 				let modal = new ModalWindow($details, msg("synergy"));
 				let parts = ratings.parts;
 
+				// Display Pokemon list
+				for(var i = 0; i < parts["offense"].length; i++){
+					let $pokeEl = createPokemonSquare(parts["offense"][i]);
+					$(".modal .synergy-modal .pokemon-list").append($pokeEl);
+				}
+
+
+				// Display bars
 				for(var key in parts){
 					if(parts.hasOwnProperty(key)){
 						let $section = $(".synergy-detail.template").first().clone().removeClass("template");
@@ -368,8 +376,6 @@ var InterfaceMaster = (function () {
 						$(".modal .synergy-details").append($section);
 					}
 				}
-
-
 			}
 
 			// Set a new format

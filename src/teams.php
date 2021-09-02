@@ -77,7 +77,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 		<div class="footer">
 			<div class="recommended-section">
 				<div class="label"><?php e("teams_recommended"); ?>:</div>
-				<div class="recommended pokemon-list"></div>
+				<div class="recommended pokemon-list small"></div>
 			</div>
 		</div>
 	</div>
@@ -92,6 +92,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 
 	<!-- HTML template for synergy details modal-->
 	<div class="synergy-modal template">
+		<div class="pokemon-list small"></div>
 		<div class="synergy-details"></div>
 		<div class="synergy-detail template">
 			<div class="bars"></div>

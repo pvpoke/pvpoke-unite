@@ -176,6 +176,17 @@ a {
   display: flex;
   flex-wrap: wrap;
 }
+.pokemon-list.small .pokemon {
+  max-width: 40px;
+}
+.pokemon-list.small .pokemon .image-container {
+  height: 30px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+.pokemon-list.small .pokemon .name {
+  display: none;
+}
 .pokemon-list .pokemon {
   position: relative;
   cursor: pointer;
@@ -1097,17 +1108,6 @@ select {
 .lanes .lane .recommended.pokemon-list {
   width: 100%;
 }
-.lanes .lane .recommended.pokemon-list .pokemon {
-  max-width: 40px;
-}
-.lanes .lane .recommended.pokemon-list .pokemon .image-container {
-  height: 30px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-}
-.lanes .lane .recommended.pokemon-list .pokemon .name {
-  display: none;
-}
 
 .synergy {
   display: flex;
@@ -1159,8 +1159,19 @@ select {
   border: 1px solid #141414;
   box-sizing: border-box;
 }
+.synergy-modal .synergy-detail .bars .bar .image {
+  width: 20px;
+  height: 100%;
+  background-size: 150%;
+  background-repeat: no-repeat;
+  background-position: center;
+}
 .synergy-modal .synergy-detail .label {
   font-size: 12px;
+}
+.synergy-modal .pokemon-list {
+  pointer-events: none;
+  margin-bottom: 10px;
 }
 
 /*# sourceMappingURL=style.css.map */
