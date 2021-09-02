@@ -75,7 +75,7 @@ function BuildSelect(element, ctx, selectors){
 		$el.find(".level .value").html(build.level);
 
 		// Display pokemon image
-		$el.find(".selected-pokemon .image").css("background-image", "url(../img/pokemon/"+build.stageId+".png)");
+		$el.find(".selected-pokemon .image").css("background-image", "url("+host+"/img/pokemon/"+build.stageId+".png)");
 		$el.find(".selected-pokemon").attr("role", build.role);
 
 		if(previousStage != build.stageId){

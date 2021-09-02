@@ -239,10 +239,15 @@ function Build(id, level){
 	// Format: speciesId - move1index move2index - heldItem1 - heldItem2 - heldItem3 - battleItem - level
 	// venusaur-15-01-5-6-3-9
 
-	self.generateURLString = function(includeLevel){
+	self.generateURLString = function(includeLevel, idOnly){
 		includeLevel = typeof includeLevel !== 'undefined' ? includeLevel : false;
+		idOnly = typeof idOnly !== 'undefined' ? idOnly : false;
 
 		let str = self.pokemonId;
+
+		if(idOnly){
+			return str;
+		}
 
 		// Add 1st move selection
 		for(var i = 0; i < self.movePool.slot1.length; i++){
@@ -316,6 +321,12 @@ function Build(id, level){
 function generateBuildFromString(str){
 	let arr = str.split("-");
 	let gm = GameMaster.getInstance();
+
+	// For ID only strings
+	if(arr.length == 1){
+		let build = new Build(arr[0]);
+		return build;
+	}
 
 	if(arr.length < 6)
 		return false;

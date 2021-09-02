@@ -1,6 +1,7 @@
 [
 	{
-		"id": "format_general",
+		"id": "general",
+		"string": "format_general",
 		"teamCap": 5,
 		"lanes": [
 			{
@@ -10,7 +11,8 @@
 		]
 	},
 	{
-		"id": "format_3v3",
+		"id": "3v3",
+		"string": "format_3v3",
 		"teamCap": 3,
 		"lanes": [
 			{
@@ -28,7 +30,8 @@
 		]
 	},
 	{
-		"id": "format_4v4",
+		"id": "4v4",
+		"string": "format_4v4",
 		"teamCap": 4,
 		"lanes": [
 			{
@@ -46,7 +49,8 @@
 		]
 	},
 	{
-		"id": "format_5v5",
+		"id": "5v5",
+		"string": "format_5v5",
 		"teamCap": 5,
 		"lanes": [
 			{

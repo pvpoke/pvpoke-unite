@@ -11,7 +11,7 @@ function Team(formatId){
 	self.pokemon = [];
 
 	for(var i = 0; i < format.lanes.length; i++){
-		self.lanes[format.lanes[i].id] = new Lane(format.lanes[i].id, format.lanes[i].cap);
+		self.lanes[format.lanes[i].id] = new Lane(format.lanes[i].id, format.lanes[i].str, format.lanes[i].cap);
 	}
 
 	// Add a build with a specified lane ID
@@ -60,6 +60,22 @@ function Team(formatId){
 		return false;
 	}
 
+	// Return a lane ID of a lane based on its index in the lane array
+	self.getLaneByIndex = function(i){
+		let index = 0;
+
+		for(var key in self.lanes){
+			if(self.lanes.hasOwnProperty(key)){
+
+				if(index == i){
+					return key;
+				}
+
+				index++;
+			}
+		}
+	}
+
 	// Return an array of Pokemon from specified lane Id's
 	self.getPokemonList = function(laneId){
 		laneId = typeof laneId !== 'undefined' ? laneId : 'all';
@@ -89,6 +105,11 @@ function Team(formatId){
 		return build;
 	}
 
+	// Return the current format
+	self.getFormat = function(){
+		return format;
+	}
+
 	// Returns true if the specified lane is at capacity
 	self.isLaneFull = function(laneId){
 		if(self.getPokemonList(laneId).length < self.lanes[laneId].cap){
@@ -97,4 +118,66 @@ function Team(formatId){
 			return true;
 		}
 	}
+
+	// Generate a string to be parsed for URLs
+	// Format: formatId - lane index - comma seperated Pokemon strings
+	// venusaur-15-01-5-6-3-9
+
+	self.generateURLString = function(){
+
+		let str = format.id;
+
+		// For each lane, add Pokemon in the lane
+		let index = 0;
+
+		for(var key in self.lanes){
+			if(self.lanes.hasOwnProperty(key)){
+				let pokemon = self.getPokemonList(key);
+
+				if(pokemon.length > 0){
+					str += '/' + index + '/';
+
+					for(var i = 0; i < pokemon.length; i++){
+						str += pokemon[i].generateURLString(false, true);
+
+						if(i < pokemon.length - 1){
+							str += ',';
+						}
+					}
+				}
+
+
+				index++;
+			}
+		}
+
+		return str;
+	}
+}
+
+// Generate a new Team from a URL string
+// 0 - format, 1 - lane index 1, 2 - Pokemon in lane 1, etc.
+
+function generateTeamFromString(str){
+	let arr = str.split("/");
+	let gm = GameMaster.getInstance();
+
+	let team = new Team(arr[0]);
+
+	// For each pair of lane and Pokemon, add Pokemon to that lane
+	for(var i = 1; i < arr.length; i+=2){
+		if(i + 1 > arr.length -1){
+			continue;
+		}
+
+		let laneId = team.getLaneByIndex(arr[i]);
+		let buildArr = arr[i+1].split(",");
+
+		for(var n = 0; n < buildArr.length; n++){
+			let build = generateBuildFromString(buildArr[n]);
+			team.addPokemon(build, laneId);
+		}
+	}
+
+	return team;
 }

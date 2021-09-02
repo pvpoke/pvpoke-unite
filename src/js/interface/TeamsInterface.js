@@ -27,9 +27,7 @@ var InterfaceMaster = (function () {
 				if(get){
 					self.loadGetData();
 				} else{
-					team = new Team("format_general");
-					console.log(team);
-
+					team = new Team("general");
 					self.refreshAllLanes();
 				}
 
@@ -60,11 +58,17 @@ var InterfaceMaster = (function () {
 			}
 
 			// Update Pokemon and recommended for all lanes
-			this.updateAllLanes = function(){
+			this.updateAllLanes = function(pushHistory){
+				pushHistory = typeof pushHistory !== 'undefined' ? pushHistory : true;
+
 				for(var key in team.lanes){
 					if(team.lanes.hasOwnProperty(key)){
 						self.updateLane(key);
 					}
+				}
+
+				if(pushHistory){
+					self.pushHistoryState();
 				}
 			}
 
@@ -99,8 +103,6 @@ var InterfaceMaster = (function () {
 					// Display lane synergy
 					let ratings = self.calculatePokemonSynergy(pokemon);
 					self.displayStars($lane.find(".synergy-meter"), ratings, pokemon);
-
-					console.log(ratings);
 
 					// Display full team synergy
 					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
@@ -142,45 +144,30 @@ var InterfaceMaster = (function () {
 
 						switch(key){
 
-							case "builds":
+							case "team":
 
+							team = generateTeamFromString(val);
 							break;
 						}
 					}
 				}
+
+				$(".format-select option[value=\""+team.getFormat().id+"\"]").prop("selected", "selected");
+
+				self.refreshAllLanes();
+				self.updateAllLanes(false);
 			}
 
 			// When the view state changes, push to browser history so it can be navigated forward or back
 
 			this.pushHistoryState = function(){
-
-				let url = webRoot+"teams/";
-				let buildStrArr = [];
-
-				for(var i = 0; i < buildSelectors.length; i++){
-					let build = buildSelectors[i].getBuild();
-
-					if(build){
-						buildStrArr.push(build.generateURLString(true));
-					}
-				}
-
-				let buildStr = buildStrArr.join(",");
-
-				url = url + buildStr;
+				let teamStr = team.generateURLString();
+				let url = webRoot+"teams/" + teamStr;
 
 
-				let data = {builds: buildStr};
+				let data = {team: teamStr};
 
-				window.history.pushState(data, "Builds", url);
-
-				// Send Google Analytics pageview
-
-				/*gtag('config', UA_ID, {page_location: (host+url), page_path: url});
-				gtag('event', 'Lookup', {
-				  'event_category' : 'Rankings',
-				  'event_label' : speciesId
-			  });*/
+				window.history.pushState(data, "Teams", url);
 			}
 
 
