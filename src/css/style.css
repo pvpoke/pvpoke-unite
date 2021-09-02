@@ -1153,6 +1153,9 @@ select {
   display: flex;
   height: 20px;
   background: #222222;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  overflow: hidden;
 }
 .synergy-modal .synergy-detail .bars .bar {
   height: 100%;
@@ -1172,6 +1175,12 @@ select {
 .synergy-modal .pokemon-list {
   pointer-events: none;
   margin-bottom: 10px;
+}
+.synergy-modal h4 {
+  font-size: 18px;
+}
+.synergy-modal p {
+  font-size: 12px;
 }
 
 /*# sourceMappingURL=style.css.map */

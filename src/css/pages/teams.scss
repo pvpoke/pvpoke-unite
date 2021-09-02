@@ -129,6 +129,9 @@
 			display:flex;
 			height:20px;
 			background:$gray;
+			border-bottom-left-radius: 10px;
+    		border-top-right-radius: 10px;
+			overflow: hidden;
 
 			.bar{
 				height:100%;
@@ -154,5 +157,13 @@
 		pointer-events: none;
 
 		margin-bottom: 10px;
+	}
+
+	h4{
+		font-size:16px;
+	}
+
+	p{
+		font-size:12px;
 	}
 }

@@ -98,9 +98,9 @@ $META_DESCRIPTION = l("teams_meta_description");
 			<div class="bars"></div>
 			<div class="label"></div>
 		</div>
-		<h3>About Synergy</h3>
-		<p>The synergy ratings are a general guideline for finding complimentary lane partners and teammates.</p>
-
+		<h4><?php e("about_synergy"); ?></h4>
+		<p><?php e("about_synergy_content_1"); ?></p>
+		<p><?php e("about_synergy_content_2"); ?></p>
 	</div>
 
 	<div class="tooltip corners"></div>
