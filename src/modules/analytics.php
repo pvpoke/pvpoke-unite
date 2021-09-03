@@ -5,7 +5,11 @@
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
 
-  gtag('config', '<?php echo $UA; ?>');
+  gtag('config', '<?php echo $UA; ?>', {
+	  'custom_map': {
+		  'dimension1': 'lane',
+	  }
+	});
 
   var UA_ID = '<?php echo $UA; ?>';
 </script>

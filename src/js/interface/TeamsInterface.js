@@ -186,6 +186,17 @@ var InterfaceMaster = (function () {
 					team.replacePokemon(selectedBuild, selectedLane, build)
 				}
 
+				// Record analytics event for the pokemon and lane selected
+				gtag('event', build.pokemonId, {
+				  'event_category' : 'Pokemon Select',
+				  'lane': selectedLane
+				});
+
+				gtag('event', team.getFormat().id, {
+				  'event_category' : 'Team',
+				  'event_label': team.generateURLString()
+				});
+
 				modal.close();
 				self.updateAllLanes();
 			}
@@ -446,6 +457,17 @@ var InterfaceMaster = (function () {
 				team.addPokemon(build, selectedLane);
 
 				self.updateAllLanes();
+
+				// Record analytics event for the pokemon and lane selected
+				gtag('event', build.pokemonId, {
+				  'event_category' : 'Pokemon Select',
+				  'lane': selectedLane
+				});
+
+				gtag('event', team.getFormat().id, {
+				  'event_category' : 'Team',
+				  'event_label': team.generateURLString()
+				});
 			});
 
 			// Open up the synergy modal window

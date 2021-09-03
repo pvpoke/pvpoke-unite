@@ -177,14 +177,6 @@ var InterfaceMaster = (function () {
 				let data = {builds: buildStr};
 
 				window.history.pushState(data, "Builds", url);
-
-				// Send Google Analytics pageview
-
-				/*gtag('config', UA_ID, {page_location: (host+url), page_path: url});
-				gtag('event', 'Lookup', {
-				  'event_category' : 'Rankings',
-				  'event_label' : speciesId
-			  });*/
 			}
 
 			// This event is triggered from BuildSelect.js when the duplicate button is clicked
