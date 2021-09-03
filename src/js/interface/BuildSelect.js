@@ -317,7 +317,7 @@ function BuildSelect(element, ctx, selectors){
 
 			gtag('event', build.pokemonId, {
 			  'event_category' : 'Move Select',
-			  'event_label' : moveId
+			  'event_label' : moveSlot + ' ' + moveId
 			});
 
 			self.update();
