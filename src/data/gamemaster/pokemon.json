@@ -242,6 +242,127 @@
 		}
 	},
 	{
+		"pokemonId": "blastoise",
+		"dex": 9,
+		"role": "defender",
+		"type": "ranged",
+		"style": "special",
+		"difficulty": "intermediate",
+		"ratings": {
+			"offense": 2,
+			"endurance": 3.5,
+			"mobility": 2,
+			"scoring": 2,
+			"support": 3,
+	        "leveling": 2
+		},
+		"stages": [
+			{
+				"stageId": "squirtle",
+				"level": 1
+			},
+			{
+				"stageId": "wartortle",
+				"level": 5
+			},
+			{
+				"stageId": "blastoise",
+				"level": 9
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3225, "atk": 150, "def": 100, "sp_atk": 50, "sp_def": 70, "speed": 3700},
+			{"level": 2, "hp": 3319, "atk": 152, "def": 107, "sp_atk": 55, "sp_def": 75, "speed": 3700},
+			{"level": 3, "hp": 3432, "atk": 154, "def": 116, "sp_atk": 61, "sp_def": 81, "speed": 3700},
+			{"level": 4, "hp": 3568, "atk": 157, "def": 126, "sp_atk": 68, "sp_def": 88, "speed": 3700},
+			{"level": 5, "hp": 4060, "atk": 168, "def": 163, "sp_atk": 95, "sp_def": 114, "speed": 3700},
+			{"level": 6, "hp": 4256, "atk": 172, "def": 178, "sp_atk": 106, "sp_def": 124, "speed": 3700},
+			{"level": 7, "hp": 4491, "atk": 177, "def": 196, "sp_atk": 119, "sp_def": 137, "speed": 3700},
+			{"level": 8, "hp": 4773, "atk": 183, "def": 217, "sp_atk": 135, "sp_def": 152, "speed": 3700},
+			{"level": 9, "hp": 5769, "atk": 205, "def": 293, "sp_atk": 190, "sp_def": 205, "speed": 3700},
+			{"level": 10, "hp": 6175, "atk": 214, "def": 324, "sp_atk": 212, "sp_def": 227, "speed": 3700},
+			{"level": 11, "hp": 6662, "atk": 225, "def": 361, "sp_atk": 239, "sp_def": 253, "speed": 3700},
+			{"level": 12, "hp": 7247, "atk": 238, "def": 405, "sp_atk": 271, "sp_def": 284, "speed": 3700},
+			{"level": 13, "hp": 7948, "atk": 253, "def": 458, "sp_atk": 310, "sp_def": 321, "speed": 3700},
+			{"level": 14, "hp": 8790, "atk": 271, "def": 522, "sp_atk": 356, "sp_def": 366, "speed": 3700},
+			{"level": 15, "hp": 9800, "atk": 293, "def": 599, "sp_atk": 412, "sp_def": 420, "speed": 3700}
+		],
+		"moves": {
+			"basic": {
+				"moveId": "blastoise_basic",
+				"style": "physical",
+				"boostStyle": "special",
+				"boostCount": 3
+			},
+			"slot1": [
+				{
+					"moveId": "water_gun",
+					"style": "special",
+					"category": "ranged",
+					"cooldown": 9,
+					"level": 1,
+					"color": "water"
+				},
+				{
+					"moveId": "hydro_pump",
+					"style": "special",
+					"category": "ranged",
+					"cooldown": 8.5,
+					"level": 5,
+					"upgrade": 11,
+					"color": "water"
+				},
+				{
+					"moveId": "water_spout",
+					"style": "special",
+					"category": "area",
+					"cooldown": 9,
+					"level": 5,
+					"upgrade": 11,
+					"color": "water"
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "skull_bash",
+					"style": "special",
+					"category": "dash",
+					"cooldown": 10,
+					"level": 1,
+					"color": "normal"
+				},
+				{
+					"moveId": "surf_blastoise",
+					"style": "special",
+					"category": "dash",
+					"cooldown": 12,
+					"level": 7,
+					"upgrade": 13,
+					"color": "water"
+				},
+				{
+					"moveId": "rapid_spin",
+					"style": "special",
+					"category": "buff",
+					"cooldown": 11,
+					"level": 7,
+					"upgrade": 13,
+					"color": "normal"
+				}
+			],
+			"unite": {
+				"moveId": "hydro_typhoon",
+				"category": "hindrance",
+				"level": 9,
+				"color": "water"
+			},
+			"passive": {
+				"moveId": "torrent_blastoise",
+				"color": "water"
+			}
+		}
+	},
+	{
 		"pokemonId": "pikachu",
 		"dex": 25,
 		"role": "attacker",
@@ -1170,6 +1291,123 @@
 			"passive": {
 				"moveId": "gluttony",
 				"color": "normal"
+			}
+		}
+	},
+	{
+		"pokemonId": "blissey",
+		"dex": 242,
+		"role": "supporter",
+		"type": "melee",
+		"style": "special",
+		"difficulty": "novice",
+		"ratings": {
+			"offense": 1,
+			"endurance": 3.5,
+			"mobility": 1.5,
+			"scoring": 1.5,
+			"support": 4.5,
+	        "leveling": 3
+		},
+		"stages": [
+			{
+				"stageId": "chansey",
+				"level": 1
+			},
+			{
+				"stageId": "blissey",
+				"level": 4
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3278, "atk": 130, "def": 40, "sp_atk": 40, "sp_def": 30, "speed": 3700},
+			{"level": 2, "hp": 3427, "atk": 147, "def": 44, "sp_atk": 52, "sp_def": 33, "speed": 3700},
+			{"level": 3, "hp": 3598, "atk": 152, "def": 48, "sp_atk": 66, "sp_def": 36, "speed": 3700},
+			{"level": 4, "hp": 4467, "atk": 178, "def": 69, "sp_atk": 138, "sp_def": 52, "speed": 3700},
+			{"level": 5, "hp": 4694, "atk": 184, "def": 74, "sp_atk": 157, "sp_def": 56, "speed": 3700},
+			{"level": 6, "hp": 4955, "atk": 192, "def": 80, "sp_atk": 179, "sp_def": 61, "speed": 3700},
+			{"level": 7, "hp": 5255, "atk": 201, "def": 87, "sp_atk": 204, "sp_def": 66, "speed": 3700},
+			{"level": 8, "hp": 5600, "atk": 211, "def": 95, "sp_atk": 233, "sp_def": 72, "speed": 3700},
+			{"level": 9, "hp": 5997, "atk": 223, "def": 104, "sp_atk": 266, "sp_def": 79, "speed": 3700},
+			{"level": 10, "hp": 6454, "atk": 236, "def": 115, "sp_atk": 304, "sp_def": 87, "speed": 3700},
+			{"level": 11, "hp": 6980, "atk": 251, "def": 128, "sp_atk": 348, "sp_def": 96, "speed": 3700},
+			{"level": 12, "hp": 7585, "atk": 269, "def": 142, "sp_atk": 398, "sp_def": 107, "speed": 3700},
+			{"level": 13, "hp": 8281, "atk": 290, "def": 159, "sp_atk": 456, "sp_def": 119, "speed": 3700},
+			{"level": 14, "hp": 9081, "atk": 313, "def": 178, "sp_atk": 523, "sp_def": 133, "speed": 3700},
+			{"level": 15, "hp": 10000, "atk": 341, "def": 200, "sp_atk": 600, "sp_def": 149, "speed": 3700}
+		],
+		"moves": {
+			"basic": {
+				"moveId": "chansey_basic",
+				"style": "physical",
+				"boostStyle": "special",
+				"boostCount": 0
+			},
+			"slot1": [
+				{
+					"moveId": "pound_blissey",
+					"style": "special",
+					"category": "melee",
+					"cooldown": 6,
+					"level": 1,
+					"color": "fighting"
+				},
+				{
+					"moveId": "egg_bomb",
+					"style": "special",
+					"category": "ranged",
+					"cooldown": 7.5,
+					"level": 4,
+					"upgrade": 10,
+					"color": "fighting"
+				},
+				{
+					"moveId": "helping_hand",
+					"style": "other",
+					"category": "buff",
+					"cooldown": 9,
+					"level": 4,
+					"upgrade": 10,
+					"color": "fighting"
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "heal_pulse",
+					"style": "other",
+					"category": "recovery",
+					"cooldown": 10,
+					"level": 1,
+					"color": "grass"
+				},
+				{
+					"moveId": "soft_boiled",
+					"style": "other",
+					"category": "recovery",
+					"cooldown": 2,
+					"level": 6,
+					"upgrade": 12,
+					"color": "grass"
+				},
+				{
+					"moveId": "safeguard",
+					"style": "other",
+					"category": "buff",
+					"cooldown": 11,
+					"level": 6,
+					"upgrade": 12,
+					"color": "psychic"
+				}
+			],
+			"unite": {
+				"moveId": "bliss_assistance",
+				"category": "Buff",
+				"level": 8,
+				"color": "psychic"
+			},
+			"passive": {
+				"moveId": "natural_cure",
+				"color": "psychic"
 			}
 		}
 	},

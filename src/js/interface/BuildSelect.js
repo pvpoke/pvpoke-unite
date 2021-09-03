@@ -29,7 +29,6 @@ function BuildSelect(element, ctx, selectors){
 	}
 
 	this.init = function(){
-
 		self.displayNewPokemonList();
 
 		$pokeSearch.val("");
