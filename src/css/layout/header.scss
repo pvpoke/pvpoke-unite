@@ -2,15 +2,17 @@ header{
 	.header-wrap{
 		max-width: $max-container-width;
 		margin: 0 auto;
-		padding:10px $gutter-width 0 $gutter-width;
+		padding:5px $gutter-width 0 $gutter-width;
 		display: flex;
 	    justify-content: space-between;
-	    align-items: flex-end;
+	    align-items: center;
 		flex-wrap: wrap;
 	}
 
 	.title{
 		margin: 0;
+		font-size:24px;
+		line-height: 24px;
 
 		a{
 			color:$white;
@@ -28,5 +30,18 @@ header{
 
 	a{
 		text-decoration: none;
+	}
+}
+
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	header{
+		.header-wrap{
+			padding:10px $gutter-width 0 $gutter-width;
+		}
+
+		.title{
+	   		font-size:32px;
+		}
 	}
 }

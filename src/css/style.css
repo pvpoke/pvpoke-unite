@@ -22,6 +22,25 @@ a {
   color: #9950c5;
 }
 
+h1:first-of-type {
+  margin-top: 0;
+  font-size: 30px;
+}
+
+p {
+  font-size: 14px;
+}
+
+@media only screen and (min-width: 768px) {
+  h1:first-of-type {
+    margin-top: 0.67em;
+    font-size: 2em;
+  }
+
+  p {
+    font-size: 16px;
+  }
+}
 /* TYPE COLORS */
 [color=bug] {
   background: #62ba51;
@@ -263,8 +282,8 @@ a {
   cursor: pointer;
 }
 .hamburger .meat {
-  width: 40px;
-  height: 6px;
+  width: 30px;
+  height: 4px;
   margin: 5px 0;
   background: #9950c5;
 }
@@ -275,7 +294,6 @@ a {
   position: relative;
   z-index: 5;
   overflow: hidden;
-  pointer-events: none;
   white-space: nowrap;
   -webkit-transition: all 0.125s linear 0s;
   -moz-transition: all 0.125s linear 0s;
@@ -318,6 +336,7 @@ header .submenu {
     z-index: 5;
     right: 0;
     top: 35px;
+    pointer-events: none;
   }
   .menu .parent-menu .submenu.active {
     display: block;
@@ -362,14 +381,16 @@ body {
 header .header-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 10px 8px 0 8px;
+  padding: 5px 8px 0 8px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  align-items: center;
   flex-wrap: wrap;
 }
 header .title {
   margin: 0;
+  font-size: 24px;
+  line-height: 24px;
 }
 header .title a {
   color: #c8c8c8;
@@ -385,10 +406,24 @@ header a {
   text-decoration: none;
 }
 
+@media only screen and (min-width: 768px) {
+  header .header-wrap {
+    padding: 10px 8px 0 8px;
+  }
+  header .title {
+    font-size: 32px;
+  }
+}
 footer {
   max-width: 1200px;
   margin: 0 auto;
   padding: 8px;
+}
+footer a {
+  color: #c8c8c8;
+}
+footer p {
+  font-size: 12px;
 }
 
 /* Ad styling and display */
@@ -1142,6 +1177,10 @@ select {
 }
 .role-bg[role=speedster] {
   background-color: #29a5e3;
+}
+
+.modal .build-select .nav-bar {
+  display: none;
 }
 
 @media only screen and (min-width: 768px) {

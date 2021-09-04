@@ -6,3 +6,23 @@ body{
 a{
 	color:$accent-color;
 }
+
+h1:first-of-type{
+	margin-top: 0;
+	font-size:30px;
+}
+
+p{
+	font-size:14px;
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	h1:first-of-type{
+		margin-top: 0.67em;
+		font-size:2em;
+	}
+
+	p{
+		font-size:16px;
+	}
+}

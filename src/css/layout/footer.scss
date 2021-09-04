@@ -2,4 +2,12 @@ footer{
 	max-width: $max-container-width;
 	margin: 0 auto;
 	padding: $gutter-width;
+
+	a{
+		color:$white;
+	}
+
+	p{
+		font-size:12px;
+	}
 }

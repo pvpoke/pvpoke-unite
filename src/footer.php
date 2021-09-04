@@ -39,15 +39,14 @@ if($(window).width() > 768){
 		$(this).find(".submenu").addClass("active");
 	});
 } else{
-	$("body").on("click", ".menu .parent-menu", function(e){
+	$("body").on("click", ".build-select .menu .parent-menu", function(e){
 		e.preventDefault();
 		$(this).find(".submenu").toggleClass("active");
 	});
 
 	$("body").on("click", function(e){
-		e.preventDefault();
-		if($(".submenu:hover, .parent-menu:hover").length == 0){
-			$(".submenu").removeClass("active");
+		if($(".build-select .submenu:hover, .build-select .parent-menu:hover").length == 0){
+			$(".build-select .submenu").removeClass("active");
 		}
 	});
 }

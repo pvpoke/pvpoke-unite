@@ -21,8 +21,8 @@
 	cursor: pointer;
 
 	.meat{
-		width: 40px;
-	    height: 6px;
+		width: 30px;
+    	height: 4px;
 	    margin: 5px 0;
 	    background: $accent-color;
 	}
@@ -34,7 +34,6 @@
 	 position: relative;
 	 z-index: 5;
 	 overflow: hidden;
-	 pointer-events: none;
 	 white-space: nowrap;
 	 -webkit-transition: all 0.125s linear 0s;
 	 -moz-transition: all 0.125s linear 0s;
@@ -80,6 +79,7 @@ header .submenu{
 				z-index: 5;
 			    right: 0;
 			    top: 35px;
+				pointer-events: none;
 
 				&.active{
 					display: block;

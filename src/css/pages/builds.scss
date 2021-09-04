@@ -386,6 +386,12 @@
 	&[role="speedster"]{ background-color:$speedster-color; }
 }
 
+.modal .build-select{
+	.nav-bar{
+		display: none;
+	}
+}
+
 // Responsive styling
 
 @media only screen and (min-width: $desktop-breakpoint) {
