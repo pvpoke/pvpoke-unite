@@ -14,7 +14,7 @@ input[type=text] {
 }
 
 body {
-  color: #c8c8c8;
+  color: #ccc;
   font-family: sans-serif;
 }
 
@@ -183,7 +183,7 @@ p {
   padding: 2px 8px;
   margin: 5px;
   font-size: 12px;
-  color: #c8c8c8;
+  color: #ccc;
   border: 1px solid #222222;
   background: #222222;
   border-bottom-left-radius: 10px;
@@ -220,7 +220,7 @@ p {
   font-size: 30px;
 }
 .pokemon-list .pokemon:hover .image-container {
-  border: 3px solid #c8c8c8;
+  border: 3px solid #ccc;
 }
 .pokemon-list .pokemon .image-container {
   width: 100%;
@@ -362,6 +362,7 @@ body {
   background-size: cover;
   background-position: center top;
   min-height: 100%;
+  padding-top: 30px;
 }
 
 .main-wrap {
@@ -370,14 +371,40 @@ body {
   padding: 8px;
 }
 
+.section {
+  color: #eee;
+}
 .section.patterned {
+  color: #ccc;
   background: linear-gradient(90deg, #141414 20px, transparent 1%) center, linear-gradient(#141414 20px, transparent 1%) center, #323232;
   background-size: 22px 22px;
 }
 .section.padding {
   padding: 20px 0;
 }
+.section:not(.patterned) .main-wrap > h2 {
+  text-align: center;
+  margin-top: 0;
+}
+.section:not(.patterned) .main-wrap > p {
+  line-height: 20px;
+}
 
+@media only screen and (min-width: 768px) {
+  body {
+    padding-top: 0px;
+  }
+
+  .section.padding {
+    padding: 40px 0;
+  }
+}
+header {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 25;
+}
 header .header-wrap {
   max-width: 1200px;
   margin: 0 auto;
@@ -393,7 +420,7 @@ header .title {
   line-height: 24px;
 }
 header .title a {
-  color: #c8c8c8;
+  color: #ccc;
   font-weight: normal;
 }
 header .title span {
@@ -407,6 +434,9 @@ header a {
 }
 
 @media only screen and (min-width: 768px) {
+  header {
+    position: relative;
+  }
   header .header-wrap {
     padding: 10px 8px 0 8px;
   }
@@ -420,7 +450,7 @@ footer {
   padding: 8px;
 }
 footer a {
-  color: #c8c8c8;
+  color: #ccc;
 }
 footer p {
   font-size: 12px;
@@ -511,7 +541,7 @@ button,
   display: block;
   border: 1px solid #9950c5;
   background: #9950c5;
-  color: #c8c8c8;
+  color: #ccc;
   padding: 5px 10px;
   margin: 5px;
   outline: none;
@@ -530,14 +560,13 @@ button.toggle:hover,
 }
 button.toggle.on,
 .button.toggle.on {
-  color: #c8c8c8;
+  color: #ccc;
   background: #9950c5;
 }
 button.secondary,
 .button.secondary {
-  background: #51c498;
-  border: 1px solid #51c498;
-  color: #fff;
+  background: #4cb78e;
+  border: 1px solid #4cb78e;
 }
 
 button.select {
@@ -570,13 +599,13 @@ button.select {
 }
 .tabs a.active {
   background: #9950c5;
-  color: #c8c8c8;
+  color: #ccc;
 }
 
 a.remove {
   border-radius: 20px;
   background: #141414;
-  color: #c8c8c8;
+  color: #ccc;
   width: 20px;
   height: 20px;
   text-decoration: none;
@@ -589,7 +618,7 @@ a.remove {
   font-size: 14px;
 }
 a.remove:hover {
-  border: 2px solid #c8c8c8;
+  border: 2px solid #ccc;
 }
 
 /* Scrollbar styling */
@@ -604,7 +633,7 @@ a.remove:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #c8c8c8;
+  background: #ccc;
 }
 
 ::-webkit-scrollbar-track {
@@ -618,7 +647,7 @@ input {
 }
 input[type=text] {
   background: #141414;
-  color: #c8c8c8;
+  color: #ccc;
   border-bottom: 3px solid #9950c5;
   padding: 10px 10px 6px 10px;
   outline: none;
@@ -676,7 +705,7 @@ input[type=text] {
   width: 17px;
   height: 17px;
   background: #141414;
-  border: 2px solid #c8c8c8;
+  border: 2px solid #ccc;
   box-sizing: border-box;
   margin: 0px 5px 0 0;
   float: left;
@@ -690,7 +719,7 @@ input[type=text] {
 
 select {
   background: #141414;
-  color: #c8c8c8;
+  color: #ccc;
   width: 200px;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -715,7 +744,7 @@ select {
   margin: 0 auto;
   max-width: 400px;
   vertical-align: middle;
-  margin-top: 50px;
+  margin-top: 25px;
   overflow: hidden;
 }
 .modal .modal-container .modal-header {
@@ -809,7 +838,7 @@ select {
 }
 .select-modal[type=move] .image {
   border-radius: 100px;
-  background-color: #c8c8c8;
+  background-color: #ccc;
 }
 .select-modal[type=move] .selected-item .image .asset {
   background-size: 92%;
@@ -828,7 +857,7 @@ select {
   position: absolute;
   display: none;
   padding: 6px 10px;
-  border: 1px solid #c8c8c8;
+  border: 1px solid #ccc;
   background: #141414;
   font-size: 12px;
   max-width: 250px;
@@ -842,6 +871,63 @@ select {
   color: #f0d50a;
 }
 
+.home-tiles {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.home-tiles .home-tile {
+  display: block;
+  position: relative;
+  text-decoration: none;
+  margin-bottom: 10px;
+}
+.home-tiles .home-tile:hover img {
+  opacity: 0.6;
+}
+.home-tiles .home-tile .tile-content {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  color: #ccc;
+  padding: 10px;
+  font-weight: bold;
+  font-size: 20px;
+  box-sizing: border-box;
+}
+.home-tiles .home-tile img {
+  -webkit-transition: all 0.125s linear 0s;
+  -moz-transition: all 0.125s linear 0s;
+  -o-transition: all 0.125s linear 0s;
+  transition: all 0.125s linear 0s;
+  opacity: 0.8;
+  pointer-events: none;
+  max-width: 100%;
+  display: block;
+}
+.home-tiles .primary, .home-tiles .primary .tile-content {
+  background: #9950c5;
+}
+.home-tiles .secondary, .home-tiles .secondary .tile-content {
+  background: #4cb78e;
+}
+.home-tiles .tertiary, .home-tiles .tertiary .tile-content {
+  background: #517dc4;
+}
+
+@media only screen and (min-width: 768px) {
+  .home-tiles {
+    justify-content: space-between;
+  }
+  .home-tiles .home-tile .tile-content {
+    font-size: 24px;
+  }
+
+  .home-tile-1,
+.home-tile-2 {
+    max-width: 49.5%;
+  }
+}
 .build-list {
   display: flex;
   width: 100%;
@@ -862,7 +948,7 @@ select {
 }
 .build-list .build-select .nav-bar .star {
   display: none;
-  color: #c8c8c8;
+  color: #ccc;
   position: absolute;
   font-size: 30px;
   line-height: 30px;
@@ -1007,7 +1093,7 @@ select {
   text-transform: uppercase;
   text-align: center;
   max-width: 90%;
-  text-shadow: -1px 1px 0 #c8c8c8, 1px 1px 0 #c8c8c8, 1px -1px 0 #c8c8c8, -1px -1px 0 #c8c8c8;
+  text-shadow: -1px 1px 0 #ccc, 1px 1px 0 #ccc, 1px -1px 0 #ccc, -1px -1px 0 #ccc;
 }
 .build-select .attributes {
   justify-content: center;
@@ -1045,7 +1131,7 @@ select {
 }
 .build-select .stats .stat .stat-label.selected {
   background: #9950c5;
-  color: #c8c8c8;
+  color: #ccc;
 }
 .build-select .stats .stat .stat-value {
   min-width: 50px;
@@ -1143,7 +1229,7 @@ select {
 }
 .build-select .move .image {
   border-radius: 100px;
-  background-color: #c8c8c8;
+  background-color: #ccc;
 }
 .build-select .move .image .asset {
   width: 100%;

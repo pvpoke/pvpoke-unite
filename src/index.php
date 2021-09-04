@@ -4,36 +4,44 @@
 
 <div id="home">
 	<div class="section patterned padding">
-		<div class="main-wrap">
-			<p>stuff</p>
+		<div class="main-wrap home-tiles">
+			<a class="home-tile primary home-tile-1" href="<?php echo $WEB_ROOT; ?>builds/">
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-1.jpg" />
+				<div class="tile-content corners"><?php e("home_tile_1_content") ?></div>
+			</a>
+			<a class="home-tile secondary home-tile-2" href="<?php echo $WEB_ROOT; ?>teams/">
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-2.jpg" />
+				<div class="tile-content corners"><?php e("home_tile_2_content") ?></div>
+			</a>
+			<a class="home-tile tertiary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3.jpg" />
+				<div class="tile-content corners"><?php e("home_tile_3_content") ?></div>
+			</a>
 		</div>
 	</div>
 
 	<div class="section padding">
 		<div class="main-wrap">
-			<h2>About PvPoke</h2>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ultrices malesuada urna at pretium. Mauris ultricies ultricies vestibulum. Cras facilisis augue id nulla maximus, eu euismod ipsum scelerisque. Vivamus vitae tellus quam. Proin maximus auctor tristique. Morbi aliquet feugiat facilisis. Vestibulum sit amet purus ut dolor malesuada tincidunt sed a dolor. Nulla tincidunt aliquet lectus eu pellentesque. Nullam eu facilisis orci, ac porttitor nisi. Suspendisse potenti. Morbi finibus tempor ante euismod rutrum.</p>
+			<h2><?php e("about_pvpoke") ?></h2>
+			<p><?php e("home_about_pvpoke_1"); ?></p>
+			<p><?php e("home_about_pvpoke_2"); ?></p>
+			<?php require 'modules/ads/body-728.php'; ?>
 		</div>
 	</div>
 
 	<div class="section patterned padding">
 		<div class="main-wrap">
-			<p><?php e("home_welcome"); ?></p>
-
-			<?php require 'modules/ads/body-728.php'; ?>
 
 			<?php if($_SETTINGS->ads == 1) : ?>
 				<span data-ccpa-link="1"></span>
 			<?php endif; ?>
 
 			<!--Update section for updates-->
-			<h3><?php e("whats_new"); ?></h3>
+			<h2><?php e("whats_new"); ?></h2>
 
-			<h4>v1.22.18 (July 24, 2021)</h4>
+			<h4>v1.0 (September 4th, 2021)</h4>
 			<ul>
-				<li>Fixed an issue with the training AI evaluating some scenarios incorrectly</li>
-				<li>Fixed an issue where individual battles in Master League Classic would set the Pokemon to level 50.</li>
-				<li>Fixed an issue where custom threats and alternatives entered in the Team Builder weren't reflected correctly in battle links.</li>
+				<li>PvPoke Unite Beta</li>
 			</ul>
 		</div>
 	</div>

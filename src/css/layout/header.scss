@@ -1,4 +1,9 @@
 header{
+	width:100%;
+	position: fixed;
+	top:0;
+	z-index:25;
+
 	.header-wrap{
 		max-width: $max-container-width;
 		margin: 0 auto;
@@ -36,6 +41,8 @@ header{
 
 @media only screen and (min-width: $desktop-breakpoint) {
 	header{
+		position: relative;
+
 		.header-wrap{
 			padding:10px $gutter-width 0 $gutter-width;
 		}

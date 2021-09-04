@@ -1,0 +1,57 @@
+.home-tiles{
+	display:flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	.home-tile{
+		display:block;
+		position: relative;
+		text-decoration: none;
+		margin-bottom: 10px;
+
+		&:hover{
+			img{
+				opacity: 0.6;
+			}
+		}
+
+		.tile-content{
+			position: absolute;
+			bottom:10px;
+			left:10px;
+			color:$white;
+			padding:10px;
+			font-weight: bold;
+			font-size:20px;
+			box-sizing: border-box;
+		}
+
+		img{
+			@include transition(all, 0.125s, linear, 0s);
+			opacity:0.8;
+			pointer-events: none;
+			max-width:100%;
+			display:block;
+		}
+	}
+
+	.primary, .primary .tile-content{ background:$accent-color; }
+	.secondary, .secondary .tile-content{ background:$secondary-color; }
+	.tertiary, .tertiary .tile-content{ background:$tertiary-color; }
+}
+
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	.home-tiles{
+		justify-content: space-between;
+
+		.home-tile .tile-content{
+			font-size:24px;
+		}
+	}
+
+	.home-tile-1,
+	.home-tile-2{
+		max-width:49.5%;
+	}
+}

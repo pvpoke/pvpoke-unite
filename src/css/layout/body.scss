@@ -6,6 +6,7 @@ body{
     background-size: cover;
     background-position: center top;
     min-height: 100%;
+	padding-top:30px;
 }
 
 .main-wrap{
@@ -15,8 +16,11 @@ body{
 }
 
 .section{
+	color:$bright-white;
 
 	&.patterned{
+		color:$white;
+
 		background:
 			linear-gradient(90deg, $background-color ($dot-space - $dot-size), transparent 1%) center,
 			linear-gradient($background-color ($dot-space - $dot-size), transparent 1%) center,
@@ -26,5 +30,26 @@ body{
 
 	&.padding{
 		padding: 20px 0;
+	}
+
+	&:not(.patterned) .main-wrap{
+		& > h2{
+			text-align: center;
+			margin-top: 0;
+		}
+
+		& > p{
+			line-height: 20px;
+		}
+	}
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	body{
+		padding-top:0px;
+	}
+
+	.section.padding{
+		padding:40px 0;
 	}
 }

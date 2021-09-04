@@ -1,7 +1,9 @@
 {
-	"home_welcome": "Welcome to PvPoke Unite! PvPoke is an open-source tool for build and team analysis of Pokemon Unite.",
-	"whats_new": "What's New",
-	"bullet_1": "Fixed an issue with the training AI evaluating some scenarios incorrectly",
-	"bullet_2": "Fixed an issue where individual battles in Master League Classic would set the Pokemon to level 50.",
-	"bullet_3": "Fixed an issue where custom threats and alternatives entered in the Team Builder weren't reflected correctly in battle links."
+	"home_tile_1_content": "Organize your builds",
+	"home_tile_2_content": "Prepare a team",
+	"home_tile_3_content": "Contribute <3",
+	"about_pvpoke": "About PvPoke",
+	"home_about_pvpoke_1": "Welcome to the site! PvPoke (\"pee-vee-poke\") is a Pokemon resource with a focus on open-source projects and tools to help you research and explore. It currently includes websites for Pokemon Unite and Pokemon GO PvP. PvPoke is built and maintained by one developer, Matthew (that's me), but wouldn't be possible without contributions and support from the wonderful people and organizations in the Pokemon community.",
+	"home_about_pvpoke_2": "I began PvPoke as a way to explore Pokemon games while making cool things and having fun with friends. Now, I'm hoping to bring that same spirit to Pokemon Unite! Whether you want to dig deep into Held Items, share your favorite builds, or need a quick tip while choosing your team, I hope PvPoke Unite can be fun and helpful in your journey on Aeos Island. Good luck in the arena!",
+	"whats_new": "What's New"
 }
