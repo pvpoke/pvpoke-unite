@@ -53,9 +53,9 @@ header .submenu{
 
 		a{
 			font-size: 24px;
-			padding:10px 10px 0 10px;
-			margin-left:40px;
-			background:none;
+		    padding: 10px 10px 0 10px;
+		    margin-left: 40px;
+		    background: none;
 
 			&.more{
 				display: block;
@@ -70,6 +70,10 @@ header .submenu{
 
 		.parent-menu{
 			position: relative;
+
+			& > a{
+				background:none;
+			}
 
 			.submenu{
 				padding-top: 10px;

@@ -11,7 +11,7 @@
 
 		&:hover{
 			img{
-				opacity: 0.6;
+				filter:brightness(1);
 			}
 		}
 
@@ -19,19 +19,21 @@
 			position: absolute;
 			bottom:10px;
 			left:10px;
-			color:$white;
+			color:$black;
 			padding:10px;
 			font-weight: bold;
 			font-size:20px;
 			box-sizing: border-box;
+			box-shadow: 5px 5px 0px $black;
+			border: 4px solid $black;
 		}
 
 		img{
 			@include transition(all, 0.125s, linear, 0s);
-			opacity:0.8;
 			pointer-events: none;
 			max-width:100%;
 			display:block;
+			filter:brightness(0.8);
 		}
 	}
 

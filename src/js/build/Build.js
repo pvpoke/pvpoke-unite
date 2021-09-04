@@ -210,6 +210,8 @@ function Build(id, level){
 		} else{
 			self.heldItems[slot] = item;
 		}
+
+		self.setStats();
 	}
 
 	// Give this Pokemon a specific battle item

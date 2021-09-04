@@ -328,6 +328,9 @@ header .submenu {
   .menu .parent-menu {
     position: relative;
   }
+  .menu .parent-menu > a {
+    background: none;
+  }
   .menu .parent-menu .submenu {
     padding-top: 10px;
     max-width: 200px;
@@ -408,7 +411,7 @@ header {
 header .header-wrap {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 5px 8px 0 8px;
+  padding: 5px 8px 5px 8px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -424,10 +427,12 @@ header .title a {
   font-weight: normal;
 }
 header .title span {
-  color: #9950c5;
+  background: #9950c5;
+  color: #141414;
   font-weight: 900;
   margin-left: 10px;
   text-transform: uppercase;
+  padding: 0 10px;
 }
 header a {
   text-decoration: none;
@@ -441,7 +446,7 @@ header a {
     padding: 10px 8px 0 8px;
   }
   header .title {
-    font-size: 32px;
+    font-size: 28px;
   }
 }
 footer {
@@ -565,8 +570,9 @@ button.toggle.on,
 }
 button.secondary,
 .button.secondary {
-  background: #4cb78e;
-  border: 1px solid #4cb78e;
+  background: #47a984;
+  border: 1px solid #47a984;
+  color: #eee;
 }
 
 button.select {
@@ -883,33 +889,35 @@ select {
   margin-bottom: 10px;
 }
 .home-tiles .home-tile:hover img {
-  opacity: 0.6;
+  filter: brightness(1);
 }
 .home-tiles .home-tile .tile-content {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  color: #ccc;
+  color: #141414;
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
   box-sizing: border-box;
+  box-shadow: 5px 5px 0px #141414;
+  border: 4px solid #141414;
 }
 .home-tiles .home-tile img {
   -webkit-transition: all 0.125s linear 0s;
   -moz-transition: all 0.125s linear 0s;
   -o-transition: all 0.125s linear 0s;
   transition: all 0.125s linear 0s;
-  opacity: 0.8;
   pointer-events: none;
   max-width: 100%;
   display: block;
+  filter: brightness(0.8);
 }
 .home-tiles .primary, .home-tiles .primary .tile-content {
   background: #9950c5;
 }
 .home-tiles .secondary, .home-tiles .secondary .tile-content {
-  background: #4cb78e;
+  background: #47a984;
 }
 .home-tiles .tertiary, .home-tiles .tertiary .tile-content {
   background: #517dc4;

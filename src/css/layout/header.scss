@@ -7,7 +7,7 @@ header{
 	.header-wrap{
 		max-width: $max-container-width;
 		margin: 0 auto;
-		padding:5px $gutter-width 0 $gutter-width;
+		padding:5px $gutter-width 5px $gutter-width;
 		display: flex;
 	    justify-content: space-between;
 	    align-items: center;
@@ -26,10 +26,12 @@ header{
 
 
 		span{
-			color:$accent-color;
+			background:$accent-color;
+			color:$background-color;
 			font-weight: 900;
 			margin-left:10px;
 			text-transform: uppercase;
+			padding:0 10px;
 		}
 	}
 
@@ -48,7 +50,7 @@ header{
 		}
 
 		.title{
-	   		font-size:32px;
+	   		font-size:28px;
 		}
 	}
 }
