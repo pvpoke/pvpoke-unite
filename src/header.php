@@ -106,7 +106,7 @@ if(! isset($OG_IMAGE)){
 
 </head>
 
-<body>
+<body <?php if($_SETTINGS->ads == 1) : ?>class="ad-padding"<?php endif; ?>>
 	<header class="section patterned">
 		<div class="header-wrap">
 			<h1 class="title"><a href="/"><?php e("pvpoke"); ?><span><?php e("unite"); ?></span></a></h1>

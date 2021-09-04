@@ -391,6 +391,86 @@ footer {
   padding: 8px;
 }
 
+/* Ad styling and display */
+#nitro-unite-header-mobile,
+#nitro-unite-body-mobile,
+#nitro-unite-body-desktop,
+#nitro-unite-body-mobile,
+#nitro-unite-sidebar-right,
+#nitro-unite-sidebar-left {
+  display: none;
+}
+
+.mobile-ad-container,
+.desktop-ad-container {
+  overflow: hidden;
+  clip-path: inset(0 0 0 0);
+  margin: 0 auto 5px auto;
+  display: none;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 767px) {
+  .nitro-pin-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    z-index: 25;
+  }
+
+  #nitro-unite-header-mobile {
+    display: block;
+    margin: 0 auto;
+  }
+
+  #nitro-unite-body-mobile {
+    display: block;
+  }
+
+  .mobile-ad-container {
+    display: block;
+    width: 320px;
+    height: 70px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  .ad-padding .section {
+    padding-left: 200px;
+    padding-right: 200px;
+  }
+
+  #nitro-unite-header-desktop {
+    display: block;
+  }
+
+  #nitro-unite-body-desktop {
+    display: block;
+  }
+
+  .desktop-ad-container {
+    display: block;
+    width: 728px;
+    height: 110px;
+    margin: 20px auto;
+  }
+  .desktop-ad-container.nitro-header {
+    margin: 0 auto;
+  }
+}
+@media only screen and (min-width: 1190px) {
+  #nitro-unite-sidebar-left {
+    display: block;
+    position: fixed;
+    top: 95px;
+    left: 20px;
+  }
+
+  #nitro-unite-sidebar-right {
+    display: block;
+    position: fixed;
+    top: 95px;
+    right: 20px;
+  }
+}
 button,
 .button {
   display: block;
