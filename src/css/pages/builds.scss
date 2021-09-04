@@ -149,6 +149,11 @@
 		display:none;
 	}
 
+	.pokemon-list{
+		max-height:450px;
+		overflow: auto;
+	}
+
 	.selected-pokemon{
 		position:relative;
 		border:1px solid $gray;
@@ -359,6 +364,12 @@
 
 	h4{
 		margin: 25px 0 5px 0;
+	}
+
+	a.team-link{
+		display: block;
+		margin: 0 0 10px 0;
+		font-size:14px;
 	}
 }
 

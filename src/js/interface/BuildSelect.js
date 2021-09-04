@@ -201,6 +201,20 @@ function BuildSelect(element, ctx, selectors){
 			$el.find(".nav-bar .star").hide();
 		}
 
+		// Update team link or build links
+		if(context == "builds"){
+			let teamURL = host + "teams/general/0/" + build.generateURLString();
+			$el.find("a.team-link").attr("href", teamURL);
+			$el.find("a.team-link").html(msg("button_team_link", [msg(build.pokemonId)]));
+			$el.find(".team-link-section").removeClass("hide");
+		} else if(context == "teams"){
+			let buildURL = host + "builds/" + build.generateURLString();
+			$el.find("a.build-link").attr("href", buildURL);
+			$el.find("a.build-link").html(msg("button_build_link", [msg(build.pokemonId)]));
+			$el.find(".build-link-section").removeClass("hide");
+		}
+
+
 		// Draw progression graph
 
 		let xAxisMax = 15;

@@ -18,13 +18,23 @@ function displayFloat(number, digits){
 
 // Return a message from the message object
 
-function msg(stringId){
+function msg(stringId, dynamicStrings){
+	dynamicStrings = typeof dynamicStrings !== 'undefined' ? dynamicStrings : [];
+
+	let message = stringId;
+
 	if(messages[stringId]){
-		return messages[stringId];
+		message = messages[stringId];
+
+		// Replace dynamic portions from array of provided strings
+		for(var i = 0; i < dynamicStrings.length; i++){
+			message = message.replace("%"+(i+1)+"$s", dynamicStrings[i]);
+		}
 	} else{
 		console.error(stringId + " not found");
-		return stringId;
 	}
+
+	return message;
 }
 
 

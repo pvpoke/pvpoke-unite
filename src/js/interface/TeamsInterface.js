@@ -192,11 +192,6 @@ var InterfaceMaster = (function () {
 				  'lane': selectedLane
 				});
 
-				gtag('event', team.getFormat().id, {
-				  'event_category' : 'Team',
-				  'event_label': team.generateURLString()
-				});
-
 				modal.close();
 				self.updateAllLanes();
 			}
@@ -462,11 +457,6 @@ var InterfaceMaster = (function () {
 				gtag('event', build.pokemonId, {
 				  'event_category' : 'Pokemon Select',
 				  'lane': selectedLane
-				});
-
-				gtag('event', team.getFormat().id, {
-				  'event_category' : 'Team',
-				  'event_label': team.generateURLString()
 				});
 			});
 

@@ -141,7 +141,17 @@
 			<h4><?php e("share"); ?></h4>
 			<div class="share-link">
 				<input type="text" value="" readonly>
-				<button class="copy">Copy</button>
+				<button class="copy"><?php e("button_copy"); ?></button>
+			</div>
+
+			<div class="team-link-section hide">
+				<h4><?php e("synergies"); ?></h4>
+				<a class="team-link button secondary" target="_blank"><?php e("button_team_link"); ?></a>
+			</div>
+
+			<div class="build-link-section hide">
+				<h4><?php e("builds"); ?></h4>
+				<a class="build-link button secondary" target="_blank"><?php e("button_build_link"); ?></a>
 			</div>
 		</div>
 	</div>

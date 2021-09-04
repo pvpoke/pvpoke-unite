@@ -1,4 +1,5 @@
-button{
+button,
+.button{
 	display:block;
 	border: 1px solid $accent-color;
 	background:$accent-color;
@@ -7,6 +8,8 @@ button{
 	margin: 5px;
 	outline:none;
 	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
 
 	&.toggle{
 		background:$black;
@@ -20,6 +23,12 @@ button{
 			color:$white;
 			background:$accent-color;
 		}
+	}
+
+	&.secondary{
+		background:$secondary-color;
+		border:1px solid $secondary-color;
+		color:#fff;
 	}
 }
 
@@ -77,4 +86,23 @@ a.remove{
 	&:hover{
 		border:2px solid $white;
 	}
+}
+
+/* Scrollbar styling */
+
+::-webkit-scrollbar{
+	width: 5px;
+	height: 5px;
+}
+::-webkit-scrollbar-thumb{
+	background: $accent-color;
+	border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover{
+	background: $white;
+}
+::-webkit-scrollbar-track{
+	background: $gray;
+	border-radius: 0px;
+	box-shadow: inset 0px 0px 0px 0px #F0F0F0;
 }
