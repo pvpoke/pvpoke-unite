@@ -506,6 +506,7 @@ footer p {
   .ad-padding .section {
     padding-left: 200px;
     padding-right: 200px;
+    box-sizing: border-box;
   }
 
   #nitro-unite-header-desktop {
