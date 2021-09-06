@@ -614,7 +614,7 @@ function BuildSelect(element, ctx, selectors){
 			if(i > 0){
 				$content.append(" + ");
 			}
-			$content.append("<span class=\"stat-part\"><span class=\"value\">"+displayFloat(parts[i].value, 1)+"</span> "+msg(parts[i].source)+"</span>");
+			$content.append("<span class=\"stat-part\"><span class=\"value\">"+parts[i].displayValue+"</span> "+msg(parts[i].source)+"</span>");
 		}
 
 		tooltip.setContent($content, "stat-parts");

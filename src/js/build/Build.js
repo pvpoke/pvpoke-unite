@@ -124,7 +124,9 @@ function Build(id, level){
 				// Add base stat
 				parts.push({
 					source: "base_stat",
-					value: baseStat
+					value: baseStat,
+					displayValue: baseStat,
+					type: "number"
 				});
 
 				// Add bonuses from held items
@@ -133,36 +135,63 @@ function Build(id, level){
 					let item = self.heldItems[i];
 					let boosts = item.boosts;
 
-					let part = {
-						source: item.itemId,
-						value: 0
-					}
 
 					// Check primary effect
 					if(item.stat == key){
-						if(item.type == "number"){
-							part.value += item.value * item.stacks;
-						} else if(item.type == "percent"){
-							part.value += item.value * (parts[0].value / 100);
+						let primaryEffectPart = {
+							source: item.itemId,
+							value: item.value * item.stacks,
+							displayValue: item.value * item.stacks,
+							type: item.type
 						}
+
+						parts.push(primaryEffectPart);
 					}
 
 					// Check secondary boosts
 
 					for(var n = 0; n < boosts.length; n++){
 						if(boosts[n].stat == key){
-							part.value += boosts[n].value;
+							let secondaryEffectPart = {
+								source: item.itemId,
+								value: boosts[n].value,
+								displayValue: boosts[n].value,
+								type: "number"
+							}
+
+							if(boosts[n].type){
+								secondaryEffectPart.type = boosts[n].type;
+							}
+
+							parts.push(secondaryEffectPart);
 						}
 					}
+				}
 
-					if(part.value != 0){
+				// Move all percentage parts to the end of the array
+				for(var i = 0; i < parts.length; i++){
+					let part = parts[i];
+					if(parts[i].type == "percent"){
+						parts.splice(i, 1);
 						parts.push(part);
 					}
 				}
 
 				// Add up all parts
 				for(var i = 0; i < parts.length; i++){
-					stats[key].value += parts[i].value;
+					if(parts[i].type == "number"){
+						stats[key].value += parts[i].value;
+					}
+				}
+
+				// Multiply all the percent parts after totalling the other parts
+				for(var i = 0; i < parts.length; i++){
+					if(parts[i].type == "percent"){
+						let displayValue = (stats[key].value * (parts[i].value / 100));
+						displayValue = displayFloat(displayValue, 1);
+						parts[i].displayValue = parts[i].value + "% (" + displayValue + ")";
+						stats[key].value += displayValue;
+					}
 				}
 			}
 		}
