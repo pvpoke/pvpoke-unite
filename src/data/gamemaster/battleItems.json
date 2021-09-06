@@ -2,46 +2,55 @@
 	{
 		"itemId": "none",
 		"dex": 0,
+		"priority": 0,
 		"cooldown": 0
 	},
 	{
 		"itemId": "eject_button",
 		"dex": 1,
+		"priority": 1,
 		"cooldown": 70
 	},
 	{
 		"itemId": "full_heal",
 		"dex": 2,
+		"priority": 2,
 		"cooldown": 40
 	},
 	{
 		"itemId": "potion",
 		"dex": 3,
+		"priority": 3,
 		"cooldown": 30
 	},
 	{
 		"itemId": "x_attack",
 		"dex": 4,
+		"priority": 4,
 		"cooldown": 40
 	},
 	{
 		"itemId": "x_speed",
 		"dex": 5,
+		"priority": 5,
 		"cooldown": 50
 	},
 	{
 		"itemId": "goal_getter",
 		"dex": 6,
+		"priority": 6,
 		"cooldown": 90
 	},
 	{
 		"itemId": "fluffy_tail",
 		"dex": 7,
+		"priority": 3,
 		"cooldown": 25
 	},
 	{
 		"itemId": "slow_smoke",
 		"dex": 8,
+		"priority": 8,
 		"cooldown": 40
 	}
 ]

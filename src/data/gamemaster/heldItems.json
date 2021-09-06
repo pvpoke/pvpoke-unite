@@ -2,6 +2,7 @@
 	{
 		"itemId": "none",
 		"dex": 0,
+		"priority": 0,
 		"values": [0, 0, 0, 0],
 		"stat": "shield",
 		"type": "percent",
@@ -9,7 +10,8 @@
 	},
 	{
 		"itemId": "score_shield",
-		"dex": 5,
+		"dex": 1,
+		"priority": 1,
 		"values": [5, 7.5, 10, 10],
 		"stat": "shield",
 		"type": "percent",
@@ -22,7 +24,8 @@
 	},
 	{
 		"itemId": "muscle_band",
-		"dex": 3,
+		"dex": 2,
+		"priority": 2,
 		"values": [1, 2, 3, 3],
 		"stat": "basic_attack_damage",
 		"type": "percent",
@@ -40,7 +43,8 @@
 	},
 	{
 		"itemId": "wise_glasses",
-		"dex": 4,
+		"dex": 3,
+		"priority": 3,
 		"values": [3, 5, 7, 7],
 		"stat": "sp_atk",
 		"type": "percent",
@@ -53,7 +57,8 @@
 	},
 	{
 		"itemId": "scope_lens",
-		"dex": 10,
+		"dex": 4,
+		"priority": 4,
 		"values": [1, 1, 1, 1],
 		"stat": "criticalHitDamage",
 		"type": "number",
@@ -72,7 +77,8 @@
 	},
 	{
 		"itemId": "assault_vest",
-		"dex": 7,
+		"dex": 5,
+		"priority": 5,
 		"values": [9, 12, 15, 15],
 		"stat": "shield",
 		"type": "percent",
@@ -89,7 +95,8 @@
 	},
 	{
 		"itemId": "buddy_barrier",
-		"dex": 2,
+		"dex": 6,
+		"priority": 6,
 		"stat": "shield",
 		"type": "percent",
 		"values": [20, 30, 40, 40],
@@ -102,7 +109,8 @@
 	},
 	{
 		"itemId": "energy_amplifier",
-		"dex": 11,
+		"dex": 7,
+		"priority": 7,
 		"values": [21, 21, 21, 21],
 		"stat": "energy_amplifier_effect",
 		"type": "percent",
@@ -121,7 +129,8 @@
 	},
 	{
 		"itemId": "attack_weight",
-		"dex": 12,
+		"dex": 8,
+		"priority": 8,
 		"values": [6, 9, 12, 12],
 		"stat": "atk",
 		"type": "number",
@@ -135,7 +144,8 @@
 	},
 	{
 		"itemId": "sp_atk_specs",
-		"dex": 13,
+		"dex": 9,
+		"priority": 9,
 		"values": [8, 12, 16, 16],
 		"stat": "sp_atk",
 		"type": "number",
@@ -149,7 +159,8 @@
 	},
 	{
 		"itemId": "rocky_helmet",
-		"dex": 8,
+		"dex": 10,
+		"priority": 10,
 		"values": [3, 4, 5, 5],
 		"stat": "rocky_helmet_effect",
 		"type": "percent",
@@ -166,7 +177,8 @@
 	},
 	{
 		"itemId": "exp_share",
-		"dex": 8,
+		"dex": 11,
+		"priority": 11,
 		"values": [2, 3, 4, 4],
 		"stat": "exp_gain",
 		"type": "number",
@@ -183,7 +195,8 @@
 	},
 	{
 		"itemId": "shell_bell",
-		"dex": 1,
+		"dex": 12,
+		"priority": 12,
 		"stat": "heal",
 		"type": "number",
 		"values": [45, 60, 75, 75],
@@ -201,7 +214,8 @@
 	},
 	{
 		"itemId": "leftovers",
-		"dex": 6,
+		"dex": 13,
+		"priority": 13,
 		"values": [1, 1.5, 2, 2],
 		"stat": "heal",
 		"type": "percent",
@@ -218,7 +232,8 @@
 	},
 	{
 		"itemId": "aeos_cookie",
-		"dex": 9,
+		"dex": 14,
+		"priority": 14,
 		"values": [100, 150, 200, 200],
 		"stat": "hp",
 		"type": "number",
@@ -226,6 +241,42 @@
 			{
 				"stat": "hp",
 				"values": [240, 240, 240, 240]
+			}
+		]
+	},
+	{
+		"itemId": "focus_band",
+		"dex": 15,
+		"priority": 3,
+		"values": [8, 11, 14, 14],
+		"stat": "focus_sash_effect",
+		"type": "percent",
+		"boosts": [
+			{
+				"stat": "def",
+				"values": [30, 30, 30, 30]
+			},
+			{
+				"stat": "sp_def",
+				"values": [30, 30, 30, 30]
+			}
+		]
+	},
+	{
+		"itemId": "float_stone",
+		"dex": 16,
+		"priority": 7,
+		"values": [10, 15, 20, 20],
+		"stat": "float_stone_effect",
+		"type": "percent",
+		"boosts": [
+			{
+				"stat": "atk",
+				"values": [24, 24, 24, 24]
+			},
+			{
+				"stat": "speed",
+				"values": [120, 120, 120, 120]
 			}
 		]
 	}

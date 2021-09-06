@@ -33,6 +33,14 @@ var GameMaster = (function () {
 
 				chunksLoaded++;
 
+				if(filename == "heldItems"){
+					object.heldItems.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0));
+				}
+
+				if(filename == "battleItems"){
+					object.battleItems.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0));
+				}
+
 				// Initialize interface if all gamemaster chunks are loaded
 				if(chunksLoaded >= chunksToLoad.length){
 					InterfaceMaster.getInstance().init(object);
