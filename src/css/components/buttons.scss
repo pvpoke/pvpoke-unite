@@ -30,6 +30,14 @@ button,
 		border:1px solid $secondary-color;
 		color:$bright-white;
 	}
+
+	&.big{
+		font-size:24px;
+		font-weight: bold;
+		padding:20px;
+		max-width:300px;
+		margin:0 auto 20px auto;
+	}
 }
 
 button.select{

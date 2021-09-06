@@ -39,6 +39,7 @@ p {
 
   p {
     font-size: 16px;
+    line-height: 22px;
   }
 }
 /* TYPE COLORS */
@@ -574,6 +575,14 @@ button.secondary,
   background: #47a984;
   border: 1px solid #47a984;
   color: #eee;
+}
+button.big,
+.button.big {
+  font-size: 24px;
+  font-weight: bold;
+  padding: 20px;
+  max-width: 300px;
+  margin: 0 auto 20px auto;
 }
 
 button.select {

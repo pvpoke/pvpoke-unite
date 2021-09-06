@@ -14,6 +14,10 @@ RewriteRule builds.?$ builds.php [L,QSA]
 
 RewriteRule settings.?$ settings.php [L,QSA]
 
+RewriteRule contribute.?$ contribute.php [L,QSA]
+
+RewriteRule privacy.?$ privacy.php [L,QSA]
+
 RewriteRule teams.?$ teams.php [L,QSA]
 RewriteRule teams/([a-zA-Z0-9-,_/\//]+).*$ teams.php?team=$1 [L,QSA]
 
