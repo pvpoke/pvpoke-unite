@@ -43,6 +43,20 @@
 			padding:10px;
 		}
 	}
+
+	.buttons{
+		display: flex;
+		justify-content: space-between;
+
+		button{
+			min-width:150px;
+		}
+	}
+
+	button.no{
+		background:$gray;
+		border:2px solid $accent-color;
+	}
 }
 
 

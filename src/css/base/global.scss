@@ -88,6 +88,7 @@
 			height:75px;
 			border:3px solid $gray;
 			box-sizing: border-box;
+			position:relative;
 
 			//@include transition(all, 0.125s, ease-out, 0s);
 
@@ -100,6 +101,27 @@
 
 				@include transition(all, 0.25s, ease-out, 0s);
 			}
+
+			.items{
+				width: 100%;
+			    display: flex;
+			    position: absolute;
+			    bottom: 2px;
+			    justify-content: space-around;
+
+				.item{
+					width: 22px;
+				    height: 22px;
+				    background-size: 80%;
+				    background-color: $gray;
+				    border-radius: 20px;
+				    background-repeat: no-repeat;
+				    background-position: center;
+				    border: 2px solid $white;
+				}
+			}
+
+
 		}
 
 		.name{

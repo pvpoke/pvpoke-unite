@@ -47,6 +47,20 @@ var Favorites = (function () {
 			object.saveFavoriteBuilds();
 		}
 
+		// Remove a build from favorites by buildId
+		object.deleteFavoriteBuild = function(buildId){
+
+			// Find build with the same ID
+			for(var i = 0; i < object.list.length; i++){
+				if(object.list[i].id == buildId){
+					object.list.splice(i, 1);
+					break;
+				}
+			}
+
+			object.saveFavoriteBuilds();
+		}
+
 		// Return a build from the list with the given build ID, or false if not found
 		object.getBuildById= function(buildId){
 			for(var i = 0; i < object.list.length; i++){

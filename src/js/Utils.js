@@ -46,8 +46,18 @@ function createPokemonSquare(poke, context){
 	$pokeEl.find(".image").css("background-image", "url("+host+"/img/pokemon/"+poke.pokemonId+".png)");
 	$pokeEl.attr("pokemon-id", poke.pokemonId);
 
+	// Show X button for favorites and team squares
 	if((context == "favorites")||(context == "teams")){
 		$pokeEl.find("a.remove").css("display","flex");
+	}
+
+	// Show held items for favorites squares
+	if(context == "favorites"){
+		for(var i = 0; i < poke.heldItems.length; i++){
+			let $item = $("<div class=\"item\"></div>");
+			$item.css("background-image", "url("+host+"/img/helditems/"+poke.heldItems[i].assetId+".png)");
+			$pokeEl.find(".items").append($item);
+		}
 	}
 
 	return $pokeEl;

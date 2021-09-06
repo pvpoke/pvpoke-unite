@@ -34,7 +34,7 @@ function ModalWindow(content, manualHeader){
 
 	// Decline confirmation
 
-	$modal.find(".modal .no").click(function(e){
+	$modal.find(".no, .yes").click(function(e){
 		self.close();
 	});
 

@@ -362,7 +362,7 @@ function BuildSelect(element, ctx, selectors){
 
 		$.each(favorites.list, function(n, obj){
 			let poke = generateBuildFromString(obj.str);
-			let $pokeEl = createPokemonSquare(poke);
+			let $pokeEl = createPokemonSquare(poke, "favorites");
 
 			$pokeEl.attr("build-id", obj.id);
 			$pokeEl.attr("build-str", obj.str);
@@ -449,6 +449,23 @@ function BuildSelect(element, ctx, selectors){
 		let $pokemon = $(e.target).closest(".pokemon");
 		let pokemonId = $pokemon.attr("pokemon-id");
 		let level = 10;
+
+		// Check to see if removing a favorite Pokemon
+		if($("a.remove:hover").length > 0){
+			e.preventDefault();
+			let buildId = $pokemon.attr("build-id");
+
+			ModalWindow($el.find(".delete-favorite-modal"));
+
+			$(".modal .delete-favorite-modal").attr("build-id", buildId);
+
+			// Delete the selected build
+			$(".modal .delete-favorite-modal .yes").click(function(e){
+				favorites.deleteFavoriteBuild(buildId);
+				self.displayFavoritesList();
+			});
+			return false;
+		}
 
 		if(context == "builds"){
 			// Set new build level to the primary or first available build

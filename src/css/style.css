@@ -228,6 +228,7 @@ p {
   height: 75px;
   border: 3px solid #222222;
   box-sizing: border-box;
+  position: relative;
 }
 .pokemon-list .pokemon .image-container .image {
   width: 100%;
@@ -239,6 +240,23 @@ p {
   -moz-transition: all 0.25s ease-out 0s;
   -o-transition: all 0.25s ease-out 0s;
   transition: all 0.25s ease-out 0s;
+}
+.pokemon-list .pokemon .image-container .items {
+  width: 100%;
+  display: flex;
+  position: absolute;
+  bottom: 2px;
+  justify-content: space-around;
+}
+.pokemon-list .pokemon .image-container .items .item {
+  width: 22px;
+  height: 22px;
+  background-size: 80%;
+  background-color: #222222;
+  border-radius: 20px;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 2px solid #ccc;
 }
 .pokemon-list .pokemon .name {
   font-size: 12px;
@@ -781,6 +799,17 @@ select {
 }
 .modal .modal-container .modal-content {
   padding: 10px;
+}
+.modal .buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.modal .buttons button {
+  min-width: 150px;
+}
+.modal button.no {
+  background: #222222;
+  border: 2px solid #9950c5;
 }
 
 .select-modal .item, .select-modal .selected-item {

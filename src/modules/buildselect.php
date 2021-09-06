@@ -179,4 +179,14 @@
 		</div>
 		<button class="select"><?php e("select_button"); ?></button>
 	</div>
+
+	<div class="delete-favorite-modal hide" header="Delete Build">
+		<p>Are you sure you want to delete this build from your favorites?</p>
+		<div class="buttons">
+			<button class="yes">Yes</button>
+			<button class="no">No</button>
+		</div>
+	</div>
+
+
 </div>
