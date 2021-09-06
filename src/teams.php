@@ -39,6 +39,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 						</div>
 						<div class="stars"></div>
 					</div>
+					<div class="info"></div>
 				</div>
 			</div>
 		</div>
@@ -65,6 +66,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 					</div>
 					<div class="stars"></div>
 				</div>
+				<div class="info"></div>
 			</div>
 		</div>
 		<div class="main pokemon-list">
@@ -95,7 +97,11 @@ $META_DESCRIPTION = l("teams_meta_description");
 		<div class="pokemon-list small"></div>
 		<div class="synergy-details"></div>
 		<div class="synergy-detail template">
-			<div class="bars"></div>
+			<div class="bar-section">
+				<div class="star-number"></div>
+				<div class="bars"></div>
+			</div>
+
 			<div class="label"></div>
 		</div>
 		<h4><?php e("about_synergy"); ?></h4>

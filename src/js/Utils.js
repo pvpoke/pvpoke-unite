@@ -37,6 +37,7 @@ function msg(stringId, dynamicStrings){
 	return message;
 }
 
+// Returns an element containing a selectable Pokemon tile from the provided build or dataset
 
 function createPokemonSquare(poke, context){
 	let $pokeEl = $(".pokemon.template").first().clone().removeClass("template");

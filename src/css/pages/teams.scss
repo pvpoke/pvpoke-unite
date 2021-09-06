@@ -119,11 +119,42 @@
 			}
 		}
 	}
+
+	.info{
+		color:$white;
+		border:2px solid $white;
+		text-align: center;
+	    width: 15px;
+	    height: 15px;
+	    border-radius: 20px;
+	    margin-left: 5px;
+	    line-height: 15px;
+
+		&:after{
+			content: "i";
+		}
+	}
 }
 
 .synergy-modal{
 	.synergy-detail{
 		margin-bottom: 10px;
+
+		.bar-section{
+			display: flex;
+
+			.star-number{
+				margin-right: 5px;
+			    font-weight: bold;
+			    min-width: 45px;
+				color:$boosted-color;
+
+				&:before{
+					content: '\2605';
+				}
+			}
+
+		}
 
 		.bars{
 			display:flex;
@@ -132,6 +163,13 @@
 			border-bottom-left-radius: 10px;
     		border-top-right-radius: 10px;
 			overflow: hidden;
+			width:100%;
+
+			.star-number{
+				margin-right: 5px;
+			    font-weight: bold;
+			    min-width: 40px;
+			}
 
 			.bar{
 				height:100%;

@@ -70,7 +70,7 @@ var InterfaceMaster = (function () {
 
 				// Display full team synergy
 				if((team.pokemon.length > 0)&&(team.getFormat().id != "general")){
-					let teamRatings = self.calculatePokemonSynergy(team.pokemon);
+					let teamRatings = self.calculateSynergy(team.pokemon);
 					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
 					$(".top-team-panel .synergy").show();
 				} else{
@@ -112,7 +112,7 @@ var InterfaceMaster = (function () {
 				if(pokemon.length > 0){
 
 					// Display lane synergy
-					let ratings = self.calculatePokemonSynergy(pokemon);
+					let ratings = self.calculateSynergy(pokemon);
 					self.displayStars($lane.find(".synergy-meter"), ratings, pokemon);
 
 					// Get recommendations
@@ -209,7 +209,7 @@ var InterfaceMaster = (function () {
 			}
 
 			// Calculate synergy with an array of Pokemon
-			this.calculatePokemonSynergy = function(pokemon){
+			this.calculateSynergy = function(pokemon){
 				// Initialize the synergy scores from the Pokemon's ratings
 				let ratings = {};
 				let ratingParts = {}; // Store how much each Pokemon contributes
@@ -290,7 +290,7 @@ var InterfaceMaster = (function () {
 					let arr = pokemon.slice();
 					arr.push(poke);
 
-					let synergy = self.calculatePokemonSynergy(arr);
+					let synergy = self.calculateSynergy(arr);
 					results.push({pokemonId: poke.pokemonId, synergy:synergy.overall});
 				});
 
@@ -313,7 +313,7 @@ var InterfaceMaster = (function () {
 							let comboName = comboNames.join("");
 
 							if(completedCombos.indexOf(comboName) == -1){
-								let synergy = self.calculatePokemonSynergy([pokeA, pokeB]);
+								let synergy = self.calculateSynergy([pokeA, pokeB]);
 								results.push({a: pokeA.pokemonId, b: pokeB.pokemonId, synergy: synergy.overall});
 								completedCombos.push(comboName);
 							}
@@ -342,10 +342,6 @@ var InterfaceMaster = (function () {
 				// Adjust to a scale of 5
 				stars = Math.round(stars * 10) / 2;
 
-				if(pokemon.length == 1){
-					stars = 0;
-				}
-
 				if(stars > 5){
 					stars = 5; // This shouldn't ever happen if the formula is good but just in case
 				}
@@ -361,7 +357,7 @@ var InterfaceMaster = (function () {
 
 			// Open a new modal window to display synergy details given an array of Pokemon
 			this.openSynergyDetails = function(pokemon){
-				let ratings = self.calculatePokemonSynergy(pokemon);
+				let ratings = self.calculateSynergy(pokemon);
 				let $details = $(".synergy-modal.template").first().clone().removeClass("template");
 				let modal = new ModalWindow($details, msg("synergy"));
 				let parts = ratings.parts;
@@ -384,6 +380,7 @@ var InterfaceMaster = (function () {
 							let width = (parts[key][i].value / ratings.categoryCaps[key]) * 100;
 							$bar.attr("role", parts[key][i].role);
 							$bar.css("width", width+"%");
+							$section.find(".star-number").html(ratings[key]);
 							$section.find(".bars").append($bar);
 						}
 

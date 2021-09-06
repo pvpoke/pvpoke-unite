@@ -329,10 +329,14 @@ function BuildSelect(element, ctx, selectors){
 		if((moveSlot == "slot1")||(moveSlot == "slot2")){
 			build.selectMove(moveId, moveSlot);
 
-			gtag('event', build.pokemonId, {
-			  'event_category' : 'Move Select',
-			  'event_label' : moveSlot + ' ' + moveId
-			});
+			// Don't report if it's the first move in the slot
+			if(moveId != build.movePool[moveSlot][0].moveId){
+				gtag('event', build.pokemonId, {
+				  'event_category' : 'Move Select',
+				  'event_label' : moveSlot + ' ' + moveId
+				});
+			}
+
 
 			self.update();
 		}

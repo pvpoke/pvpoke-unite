@@ -266,7 +266,7 @@ p {
 .pokemon-list .pokemon a.remove {
   display: none;
   position: absolute;
-  right: -5px;
+  right: -2px;
   top: -5px;
   width: 30px;
   height: 30px;
@@ -1439,9 +1439,34 @@ select {
   overflow: hidden;
   width: 10px;
 }
+.synergy .info {
+  color: #ccc;
+  border: 2px solid #ccc;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  margin-left: 5px;
+  line-height: 15px;
+}
+.synergy .info:after {
+  content: "i";
+}
 
 .synergy-modal .synergy-detail {
   margin-bottom: 10px;
+}
+.synergy-modal .synergy-detail .bar-section {
+  display: flex;
+}
+.synergy-modal .synergy-detail .bar-section .star-number {
+  margin-right: 5px;
+  font-weight: bold;
+  min-width: 45px;
+  color: #f0d50a;
+}
+.synergy-modal .synergy-detail .bar-section .star-number:before {
+  content: "★";
 }
 .synergy-modal .synergy-detail .bars {
   display: flex;
@@ -1450,6 +1475,12 @@ select {
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
   overflow: hidden;
+  width: 100%;
+}
+.synergy-modal .synergy-detail .bars .star-number {
+  margin-right: 5px;
+  font-weight: bold;
+  min-width: 40px;
 }
 .synergy-modal .synergy-detail .bars .bar {
   height: 100%;
