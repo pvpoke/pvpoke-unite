@@ -8,6 +8,7 @@
 		position: relative;
 		text-decoration: none;
 		margin-bottom: 10px;
+		min-height:100px;
 
 		&:hover{
 			img{
@@ -19,7 +20,7 @@
 			position: absolute;
 			bottom:10px;
 			left:10px;
-			color:$black;
+			color:$white;
 			padding:10px;
 			font-weight: bold;
 			font-size:20px;
@@ -32,6 +33,7 @@
 			@include transition(all, 0.125s, linear, 0s);
 			pointer-events: none;
 			max-width:100%;
+			height:auto;
 			display:block;
 			filter:brightness(0.8);
 		}

@@ -46,7 +46,7 @@
 			<div class="attributes"></div>
 
 			<div class="advanced">
-				<canvas class="progression"></canvas>
+				<canvas class="progression" height="75"></canvas>
 
 				<div class="level">
 					<div class="label"><?php e("level"); ?></div>
@@ -155,6 +155,9 @@
 			</div>
 		</div>
 	</div>
+
+	<!--used to preload Pokemon assets-->
+	<div class="preload"></div>
 
 	<!-- Modal windows-->
 

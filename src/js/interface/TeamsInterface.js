@@ -72,7 +72,7 @@ var InterfaceMaster = (function () {
 				if((team.pokemon.length > 0)&&(team.getFormat().id != "general")){
 					let teamRatings = self.calculateSynergy(team.pokemon);
 					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
-					$(".top-team-panel .synergy").show();
+					$(".top-team-panel .synergy").css("display", "flex");
 				} else{
 					$(".top-team-panel .synergy").hide();
 				}

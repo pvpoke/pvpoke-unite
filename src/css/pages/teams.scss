@@ -13,9 +13,15 @@
 		margin:10px 40px 10px 0;
 	}
 
+	.synergy{
+		display: none;
+	}
+
 }
 
 .lanes{
+	min-height: 160px;
+	
 	.lane{
 		max-width: 500px;
 	    margin: 0 auto 20px auto;

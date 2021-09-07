@@ -191,6 +191,12 @@ p {
   border-top-right-radius: 10px;
   cursor: default;
 }
+.attributes div.cooldown {
+  background-image: url(../img/clock.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  padding-left: 22px;
+}
 
 .pokemon-list {
   display: flex;
@@ -378,7 +384,7 @@ header .submenu {
 }
 body {
   background-color: #f3fbfe;
-  background: url("../img/unite-bg.jpg");
+  background: url("../img/unite-bg-clouds.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-size: cover;
@@ -488,6 +494,8 @@ footer p {
 #nitro-unite-sidebar-right,
 #nitro-unite-sidebar-left {
   display: none;
+  position: relative;
+  overflow: hidden;
 }
 
 .mobile-ad-container,
@@ -846,7 +854,7 @@ select {
   background: none !important;
 }
 .select-modal .selected-description {
-  height: 200px;
+  height: 150px;
   overflow-y: auto;
   margin-bottom: 10px;
   border-bottom: 1px solid #222222;
@@ -873,7 +881,7 @@ select {
   margin-top: 10px;
 }
 .select-modal .item-list {
-  max-height: 340px;
+  max-height: 290px;
   overflow-y: auto;
 }
 .select-modal .item-list .image {
@@ -926,6 +934,7 @@ select {
   position: relative;
   text-decoration: none;
   margin-bottom: 10px;
+  min-height: 100px;
 }
 .home-tiles .home-tile:hover img {
   filter: brightness(1);
@@ -934,7 +943,7 @@ select {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  color: #141414;
+  color: #ccc;
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
@@ -949,6 +958,7 @@ select {
   transition: all 0.125s linear 0s;
   pointer-events: none;
   max-width: 100%;
+  height: auto;
   display: block;
   filter: brightness(0.8);
 }
@@ -1351,7 +1361,13 @@ select {
 .top-team-panel select {
   margin: 10px 40px 10px 0;
 }
+.top-team-panel .synergy {
+  display: none;
+}
 
+.lanes {
+  min-height: 160px;
+}
 .lanes .lane {
   max-width: 500px;
   margin: 0 auto 20px auto;

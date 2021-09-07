@@ -6,15 +6,15 @@
 	<div class="section patterned padding">
 		<div class="main-wrap home-tiles">
 			<a class="home-tile primary home-tile-1" href="<?php echo $WEB_ROOT; ?>builds/">
-				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-1.jpg" />
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-1.jpg" width="600" height="400" />
 				<div class="tile-content corners"><?php e("home_tile_1_content") ?></div>
 			</a>
 			<a class="home-tile secondary home-tile-2" href="<?php echo $WEB_ROOT; ?>teams/">
-				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-2.jpg" />
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-2.jpg" width="600" height="400" />
 				<div class="tile-content corners"><?php e("home_tile_2_content") ?></div>
 			</a>
 			<a class="home-tile tertiary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
-				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3.jpg" />
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3.jpg" width="1200" height="200" />
 				<div class="tile-content corners"><?php e("home_tile_3_content") ?></div>
 			</a>
 		</div>

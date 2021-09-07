@@ -14,8 +14,7 @@ function BuildSelect(element, ctx, selectors){
 	let buildSelectors = [];
 
 	let selectedStat = 'hp';
-	let statCanvas = $el.find("canvas.progression")[0];
-	let statCtx = statCanvas.getContext("2d");
+	let graph = new ProgressionGraph( $el.find("canvas.progression")[0] );
 
 	let tooltip = Tooltip.getInstance();
 
@@ -74,7 +73,7 @@ function BuildSelect(element, ctx, selectors){
 		$el.find(".level .value").html(build.level);
 
 		// Display pokemon image
-		$el.find(".selected-pokemon .image").css("background-image", "url("+host+"/img/pokemon/"+build.stageId+".png)");
+		$el.find(".selected-pokemon .image").css("background-image", "url("+getAsset(build.stageId, "pokemon", "png")+")");
 		$el.find(".selected-pokemon").attr("role", build.role);
 
 		if(previousStage != build.stageId){
@@ -148,6 +147,9 @@ function BuildSelect(element, ctx, selectors){
 				}
 			}
 
+			// Update stats graph
+			graph.update(build, primary, selectedStat);
+
 			// Bubble up to other build selectors
 
 			if((context == "builds")&&(internal)){
@@ -160,7 +162,7 @@ function BuildSelect(element, ctx, selectors){
 		for(var i = 0; i < 3; i++){
 			if(i < build.heldItems.length){
 				$el.find(".held-item").eq(i).html("");
-				$el.find(".held-item").eq(i).css("background-image", "url("+host+"img/helditems/"+build.heldItems[i].itemId+".png)");
+				$el.find(".held-item").eq(i).css("background-image", "url("+getAsset(build.heldItems[i].itemId, "helditems", "png")+")");
 			} else{
 				$el.find(".held-item").eq(i).html("+");
 				$el.find(".held-item").eq(i).css("background-image", "none");
@@ -171,7 +173,7 @@ function BuildSelect(element, ctx, selectors){
 		if(build.battleItem){
 			$el.find(".battle-item .name").html(build.battleItem.itemName);
 			$el.find(".battle-item .image").html("");
-			$el.find(".battle-item .image").css("background-image", "url("+host+"img/battleitems/"+build.battleItem.itemId+".png)");
+			$el.find(".battle-item .image").css("background-image", "url("+getAsset(build.battleItem.itemId, "battleitems", "png")+")");
 		} else{
 			$el.find(".battle-item .name").html("");
 			$el.find(".battle-item .image").html("+");
@@ -183,7 +185,7 @@ function BuildSelect(element, ctx, selectors){
 			if(build.moves.hasOwnProperty(key)){
 				$el.find(".move[slot=\""+key+"\"] .name").html(build.moves[key].moveName);
 				$el.find(".move[slot=\""+key+"\"] .image").attr("color", build.moves[key].color);
-				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+host+"img/moves/"+build.moves[key].assetId+".png)");
+				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+getAsset(build.moves[key].assetId, "moves", "png")+")");
 			}
 		}
 
@@ -214,76 +216,18 @@ function BuildSelect(element, ctx, selectors){
 			$el.find(".build-link-section").removeClass("hide");
 		}
 
+		// Preload evolution assets
+		if(build.stages.length > 1){
+			$el.find(".preload").html("");
 
-		// Draw progression graph
+			for(var i = 0; i < build.stages.length; i++){
+				let stageImgUrl = "url(" + getAsset(build.stages[i].stageId, "pokemon", "png") + ")";
+				let $preload = $("<div></div>");
+				$preload.css("background-image", stageImgUrl);
 
-		let xAxisMax = 15;
-		let yAxisMax = 1200;
-		let width = statCanvas.width;
-		let height = statCanvas.height;
-
-		if(selectedStat == "hp"){
-			yAxisMax = 10000;
-		}
-
-		statCtx.clearRect(0, 0, width, height);
-
-		// Draw gridlines
-		let gridCount = 7;
-
-		statCtx.lineWidth = 1;
-		statCtx.strokeStyle = "#222222";
-
-		statCtx.beginPath();
-
-		for(var i = 0; i < gridCount; i++){
-			let x = (width / gridCount) * i;
-			statCtx.moveTo(x, 0);
-			statCtx.lineTo(x, height);
-
-		}
-
-		statCtx.stroke();
-		statCtx.closePath();
-
-		// Draw level line
-
-		statCtx.lineWidth = 1;
-		statCtx.strokeStyle = "#888888";
-		statCtx.setLineDash([5, 3]);
-		let levelX = (build.level-1) * (width / 14);
-
-		statCtx.beginPath();
-		statCtx.moveTo(levelX, 0);
-		statCtx.lineTo(levelX, height);
-		statCtx.stroke();
-		statCtx.closePath();
-
-		// Draw stat graph
-		statCtx.lineWidth = 6;
-		statCtx.strokeStyle = "#9950c5";
-		statCtx.setLineDash([]);
-
-		statCtx.beginPath();
-
-		// Calculate stat at each level
-		for(var i = 0; i < 15; i++){
-			let stats = build.calculateStats(i+1);
-			let displayStat = stats[selectedStat].value;
-
-			// Scaling Hp stat graph to show change more visually
-			if(selectedStat == "hp"){
-				displayStat -= 3000;
+				$el.find(".preload").append($preload);
 			}
-
-			let x = width * (i / 14);
-			let y = height - (height * (displayStat / yAxisMax));
-
-	        statCtx.lineTo(x, y);
 		}
-
-		statCtx.stroke();
-		statCtx.closePath();
 
 		// Match level slider if not equal
 		if($el.find(".level-slider").val() != build.level){
