@@ -265,13 +265,13 @@ var InterfaceMaster = (function () {
 
 			// Toggle lock settings on or off
 
-			$("button.lock-settings").click(function(e){
+			$(".check.lock-settings").click(function(e){
 				lockSettings = (! lockSettings);
 			});
 
 			// Toggle lock settings on or off
 
-			$("button.show-stats").click(function(e){
+			$(".check.show-stats").click(function(e){
 				$(".build-list").attr("stats", ( $(".build-list").attr("stats") == "false" ));
 			});
 		};

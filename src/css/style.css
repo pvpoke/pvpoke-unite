@@ -1066,7 +1066,7 @@ select {
   align-items: center;
   margin-bottom: 15px;
 }
-.builds-nav button {
+.builds-nav .check {
   margin: 0 10px 0 0;
 }
 .builds-nav .build-count {

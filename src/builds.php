@@ -27,8 +27,9 @@ $META_DESCRIPTION = l("builds_meta_description");
 				<div class="build-count">
 					<span class="current">0</span> / <span class="max">4</span>
 				</div>
-				<button class="toggle lock-settings on"><?php e('lock_settings'); ?></button>
-				<button class="toggle show-stats on"><?php e('show_stats'); ?></button>
+
+				<div class="check lock-settings on"><span></span><?php e('lock_settings'); ?></div>
+				<div class="check show-stats on"><span></span><?php e('show_stats'); ?></div>
 			</div>
 
 
@@ -59,7 +60,7 @@ $META_DESCRIPTION = l("builds_meta_description");
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ProgressionGraph.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
-<script src="<?php echo $WEB_ROOT; ?>js/interface/BuildsInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/masters/BuildsInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
 
 <?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
