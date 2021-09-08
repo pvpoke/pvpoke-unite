@@ -552,7 +552,7 @@
     "soft_boiled_upgrade": "Increases the maximum number of uses that can be kept in reserve for this move.",
     "safeguard": "Safeguard",
     "safeguard_description": "Removes all status conditions from the designated ally Pokemon and grants both Pokemon a shield for 3 seconds. While these shields are active, the shielded Pokemon become immune to hindrances.",
-    "safeguard_upgrade": "Also grants the designated ally Pokemon a shield.",
+    "safeguard_upgrade": "Increases the amount of damage nullified by the shield effect.",
     "bliss_assistance": "Bliss Assistance",
     "bliss_assistance_description": "Has the user dash to the designated ally Pokemon to give it an egg, granting that Pokemon a shield and increasing its Attack and Sp. Atk for a short time. The user also intercepts a portion of the damage received by that Pokemon for a short time. While dashing, the user throws nearby opposing pokemon and those it comes in contact with.",
     "natural_cure": "Natural Cure",
