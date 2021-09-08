@@ -3,6 +3,10 @@
 	.section.padding:first-of-type{
 		padding-bottom: 0;
 	}
+
+	.share-section{
+		max-width:500px;
+	}
 }
 
 .top-team-panel{
@@ -21,7 +25,7 @@
 
 .lanes{
 	min-height: 160px;
-	
+
 	.lane{
 		max-width: 500px;
 	    margin: 0 auto 20px auto;

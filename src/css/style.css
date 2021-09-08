@@ -1353,6 +1353,9 @@ select {
 #teams .section.padding:first-of-type {
   padding-bottom: 0;
 }
+#teams .share-section {
+  max-width: 500px;
+}
 
 .top-team-panel {
   display: flex;

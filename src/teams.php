@@ -48,6 +48,16 @@ $META_DESCRIPTION = l("teams_meta_description");
 	<div class="section padding">
 		<div class="main-wrap lanes">
 		</div>
+
+		<div class="main-wrap share-section">
+			<h4>Share</h4>
+			<div class="share-link">
+				<input type="text" value="" readonly>
+				<button class="copy"><?php e("button_copy"); ?></button>
+			</div>
+		</div>
+
+
 	</div>
 
 	<!-- HTML template for lane interface-->
@@ -124,6 +134,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 <script src="<?php echo $WEB_ROOT; ?>js/interface/Tooltip.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/SelectWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/ModalWindow.js?v=<?php echo $SITE_VERSION; ?>"></script>
+<script src="<?php echo $WEB_ROOT; ?>js/interface/ProgressionGraph.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/TeamsInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>

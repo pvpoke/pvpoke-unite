@@ -56,6 +56,13 @@ var InterfaceMaster = (function () {
 						$(".lanes").append($lane);
 					}
 				}
+
+				if(team.pokemon.length > 0){
+					$(".share-section").show();
+					$(".share-section .share-link input").val(window.location.href);
+				} else{
+					$(".share-section").hide();
+				}
 			}
 
 			// Update Pokemon and recommended for all lanes
@@ -77,9 +84,15 @@ var InterfaceMaster = (function () {
 					$(".top-team-panel .synergy").hide();
 				}
 
-
 				if(pushHistory){
 					self.pushHistoryState();
+				}
+
+				if(team.pokemon.length > 0){
+					$(".share-section").show();
+					$(".share-section .share-link input").val(window.location.href);
+				} else{
+					$(".share-section").hide();
 				}
 			}
 
