@@ -183,9 +183,19 @@ function BuildSelect(element, ctx, selectors){
 		// Display moves
 		for(var key in build.moves){
 			if(build.moves.hasOwnProperty(key)){
-				$el.find(".move[slot=\""+key+"\"] .name").html(build.moves[key].moveName);
-				$el.find(".move[slot=\""+key+"\"] .image").attr("color", build.moves[key].color);
-				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+getAsset(build.moves[key].assetId, "moves", "png")+")");
+				let move = build.moves[key];
+
+				$el.find(".move[slot=\""+key+"\"] .name").html(move.moveName);
+				$el.find(".move[slot=\""+key+"\"] .image").attr("color", move.color);
+				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+getAsset(move.assetId, "moves", "png")+")");
+
+				if(move.unlockLevel){
+					if(build.level < move.unlockLevel){
+						$el.find(".move[slot=\""+key+"\"]").addClass("locked");
+					} else{
+						$el.find(".move[slot=\""+key+"\"]").removeClass("locked");
+					}
+				}
 			}
 		}
 

@@ -278,7 +278,7 @@
 		background:$black;
 		border:1px solid $gray;
 		width:95%;
-		height:75px;
+		height:60px;
 		box-sizing: border-box;
 		margin: 15px auto 5px auto;
 		display: block;
@@ -362,6 +362,14 @@
 		}
 	}
 
+	.move.locked{
+		filter:grayscale(1);
+
+		.image{
+			opacity:0.5;
+		}
+	}
+
 	h4{
 		margin: 25px 0 5px 0;
 	}
@@ -430,5 +438,10 @@
 				padding:4px 10px;
 			}
 		}
+	}
+
+	canvas.progression{
+		height:73px;
+
 	}
 }

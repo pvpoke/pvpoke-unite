@@ -1222,7 +1222,7 @@ select {
   background: #141414;
   border: 1px solid #222222;
   width: 95%;
-  height: 75px;
+  height: 60px;
   box-sizing: border-box;
   margin: 15px auto 5px auto;
   display: block;
@@ -1292,6 +1292,12 @@ select {
   width: 100%;
   height: 100%;
 }
+.build-select .move.locked {
+  filter: grayscale(1);
+}
+.build-select .move.locked .image {
+  opacity: 0.5;
+}
 .build-select h4 {
   margin: 25px 0 5px 0;
 }
@@ -1349,12 +1355,17 @@ select {
   .build-select .stats .stat .stat-label {
     padding: 4px 10px;
   }
+
+  canvas.progression {
+    height: 73px;
+  }
 }
 #teams .section.padding:first-of-type {
   padding-bottom: 0;
 }
 #teams .share-section {
   max-width: 500px;
+  display: none;
 }
 
 .top-team-panel {

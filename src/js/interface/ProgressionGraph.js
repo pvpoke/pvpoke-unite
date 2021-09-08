@@ -138,13 +138,13 @@ function ProgressionGraph(c){
 		for(var i = 0; i < movesToDraw.length; i++){
 			let x = (width * ((movesToDraw[i].level-1) / 14));
 
-			statCtx.strokeStyle = "#9950c5";
+			statCtx.strokeStyle = "#517dc4";
 			statCtx.beginPath();
 			statCtx.arc(x, drawY, 8, 0, 2 * Math.PI, false);
 			statCtx.stroke();
 			statCtx.closePath();
 
-			statCtx.fillStyle = "#9950c5";
+			statCtx.fillStyle = "#517dc4";
 			statCtx.fillText(movesToDraw[i].label, x, drawY+5);
 		}
 	}
