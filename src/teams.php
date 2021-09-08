@@ -122,6 +122,11 @@ $META_DESCRIPTION = l("teams_meta_description");
 	<div class="tooltip corners"></div>
 </div>
 
+<?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
+<?php i18n::getInstance()->outputCategoryToJS("pages/teams"); ?>
+
 <script src="<?php echo $WEB_ROOT; ?>js/Utils.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Favorites.js?v=<?php echo $SITE_VERSION; ?>"></script>
@@ -138,10 +143,5 @@ $META_DESCRIPTION = l("teams_meta_description");
 <script src="<?php echo $WEB_ROOT; ?>js/interface/BuildSelect.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/interface/masters/TeamsInterface.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/Main.js?v=<?php echo $SITE_VERSION; ?>"></script>
-
-<?php i18n::getInstance()->outputCategoryToJS("pokemon-strings"); ?>
-<?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
-<?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
-<?php i18n::getInstance()->outputCategoryToJS("pages/teams"); ?>
 
 <?php require_once 'footer.php'; ?>
