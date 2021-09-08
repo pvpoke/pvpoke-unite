@@ -29,3 +29,5 @@ var InterfaceMaster = (function () {
         }
     };
 })();
+
+InterfaceMaster.getInstance();
