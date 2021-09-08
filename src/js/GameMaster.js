@@ -290,5 +290,3 @@ var GameMaster = (function () {
         }
     };
 })();
-
-GameMaster.getInstance();
