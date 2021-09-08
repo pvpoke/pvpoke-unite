@@ -130,6 +130,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	function updateHeldItemDetails(){
 		let $item = $form.find(".item.selected");
 		let $selectedItem = $form.find(".selected-item");
+		let selectedIndex = $form.find(".item").index($item) - 1; // -1 because of the template
 		let $selecteDescription = $form.find(".selected-description");
 		let itemId = $item.attr("value");
 		let assetId = $item.attr("asset-id");
@@ -150,13 +151,14 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		// Display item attributes
 		let $attributes = $selectedItem.find(".attributes");
 
+
+		$attributes.html("");
 		$attributes.hide();
 
-		if(type == "move"){
-			let selectedIndex = $form.find(".item").index($item) - 1; // -1 because of the template
-			let move = itemArray[selectedIndex];
 
-			$attributes.html("");
+		// Show move attributes and unlock details
+		if(type == "move"){
+			let move = itemArray[selectedIndex];
 
 			if(move.cooldown){
 				$attributes.append("<div class=\"cooldown\">"+move.cooldown+msg("cooldown_abbreviation")+"</div>");
@@ -188,6 +190,18 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			}
 
 			$selecteDescription.append($secondary);
+		}
+
+		// Show battle item attributes
+
+		if(type == "battle"){
+			let battleItem = new BattleItem(itemId);
+
+			if(itemId != "none"){
+				$attributes.append("<div class=\"cooldown\">"+battleItem.cooldown+msg("cooldown_abbreviation")+"</div>");
+			}
+
+			$attributes.show();
 		}
 	}
 }
