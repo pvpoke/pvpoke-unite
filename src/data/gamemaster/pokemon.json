@@ -1144,7 +1144,7 @@
 			"slot2": [
 				{
 					"moveId": "light_screen",
-					"style": "special",
+					"style": "other",
 					"category": "hindrance",
 					"cooldown": 8,
 					"level": 1,
@@ -1152,7 +1152,7 @@
 				},
 				{
 					"moveId": "barrier",
-					"style": "special",
+					"style": "other",
 					"category": "hindrance",
 					"cooldown": 2,
 					"level": 6,
@@ -1161,7 +1161,7 @@
 				},
 				{
 					"moveId": "guard_swap",
-					"style": "special",
+					"style": "other",
 					"category": "debuff",
 					"cooldown": 4.5,
 					"level": 6,
@@ -1247,7 +1247,7 @@
 				{
 					"moveId": "flail",
 					"style": "physical",
-					"category": "hindrance",
+					"category": "buff",
 					"cooldown": 6.5,
 					"level": 6,
 					"upgrade": 12,
@@ -1257,15 +1257,15 @@
 			"slot2": [
 				{
 					"moveId": "rest",
-					"style": "physical",
-					"category": "hindrance",
+					"style": "other",
+					"category": "recovery",
 					"cooldown": 10,
 					"level": 1,
 					"color": "water"
 				},
 				{
 					"moveId": "block",
-					"style": "physical",
+					"style": "other",
 					"category": "hindrance",
 					"cooldown": 11,
 					"level": 8,
@@ -1274,7 +1274,7 @@
 				},
 				{
 					"moveId": "yawn",
-					"style": "physical",
+					"style": "other",
 					"category": "hindrance",
 					"cooldown": 12,
 					"level": 8,
