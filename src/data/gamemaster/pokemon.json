@@ -1357,8 +1357,8 @@
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 7.5,
-					"level": 4,
-					"upgrade": 10,
+					"level": 6,
+					"upgrade": 12,
 					"color": "fighting"
 				},
 				{
@@ -1366,8 +1366,8 @@
 					"style": "other",
 					"category": "buff",
 					"cooldown": 9,
-					"level": 4,
-					"upgrade": 10,
+					"level": 6,
+					"upgrade": 12,
 					"color": "fighting"
 				}
 			],
@@ -1385,8 +1385,8 @@
 					"style": "other",
 					"category": "recovery",
 					"cooldown": 2,
-					"level": 6,
-					"upgrade": 12,
+					"level": 4,
+					"upgrade": 10,
 					"color": "grass"
 				},
 				{
@@ -1394,8 +1394,8 @@
 					"style": "other",
 					"category": "buff",
 					"cooldown": 8,
-					"level": 6,
-					"upgrade": 12,
+					"level": 4,
+					"upgrade": 10,
 					"color": "psychic"
 				}
 			],
@@ -1505,7 +1505,7 @@
 					"moveId": "psyshock",
 					"style": "special",
 					"category": "area",
-					"cooldown": 11,
+					"cooldown": 10,
 					"level": 6,
 					"upgrade": 12,
 					"color": "psychic"
@@ -1610,7 +1610,7 @@
 					"moveId": "slash_absol",
 					"style": "physical",
 					"category": "melee",
-					"cooldown": 7,
+					"cooldown": 6,
 					"level": 1,
 					"color": "fighting"
 				},
@@ -1701,8 +1701,8 @@
 			"slot1": [
 				{
 					"moveId": "sand_attack",
-					"style": "physical",
-					"category": "dash",
+					"style": "other",
+					"category": "debuff",
 					"cooldown": 6,
 					"level": 1,
 					"color": "ground"
@@ -1720,7 +1720,7 @@
 					"moveId": "dragon_rush",
 					"style": "physical",
 					"category": "dash",
-					"cooldown": 8,
+					"cooldown": 6,
 					"level": 5,
 					"upgrade": 11,
 					"color": "dragon"
@@ -1948,10 +1948,10 @@
 				},
 				{
 					"moveId": "shell_smash",
-					"style": "physical",
+					"style": "other",
 					"category": "buff",
 					"cooldown": 7,
-					"level": 5,
+					"level": 4,
 					"upgrade": 11,
 					"color": "rock"
 				}
@@ -1969,7 +1969,7 @@
 					"moveId": "stealth_rock",
 					"style": "physical",
 					"category": "area",
-					"cooldown": 8,
+					"cooldown": 6,
 					"level": 6,
 					"upgrade": 13,
 					"color": "rock"
@@ -1986,7 +1986,7 @@
 			],
 			"unite": {
 				"moveId": "rubble_rouser",
-				"category": "area",
+				"category": "buff",
 				"level": 9,
 				"color": "rock"
 			},
@@ -2061,8 +2061,8 @@
 				{
 					"moveId": "water_shuriken",
 					"style": "physical",
-					"category": "area",
-					"cooldown": 7,
+					"category": "ranged",
+					"cooldown": 5,
 					"level": 7,
 					"upgrade": 11,
 					"color": "water"
@@ -2070,7 +2070,7 @@
 				{
 					"moveId": "surf",
 					"style": "physical",
-					"category": "melee",
+					"category": "dash",
 					"cooldown": 9,
 					"level": 7,
 					"upgrade": 11,
@@ -2090,7 +2090,7 @@
 					"moveId": "double_team",
 					"style": "other",
 					"category": "dash",
-					"cooldown": 11,
+					"cooldown": 9,
 					"level": 5,
 					"upgrade": 13,
 					"color": "water"
@@ -2099,7 +2099,7 @@
 					"moveId": "smokescreen",
 					"style": "other",
 					"category": "dash",
-					"cooldown": 11,
+					"cooldown": 13,
 					"level": 5,
 					"upgrade": 13,
 					"color": "normal"
@@ -2315,7 +2315,7 @@
 				{
 					"moveId": "slash_zeraora",
 					"style": "physical",
-					"category": "dash",
+					"category": "melee",
 					"cooldown": 8.5,
 					"level": 1,
 					"color": "electric"
@@ -2324,7 +2324,7 @@
 					"moveId": "discharge",
 					"style": "physical",
 					"category": "melee",
-					"cooldown": 8.5,
+					"cooldown": 12,
 					"level": 8,
 					"upgrade": 14,
 					"color": "electric"
@@ -2332,7 +2332,7 @@
 				{
 					"moveId": "wild_charge",
 					"style": "physical",
-					"category": "melee",
+					"category": "dash",
 					"cooldown": 11,
 					"level": 8,
 					"upgrade": 14,
@@ -2554,15 +2554,15 @@
 					"moveId": "synthesis",
 					"style": "other",
 					"category": "recovery",
-					"cooldown": 7.5,
+					"cooldown": 8,
 					"level": 1,
 					"color": "grass"
 				},
 				{
 					"moveId": "cotton_guard",
 					"style": "other",
-					"category": "recovery",
-					"cooldown": 8,
+					"category": "buff",
+					"cooldown": 9,
 					"level": 6,
 					"upgrade": 13,
 					"color": "normal"
@@ -2638,7 +2638,7 @@
 				{
 					"moveId": "whirlpool",
 					"style": "special",
-					"category": "ranged",
+					"category": "area",
 					"cooldown": 5,
 					"level": 1,
 					"color": "water"
@@ -2646,7 +2646,7 @@
 				{
 					"moveId": "surf",
 					"style": "special",
-					"category": "hindrance",
+					"category": "ranged",
 					"cooldown": 8,
 					"level": 6,
 					"upgrade": 13,
