@@ -166,4 +166,15 @@
 		background-size:100%;
 		border-radius: 100px;
 	}
+
+	.stacks-section{
+		display: flex;
+		align-items: center;
+
+		input{
+			margin-left:5px;
+			line-height: 22px;
+			padding: 6px 0px 0px 10px;
+		}
+	}
 }

@@ -687,9 +687,10 @@ a.remove:hover {
 input {
   display: block;
 }
-input[type=text] {
+input[type=text], input[type=number] {
   background: #141414;
   color: #ccc;
+  border: none;
   border-bottom: 3px solid #9950c5;
   padding: 10px 10px 6px 10px;
   outline: none;
@@ -904,6 +905,15 @@ select {
   background-repeat: no-repeat;
   background-size: 100%;
   border-radius: 100px;
+}
+.select-modal .stacks-section {
+  display: flex;
+  align-items: center;
+}
+.select-modal .stacks-section input {
+  margin-left: 5px;
+  line-height: 22px;
+  padding: 6px 0px 0px 10px;
 }
 
 .tooltip {

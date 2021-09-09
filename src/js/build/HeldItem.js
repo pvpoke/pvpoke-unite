@@ -56,6 +56,19 @@ function HeldItem(id){
 		}
 	}
 
+	// set the number of stacks for this item
+	self.setStacks = function(value){
+		value = parseInt(value);
+
+		if(value < 0){
+			value = 0;
+		} else if(value > self.maxStacks){
+			value = self.maxStacks;
+		}
+
+		self.stacks = value;
+	}
+
 	// Insert values into a dynamic string
 
 	self.descriptionHTML = function(build){

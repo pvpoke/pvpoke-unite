@@ -247,9 +247,13 @@ function BuildSelect(element, ctx, selectors){
 
 	// Callback function for the SelectWindow to trigger when selecting a held item
 
-	self.selectHeldItem = function(itemId, itemIndex){
+	self.selectHeldItem = function(itemId, itemIndex, stacks){
+		stacks = typeof stacks !== 'undefined' ? stacks : 1;
+
 		let item = new HeldItem(itemId);
+		item.setStacks(stacks);
 		build.giveHeldItem(item, itemIndex);
+
 
 		if(itemId != "none"){
 			gtag('event', build.pokemonId, {

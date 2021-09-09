@@ -1,9 +1,11 @@
 input{
 	display: block;
 
-	&[type="text"]{
+	&[type="text"],
+	&[type="number"]{
 		background:$black;
 		color:$white;
+		border:none;
 		border-bottom:3px solid $accent-color;
 		padding:10px 10px 6px 10px;
 		outline:none;

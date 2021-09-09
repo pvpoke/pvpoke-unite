@@ -88,6 +88,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	if(selectedItem){
 		$form.find(".item[value=\""+selectedItem[idKey]+"\"]").addClass("selected");
 		updateHeldItemDetails();
+
+		// Set the stacks form to the currently selected amount
+		if(selectedItem.stacks !== undefined){
+			$form.find(".selected-description .stacks").val(selectedItem.stacks);
+		}
 	} else{
 		$form.find(".item[value=\"none\"]").addClass("selected");
 		updateHeldItemDetails();
@@ -120,7 +125,13 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 	$form.find("button.select").click(function(e){
 		let itemId = $form.find(".item.selected").attr("value");
 
-		selectCallback(itemId, itemIndex);
+		let stacks = 1;
+
+		if($form.find(".selected-description .stacks").length > 0){
+			stacks = $form.find(".selected-description .stacks").val();
+		}
+
+		selectCallback(itemId, itemIndex, stacks);
 
 		modal.close();
 	});
@@ -131,7 +142,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let $item = $form.find(".item.selected");
 		let $selectedItem = $form.find(".selected-item");
 		let selectedIndex = $form.find(".item").index($item) - 1; // -1 because of the template
-		let $selecteDescription = $form.find(".selected-description");
+		let $selectedDescription = $form.find(".selected-description");
 		let itemId = $item.attr("value");
 		let assetId = $item.attr("asset-id");
 		let color = $item.find(".image").attr("color");
@@ -143,9 +154,9 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 
 		if(type == "held"){
 			let heldItem = new HeldItem(itemId);
-			$selecteDescription.html(heldItem.descriptionHTML(build));
+			$selectedDescription.html(heldItem.descriptionHTML(build));
 		} else{
-			$selecteDescription.html(msg(descriptionKey));
+			$selectedDescription.html(msg(descriptionKey));
 		}
 
 		// Display item attributes
@@ -185,11 +196,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			if((itemIndex == "slot1")||(itemIndex == "slot2")){
 				if(move.upgradeLevel){
 					$secondary.append('<div class="boost corners"><span>'+move.upgradeLevel + '</span> ' + msg("upgrade_level") + '</div>');
-					$selecteDescription.append('<div class="upgrade-description"><b>'+msg("upgrade")+":</b> "+msg(move.moveId+"_upgrade")+'</div>');
+					$selectedDescription.append('<div class="upgrade-description"><b>'+msg("upgrade")+":</b> "+msg(move.moveId+"_upgrade")+'</div>');
 				}
 			}
 
-			$selecteDescription.append($secondary);
+			$selectedDescription.append($secondary);
 		}
 
 		// Show battle item attributes
@@ -202,6 +213,16 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			}
 
 			$attributes.show();
+		}
+
+		// For held items with variable stacks, show the stack form
+		if(type == "held"){
+			let heldItem = new HeldItem(itemId);
+
+			if(heldItem.maxStacks > 1){
+				let $stackForm = $form.find(".stacks-section.template").clone().removeClass("template");
+				$selectedDescription.find(".boosts").prepend($stackForm);
+			}
 		}
 	}
 }

@@ -180,6 +180,10 @@
 				<div class="name"></div>
 			</div>
 		</div>
+		<div class="stacks-section template">
+			<div><?php e("stacks"); ?>:</div>
+			<input class="stacks" type="number" min="0" step="1" max="6" value="1" />
+		</div>
 		<button class="select"><?php e("select_button"); ?></button>
 	</div>
 
