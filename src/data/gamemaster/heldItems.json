@@ -237,6 +237,7 @@
 		"values": [100, 150, 200, 200],
 		"stat": "hp",
 		"type": "number",
+		"maxStacks": 6,
 		"boosts": [
 			{
 				"stat": "hp",

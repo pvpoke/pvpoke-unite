@@ -93,7 +93,7 @@
 					"moveId": "solar_beam",
 					"style": "special",
 					"category": "area",
-					"cooldown": 11,
+					"cooldown": 10,
 					"level": 7,
 					"upgrade": 10,
 					"color": "grass"
@@ -296,7 +296,7 @@
 			},
 			"slot1": [
 				{
-					"moveId": "water_gun",
+					"moveId": "water_gun_blastoise",
 					"style": "special",
 					"category": "ranged",
 					"cooldown": 9,
@@ -342,7 +342,7 @@
 				},
 				{
 					"moveId": "rapid_spin",
-					"style": "special",
+					"style": "other",
 					"category": "buff",
 					"cooldown": 11,
 					"level": 7,
@@ -572,7 +572,7 @@
 				},
 				{
 					"moveId": "aurora_veil",
-					"style": "special",
+					"style": "other",
 					"category": "buff",
 					"cooldown": 13,
 					"level": 6,
@@ -662,7 +662,7 @@
 				{
 					"moveId": "dazzling_gleam_wigglytuff",
 					"style": "special",
-					"category": "hindrance",
+					"category": "area",
 					"cooldown": 4.5,
 					"level": 6,
 					"upgrade": 10,
@@ -793,7 +793,7 @@
 			"slot2": [
 				{
 					"moveId": "bulk_up",
-					"style": "physical",
+					"style": "other",
 					"category": "buff",
 					"cooldown": 8,
 					"level": 1,
@@ -883,7 +883,7 @@
 				{
 					"moveId": "water_gun",
 					"style": "special",
-					"category": "melee",
+					"category": "ranged",
 					"cooldown": 5,
 					"level": 1,
 					"color": "water"
@@ -891,16 +891,16 @@
 				{
 					"moveId": "scald",
 					"style": "special",
-					"category": "melee",
+					"category": "ranged",
 					"cooldown": 5,
 					"level": 4,
 					"upgrade": 11,
 					"color": "water"
 				},
 				{
-					"moveId": "surf",
+					"moveId": "surf_slowbro",
 					"style": "special",
-					"category": "dash",
+					"category": "hindrance",
 					"cooldown": 9,
 					"level": 4,
 					"upgrade": 11,
@@ -910,7 +910,7 @@
 			"slot2": [
 				{
 					"moveId": "slack_off",
-					"style": "special",
+					"style": "other",
 					"category": "recovery",
 					"cooldown": 11,
 					"level": 1,
@@ -918,7 +918,7 @@
 				},
 				{
 					"moveId": "amnesia",
-					"style": "special",
+					"style": "other",
 					"category": "recovery",
 					"cooldown": 13,
 					"level": 6,
@@ -927,10 +927,10 @@
 				},
 				{
 					"moveId": "telekenisis",
-					"style": "special",
+					"style": "other",
 					"category": "hindrance",
 					"cooldown": 11,
-					"level": 5,
+					"level": 6,
 					"upgrade": 13,
 					"color": "psychic"
 				}
