@@ -36,5 +36,6 @@
 	"button_team_link": "Find Teammates for %1$s &#10151;",
 	"builds": "Builds",
 	"button_build_link": "Explore %1$s Builds &#10151;",
-	"stacks": "Stacks"
+	"stacks": "Stacks",
+	"stats_from_serebii": "Stats via"
 }

@@ -42,6 +42,7 @@
 	.primary, .primary .tile-content{ background:$accent-color; }
 	.secondary, .secondary .tile-content{ background:$secondary-color; }
 	.tertiary, .tertiary .tile-content{ background:$tertiary-color; }
+	.quarternary, .quarternary .tile-content{ background:$quarternary-color; }
 }
 
 
@@ -54,8 +55,7 @@
 		}
 	}
 
-	.home-tile-1,
-	.home-tile-2{
+	.home-tile{
 		max-width:49.5%;
 	}
 }

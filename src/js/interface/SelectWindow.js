@@ -47,8 +47,6 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		}
 	}
 
-	console.log("initializing list " + type);
-
 	for(var i = 0; i < itemArray.length; i++){
 		let itemId = itemArray[i][idKey];
 		let assetId = itemId;
@@ -179,7 +177,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 				$attributes.append("<div>"+msg(move.category)+"</div>");
 			}
 
-			if(move.style){
+			if((move.style)&&(move.style != "other")){
 				$attributes.append("<div>"+msg(move.style)+"</div>");
 			}
 
@@ -224,5 +222,8 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 				$selectedDescription.find(".boosts").prepend($stackForm);
 			}
 		}
+
+		// Scroll description to top
+		$selectedDescription.scrollTop(0);
 	}
 }

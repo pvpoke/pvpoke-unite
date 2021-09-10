@@ -84,7 +84,7 @@
 						<div class="stat-difference"></div>
 					</div>
 					<div class="stat link">
-						Stats from &nbsp;<a href="https://www.serebii.net/pokemonunite/pokemon.shtml" target="_blank">serebii.net</a>
+						<?php e("stats_from_serebii"); ?>&nbsp;<a class="serebii" href="https://www.serebii.net/pokemonunite/pokemon.shtml" target="_blank">serebii.net</a>
 					</div>
 				</div>
 			</div>

@@ -13,9 +13,13 @@
 				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-2.jpg" width="600" height="400" />
 				<div class="tile-content corners"><?php e("home_tile_2_content") ?></div>
 			</a>
-			<a class="home-tile tertiary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
-				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3.jpg" width="1200" height="200" />
+			<a class="home-tile quarternary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3b.jpg" width="600" height="200" />
 				<div class="tile-content corners"><?php e("home_tile_3_content") ?></div>
+			</a>
+			<a class="home-tile tertiary home-tile-4" href="https://twitter.com/pvpoke" target="_blank">
+				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-4.jpg" width="600" height="200" />
+				<div class="tile-content corners"><?php e("home_tile_4_content") ?></div>
 			</a>
 		</div>
 	</div>

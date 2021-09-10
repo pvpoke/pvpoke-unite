@@ -981,6 +981,9 @@ select {
 .home-tiles .tertiary, .home-tiles .tertiary .tile-content {
   background: #517dc4;
 }
+.home-tiles .quarternary, .home-tiles .quarternary .tile-content {
+  background: #c4517d;
+}
 
 @media only screen and (min-width: 768px) {
   .home-tiles {
@@ -990,8 +993,7 @@ select {
     font-size: 24px;
   }
 
-  .home-tile-1,
-.home-tile-2 {
+  .home-tile {
     max-width: 49.5%;
   }
 }
@@ -1182,6 +1184,14 @@ select {
 }
 .build-select .stats .stat.link {
   font-size: 12px;
+  margin-top: 20px;
+}
+.build-select .stats .stat.link a.serebii {
+  color: #87c13b;
+  padding-left: 20px;
+  background-image: url("../img/serebii.jpg");
+  background-repeat: no-repeat;
+  background-size: contain;
 }
 .build-select .stats .stat .stat-label {
   cursor: pointer;

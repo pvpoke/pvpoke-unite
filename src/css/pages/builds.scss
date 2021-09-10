@@ -224,6 +224,15 @@
 
 			&.link{
 				font-size:12px;
+				margin-top:20px;
+
+				a.serebii{
+					color:#87c13b;
+					padding-left:20px;
+					background-image:url('../img/serebii.jpg');
+					background-repeat: no-repeat;
+					background-size:contain;
+				}
 			}
 
 			.stat-label{
