@@ -314,6 +314,12 @@ function Build(id, level){
 			str += '-' + self.level;
 		}
 
+
+		// Return the ID only if this is a default build with no set items or moves
+		if(str.indexOf("-0-0-0-0-0-0") > -1){
+			return self.pokemonId;
+		}
+
 		return str;
 	}
 

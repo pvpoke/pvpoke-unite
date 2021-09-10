@@ -252,7 +252,7 @@ p {
   display: flex;
   position: absolute;
   bottom: 2px;
-  justify-content: space-around;
+  justify-content: center;
 }
 .pokemon-list .pokemon .image-container .items .item {
   width: 22px;

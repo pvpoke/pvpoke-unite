@@ -138,7 +138,7 @@ function Team(formatId){
 					str += '/' + index + '/';
 
 					for(var i = 0; i < pokemon.length; i++){
-						str += pokemon[i].generateURLString(false, true);
+						str += pokemon[i].generateURLString(false);
 
 						if(i < pokemon.length - 1){
 							str += ',';

@@ -53,7 +53,7 @@ function createPokemonSquare(poke, context){
 	}
 
 	// Show held items for favorites squares
-	if(context == "favorites"){
+	if((context == "favorites") || (context == "teams")){
 		for(var i = 0; i < poke.heldItems.length; i++){
 			let $item = $("<div class=\"item\"></div>");
 			$item.css("background-image", "url("+getAsset(poke.heldItems[i].assetId, "helditems", "png")+")");

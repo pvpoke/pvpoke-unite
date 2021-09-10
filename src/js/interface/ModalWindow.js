@@ -30,6 +30,12 @@ function ModalWindow(content, manualHeader){
 
 	$modal.find(".modal-close").click(function(e){
 		self.close();
+
+
+		// On the teams page, update all lanes when a build is updated
+		if(InterfaceMaster.getInstance().updateAllLanes){
+			InterfaceMaster.getInstance().updateAllLanes();
+		}
 	});
 
 	// Decline confirmation
@@ -43,6 +49,11 @@ function ModalWindow(content, manualHeader){
 
 		if($(".modal-container:hover, option:hover, input:focus").length == 0){
 			self.close();
+
+			// On the teams page, update all lanes when a build is updated
+			if(InterfaceMaster.getInstance().updateAllLanes){
+				InterfaceMaster.getInstance().updateAllLanes();
+			}
 		}
 	});
 }
