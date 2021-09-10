@@ -84,7 +84,9 @@ if($(window).width() > 768){
 			if($(".submenu:hover, .parent-menu:hover").length == 0){
 				$(".submenu").removeClass("active");
 			} else{
-				e.preventDefault();
+				if($(e.target).parents("header").length == 0){
+					e.preventDefault();
+				}
 				$(e.target).closest(".parent-menu").find(".submenu").toggleClass("active");
 			}
 		}
