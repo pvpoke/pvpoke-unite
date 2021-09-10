@@ -51,6 +51,12 @@ function Move(slot, data){
 			self.assetId = "passive";
 		break;
 	}
+
+	// Adjust this move's cooldown provided a cooldown stat. Cooldown stat is a number between 0 and 100, 100 representing default cooldown.
+
+	self.updateCooldown = function(cooldownStat){
+		self.cooldown = self.baseCooldown * (cooldownStat / 100);
+	}
 }
 
 // Hello I am a tiny class

@@ -94,6 +94,13 @@ function Build(id, level){
 
 	self.setStats = function(){
 		self.stats = self.calculateStats(self.level);
+
+		// Set move cooldowns using the current stats
+		for(var i = 0; i < self.movePool.slot1.length; i++){
+			self.movePool.slot1[i].updateCooldown(self.stat("move_cooldown"));
+			self.movePool.slot2[i].updateCooldown(self.stat("move_cooldown"));
+		}
+
 	}
 
 	// Return this build's stats at a given level
@@ -108,7 +115,8 @@ function Build(id, level){
 			def: { value: 0, parts: []},
 			sp_atk: { value: 0, parts: []},
 			sp_def: { value: 0, parts: []},
-			speed: { value: 0, parts: []}
+			speed: { value: 0, parts: []},
+			move_cooldown: { value: 100, parts: []}
 		};
 
 		// Determine base stats
@@ -121,13 +129,15 @@ function Build(id, level){
 				let parts = stats[key].parts;
 				let baseStat = statSet[key];
 
-				// Add base stat
-				parts.push({
-					source: "base_stat",
-					value: baseStat,
-					displayValue: baseStat,
-					type: "number"
-				});
+				if(baseStat){
+					// Add base stat
+					parts.push({
+						source: "base_stat",
+						value: baseStat,
+						displayValue: baseStat,
+						type: "number"
+					});
+				}
 
 				// Add bonuses from held items
 

@@ -14,6 +14,7 @@ $META_DESCRIPTION = l("builds_meta_description");
 
 if(isset($_GET['builds'])){
 	$arr = explode('-', $_GET['builds']);
+	$arr = explode(',', $arr[0]);
 	$pokemonId = htmlspecialchars($arr[0]);
 	$pokemonName = l($pokemonId);
 

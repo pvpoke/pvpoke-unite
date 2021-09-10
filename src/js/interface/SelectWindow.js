@@ -170,7 +170,11 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			let move = itemArray[selectedIndex];
 
 			if(move.cooldown){
-				$attributes.append("<div class=\"cooldown\">"+move.cooldown+msg("cooldown_abbreviation")+"</div>");
+				$attributes.append("<div class=\"cooldown\">"+displayFloat(move.cooldown, 1)+msg("cooldown_abbreviation")+"</div>");
+
+				if(move.cooldown < move.baseCooldown){
+					$attributes.find(".cooldown").addClass("boosted");
+				}
 			}
 
 			if(move.category){
@@ -207,7 +211,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			let battleItem = new BattleItem(itemId);
 
 			if(itemId != "none"){
-				$attributes.append("<div class=\"cooldown\">"+battleItem.cooldown+msg("cooldown_abbreviation")+"</div>");
+				$attributes.append("<div class=\"cooldown\">"+displayFloat(battleItem.cooldown, 1)+msg("cooldown_abbreviation")+"</div>");
 			}
 
 			$attributes.show();

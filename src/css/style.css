@@ -31,6 +31,10 @@ p {
   font-size: 14px;
 }
 
+.boosted {
+  color: #f0d50a !important;
+}
+
 @media only screen and (min-width: 768px) {
   h1:first-of-type {
     margin-top: 0.67em;
@@ -1188,10 +1192,11 @@ select {
 }
 .build-select .stats .stat.link a.serebii {
   color: #87c13b;
-  padding-left: 20px;
+  padding-left: 16px;
   background-image: url("../img/serebii.jpg");
   background-repeat: no-repeat;
   background-size: contain;
+  margin-left: 4px;
 }
 .build-select .stats .stat .stat-label {
   cursor: pointer;
@@ -1212,9 +1217,6 @@ select {
 }
 .build-select .stats .stat .stat-value {
   min-width: 50px;
-}
-.build-select .stats .stat .stat-value.boosted {
-  color: #f0d50a;
 }
 .build-select .stats .stat .stat-difference {
   font-size: 12px;
@@ -1312,6 +1314,14 @@ select {
   width: 100%;
   height: 100%;
 }
+.build-select .move .name {
+  width: 105px;
+}
+.build-select .move .cooldown {
+  min-width: 55px;
+  box-sizing: border-box;
+  text-align: center;
+}
 .build-select .move.locked {
   filter: grayscale(1);
 }
@@ -1374,6 +1384,9 @@ select {
   }
   .build-select .stats .stat .stat-label {
     padding: 4px 10px;
+  }
+  .build-select .move .name {
+    width: 145px;
   }
 
   canvas.progression {

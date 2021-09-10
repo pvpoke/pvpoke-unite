@@ -125,6 +125,10 @@ function HeldItem(id){
 				boostStr += '%';
 			}
 
+			// Display move cooldown as a percent
+			if(self.boosts[i].stat == "move_cooldown"){
+				boostStr += '%';
+			}
 
 			$secondary.append('<div class="boost corners"><span>'+boostStr + '</span> ' + msg(self.boosts[i].stat) + '</div>');
 		}

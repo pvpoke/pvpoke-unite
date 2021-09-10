@@ -122,7 +122,7 @@
 			},
 			{
 				"stat": "move_cooldown",
-				"type": "percent",
+				"type": "number",
 				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
 		]
@@ -207,7 +207,7 @@
 			},
 			{
 				"stat": "move_cooldown",
-				"type": "percent",
+				"type": "number",
 				"values": [-4.5, -4.5, -4.5, -4.5]
 			}
 		]

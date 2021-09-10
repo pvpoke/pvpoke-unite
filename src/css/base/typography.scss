@@ -16,6 +16,10 @@ p{
 	font-size:14px;
 }
 
+.boosted{
+	color:$boosted-color !important;
+}
+
 @media only screen and (min-width: $desktop-breakpoint) {
 	h1:first-of-type{
 		margin-top: 0.67em;

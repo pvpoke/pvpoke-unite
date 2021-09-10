@@ -163,7 +163,7 @@ function ProgressionGraph(c){
 		statCtx.setLineDash([]);
 
 		if(isPrimary){
-			statCtx.strokeStyle = "#444";
+			statCtx.strokeStyle = "#777";
 			statCtx.setLineDash([5, 3]);
 		}
 

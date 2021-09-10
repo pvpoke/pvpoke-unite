@@ -64,10 +64,10 @@ function BuildSelect(element, ctx, selectors){
 		$el.find(".selected-pokemon .name").html(msg(build.stageId));
 
 		// Display Pokemon's role and type
-		$el.find(".attributes").html("");
-		$el.find(".attributes").append("<div>"+msg(build.role)+"</div>");
-		$el.find(".attributes").append("<div>"+msg(build.type)+"</div>");
-		$el.find(".attributes").append("<div>"+msg(build.style)+"</div>");
+		$el.find(".main-attributes").html("");
+		$el.find(".main-attributes").append("<div>"+msg(build.role)+"</div>");
+		$el.find(".main-attributes").append("<div>"+msg(build.type)+"</div>");
+		$el.find(".main-attributes").append("<div>"+msg(build.style)+"</div>");
 
 		// Display current level
 		$el.find(".level .value").html(build.level);
@@ -194,6 +194,17 @@ function BuildSelect(element, ctx, selectors){
 						$el.find(".move[slot=\""+key+"\"]").addClass("locked");
 					} else{
 						$el.find(".move[slot=\""+key+"\"]").removeClass("locked");
+					}
+				}
+
+				// Display move cooldown
+				if(move.cooldown){
+					$el.find(".move[slot=\""+key+"\"] .cooldown").html( displayFloat(move.cooldown, 1) + msg("cooldown_abbreviation") );
+
+					if(move.cooldown < move.baseCooldown){
+						$el.find(".move[slot=\""+key+"\"] .cooldown").addClass("boosted");
+					} else{
+						$el.find(".move[slot=\""+key+"\"] .cooldown").removeClass("boosted");
 					}
 				}
 			}

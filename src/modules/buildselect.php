@@ -43,7 +43,7 @@
 				</div>
 			</div>
 
-			<div class="attributes"></div>
+			<div class="main-attributes attributes"></div>
 
 			<div class="advanced">
 				<canvas class="progression" height="75"></canvas>
@@ -111,12 +111,18 @@
 					<div class="asset"></div>
 				</div>
 				<div class="name"></div>
+				<div class="attributes">
+					<div class="cooldown">0s</div>
+				</div>
 			</div>
 			<div class="move ability"  slot="slot2">
 				<div class="image">
 					<div class="asset"></div>
 				</div>
 				<div class="name"></div>
+				<div class="attributes">
+					<div class="cooldown">0s</div>
+				</div>
 			</div>
 			<div class="divider"></div>
 			<div class="move" slot="unite">
