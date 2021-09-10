@@ -58,7 +58,15 @@ if(isset($_GET['builds'])){
 				<?php require_once 'modules/buildselect.php'; ?>
 			</div>
 		</div>
+
 	</div>
+
+	<?php if($_SETTINGS->ads == 1) : ?>
+		<div class="section patterned">
+			<?php require 'modules/ads/body-728.php'; ?>
+		</div>
+	<?php endif; ?>
+
 
 	<div class="tooltip corners"></div>
 </div>

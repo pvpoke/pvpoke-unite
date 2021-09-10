@@ -126,7 +126,7 @@ if(! isset($OG_IMAGE)){
 							<a class="icon-contribute" href="<?php echo $WEB_ROOT; ?>contribute/"><?php e("nav_contribute"); ?></a>
 							<a class="icon-settings" href="<?php echo $WEB_ROOT; ?>settings/"><?php e("nav_settings"); ?></a>
 							<a class="icon-twitter" href="https://twitter.com/pvpoke" target="_blank">Twitter</a>
-							<a class="icon-twitter" href="https://pvpoke.com" target="_blank">PvPoke.com</a>
+							<a class="icon-twitter" href="https://pvpoke.com">PvPoke.com</a>
 						</div>
 					</div>
 				</div>

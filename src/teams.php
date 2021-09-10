@@ -60,6 +60,14 @@ $META_DESCRIPTION = l("teams_meta_description");
 
 	</div>
 
+	<?php if($_SETTINGS->ads == 1) : ?>
+		<div class="section padding">
+			<div class="main-wrap">
+				<?php require 'modules/ads/body-728.php'; ?>
+			</div>
+		</div>
+	<?php endif; ?>
+
 	<!-- HTML template for lane interface-->
 	<div class="lane template">
 		<div class="header">
