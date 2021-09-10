@@ -10,6 +10,20 @@ $META_TITLE = l("builds_meta_title");
 
 $META_DESCRIPTION = l("builds_meta_description");
 
+// Add Pokemon name to meta title
+
+if(isset($_GET['builds'])){
+	$arr = explode('-', $_GET['builds']);
+	$pokemonId = htmlspecialchars($arr[0]);
+	$pokemonName = l($pokemonId);
+
+	if($pokemonName != $pokemonId){
+		$META_TITLE = $pokemonName . ' ' . $META_TITLE;
+
+		$CANONICAL = '/builds/' . $pokemonId;
+	}
+}
+
 ?>
 
 <?php require_once 'header.php'; ?>
