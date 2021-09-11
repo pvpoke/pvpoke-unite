@@ -352,6 +352,12 @@ header .submenu {
   height: auto;
 }
 
+@media only screen and (max-width: 768px) {
+  header .menu a:hover {
+    background: #9950c5;
+    color: #141414;
+  }
+}
 @media only screen and (min-width: 768px) {
   .menu {
     display: flex;

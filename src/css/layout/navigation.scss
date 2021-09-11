@@ -45,6 +45,13 @@ header .submenu{
 	height:auto;
 }
 
+@media only screen and (max-width: $desktop-breakpoint) {
+	header .menu a:hover{
+		background:$accent-color;
+		color:$black;
+	}
+}
+
 @media only screen and (min-width: $desktop-breakpoint) {
 	.menu{
 		display:flex;
