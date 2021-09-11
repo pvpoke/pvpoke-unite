@@ -29,7 +29,7 @@
 			<h2><?php e("about_pvpoke") ?></h2>
 			<p><?php e("home_about_pvpoke_1"); ?></p>
 			<p><?php e("home_about_pvpoke_2"); ?></p>
-			<?php require 'modules/ads/body-728.php'; ?>
+			<?php require 'config/ads/body-728.php'; ?>
 		</div>
 	</div>
 
