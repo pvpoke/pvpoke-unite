@@ -36,7 +36,7 @@ if(! isset($META_DESCRIPTION)){
 }
 
 if(! isset($OG_IMAGE)){
-	$OG_IMAGE = 'https://pvpoke.com/img/og.jpg'; // Have to change this!
+	$OG_IMAGE = 'https://unite.pvpoke.com/img/og.jpg'; // Have to change this!
 }
 ?>
 
