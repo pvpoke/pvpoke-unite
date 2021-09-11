@@ -1,7 +1,7 @@
 {
 	"teams_meta_title": "Teams",
 	"teams_meta_description": "Build your Pokemon Unite team and find the best synergy for your Pokemon and lanes.",
-	"teams_description": "Select Pokemon below to explore lane partners or team synergy.",
+	"teams_description": "Select Pokemon below to explore lane partners and team synergy, or quickly assess your opponents.",
 	"format_general": "General",
 	"format_3v3": "3v3 (Auroma Park)",
 	"format_4v4": "4v4 (Mer Stadium)",
@@ -16,5 +16,11 @@
 	"teams_recommended": "Recommended",
 	"about_synergy": "About Synergy",
 	"about_synergy_content_1": "Synergy ratings are a general guideline for finding lane partners and teammates. Recommendations aim to pair Pokemon with complimentary strengths and weaknesses. Ratings are derived from Pokemon attributes as displayed in-game, and some external analysis. These numbers are limited in scope and detail, and should only be used for broad analysis.",
-	"about_synergy_content_2": "Synergy ratings scale with the number of Pokemon in the lane or team."
+	"about_synergy_content_2": "Synergy ratings scale with the number of Pokemon in the lane or team.",
+	"team_attribute_low_endurance": "This team has lower Endurance. It may be vulnerable to burst damage, aggressive attacks, or uneven engagements.",
+	"team_attribute_low_leveling": "This team reaches its full power at later levels. It may be vulnerable to early game pressure, and may struggle to close early level gaps.",
+	"team_attribute_low_mobility": "This team has lower Mobility. It may struggle to initiate or disengage from fights, and is vulnerable if caught out of position.",
+	"team_attribute_low_offense": "This team has lower Offense. It may struggle to overcome sustained defenses or secure objectives.",
+	"team_attribute_low_scoring": "This team has lower Scoring ability. It may struggle to capitalize on certain scoring opportunities.",
+	"team_attribute_low_support": "This team has lower Support. It may struggle to sustain fights, disrupt abilities, or zone off objective areas."
 }

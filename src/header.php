@@ -1,7 +1,7 @@
 <?php require_once 'modules/config.php';
 require_once 'modules/localize.php';
 
-$SITE_VERSION = '0.58';
+$SITE_VERSION = '0.6';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
@@ -36,7 +36,7 @@ if(! isset($META_DESCRIPTION)){
 }
 
 if(! isset($OG_IMAGE)){
-	$OG_IMAGE = 'https://unite.pvpoke.com/img/og.jpg'; // Have to change this!
+	$OG_IMAGE = 'https://unite.pvpoke.com/img/og.jpg';
 }
 ?>
 
@@ -58,7 +58,7 @@ if(! isset($OG_IMAGE)){
 <link rel="manifest" href="<?php echo $WEB_ROOT; ?>data/manifest.json?v=1">
 
 <link rel="icon" href="<?php echo $WEB_ROOT; ?>img/favicon.png">
-<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=9">
+<link rel="stylesheet" type="text/css" href="<?php echo $WEB_ROOT; ?>css/style.css?v=10">
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 

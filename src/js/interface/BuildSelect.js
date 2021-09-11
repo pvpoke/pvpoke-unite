@@ -565,7 +565,6 @@ function BuildSelect(element, ctx, selectors){
 		e.preventDefault();
 		if(context == "builds"){
 			favorites.addBuildToFavorites(build);
-			$el.find(".submenu").removeClass("active");
 			self.update();
 		}
 	});

@@ -11,3 +11,7 @@ input[type="text"]{
 	border:none;
 	outline:none;
 }
+
+a, div{
+	-webkit-tap-highlight-color: transparent;
+}

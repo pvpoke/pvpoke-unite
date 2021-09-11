@@ -13,8 +13,12 @@ input[type=text] {
   outline: none;
 }
 
+a, div {
+  -webkit-tap-highlight-color: transparent;
+}
+
 body {
-  color: #ccc;
+  color: #ddd;
   font-family: sans-serif;
 }
 
@@ -188,7 +192,7 @@ p {
   padding: 2px 8px;
   margin: 5px;
   font-size: 12px;
-  color: #ccc;
+  color: #ddd;
   border: 1px solid #222222;
   background: #222222;
   border-bottom-left-radius: 10px;
@@ -231,7 +235,7 @@ p {
   font-size: 30px;
 }
 .pokemon-list .pokemon:hover .image-container {
-  border: 3px solid #ccc;
+  border: 3px solid #ddd;
 }
 .pokemon-list .pokemon .image-container {
   width: 100%;
@@ -266,7 +270,7 @@ p {
   border-radius: 20px;
   background-repeat: no-repeat;
   background-position: center;
-  border: 2px solid #ccc;
+  border: 2px solid #ddd;
 }
 .pokemon-list .pokemon .name {
   font-size: 12px;
@@ -290,6 +294,20 @@ p {
   -ms-filter: grayscale(100%);
   -o-filter: grayscale(100%);
   filter: gray;
+}
+
+.info {
+  display: inline-block;
+  color: #ddd;
+  border: 2px solid #ddd;
+  text-align: center;
+  width: 15px;
+  height: 15px;
+  border-radius: 20px;
+  line-height: 15px;
+}
+.info:after {
+  content: "i";
 }
 
 .menu {
@@ -407,7 +425,7 @@ body {
   color: #eee;
 }
 .section.patterned {
-  color: #ccc;
+  color: #ddd;
   background: linear-gradient(90deg, #141414 20px, transparent 1%) center, linear-gradient(#141414 20px, transparent 1%) center, #323232;
   background-size: 22px 22px;
 }
@@ -452,7 +470,7 @@ header .title {
   line-height: 24px;
 }
 header .title a {
-  color: #ccc;
+  color: #ddd;
   font-weight: normal;
 }
 header .title span {
@@ -484,7 +502,7 @@ footer {
   padding: 8px;
 }
 footer a {
-  color: #ccc;
+  color: #ddd;
 }
 footer p {
   font-size: 12px;
@@ -578,7 +596,7 @@ button,
   display: block;
   border: 1px solid #9950c5;
   background: #9950c5;
-  color: #ccc;
+  color: #ddd;
   padding: 5px 10px;
   margin: 5px;
   outline: none;
@@ -597,7 +615,7 @@ button.toggle:hover,
 }
 button.toggle.on,
 .button.toggle.on {
-  color: #ccc;
+  color: #ddd;
   background: #9950c5;
 }
 button.secondary,
@@ -645,13 +663,13 @@ button.select {
 }
 .tabs a.active {
   background: #9950c5;
-  color: #ccc;
+  color: #ddd;
 }
 
 a.remove {
   border-radius: 20px;
   background: #141414;
-  color: #ccc;
+  color: #ddd;
   width: 20px;
   height: 20px;
   text-decoration: none;
@@ -664,7 +682,7 @@ a.remove {
   font-size: 14px;
 }
 a.remove:hover {
-  border: 2px solid #ccc;
+  border: 2px solid #ddd;
 }
 
 /* Scrollbar styling */
@@ -679,7 +697,7 @@ a.remove:hover {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #ccc;
+  background: #ddd;
 }
 
 ::-webkit-scrollbar-track {
@@ -693,13 +711,16 @@ input {
 }
 input[type=text], input[type=number] {
   background: #141414;
-  color: #ccc;
+  color: #ddd;
   border: none;
   border-bottom: 3px solid #9950c5;
   padding: 10px 10px 6px 10px;
   outline: none;
   box-sizing: border-box;
   -webkit-appearance: none;
+}
+input[type=text].secondary, input[type=number].secondary {
+  border-bottom: 3px solid #47a984;
 }
 
 .slider {
@@ -752,7 +773,7 @@ input[type=text], input[type=number] {
   width: 17px;
   height: 17px;
   background: #141414;
-  border: 2px solid #ccc;
+  border: 2px solid #ddd;
   box-sizing: border-box;
   margin: 0px 5px 0 0;
   float: left;
@@ -766,7 +787,7 @@ input[type=text], input[type=number] {
 
 select {
   background: #141414;
-  color: #ccc;
+  color: #ddd;
   width: 200px;
   padding: 5px 10px;
   box-sizing: border-box;
@@ -896,7 +917,7 @@ select {
 }
 .select-modal[type=move] .image {
   border-radius: 100px;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 .select-modal[type=move] .selected-item .image .asset {
   background-size: 92%;
@@ -924,7 +945,7 @@ select {
   position: absolute;
   display: none;
   padding: 6px 10px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   background: #141414;
   font-size: 12px;
   max-width: 250px;
@@ -957,7 +978,7 @@ select {
   position: absolute;
   bottom: 10px;
   left: 10px;
-  color: #ccc;
+  color: #ddd;
   padding: 10px;
   font-weight: bold;
   font-size: 20px;
@@ -1021,7 +1042,7 @@ select {
 }
 .build-list .build-select .nav-bar .star {
   display: none;
-  color: #ccc;
+  color: #ddd;
   position: absolute;
   font-size: 30px;
   line-height: 30px;
@@ -1166,7 +1187,7 @@ select {
   text-transform: uppercase;
   text-align: center;
   max-width: 90%;
-  text-shadow: -1px 1px 0 #ccc, 1px 1px 0 #ccc, 1px -1px 0 #ccc, -1px -1px 0 #ccc;
+  text-shadow: -1px 1px 0 #ddd, 1px 1px 0 #ddd, 1px -1px 0 #ddd, -1px -1px 0 #ddd;
 }
 .build-select .attributes {
   justify-content: center;
@@ -1213,7 +1234,7 @@ select {
 }
 .build-select .stats .stat .stat-label.selected {
   background: #9950c5;
-  color: #ccc;
+  color: #ddd;
 }
 .build-select .stats .stat .stat-value {
   min-width: 50px;
@@ -1308,7 +1329,7 @@ select {
 }
 .build-select .move .image {
   border-radius: 100px;
-  background-color: #ccc;
+  background-color: #ddd;
 }
 .build-select .move .image .asset {
   width: 95%;
@@ -1399,6 +1420,23 @@ select {
 #teams .share-section {
   max-width: 500px;
   display: none;
+}
+#teams .main-wrap.attributes {
+  display: block;
+}
+#teams .main-wrap.attributes div {
+  background: #141414;
+  max-width: 500px;
+  margin: 5px auto;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+#teams .main-wrap.attributes div:hover {
+  background: #222222;
+}
+#teams .main-wrap.attributes div .info {
+  margin-right: 5px;
+  margin-bottom: 2px;
 }
 
 .top-team-panel {
@@ -1503,17 +1541,7 @@ select {
   width: 10px;
 }
 .synergy .info {
-  color: #ccc;
-  border: 2px solid #ccc;
-  text-align: center;
-  width: 15px;
-  height: 15px;
-  border-radius: 20px;
   margin-left: 5px;
-  line-height: 15px;
-}
-.synergy .info:after {
-  content: "i";
 }
 
 .synergy-modal .synergy-detail {

@@ -11,6 +11,11 @@ input{
 		outline:none;
 		box-sizing: border-box;
 		-webkit-appearance: none;
+
+
+		&.secondary{
+			border-bottom:3px solid $secondary-color;
+		}
 	}
 }
 

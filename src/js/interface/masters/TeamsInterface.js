@@ -76,13 +76,49 @@ var InterfaceMaster = (function () {
 				}
 
 				// Display full team synergy
+				let teamRatings = self.calculateSynergy(team.pokemon);
+
 				if((team.pokemon.length > 0)&&(team.getFormat().id != "general")){
-					let teamRatings = self.calculateSynergy(team.pokemon);
 					self.displayStars($(".top-team-panel .synergy-meter"), teamRatings, team.pokemon);
 					$(".top-team-panel .synergy").css("display", "flex");
+					// Display team attributes
 				} else{
 					$(".top-team-panel .synergy").hide();
 				}
+
+				// Display team attributes
+				if(team.pokemon.length > 1){
+					let attributes = [];
+					let keys = ["endurance", "leveling", "mobility", "offense", "scoring", "support"];
+
+					console.log(teamRatings);
+
+					for(var key in teamRatings){
+						if((teamRatings.hasOwnProperty(key))&&(keys.indexOf(key) > -1)){
+							let missingStars = teamRatings.categoryCaps[key] - teamRatings[key];
+
+							if(missingStars >= 2){
+								attributes.push("team_attribute_low_"+key);
+							}
+						}
+					}
+
+					if(attributes.length > 0){
+						$(".main-wrap.attributes").html("");
+
+						for(var i = 0; i < attributes.length; i++){
+							$(".main-wrap.attributes").append("<div><span class=\"info\"></span>"+msg(attributes[i])+"</div>");
+						}
+
+						$(".main-wrap.attributes").show();
+					} else{
+						$(".main-wrap.attributes").hide();
+					}
+
+				} else{
+					$(".main-wrap.attributes").hide();
+				}
+
 
 				if(pushHistory){
 					self.pushHistoryState();
@@ -472,7 +508,7 @@ var InterfaceMaster = (function () {
 
 			// Open up the synergy modal window
 
-			$("body").on("click", ".synergy", function(e){
+			$("body").on("click", ".synergy, .main-wrap.attributes > div", function(e){
 				// Determine if this is a lane or the whole team
 				let pokemon = team.pokemon;
 
