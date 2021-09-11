@@ -43,6 +43,7 @@ var InterfaceMaster = (function () {
 			this.refreshAllLanes = function(){
 				$(".lanes").html("");
 				$(".synergy-meter .stars").html("");
+				$(".main-wrap.attributes").hide();
 				$(".top-team-panel .synergy").hide();
 
 				for(var key in team.lanes){

@@ -96,6 +96,11 @@ header .submenu{
 					padding:8px;
 					font-size:16px;
 					background:$gray;
+
+					&:hover{
+						background:$accent-color;
+						color:$black;
+					}
 				}
 			}
 		}

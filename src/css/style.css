@@ -399,6 +399,10 @@ header .submenu {
     font-size: 16px;
     background: #222222;
   }
+  .menu .parent-menu .submenu a:hover {
+    background: #9950c5;
+    color: #141414;
+  }
 
   .hamburger {
     display: none;
@@ -804,7 +808,7 @@ select {
   z-index: 30;
   padding: 10px;
   box-sizing: border-box;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .modal .modal-container {
   position: relative;
@@ -1006,7 +1010,7 @@ select {
 .home-tiles .tertiary, .home-tiles .tertiary .tile-content {
   background: #517dc4;
 }
-.home-tiles .quarternary, .home-tiles .quarternary .tile-content {
+.home-tiles .quaternary, .home-tiles .quaternary .tile-content {
   background: #c4517d;
 }
 
@@ -1437,6 +1441,8 @@ select {
 #teams .main-wrap.attributes div .info {
   margin-right: 5px;
   margin-bottom: 2px;
+  color: #c4517d;
+  border-color: #c4517d;
 }
 
 .top-team-panel {

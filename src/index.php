@@ -13,7 +13,7 @@
 				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-2.jpg" width="600" height="400" />
 				<div class="tile-content corners"><?php e("home_tile_2_content") ?></div>
 			</a>
-			<a class="home-tile quarternary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
+			<a class="home-tile quaternary home-tile-3" href="<?php echo $WEB_ROOT; ?>contribute/">
 				<img src="<?php echo $WEB_ROOT; ?>img/home/home-tile-3b.jpg" width="600" height="200" />
 				<div class="tile-content corners"><?php e("home_tile_3_content") ?></div>
 			</a>
