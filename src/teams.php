@@ -137,7 +137,6 @@ $META_DESCRIPTION = l("teams_meta_description");
 <?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
 <?php i18n::getInstance()->outputCategoryToJS("pages/teams"); ?>
 
-<script src="<?php echo $WEB_ROOT; ?>js/Utils.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Favorites.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/HeldItem.js?v=<?php echo $SITE_VERSION; ?>"></script>

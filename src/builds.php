@@ -75,8 +75,6 @@ if(isset($_GET['builds'])){
 <?php i18n::getInstance()->outputCategoryToJS("item-strings"); ?>
 <?php i18n::getInstance()->outputCategoryToJS("pages/builds"); ?>
 
-
-<script src="<?php echo $WEB_ROOT; ?>js/Utils.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/GameMaster.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/Favorites.js?v=<?php echo $SITE_VERSION; ?>"></script>
 <script src="<?php echo $WEB_ROOT; ?>js/build/HeldItem.js?v=<?php echo $SITE_VERSION; ?>"></script>

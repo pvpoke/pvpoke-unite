@@ -19,7 +19,7 @@ require_once 'header.php';
 		<div class="main-wrap">
 			<h1>Privacy Policy</h1>
 			<p>Privacy is important for Trainers and Pokemon alike! Below is all the information relevant to your privacy and PvPoke.com.</p>
-		
+
 			<span data-ccpa-link="1"></span>
 
 			<p>This page informs you of the policies of PvPoke.com ("the Site", "us", "we", or "our") regarding the collection, use and disclosure of Personal Information we receive from users of the Site.</p>

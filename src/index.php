@@ -52,6 +52,4 @@
 
 </div>
 
-<script src="<?php echo $WEB_ROOT; ?>js/Utils.js?v=<?php echo $SITE_VERSION; ?>"></script>
-
 <?php require_once 'footer.php'; ?>
