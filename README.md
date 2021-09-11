@@ -61,7 +61,7 @@ The interface files in `\modules` only contain the HTML content. They don't cont
 
 The site uses [SASS](https://sass-lang.com/) to generate its CSS files. To make style changes, to do not edit `style.css` directly. Instead, edit the relevant `scss` file and recompile `style.css` with the command line below:
 
-`sass style.csss style.css`
+`sass style.scss style.css`
 
 You'll need to install SASS to get all sassy.
 
@@ -131,5 +131,11 @@ Regarding future features and development, let's talk about scope and scope cree
 * New features and updates should strive to be self-sustaining or automated where possible. Low upkeep features will make the site easier to maintain and faster to update when updates are required.
 
 * Any tools that provide evaluations or ratings should strive to have an empirical basis in the game data and formulas. No subjective tier lists, etc.
+
+If you would like to contribute to the project, please consider reaching out to me here or on [Twitter](https://twitter.com/pvpoke)! Especially for larger features or updates, discussing your ideas beforehand will help ensure they're a good fit for the project and that your time is used effectively.
+
+## Acknowledgements
+
+I'd like to give special thanks to [Serebii.net](https://serebii.net) for their research and fast updates. This project would not have been possible without their valuable reference. I'd also like to thank the team at [Stadium Gaming](https://www.stadiumgaming.gg/) for their encouragement and support, the Unite Mathcord for help answering formula and mechanics questions, and the beta test group for their early feedback.
 
 Thanks for reading me!
