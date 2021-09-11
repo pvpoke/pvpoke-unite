@@ -1311,8 +1311,8 @@ select {
   background-color: #ccc;
 }
 .build-select .move .image .asset {
-  width: 100%;
-  height: 100%;
+  width: 95%;
+  height: 95%;
 }
 .build-select .move .name {
   width: 105px;
