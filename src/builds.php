@@ -63,7 +63,7 @@ if(isset($_GET['builds'])){
 
 	<?php if($_SETTINGS->ads == 1) : ?>
 		<div class="section patterned">
-			<?php require 'modules/ads/body-728.php'; ?>
+			<?php require 'config/ads/body-728.php'; ?>
 		</div>
 	<?php endif; ?>
 

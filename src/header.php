@@ -1,4 +1,4 @@
-<?php require_once 'modules/config.php';
+<?php require_once 'config/config.php';
 require_once 'modules/localize.php';
 
 $SITE_VERSION = '0.6';
@@ -62,7 +62,7 @@ if(! isset($OG_IMAGE)){
 
 <script src="<?php echo $WEB_ROOT; ?>js/libs/jquery-3.3.1.min.js"></script>
 
-<?php require_once('modules/analytics.php'); ?>
+<?php require_once('config/analytics.php'); ?>
 
 <script>
 	// Host for link reference
@@ -102,7 +102,7 @@ if(! isset($OG_IMAGE)){
 	?>
 </script>
 
-	<?php require_once 'modules/ads/base-code.php'; ?>
+	<?php require_once 'config/ads/base-code.php'; ?>
 
 </head>
 

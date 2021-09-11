@@ -65,7 +65,7 @@ $META_DESCRIPTION = l("teams_meta_description");
 	<?php if($_SETTINGS->ads == 1) : ?>
 		<div class="section padding">
 			<div class="main-wrap">
-				<?php require 'modules/ads/body-728.php'; ?>
+				<?php require 'config/ads/body-728.php'; ?>
 			</div>
 		</div>
 	<?php endif; ?>
