@@ -65,7 +65,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		}
 
 		$item.find(".name").html(msg(displayId));
-		$item.find(".image .asset").css("background-image", "url("+host+"img/"+imgDir+"/"+assetId+".png)");
+		$item.find(".image .asset").css("background-image", "url("+getAsset(assetId, imgDir, "png")+")");
 		$item.attr("value", itemId);
 		$item.attr("asset-id", assetId);
 		$item.find(".image").attr("color", color);
@@ -147,7 +147,7 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 		let descriptionKey = $item.attr("value") + "_description";
 
 		$selectedItem.find(".name").html($item.find(".name").html());
-		$selectedItem.find(".image .asset").css("background-image", "url("+host+"img/"+imgDir+"/"+assetId+".png)");
+		$selectedItem.find(".image .asset").css("background-image", "url("+getAsset(assetId, imgDir, "png")+")");
 		$selectedItem.find(".image").attr("color", color);
 
 		if(type == "held"){
