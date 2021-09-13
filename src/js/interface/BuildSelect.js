@@ -397,7 +397,7 @@ function BuildSelect(element, ctx, selectors){
 			return;
 		}
 
-		$el.find(".pokemon").each(function(index, value){
+		$el.find(".pokemon:not(.template)").each(function(index, value){
 			//Match against each word in the name HTML
 			let strs = $(this).find(".name").html().split(" ");
 			let matches = 0;

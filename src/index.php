@@ -43,9 +43,9 @@
 			<!--Update section for updates-->
 			<h2><?php e("whats_new"); ?></h2>
 
-			<h4>v1.0 (September 4th, 2021)</h4>
+			<h4>v1.0 (September 14th, 2021)</h4>
 			<ul>
-				<li>PvPoke Unite Beta</li>
+				<li>Site launch! Welcome to PvPoke Unite!</li>
 			</ul>
 		</div>
 	</div>
