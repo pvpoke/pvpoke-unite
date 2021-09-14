@@ -45,11 +45,6 @@
 }
 
 @media only screen and (min-width: 768px) {
-	.bracket-padding .section{
-		padding-left: 200px;
-		padding-right: 200px;
-		box-sizing: border-box;
-	}
 
 	#nitro-unite-header-desktop{
 		display: block;
@@ -71,7 +66,13 @@
 	}
 }
 
-@media only screen and (min-width: 1190px) {
+@media only screen and (min-width: 1002px) {
+	.bracket-padding .section{
+		padding-left: 200px;
+		padding-right: 200px;
+		box-sizing: border-box;
+	}
+
 	#nitro-unite-sidebar-left{
 		display: block;
 		position: fixed;

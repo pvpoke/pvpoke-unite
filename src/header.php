@@ -1,7 +1,7 @@
 <?php require_once 'config/config.php';
 require_once 'modules/localize.php';
 
-$SITE_VERSION = '0.9';
+$SITE_VERSION = '0.92';
 
 // This prevents caching on local testing
 if (strpos($WEB_ROOT, 'src') !== false) {
