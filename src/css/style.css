@@ -184,6 +184,10 @@ p {
   background: linear-gradient(39deg, #66c5d4 26%, #bdf2f5 77%);
 }
 
+[color=none] {
+  background: none !important;
+}
+
 .attributes {
   display: flex;
   flex-wrap: wrap;
@@ -824,6 +828,7 @@ select {
   vertical-align: middle;
   margin-top: 25px;
   overflow: hidden;
+  margin-bottom: 100px;
 }
 .modal .modal-container .modal-header {
   padding: 10px;
@@ -890,7 +895,7 @@ select {
   background: none !important;
 }
 .select-modal .selected-description {
-  height: 150px;
+  height: 125px;
   overflow-y: auto;
   margin-bottom: 10px;
   border-bottom: 1px solid #222222;
@@ -917,7 +922,7 @@ select {
   margin-top: 10px;
 }
 .select-modal .item-list {
-  max-height: 290px;
+  max-height: 250px;
   overflow-y: auto;
 }
 .select-modal .item-list .image {
@@ -951,6 +956,18 @@ select {
   padding: 6px 0px 0px 10px;
 }
 
+@media only screen and (min-width: 768px) {
+  .modal .modal-container {
+    margin-bottom: 0;
+  }
+
+  .select-modal .item-list {
+    max-height: 385px;
+  }
+  .select-modal .selected-description {
+    max-height: 150px;
+  }
+}
 .tooltip {
   position: absolute;
   display: none;
@@ -1344,6 +1361,9 @@ select {
 .build-select .move .image .asset {
   width: 95%;
   height: 95%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .build-select .move .name {
   width: 105px;

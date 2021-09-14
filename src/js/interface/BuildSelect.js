@@ -184,28 +184,43 @@ function BuildSelect(element, ctx, selectors){
 		for(var key in build.moves){
 			if(build.moves.hasOwnProperty(key)){
 				let move = build.moves[key];
+				let showBlank = false;
 
-				$el.find(".move[slot=\""+key+"\"] .name").html(move.moveName);
-				$el.find(".move[slot=\""+key+"\"] .image").attr("color", move.color);
-				$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+getAsset(move.assetId, "moves", "png")+")");
-
-				if(move.unlockLevel){
-					if(build.level < move.unlockLevel){
-						$el.find(".move[slot=\""+key+"\"]").addClass("locked");
-					} else{
-						$el.find(".move[slot=\""+key+"\"]").removeClass("locked");
-					}
+				if(((key == "slot1")||(key == "slot2"))&&(move.unlockLevel == 1)){
+					showBlank = true;
 				}
 
-				// Display move cooldown
-				if(move.cooldown){
-					$el.find(".move[slot=\""+key+"\"] .cooldown").html( displayFloat(move.cooldown, 1) + msg("cooldown_abbreviation") );
+				// Show the move slot as blank if no move has been selected
+				if(! showBlank){
+					$el.find(".move[slot=\""+key+"\"] .name").html(move.moveName);
+					$el.find(".move[slot=\""+key+"\"] .image").attr("color", move.color);
+					$el.find(".move[slot=\""+key+"\"] .image .asset").css("background-image", "url("+getAsset(move.assetId, "moves", "png")+")");
+					$el.find(".move[slot=\""+key+"\"] .image .asset").html("");
 
-					if(move.cooldown < move.baseCooldown){
-						$el.find(".move[slot=\""+key+"\"] .cooldown").addClass("boosted");
-					} else{
-						$el.find(".move[slot=\""+key+"\"] .cooldown").removeClass("boosted");
+					if(move.unlockLevel){
+						if(build.level < move.unlockLevel){
+							$el.find(".move[slot=\""+key+"\"]").addClass("locked");
+						} else{
+							$el.find(".move[slot=\""+key+"\"]").removeClass("locked");
+						}
 					}
+
+					// Display move cooldown
+					if(move.cooldown){
+						$el.find(".move[slot=\""+key+"\"] .cooldown").show();
+						$el.find(".move[slot=\""+key+"\"] .cooldown").html( displayFloat(move.cooldown, 1) + msg("cooldown_abbreviation") );
+
+						if(move.cooldown < move.baseCooldown){
+							$el.find(".move[slot=\""+key+"\"] .cooldown").addClass("boosted");
+						} else{
+							$el.find(".move[slot=\""+key+"\"] .cooldown").removeClass("boosted");
+						}
+					}
+				} else{
+					$el.find(".move[slot=\""+key+"\"] .name").html(msg("select_a_move"));
+					$el.find(".move[slot=\""+key+"\"] .image").attr("color", "none");
+					$el.find(".move[slot=\""+key+"\"] .image .asset").html("+");
+					$el.find(".move[slot=\""+key+"\"] .cooldown").hide();
 				}
 			}
 		}

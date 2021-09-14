@@ -19,6 +19,7 @@
 		vertical-align: middle;
 		margin-top: 25px;
 		overflow:hidden;
+		margin-bottom:100px;
 
 		.modal-header{
 			padding:10px;
@@ -103,7 +104,7 @@
 	}
 
 	.selected-description{
-		height:150px;
+		height:125px;
 		overflow-y:auto;
 		margin-bottom:10px;
 		border-bottom: 1px solid $gray;
@@ -136,7 +137,7 @@
 	}
 
 	.item-list{
-		max-height:290px;
+		max-height:250px;
 		overflow-y:auto;
 
 		.image{
@@ -175,6 +176,22 @@
 			margin-left:5px;
 			line-height: 22px;
 			padding: 6px 0px 0px 10px;
+		}
+	}
+}
+
+@media only screen and (min-width: $desktop-breakpoint) {
+	.modal .modal-container{
+		margin-bottom: 0;
+	}
+
+	.select-modal{
+		.item-list{
+			max-height: 385px;
+		}
+
+		.selected-description{
+			max-height: 150px;
 		}
 	}
 }

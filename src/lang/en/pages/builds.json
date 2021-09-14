@@ -37,5 +37,6 @@
 	"builds": "Builds",
 	"button_build_link": "Explore %1$s Builds &#10151;",
 	"stacks": "Stacks",
-	"stats_from_serebii": "Stats via"
+	"stats_from_serebii": "Stats via",
+	"select_a_move": "Select Move Path"
 }

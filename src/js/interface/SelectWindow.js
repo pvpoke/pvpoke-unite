@@ -203,6 +203,14 @@ function SelectWindow($content, type, build, selectCallback, itemIndex, selected
 			}
 
 			$selectedDescription.append($secondary);
+
+
+			// For moves, disable the select button if this is the first option
+			if(selectedIndex == 0){
+				$form.find("button.select").addClass("disabled");
+			} else{
+				$form.find("button.select").removeClass("disabled");
+			}
 		}
 
 		// Show battle item attributes
