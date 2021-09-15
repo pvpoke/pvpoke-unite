@@ -220,6 +220,7 @@ function BuildSelect(element, ctx, selectors){
 					$el.find(".move[slot=\""+key+"\"] .name").html(msg("select_a_move"));
 					$el.find(".move[slot=\""+key+"\"] .image").attr("color", "none");
 					$el.find(".move[slot=\""+key+"\"] .image .asset").html("+");
+					$el.find(".move[slot=\""+key+"\"] .image .asset").css("background", "");
 					$el.find(".move[slot=\""+key+"\"] .cooldown").hide();
 				}
 			}

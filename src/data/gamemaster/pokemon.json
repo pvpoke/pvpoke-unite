@@ -2068,7 +2068,7 @@
 					"color": "water"
 				},
 				{
-					"moveId": "surf",
+					"moveId": "surf_greninja",
 					"style": "physical",
 					"category": "dash",
 					"cooldown": 9,
