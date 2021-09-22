@@ -43,9 +43,10 @@
 			<!--Update section for updates-->
 			<h2><?php e("whats_new"); ?></h2>
 
-			<h4>v1.0 (September 14th, 2021)</h4>
+			<h4>v1.1 (September 22nd, 2021)</h4>
 			<ul>
-				<li>Site launch! Welcome to PvPoke Unite!</li>
+				<li>Updated latest Pokemon and move stats</li>
+				<li>Added new held items</li>
 			</ul>
 		</div>
 	</div>

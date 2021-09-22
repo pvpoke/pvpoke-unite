@@ -55,5 +55,11 @@
     "critical_hit_damage": "Critical Hit Damage",
     "unite_move_charge_rate": "Unite Move Charge Rate",
     "move_cooldown": "Move Cooldown",
-    "hp_recovery": "HP Recovery"
+    "hp_recovery": "HP Recovery",
+    "razor_claw": "Razor Claw",
+    "razor_claw_description": "After the Pokemon uses a move, its next basic attack deals a mininum of %1$d more damage. The higher the Pokemon's Attack, the more this damage increases. When this item is held by a melee Pokemon, this basic attack also decreases the movement speed of opposing Pokemon for a short time.",
+    "choice_specs": "Choice Specs",
+    "choice_specs_description": "Increases the damage of moves by a minimum of %1$d when they hit. The higher the Pokemon's Sp. Atk, the more the damage is increased.",
+    "weakness_policy": "Weakness Policy",
+    "weakness_policy_description": "Increases the Pokemon's Attack for a short time by a minimum of %1$d when the Pokemon receives damage. This increase grows larger the more times damage is received."
 }

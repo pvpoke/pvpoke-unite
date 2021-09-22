@@ -102,7 +102,7 @@
 					"moveId": "petal_dance",
 					"style": "special",
 					"category": "area",
-					"cooldown": 11,
+					"cooldown": 9,
 					"level": 7,
 					"upgrade": 11,
 					"color": "grass"
@@ -214,7 +214,7 @@
 					"moveId": "fire_blast",
 					"style": "physical",
 					"category": "area",
-					"cooldown": 8,
+					"cooldown": 6.5,
 					"level": 7,
 					"upgrade": 13,
 					"color": "fire"
@@ -619,20 +619,20 @@
 		],
 		"stats": [
 			{"level": 1, "hp": 3278, "atk": 130, "def": 90, "sp_atk": 40, "sp_def": 80, "speed": 3700},
-			{"level": 2, "hp": 3415, "atk": 134, "def": 100, "sp_atk": 53, "sp_def": 89, "speed": 3700},
-			{"level": 3, "hp": 3573, "atk": 139, "def": 111, "sp_atk": 68, "sp_def": 99, "speed": 3700},
-			{"level": 4, "hp": 4327, "atk": 162, "def": 169, "sp_atk": 144, "sp_def": 151, "speed": 3700},
-			{"level": 5, "hp": 4581, "atk": 168, "def": 184, "sp_atk": 164, "sp_def": 165, "speed": 3700},
-			{"level": 6, "hp": 4821, "atk": 175, "def": 201, "sp_atk": 187, "sp_def": 181, "speed": 3700},
-			{"level": 7, "hp": 5097, "atk": 183, "def": 221, "sp_atk": 213, "sp_def": 199, "speed": 3700},
-			{"level": 8, "hp": 5414, "atk": 192, "def": 244, "sp_atk": 243, "sp_def": 220, "speed": 3700},
-			{"level": 9, "hp": 5779, "atk": 203, "def": 271, "sp_atk": 278, "sp_def": 244, "speed": 3700},
-			{"level": 10, "hp": 6199, "atk": 215, "def": 302, "sp_atk": 318, "sp_def": 271, "speed": 3700},
-			{"level": 11, "hp": 6681, "atk": 229, "def": 337, "sp_atk": 364, "sp_def": 302, "speed": 3700},
-			{"level": 12, "hp": 7236, "atk": 245, "def": 377, "sp_atk": 417, "sp_def": 338, "speed": 3700},
-			{"level": 13, "hp": 7874, "atk": 264, "def": 424, "sp_atk": 477, "sp_def": 379, "speed": 3700},
-			{"level": 14, "hp": 8608, "atk": 285, "def": 477, "sp_atk": 547, "sp_def": 427, "speed": 3700},
-			{"level": 15, "hp": 9452, "atk": 310, "def": 539, "sp_atk": 627, "sp_def": 482, "speed": 3700}
+			{"level": 2, "hp": 3415, "atk": 134, "def": 100, "sp_atk": 51, "sp_def": 89, "speed": 3700},
+			{"level": 3, "hp": 3573, "atk": 139, "def": 111, "sp_atk": 64, "sp_def": 99, "speed": 3700},
+			{"level": 4, "hp": 4372, "atk": 162, "def": 169, "sp_atk": 131, "sp_def": 151, "speed": 3700},
+			{"level": 5, "hp": 4581, "atk": 168, "def": 184, "sp_atk": 148, "sp_def": 165, "speed": 3700},
+			{"level": 6, "hp": 4821, "atk": 175, "def": 201, "sp_atk": 168, "sp_def": 181, "speed": 3700},
+			{"level": 7, "hp": 5097, "atk": 183, "def": 221, "sp_atk": 191, "sp_def": 199, "speed": 3700},
+			{"level": 8, "hp": 5414, "atk": 192, "def": 244, "sp_atk": 217, "sp_def": 220, "speed": 3700},
+			{"level": 9, "hp": 5779, "atk": 203, "def": 271, "sp_atk": 247, "sp_def": 244, "speed": 3700},
+			{"level": 10, "hp": 6199, "atk": 215, "def": 302, "sp_atk": 282, "sp_def": 271, "speed": 3700},
+			{"level": 11, "hp": 6681, "atk": 229, "def": 337, "sp_atk": 322, "sp_def": 302, "speed": 3700},
+			{"level": 12, "hp": 7236, "atk": 245, "def": 377, "sp_atk": 368, "sp_def": 338, "speed": 3700},
+			{"level": 13, "hp": 7874, "atk": 264, "def": 424, "sp_atk": 421, "sp_def": 379, "speed": 3700},
+			{"level": 14, "hp": 8608, "atk": 285, "def": 477, "sp_atk": 482, "sp_def": 427, "speed": 3700},
+			{"level": 15, "hp": 9452, "atk": 310, "def": 539, "sp_atk": 552, "sp_def": 482, "speed": 3700}
 		],
 		"moves": {
 			"basic": {
@@ -1627,7 +1627,7 @@
 					"moveId": "sucker_punch",
 					"style": "physical",
 					"category": "hindrance",
-					"cooldown": 7,
+					"cooldown": 6,
 					"level": 7,
 					"upgrade": 13,
 					"color": "dark"
@@ -1675,21 +1675,21 @@
 			}
 		],
 		"stats": [
-			{"level": 1, "hp": 3050, "atk": 145, "def": 84, "sp_atk": 20, "sp_def": 64, "speed": 3650},
-			{"level": 2, "hp": 3117, "atk": 150, "def": 89, "sp_atk": 21, "sp_def": 68, "speed": 3650},
-			{"level": 3, "hp": 3198, "atk": 156, "def": 95, "sp_atk": 23, "sp_def": 72, "speed": 3650},
-			{"level": 4, "hp": 3295, "atk": 163, "def": 102, "sp_atk": 25, "sp_def": 77, "speed": 3650},
-			{"level": 5, "hp": 3412, "atk": 172, "def": 110, "sp_atk": 27, "sp_def": 83, "speed": 3650},
-			{"level": 6, "hp": 3787, "atk": 200, "def": 137, "sp_atk": 35, "sp_def": 103, "speed": 3650},
-			{"level": 7, "hp": 3955, "atk": 213, "def": 149, "sp_atk": 38, "sp_def": 112, "speed": 3650},
-			{"level": 8, "hp": 4157, "atk": 228, "def": 163, "sp_atk": 42, "sp_def": 123, "speed": 3650},
-			{"level": 9, "hp": 4339, "atk": 246, "def": 180, "sp_atk": 47, "sp_def": 136, "speed": 3650},
-			{"level": 10, "hp": 5159, "atk": 303, "def": 234, "sp_atk": 62, "sp_def": 177, "speed": 3650},
-			{"level": 11, "hp": 5507, "atk": 329, "def": 259, "sp_atk": 69, "sp_def": 196, "speed": 3650},
-			{"level": 12, "hp": 5925, "atk": 360, "def": 289, "sp_atk": 77, "sp_def": 219, "speed": 3650},
-			{"level": 13, "hp": 6426, "atk": 397, "def": 325, "sp_atk": 87, "sp_def": 246, "speed": 3650},
-			{"level": 14, "hp": 7028, "atk": 442, "def": 368, "sp_atk": 99, "sp_def": 279, "speed": 3650},
-			{"level": 15, "hp": 7750, "atk": 496, "def": 420, "sp_atk": 114, "sp_def": 318, "speed": 3650}
+			{"level": 1, "hp": 3050, "atk": 145, "def": 90, "sp_atk": 20, "sp_def": 67, "speed": 3650},
+			{"level": 2, "hp": 3117, "atk": 150, "def": 95, "sp_atk": 21, "sp_def": 71, "speed": 3650},
+			{"level": 3, "hp": 3198, "atk": 156, "def": 102, "sp_atk": 23, "sp_def": 76, "speed": 3650},
+			{"level": 4, "hp": 3295, "atk": 163, "def": 110, "sp_atk": 25, "sp_def": 82, "speed": 3650},
+			{"level": 5, "hp": 3412, "atk": 172, "def": 119, "sp_atk": 27, "sp_def": 89, "speed": 3650},
+			{"level": 6, "hp": 3787, "atk": 200, "def": 149, "sp_atk": 35, "sp_def": 113, "speed": 3650},
+			{"level": 7, "hp": 3955, "atk": 213, "def": 163, "sp_atk": 38, "sp_def": 124, "speed": 3650},
+			{"level": 8, "hp": 4157, "atk": 228, "def": 176, "sp_atk": 42, "sp_def": 137, "speed": 3650},
+			{"level": 9, "hp": 4339, "atk": 246, "def": 199, "sp_atk": 47, "sp_def": 152, "speed": 3650},
+			{"level": 10, "hp": 5159, "atk": 303, "def": 261, "sp_atk": 62, "sp_def": 201, "speed": 3650},
+			{"level": 11, "hp": 5507, "atk": 329, "def": 289, "sp_atk": 69, "sp_def": 223, "speed": 3650},
+			{"level": 12, "hp": 5925, "atk": 360, "def": 323, "sp_atk": 77, "sp_def": 250, "speed": 3650},
+			{"level": 13, "hp": 6426, "atk": 397, "def": 364, "sp_atk": 87, "sp_def": 282, "speed": 3650},
+			{"level": 14, "hp": 7028, "atk": 442, "def": 413, "sp_atk": 99, "sp_def": 321, "speed": 3650},
+			{"level": 15, "hp": 7750, "atk": 496, "def": 472, "sp_atk": 114, "sp_def": 367, "speed": 3650}
 		],
 		"moves": {
 			"basic": {
@@ -2026,21 +2026,21 @@
 			}
 		],
 		"stats": [
-			{"level": 1, "hp": 3000, "atk": 156, "def": 50, "sp_atk": 20, "sp_def": 30, "speed": 3600},
-			{"level": 2, "hp": 3034, "atk": 161, "def": 53, "sp_atk": 21, "sp_def": 32, "speed": 3600},
-			{"level": 3, "hp": 3075, "atk": 167, "def": 56, "sp_atk": 23, "sp_def": 34, "speed": 3600},
-			{"level": 4, "hp": 3124, "atk": 174, "def": 60, "sp_atk": 25, "sp_def": 36, "speed": 3600},
-			{"level": 5, "hp": 3304, "atk": 198, "def": 75, "sp_atk": 32, "sp_def": 45, "speed": 3600},
-			{"level": 6, "hp": 3376, "atk": 208, "def": 81, "sp_atk": 35, "sp_def": 49, "speed": 3600},
-			{"level": 7, "hp": 3702, "atk": 252, "def": 108, "sp_atk": 49, "sp_def": 65, "speed": 3600},
-			{"level": 8, "hp": 3805, "atk": 266, "def": 117, "sp_atk": 53, "sp_def": 70, "speed": 3600},
-			{"level": 9, "hp": 3929, "atk": 283, "def": 127, "sp_atk": 58, "sp_def": 76, "speed": 3600},
-			{"level": 10, "hp": 4077, "atk": 303, "def": 139, "sp_atk": 64, "sp_def": 83, "speed": 3600},
-			{"level": 11, "hp": 4255, "atk": 327, "def": 154, "sp_atk": 74, "sp_def": 92, "speed": 3600},
-			{"level": 12, "hp": 4468, "atk": 356, "def": 172, "sp_atk": 80, "sp_def": 103, "speed": 3600},
-			{"level": 13, "hp": 4724, "atk": 391, "def": 193, "sp_atk": 91, "sp_def": 116, "speed": 3600},
-			{"level": 14, "hp": 5031, "atk": 432, "def": 219, "sp_atk": 104, "sp_def": 131, "speed": 3600},
-			{"level": 15, "hp": 5400, "atk": 482, "def": 250, "sp_atk": 119, "sp_def": 149, "speed": 3600}
+			{"level": 1, "hp": 3000, "atk": 146, "def": 50, "sp_atk": 20, "sp_def": 30, "speed": 3600},
+			{"level": 2, "hp": 3031, "atk": 151, "def": 53, "sp_atk": 21, "sp_def": 32, "speed": 3600},
+			{"level": 3, "hp": 3068, "atk": 156, "def": 56, "sp_atk": 23, "sp_def": 34, "speed": 3600},
+			{"level": 4, "hp": 3112, "atk": 162, "def": 60, "sp_atk": 25, "sp_def": 36, "speed": 3600},
+			{"level": 5, "hp": 3273, "atk": 186, "def": 75, "sp_atk": 32, "sp_def": 45, "speed": 3600},
+			{"level": 6, "hp": 3337, "atk": 195, "def": 81, "sp_atk": 35, "sp_def": 49, "speed": 3600},
+			{"level": 7, "hp": 3629, "atk": 238, "def": 108, "sp_atk": 49, "sp_def": 65, "speed": 3600},
+			{"level": 8, "hp": 3721, "atk": 252, "def": 117, "sp_atk": 53, "sp_def": 70, "speed": 3600},
+			{"level": 9, "hp": 3832, "atk": 268, "def": 127, "sp_atk": 58, "sp_def": 76, "speed": 3600},
+			{"level": 10, "hp": 3965, "atk": 287, "def": 139, "sp_atk": 64, "sp_def": 83, "speed": 3600},
+			{"level": 11, "hp": 4125, "atk": 310, "def": 154, "sp_atk": 74, "sp_def": 92, "speed": 3600},
+			{"level": 12, "hp": 4316, "atk": 338, "def": 172, "sp_atk": 80, "sp_def": 103, "speed": 3600},
+			{"level": 13, "hp": 4546, "atk": 372, "def": 193, "sp_atk": 91, "sp_def": 116, "speed": 3600},
+			{"level": 14, "hp": 4821, "atk": 412, "def": 219, "sp_atk": 104, "sp_def": 131, "speed": 3600},
+			{"level": 15, "hp": 5152, "atk": 460, "def": 250, "sp_atk": 119, "sp_def": 149, "speed": 3600}
 		],
 		"moves": {
 			"basic": {
@@ -2147,21 +2147,21 @@
 			}
 		],
 		"stats": [
-			{"level": 1, "hp": 3024, "atk": 170, "def": 58, "sp_atk": 20, "sp_def": 40, "speed": 3650},
-			{"level": 2, "hp": 3071, "atk": 176, "def": 61, "sp_atk": 21, "sp_def": 42, "speed": 3650},
-			{"level": 3, "hp": 3127, "atk": 184, "def": 65, "sp_atk": 23, "sp_def": 45, "speed": 3650},
-			{"level": 4, "hp": 3195, "atk": 193, "def": 70, "sp_atk": 25, "sp_def": 48, "speed": 3650},
-			{"level": 5, "hp": 3440, "atk": 227, "def": 87, "sp_atk": 32, "sp_def": 60, "speed": 3650},
-			{"level": 6, "hp": 3538, "atk": 241, "def": 94, "sp_atk": 35, "sp_def": 65, "speed": 3650},
-			{"level": 7, "hp": 3983, "atk": 303, "def": 125, "sp_atk": 48, "sp_def": 87, "speed": 3650},
-			{"level": 8, "hp": 4124, "atk": 322, "def": 135, "sp_atk": 52, "sp_def": 94, "speed": 3650},
-			{"level": 9, "hp": 4293, "atk": 345, "def": 147, "sp_atk": 57, "sp_def": 102, "speed": 3650},
-			{"level": 10, "hp": 4495, "atk": 373, "def": 161, "sp_atk": 63, "sp_def": 112, "speed": 3650},
-			{"level": 11, "hp": 4738, "atk": 407, "def": 178, "sp_atk": 70, "sp_def": 124, "speed": 3650},
-			{"level": 12, "hp": 5029, "atk": 447, "def": 199, "sp_atk": 79, "sp_def": 138, "speed": 3650},
-			{"level": 13, "hp": 5378, "atk": 495, "def": 224, "sp_atk": 89, "sp_def": 155, "speed": 3650},
-			{"level": 14, "hp": 5797, "atk": 553, "def": 254, "sp_atk": 102, "sp_def": 175, "speed": 3650},
-			{"level": 15, "hp": 6300, "atk": 623, "def": 290, "sp_atk": 117, "sp_def": 200, "speed": 3650}
+			{"level": 1, "hp": 3024, "atk": 200, "def": 58, "sp_atk": 20, "sp_def": 40, "speed": 3650},
+			{"level": 2, "hp": 3071, "atk": 207, "def": 61, "sp_atk": 21, "sp_def": 42, "speed": 3650},
+			{"level": 3, "hp": 3127, "atk": 215, "def": 65, "sp_atk": 23, "sp_def": 45, "speed": 3650},
+			{"level": 4, "hp": 3195, "atk": 225, "def": 70, "sp_atk": 25, "sp_def": 48, "speed": 3650},
+			{"level": 5, "hp": 3440, "atk": 261, "def": 87, "sp_atk": 32, "sp_def": 60, "speed": 3650},
+			{"level": 6, "hp": 3538, "atk": 275, "def": 94, "sp_atk": 35, "sp_def": 65, "speed": 3650},
+			{"level": 7, "hp": 3983, "atk": 340, "def": 125, "sp_atk": 48, "sp_def": 87, "speed": 3650},
+			{"level": 8, "hp": 4124, "atk": 361, "def": 135, "sp_atk": 52, "sp_def": 94, "speed": 3650},
+			{"level": 9, "hp": 4293, "atk": 386, "def": 147, "sp_atk": 57, "sp_def": 102, "speed": 3650},
+			{"level": 10, "hp": 4495, "atk": 416, "def": 161, "sp_atk": 63, "sp_def": 112, "speed": 3650},
+			{"level": 11, "hp": 4738, "atk": 452, "def": 178, "sp_atk": 70, "sp_def": 124, "speed": 3650},
+			{"level": 12, "hp": 5029, "atk": 495, "def": 199, "sp_atk": 79, "sp_def": 138, "speed": 3650},
+			{"level": 13, "hp": 5378, "atk": 546, "def": 224, "sp_atk": 89, "sp_def": 155, "speed": 3650},
+			{"level": 14, "hp": 5797, "atk": 607, "def": 254, "sp_atk": 102, "sp_def": 175, "speed": 3650},
+			{"level": 15, "hp": 6300, "atk": 681, "def": 290, "sp_atk": 117, "sp_def": 200, "speed": 3650}
 		],
 		"moves": {
 			"basic": {
@@ -2211,7 +2211,7 @@
 					"moveId": "fly",
 					"style": "physical",
 					"category": "dash",
-					"cooldown": 11,
+					"cooldown": 9,
 					"level": 7,
 					"upgrade": 13,
 					"color": "flying"
@@ -2333,7 +2333,7 @@
 					"moveId": "wild_charge",
 					"style": "physical",
 					"category": "dash",
-					"cooldown": 11,
+					"cooldown": 9,
 					"level": 8,
 					"upgrade": 14,
 					"color": "electric"
@@ -2417,7 +2417,7 @@
 					"moveId": "pyro_ball",
 					"style": "physical",
 					"category": "ranged",
-					"cooldown": 7,
+					"cooldown": 5,
 					"level": 7,
 					"upgrade": 11,
 					"color": "fire"
@@ -2445,7 +2445,7 @@
 					"moveId": "flame_charge_cinderace",
 					"style": "physical",
 					"category": "melee",
-					"cooldown": 6,
+					"cooldown": 5,
 					"level": 8,
 					"upgrade": 13,
 					"color": "fire"
