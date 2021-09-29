@@ -33,6 +33,9 @@ var GameMaster = (function () {
 
 				chunksLoaded++;
 
+				if(filename == "pokemon"){
+					object.pokemon.sort((a,b) => (a.dex > b.dex) ? 1 : ((b.dex > a.dex) ? -1 : 0));
+				}
 				if(filename == "heldItems"){
 					object.heldItems.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0));
 				}

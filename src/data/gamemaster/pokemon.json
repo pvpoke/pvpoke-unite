@@ -1880,6 +1880,127 @@
 		}
 	},
 	{
+		"pokemonId": "mamoswine",
+		"dex": 220,
+		"role": "defender",
+		"type": "melee",
+		"style": "physical",
+		"difficulty": "intermediate",
+		"ratings": {
+			"offense": 2.5,
+			"endurance": 4,
+			"mobility": 2,
+			"scoring": 1.5,
+			"support": 2.5,
+	        "leveling": 1
+		},
+		"stages": [
+			{
+				"stageId": "swinub",
+				"level": 1
+			},
+			{
+				"stageId": "piloswine",
+				"level": 6
+			},
+			{
+				"stageId": "mamoswine",
+				"level": 10
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3280, "atk": 170, "def": 85, "sp_atk": 20, "sp_def": 65, "speed": 3600 },
+			{"level": 2, "hp": 3371, "atk": 172, "def": 91, "sp_atk": 21, "sp_def": 70, "speed": 3600 },
+			{"level": 3, "hp": 3480, "atk": 175, "def": 98, "sp_atk": 23, "sp_def": 75, "speed": 3600 },
+			{"level": 4, "hp": 3611, "atk": 178, "def": 107, "sp_atk": 25, "sp_def": 81, "speed": 3600 },
+			{"level": 5, "hp": 3769, "atk": 182, "def": 118, "sp_atk": 27, "sp_def": 89, "speed": 3600 },
+			{"level": 6, "hp": 4277, "atk": 194, "def": 152, "sp_atk": 35, "sp_def": 114, "speed": 3600 },
+			{"level": 7, "hp": 4505, "atk": 200, "def": 167, "sp_atk": 38, "sp_def": 125, "speed": 3600 },
+			{"level": 8, "hp": 4778, "atk": 207, "def": 185, "sp_atk": 42, "sp_def": 139, "speed": 3600 },
+			{"level": 9, "hp": 5106, "atk": 215, "def": 207, "sp_atk": 47, "sp_def": 155, "speed": 3600 },
+			{"level": 10, "hp": 6136, "atk": 240, "def": 276, "sp_atk": 63, "sp_def": 206, "speed": 3600 },
+			{"level": 11, "hp": 6608, "atk": 251, "def": 308, "sp_atk": 70, "sp_def": 229, "speed": 3600 },
+			{"level": 12, "hp": 7174, "atk": 265, "def": 346, "sp_atk": 79, "sp_def": 257, "speed": 3600 },
+			{"level": 13, "hp": 7854, "atk": 281, "def": 391, "sp_atk": 89, "sp_def": 291, "speed": 3600 },
+			{"level": 14, "hp": 8669, "atk": 301, "def": 445, "sp_atk": 101, "sp_def": 331, "speed": 3600 },
+			{"level": 15, "hp": 9648, "atk": 325, "def": 510, "sp_atk": 116, "sp_def": 379, "speed": 3600 }
+		],
+		"moves": {
+			"basic": {
+				"moveId": "mamoswine_basic",
+				"style": "physical",
+				"boostStyle": "physical",
+				"boostCount": 3
+			},
+			"slot1": [
+				{
+					"moveId": "ice_shard",
+					"style": "physical",
+					"category": "area",
+					"cooldown": 7,
+					"level": 1,
+					"color": "ice"
+				},
+				{
+					"moveId": "icicle_crash",
+					"style": "physical",
+					"category": "hindrance",
+					"cooldown": 10,
+					"level": 6,
+					"upgrade": 12,
+					"color": "ice"
+				},
+				{
+					"moveId": "ice_fang",
+					"style": "physical",
+					"category": "hindrance",
+					"cooldown": 8,
+					"level": 6,
+					"upgrade": 12,
+					"color": "ice"
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "tackle_mamoswine",
+					"style": "physical",
+					"category": "dash",
+					"cooldown": 8,
+					"level": 1,
+					"color": "fighting"
+				},
+				{
+					"moveId": "high_horsepower",
+					"style": "physical",
+					"category": "dash",
+					"cooldown": 8,
+					"level": 8,
+					"upgrade": 14,
+					"color": "rock"
+				},
+				{
+					"moveId": "earthquake_mamoswine",
+					"style": "physical",
+					"category": "dash",
+					"cooldown": 7.5,
+					"level": 8,
+					"upgrade": 14,
+					"color": "ground"
+				}
+			],
+			"unite": {
+				"moveId": "mammoth_mash",
+				"category": "area",
+				"level": 10,
+				"color": "ground"
+			},
+			"passive": {
+				"moveId": "thick_fat",
+				"color": "fighting"
+			}
+		}
+	},
+	{
 		"pokemonId": "crustle",
 		"dex": 558,
 		"role": "defender",

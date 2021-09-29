@@ -287,6 +287,10 @@ function BuildSelect(element, ctx, selectors){
 			  'event_category' : 'Held Item',
 			  'event_label' : itemId
 			});
+
+			gtag('event', itemId, {
+			  'event_category' : 'Held Item Only'
+			});
 		}
 
 		self.update();

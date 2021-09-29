@@ -43,10 +43,9 @@
 			<!--Update section for updates-->
 			<h2><?php e("whats_new"); ?></h2>
 
-			<h4>v1.1 (September 22nd, 2021)</h4>
+			<h4>v1.1 (September 29th, 2021)</h4>
 			<ul>
-				<li>Updated latest Pokemon and move stats</li>
-				<li>Added new held items</li>
+				<li>Added Pokemon data for Mamoswine</li>
 			</ul>
 		</div>
 	</div>
