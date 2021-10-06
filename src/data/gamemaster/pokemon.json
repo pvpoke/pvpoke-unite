@@ -2711,6 +2711,123 @@
 		}
 	},
 	{
+		"pokemonId": "sylveon",
+		"dex": 700,
+		"role": "attacker",
+		"type": "ranged",
+		"style": "special",
+		"difficulty": "intermediate",
+		"ratings": {
+			"offense": 3.5,
+			"endurance": 1.5,
+			"mobility": 1.5,
+			"scoring": 3.5,
+			"support": 3.5,
+	        "leveling": 4
+		},
+		"stages": [
+			{
+				"stageId": "eevee",
+				"level": 1
+			},
+			{
+				"stageId": "sylveon",
+				"level": 4
+			}
+		],
+		"stats": [
+			{"level": 1, "hp": 3280, "atk": 167, "def": 52, "sp_atk": 50, "sp_def": 38, "speed": 3700},
+			{"level": 2, "hp": 3489, "atk": 171, "def": 57, "sp_atk": 64, "sp_def": 41, "speed": 3700},
+			{"level": 3, "hp": 3584, "atk": 176, "def": 62, "sp_atk": 80, "sp_def": 45, "speed": 3700},
+			{"level": 4, "hp": 4068, "atk": 201, "def": 89, "sp_atk": 162, "sp_def": 65, "speed": 3700},
+			{"level": 5, "hp": 4195, "atk": 208, "def": 96, "sp_atk": 183, "sp_def": 70, "speed": 3700},
+			{"level": 6, "hp": 4340, "atk": 216, "def": 104, "sp_atk": 207, "sp_def": 76, "speed": 3700},
+			{"level": 7, "hp": 4507, "atk": 225, "def": 113, "sp_atk": 235, "sp_def": 83, "speed": 3700},
+			{"level": 8, "hp": 4699, "atk": 235, "def": 124, "sp_atk": 267, "sp_def": 91, "speed": 3700},
+			{"level": 9, "hp": 4920, "atk": 247, "def": 136, "sp_atk": 304, "sp_def": 100, "speed": 3700},
+			{"level": 10, "hp": 5174, "atk": 260, "def": 150, "sp_atk": 347, "sp_def": 110, "speed": 3700},
+			{"level": 11, "hp": 5467, "atk": 275, "def": 166, "sp_atk": 396, "sp_def": 122, "speed": 3700},
+			{"level": 12, "hp": 5804, "atk": 293, "def": 183, "sp_atk": 453, "sp_def": 136, "speed": 3700},
+			{"level": 13, "hp": 6191, "atk": 313, "def": 207, "sp_atk": 518, "sp_def": 152, "speed": 3700},
+			{"level": 14, "hp": 6636, "atk": 336, "def": 232, "sp_atk": 593, "sp_def": 170, "speed": 3700},
+			{"level": 15, "hp": 7148, "atk": 363, "def": 260, "sp_atk": 679, "sp_def": 191, "speed": 3700}
+		],
+		"moves": {
+			"basic": {
+				"moveId": "sylveon_basic",
+				"style": "physical",
+				"boostStyle": "special",
+				"boostCount": 3
+			},
+			"slot1": [
+				{
+					"moveId": "swift",
+					"style": "special",
+					"category": "ranged",
+					"cooldown": 7,
+					"level": 1,
+					"color": "fighting"
+				},
+				{
+					"moveId": "mystical_fire",
+					"style": "special",
+					"category": "dash",
+					"cooldown": 7,
+					"level": 4,
+					"upgrade": 10,
+					"color": "fighting"
+				},
+				{
+					"moveId": "hyper_voice",
+					"style": "special",
+					"category": "area",
+					"cooldown": 5,
+					"level": 4,
+					"upgrade": 10,
+					"color": "fairy"
+				}
+			],
+			"slot2": [
+				{
+					"moveId": "baby_doll_eyes",
+					"style": "special",
+					"category": "ranged",
+					"cooldown": 5,
+					"level": 1,
+					"color": "fairy"
+				},
+				{
+					"moveId": "draining_kiss",
+					"style": "special",
+					"category": "sure_hit",
+					"cooldown": 10,
+					"level": 6,
+					"upgrade": 12,
+					"color": "fairy"
+				},
+				{
+					"moveId": "calm_mind",
+					"style": "other",
+					"category": "buff",
+					"cooldown": 10,
+					"level": 6,
+					"upgrade": 12,
+					"color": "water"
+				}
+			],
+			"unite": {
+				"moveId": "fairy_frolic",
+				"category": "buff",
+				"level": 8,
+				"color": "fairy"
+			},
+			"passive": {
+				"moveId": "pixilate",
+				"color": "fairy"
+			}
+		}
+	},
+	{
 		"pokemonId": "cramorant",
 		"dex": 845,
 		"role": "attacker",
